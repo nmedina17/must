@@ -1,0 +1,933 @@
+---
+#title: "Managing urban soils for sustainable agriculture"
+#author: "Nicholas L Medina"
+#date: "10/14/2019"
+output:
+  pdf_document: 
+    toc: yes
+    fig_caption: yes
+    number_sections: yes
+    keep_tex: yes
+  word_document: 
+    toc: yes
+    fig_caption: yes
+    keep_md: yes
+  html_document: 
+    fig_caption: yes
+    toc: yes
+    number_sections: yes
+    keep_md: yes
+---
+
+# **Tillage and cover crops for urban soil restoration**
+
+Naim Edwards and Nicholas Medina
+
+## **Abstract**
+
+Urban growers commonly face issues of related to soil compaction, especially when re-purposing land that previously supported buildings. In response, tillage is often used to prepare land before seeding and cultivation, as are cover crop mixes, especially with specific intended targeted functions. This study tested how tillage method and various designed cover crop mixes affect common agricultural variables of interest, including relief of soil compaction, soil water infiltration, herbaceous weedy plant emergence, and yield of a common root crop, forage radish. Of note was that tillage initially revealed substantial debris buried below the surface (construction debris, roots, garbage, stones). Compared to no-till, rototilled (medium intensity) and tractor tilled (high intensity) relieved compaction at significantly greater depths, with tractor tilling resulting in the deepest relief. However, rototilling showed the highest infiltration throughout the growing season even compared to tractor tilled soils, challenging assumed benefits that might follow from extensive tractor tilling. Furthermore, radish yield was significantly greater in no-till plots, again challenging assumed links between compaction relief, infiltration, and yield. We posit that no-till methods may be more productive due to better interactions with additions like compost and cover crop mixes that are tailored to suppress common weeds, which also showed significant benefits in this study. As a result, urban soils may provide a strong foundation for the widespread implementation of more sustainable and fewer industrial management practices.
+
+## **Introduction**
+
+-   background on importance of urban agriculture (UA) for food security and food justice (*e.g.* fruit and vegetable provision)
+-   UA also represents a frontier for soil and agronomic science
+-   key part of soil variation (and associated productivity) is human land use and management (*i.e.* tilling practices, esp. for compaction). Modifies Jenny's (1941) model of soil formation
+
+Soils in urban agro-ecosystems are formed in major part by anthropogenic components (Kuzyakov et al 2019), [adding nuance to classic relationships among their chemical, physical, and biological relationships.]
+
+Urban growers face unique obstacles to soil management due to space limitations, surrounding environment, and historical uses of land that often render soils degraded (Lal 2012/others). Common challenges include compaction, low organic matter, high pH, and contamination from pollution and debris (CITE). [expand on issue?]
+
+### *Compaction*
+
+Compaction presents challenges to growers because it can reduce plant health and yields by redistributing and generally reducing the amount of air, water, and biological activity that is in association with crop roots. As a general increase in bulk density, compaction is likely to create areas of hardpan, which are places in a soil profile that where particles have re-arranged and formed a structure such that the pressure needed to access its contents (water, nutrients, and microbes) are greater than those that can possibly be exerted by roots (\~300 psi). Extended compaction changes pore structure throughout a field enough to change root system networks, limit water infiltration by deviating and consolidating preferential surface flow pathways, which increase local erosion (CITE). As a result, compacted soils are also more susceptible to erosion, when compared to more structured, aggregated soils (CITE Jo H, maybe mention severity of non-urban soil erosion issue).
+
+### *Infiltration*
+
+Alongside erosion comes poorer soil water infiltration, which adds to widespread existing concerns about highway flooding and associated groundwater storm infrastructure (CITE groups/sources, extent of issue?). Water infiltration is important for two reasons: 1) The faster water can drain into soil, the less likely water falling on the surface is to runoff causing erosion and/or stormwater issues like flooding, 2) Water can get to plant roots faster and infiltration can indicate the soil's ability to hold water as well, reducing the need to irrigate during dry periods. Ultimately, infiltration and patterns in soil water content will have effects on realized yields, although the relationships may not always be straighforward/intuitive] (CITE data involving soil water hysteresis?)
+
+### *Weeds and yield* / *Tillage*
+
+The extent of compaction and limited infiltration in a soil is influenced by soil texture, usage of heavy equipment on soil surface (as in for tillage), soil moisture, soil organic matter, and other management practices (CITE). Tillage by hand, tractor, or rototiller can be and is often useful for reducing compaction immediately prior to planting, at the start of the growing season. This immediately increases macro-pores and reduces bulk density (CITE), theoretically allowing better crop root establishment, absorption of water and nutrients that filter through the soil, and subsequent soil microbial activity.
+
+However, the depth or intensity of tillage, related to the type of machinery used and scale of operation, may not directly correspond to yield or overall growth, and may even vary by plant species. For example, deep tillage by tractor may unnecessary for crops with shallow roots, and may even be detrimental if it disproportionately improves weed growth. [Other factors affecting weed persistence?] Tilling also tends to slow rates of organic matter accumulation, and may be less practical due to costs, labor, and space limitations, compared to broadfork-like methods. Furthermore, crops may not respond linearly to the degree/intensity of tillage, making extensive tillage unnecessary, and even detrimental to soil structure in the long-term, as soil becomes more dependent on regular complete up-ending.
+
+### *Cover cropping*
+
+-   cover cropping as an additional method of relieving compaction
+-   oilseed, radish for vegetables. sorghum/sudangrass very good. others: clover, rygrass
+
+### *Study overview*
+
+To combat compaction, growers can focus on root crops like carrots, forage radish, and potatoes (CITE previous uses?). In 2019, we studied how different tillage and cover crop mixes affect organic matter, water infiltration, compaction, and weed abundance over the growing season. We expected that the more intensely tilled soil group, and weed suppression mix would improve the aforementioned characteristics the fastest. Additionally, cover crop performance in urban soils has been scarcely studied (CITE), so we also documented how species and mixes perform in general. Though all cover crops can improve soil in a variety of ways, we grouped them based on a targeted outcome. The hypothesized that our species mixture targeting soil compaction would loosen the soil reduce compaction the most, while the perennial mix should build soil over multiple seasons from root and above ground growth (/improve crop yields).
+
+## **Methods**
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+#setwd("~/Box Sync/DPFLI/USMP/data/")
+source("flow/reportstyle.R")
+source("clean.R")
+#source("flow/statsflow.R")
+source("stats.R")
+```
+
+### *Study site*
+
+This study was done at Michigan State University's Detroit Partnership for Food, Learning, and Innovation (42.4119979˚N, -83.2627370˚W), [an urban agriculture research and community engagement site] in Detroit, MI, USA. Mean annual temperature is 9.5˚C and precipitation is 787mm. The site was formerly a school, which was demolished in 2016, 2 years before the site was established. The site observes upland wetland properties: there is a nearby river, soils are (lacustrine derived from a former lake bed), with mostly clay texture ([\~37%], with some areas higher in silt and sand) and alkaline pH 8.0 - 8.3. Initial soil tests showed wet aggregate stability ranging 15 - 47%. Mean concentrations of various elements of these soils are shown in [Table/Fig \#].
+
+```{r chem}
+Chem #%>% group_by(element) %>% select() %>% mySummary()
+```
+
+**Table \#**. Maximums based on recommendations from the Cornell Waste Management Institute (CITE). Max Cu and Ni levels are toxic to plants, while those for As, Ba, Cd, Cr, Pb, and Zn are toxic to humans. [Pb is over-estimate i.e. for playgrounds, not food.]
+
+### *Baseline soil sampling*
+
+Eight soil samples [vol?] were collected from around study site and analyzed for chemistry using modified Morgan extractable protocols (CITE) at the Cornell Soil Health Laboratory (website).
+
+### *Tillage*
+
+The tillage groups ranged from no-till to intensive soil disturbance with a tractor, at 3 levels: No Till (NT), rototill (RT), and tractor-tilled (TT). [Info on tractor [brand] and/or rototiller used?] These methods represent a spectrum of soil management from hand tools to heavy machinery.
+
+### *Crop mixes*
+
++------------------+-------------------------+--------+
+| Mix Name         | Species                 | Traits |
++==================+=========================+========+
+| Null             |                         |        |
++------------------+-------------------------+--------+
+| Perennial        |                         |        |
++------------------+-------------------------+--------+
+| Compaction       | crimson clover          |        |
+|                  |                         |        |
+|                  | forage radish / oilseed |        |
+|                  |                         |        |
+|                  | mustard                 |        |
++------------------+-------------------------+--------+
+| Weed Suppression |                         |        |
++------------------+-------------------------+--------+
+
+**Table \#**. shows the plant species used for to optimize each desired function. [Justification of each chosen combo?]
+
+### *Compaction*
+
+Soil compaction was measured with a penetrometer ([brand]). Readings were taken as the depth at which the pressure gauge read 300 lbs/in\^2, which is the maximum pressure that plant roots are estimated to be able to penetrate the soil. Beyond 300 psi is considered hardpan impenetrable by plant roots.
+
+### *Infiltration*
+
+Infiltration was measured as the time it took for \~1L (32 fl oz) to flow through the soil surface [material/instrument used?]. This quantity of water is similar to the amount of water expected to fall during a 1⁄2-inch rain event if all the water fell at once.
+
+### *Weed suppression*
+
+Weed suppression was measured 2 different ways: using abundance and density. Weed abundance was estimated as the relative cover of the top 2 most abundant weed species in [A 1 x 1m quadrat?]--pigweed ( *Palmer amaranth*) and velvetleaf ( *Abutilon theophrasti*), using a comparative scale of 0-10. Weed density was measured as the relative cover of all weed (non-crop) species in the same area, on a scale of 1-3. [multiple observers for counting?]
+
+### *Yield*
+
+Forage radish (*Raphanus sativus* var. *longipinnatus*) roots were measured for length, and their tubers weighed. The length of the longest root was recorded for each individual radish, and 5 representative individuals were used to calculate mean weights (at field moisture) per plot. The length of a radish root was measured from the hypocotyl or root cap to where the root became 1⁄4 inch wide.
+
+### *Statistics*
+
+All statistical tests, mainly ANOVAs, were done using base function in RStudio v1.2.1335 (R v\#.\#.\#\#\#\#). If 2 variables were correlated, a MANOVA was used, as recommended.
+
+All analyses were performed using plots with even sampling, limiting infiltration to weed-suppression plots and radish yield and root length to compaction-optimized cover crop mixes. This was justified because cover crop mix did not significantly affect compaction, which was expected to correlate with water infiltration and root growth.
+
+## Results
+
+the result for compaction is \r inline\_text()...
+
+```{r summary}
+#Usmp %>% tbl_summary()
+```
+
+### Compaction
+
+-   Mix & Til signif
+
+```{r quick}
+Compact %>% grouped_ggbetweenstats(x = MIX, y = median, grouping.var = TIL)
+```
+
+```{r table}
+# CompactStat %>% as.data.frame %>% sjtab()
+CompactStat %>% myRegression()
+```
+
+-   plot to highlight interactions
+
+    -   perennial (v Null) in Roto & Tractor
+
+    -   weed suppress in Tractor
+
+```{r plot}
+Compact %>%
+  myPlot(..x = MIX, ..y = median, 
+         ..myposthoc = CompactStatPost,
+         ..ylab = "Compaction depth (m)", 
+         ..xlab = "Cover crop mix") +
+  facet_wrap( ~ TIL) + stat_summary(fun = mean) +
+  stat_summary(fun.data = mean_se, geom = "errorbar",
+               width = 0.5) +
+  scale_y_continuous(trans = "reverse") +
+  theme(axis.text.x = element_text(angle = 25, 
+                                   hjust = 1, vjust = 1))
+```
+
+-   expected pairwise results not showing
+
+    -   --\> interactions more nuanced
+
+#### Variance
+
+-   Earlier Levene's Test should show this
+
+    -   but here is DIY/OG mirrored test (ideally more strength)
+
+-   signif interactive effect of weed suppress in Roto
+
+```{r quick}
+#subset
+Compact <- Usmpg1 %>% filter(variable == "PNDcm")
+
+Compact %>% 
+  grouped_ggbetweenstats(x = MIX, y = mad,
+                         grouping.var = TIL)
+```
+
+```{r table}
+CompactStatVar <- Compact %>%
+  lmer(formula = mad ~ MIX * TIL + (SAMPL_TIME | COL))
+CompactStatVar %>% residuals() %>% shapiro_test() #fail
+CompactStatVar2 <- Compact %>%
+  glmer(formula = mad+1 ~ MIX + TIL + (SAMPL_TIME | COL),
+        family = Gamma())
+
+CompactStatVar %>% tbl_regression() %>%
+  add_global_p(keep = T) %>%
+  add_n(location = "level") %>%
+  add_glance_source_note(include = modelfit)
+```
+
+-   effects on variance visual, but not in posthoc
+
+### Infiltration
+
+```{r quick}
+#subset
+Infil <- Usmpg1 %>% filter(variable == "INFILmL")
+                           #SAMPL_TIME != "Late")
+
+Infil %>%
+  grouped_ggbetweenstats(x = MIX, y = median,
+                         grouping.var = TIL)
+```
+
+```{r table}
+InfilStat <- Infil %>% 
+  lmer(formula = median+1 ~ MIX + TIL + (1 | COL))
+InfilStat %>% residuals() %>% shapiro_test()  #fail
+InfilStat1 <- Infil %>% 
+  glmer(formula = median+1 ~ MIX + TIL + (1 | COL),
+        family = Gamma())  #GammaAIC<InverseGaussianAIC
+
+#variance
+bf.test(data = Infil,
+        formula = median ~ MIX) #pass
+bf.test(data = Infil,
+        formula = median ~ TIL) #justpass
+
+InfilStat1 %>% tbl_regression() %>%
+  add_global_p(keep = T) %>% 
+  add_n(location = "level") %>%
+  add_glance_source_note(include = modelfit)
+```
+
+```{r plot}
+InfilStat1Post <- Infil %>% 
+  #group_by(TIL) %>%
+  emmeans_test(median ~ MIX, 
+               p.adjust.method = "Holm") %>%
+  add_xy_position()
+#InfilStat1Post2 <- Infil %>% group_by(MIX) %>%
+#  kruskal_test(median ~ TIL) %>%
+#  add_xy_position()
+
+#checkrawdata...
+Fig2.1 <- Infil %>% 
+  ggplot(aes(x = MIX, y = median)) + 
+  #facet_wrap(~ TIL, scales = "free") +
+  #geom_quasirandom(color = "grey") +
+  stat_summary(fun = median) +
+  stat_summary(fun.data = median_mad,
+               geom = "errorbar", width = 0.5) +
+  labs(x = "Cover crop mix", 
+       y = expression(paste("Infiltration (mL sec"^-1,")")))
+Fig2.1 + labs(caption = get_pwc_label(InfilStat1Post)) +
+  stat_pvalue_manual(InfilStat1Post, hide.ns = T)
+```
+
+### Weeds
+
+```{r WeedDensity}
+WeedDensity <- Usmpg1 %>% filter(variable == "Wd_Dn")
+
+WeedDensityStat <- WeedDensity %>%
+  lmer(formula = median ~ MIX + TIL + (SAMPL_TIME | COL))
+WeedDensityStat %>% residuals() %>% shapiro_test()  #pass
+WeedDensity %>% levene_test(formula = median ~ MIX)  #pass
+WeedDensity %>% levene_test(formula = median ~ TIL)  #pass
+
+WeedDensityStat1Table <- WeedDensityStat %>%
+  tbl_regression() %>% add_global_p(keep = T) %>%
+  add_n(location = "level") %>%
+  add_glance_source_note(include = modelfit)
+
+WeedDensityStatPost <- WeedDensity %>% group_by(TIL) %>%
+  emmeans_test(median ~ MIX, p.adjust.method = "BH") %>%
+  add_xy_position()
+
+Fig3.1 <- WeedDensity %>%
+  ggplot(aes(x = MIX, y = median)) + facet_wrap(~ TIL) +
+  geom_quasirandom(color = "grey") +
+  stat_summary(fun = mean) +
+  stat_summary(fun.data = mean_se,
+               geom = "errorbar", width = 0.5) +
+  labs(x = "Cover crop mix", y = "Weed density")
+Fig3.1 + labs(caption = get_pwc_label(WeedDensityStatPost)) +
+  stat_pvalue_manual(WeedDensityStatPost, hide.ns = T)
+```
+
+```{r WeedRichness}
+WeedRichness <- Usmpg1 %>% filter(variable == "Wd_Abn")
+
+WeedRichnessStat <- WeedRichness %>%
+  lmer(formula = median ~ MIX * TIL + (SAMPL_TIME | COL))
+WeedRichnessStat %>% residuals() %>% shapiro_test()  #pass
+WeedRichness %>% levene_test(formula = median ~ MIX)  #pass
+WeedRichness %>% levene_test(formula = median ~ TIL)  #pass
+
+WeedRichnessStatTable <- WeedRichnessStat %>%
+  tbl_regression() %>% add_global_p(keep = T) %>%
+  add_n(location = "level") %>%
+  add_glance_source_note(include = modelfit)
+
+WeedRichnessStatPost <- WeedRichness %>%
+  group_by(TIL) %>%
+  emmeans_test(formula = median ~ MIX, 
+               p.adjust.method = "BH") %>%
+  add_xy_position()
+
+Fig3.2 <- WeedRichness %>% 
+  ggplot(aes(x = MIX, y = median)) + facet_wrap(~ TIL) +
+  geom_quasirandom(color = "grey") +
+  stat_summary(fun = mean) +
+  stat_summary(fun.data = mean_se, geom = "errorbar", 
+               width = 0.5) +
+  labs(x = "Cover crop mix", y = "Weed richness")
+Fig3.2 + labs(caption = get_pwc_label(WeedRichnessStatPost)) +
+  stat_pvalue_manual(WeedRichnessStatPost, hide.ns = T)
+```
+
+### Yield
+
+```{r Roots}
+Roots <- Usmpg1 %>% filter(variable == "RADL_CM")
+
+RootStat <- Roots %>%
+  lmer(formula = median ~ TIL + (1 | COL))
+RootStat %>% residuals() %>% shapiro_test()  #pass
+Roots %>% levene_test(formula = median ~ TIL)  #fail
+RootStat1 <- Roots %>%
+  glmer(formula = median ~ TIL + (1 | COL), 
+        family = Gamma())
+
+RootStat1Table <- RootStat1 %>% tbl_regression() %>%
+  add_global_p(keep = T) %>% add_n(location = "level") %>%
+  add_glance_source_note(include = modelfit)
+
+RootStat1Post <- Roots %>%
+  emmeans_test(formula = median ~ TIL, 
+               p.adjust.method = "BH") %>%
+  add_xy_position()
+
+Fig4.1 <- Roots %>% ggplot(aes(x = TIL, y = median)) +
+  geom_quasirandom(color = "grey") +
+  stat_summary(fun = median) +
+  stat_summary(fun.data = median_mad, geom = "errorbar",
+               width = 0.5) +
+  labs(x = "Tillage", y = "Radish length (cm)")
+Fig4.1 + labs(caption = get_pwc_label(RootStat1Post)) +
+  stat_pvalue_manual(RootStat1Post, hide.ns = T)
+```
+
+```{r Mass}
+RadMass <- Usmpg1 %>% filter(variable == "TOTRAD_oz")
+
+RadMassStat <- RadMass %>%
+  lmer(formula = median ~ TIL + (1 | COL))
+RadMassStat %>% residuals() %>% shapiro_test()  #pass
+RadMass %>% levene_test(formula = median ~ TIL)  #fail
+RadMassStat1 <- RadMass %>%
+  glmer(formula = median ~ TIL + (1 | COL), 
+        family = Gamma())
+RadMassStat1 %>% summary()
+
+RadMassStat1Table <- RadMassStat1 %>%
+  tbl_regression() %>% add_global_p(keep = T) %>%
+  add_n(location = "level") %>%
+  add_glance_source_note(include = modelfit)
+
+RadMassStat1Post <- RadMass %>%
+  emmeans_test(formula = median ~ TIL,
+               p.adjust.method = "BH") %>%
+  add_xy_position()
+
+Fig4.2 <- RadMass %>% ggplot(aes(x = TIL, y = median)) +
+  geom_quasirandom(color = "grey") +
+  stat_summary(fun = median) +
+  stat_summary(fun.data = median_mad, geom = "errorbar",
+               width = 0.5) +
+  labs(x = "Tillage", y = "Radish yield")
+Fig4.2 + labs(caption = get_pwc_label(RadMassStat1Post)) +
+  stat_pvalue_manual(RadMassStat1Post, hide.ns = T)
+```
+
+## DEPRECATED
+
+*Compaction*
+
+```{r variance?}
+Usmpg2 %>% group_by(Variable) %>% levene_test(mean ~ MIX)  #?
+Usmpg2 %>% group_by(Variable) %>% levene_test(mean ~ TIL)  #notComp,Infl
+Usmpg2 %>% group_by(Variable) %>% levene_test(mean ~ MIX * TIL)  #notInfl
+Usmpg2 %>% group_by(Variable) %>% levene_test(mean ~ SAMPL_TIME)  #?
+```
+
+```{r compStat}
+hist(Usmpg2$PNDcm)
+
+#joint model to tease interaction, also more conservative
+CompTest <- glmer(mean ~ MIX + TIL + SAMPL_TIME + (1 | COL), 
+                     family = Gamma(), data = CompPlotData)
+#summary.glm(CompTest)
+summary(CompTest)
+CompTestPost <- CompPlotData %>% 
+  group_by(SAMPL_TIME, TIL) %>% emmeans_test(mean ~ MIX)
+
+
+#variance...?  #HERE 5/11/21
+#hist(CompPlotData$sd)
+CompTest2 <- glmer(se ~ MIX + TIL + SAMPL_TIME + (1 | COL), 
+                     family = Gamma(), data = CompPlotData)
+#summary.glm(CompTest)
+summary(CompTest)
+CompTestPost <- CompPlotData %>% 
+  group_by(SAMPL_TIME, TIL) %>% emmeans_test(mean ~ MIX)
+```
+
+```{r Fig1.1update}
+Fig1.1 + stat_pvalue_manual(CompTestPost, y.position = 0, hide.ns = T) +
+  labs(subtitle = get_test_label(CompTestPost, type = "expression"),
+       caption = get_pwc_label(CompTestPost))
+```
+
+```{r oldStat}
+#old
+
+shapiro.test(Usmpg$PND)  #justpass
+levene_test(Usmpg, PND ~ TIL)  #notpass
+compactStat <- aov(PND ~ TIL + MIX,
+                   #+ PLOT,
+                    data = Usmpg)
+compactStat <- aov(PND ~ TIL * MIX + SAMPL_TIME,
+                    data = Usmpg)
+#compactStat <- lm(PND ~ TIL * MIX, data = Usmpg)
+summary(compactStat)
+#TukeyHSD(compactStat)
+emmeans(compactStat, pairwise ~ TIL)
+compare_means(PND ~ TIL,
+              data = Usmpg, method = "t.test")
+#emmeans(compactStat, pairwise ~ MIX)
+emmeans(compactStat, pairwise ~ MIX | TIL)
+#emmeans(compactStat, pairwise ~ TIL | MIX)
+#emmeans(compactStat, pairwise ~ MIX | SAMPL_TIME)
+```
+
+*Infiltration*
+
+```{r infilStat}
+Usmpgi <- subset(Usmpg, !is.na(INFL))
+Usmpgi$INFL
+shapiro.test(log1p(Usmpgi$INFL))  #no
+#plot(Usmpgi$MIX, Usmpgi$INFL)
+#plot(Usmpgi$TIL, Usmpgi$INFL)
+kruskal.test(log1p(INFL) ~ TIL, 
+             data = Usmpgi)  #yes
+kruskal.test(log1p(INFL) ~ MIX, 
+             data = Usmpgi)  #no,almost
+kruskal.test(log1p(INFL) ~ SAMPL_TIME, 
+             data = Usmpgi)  #yes
+
+
+#PREVIOUS
+shapiro.test(log1p(Usmpg$INFL))  #no
+shapiro.test(subset(Usmpg, MIX == "wdsp")$INFL)  # not pass
+# "weed suppression" mix/treat only--un-even sampling
+kruskal.test(INFL ~ TIL,
+             data = subset(Usmpg, MIX == "wdsp"))
+kruskal.test(INFL ~ TIL,
+             data = Usmpg)
+```
+
+*Weed suppression*
+
+```{r weedStat}
+shapiro.test(Usmpg$WEEDAB)  #notpass
+shapiro.test(log1p(Usmpg$WEEDEN))  #notpass
+shapiro.test(log1p(Usmpg$WEEDCOV))  #notpass
+hist(Usmpg$WEEDAB)  #reasonable
+hist(Usmpg$WEEDEN)  #discrete
+hist(Usmpg$WEEDCOV)  #discrete
+# check for weed MANOVA need
+summary(lm(WEEDAB ~ WEEDEN, data = Usmpg))  # yes
+
+# weed MANOVA stat result
+summary(manova(cbind(WEEDAB, WEEDEN) ~ TIL + MIX,
+            data = Usmpg))
+
+kruskal.test(WEEDAB ~ MIX, data = Usmpg)
+kruskal.test(WEEDAB ~ TIL, data = Usmpg)
+
+kruskal.test(WEEDEN ~ MIX, data = Usmpg)
+kruskal.test(WEEDEN ~ TIL, data = Usmpg)
+
+kruskal.test(WEEDCOV ~ MIX, data = Usmpg)  #yes
+kruskal.test(WEEDCOV ~ TIL, data = Usmpg)  #no
+```
+
+*Yield*
+
+```{r yieldStat}
+# yield for tubers = roots
+
+shapiro.test(Usmpg$RADL)  #pass
+shapiro.test(Usmpg$TOTRAD)  #pass
+
+# check for MANOVA need
+#summary(lm(RADL_CM ~ TOTRAD_oz, data = Usmp))  # yes
+summary(lm(RADL ~ TOTRAD, data = Usmpg))  # yes
+
+#summary(manova(cbind(RADL_CM, TOTRAD_oz) ~ TIL,
+#               data = subset(Usmp, MIX == "comp")))
+yield <- manova(cbind(RADL, TOTRAD) ~ TIL, data = Usmpg)
+summary(yield)
+emmeans(yield, pairwise ~ TIL)
+
+yield2 <- aov(TOTRAD ~ TIL, data = Usmpg)
+summary(yield2)
+emmeans(yield2, pairwise ~ TIL)
+
+radlength <- aov(RADL ~ TIL, data = Usmpg)
+summary(radlength)
+emmeans(radlength, pairwise ~ TIL)
+
+#kruskal.test(RADL ~ TIL, data = subset(Usmpg, MIX == "comp"))
+#kruskal.test(TOTRAD ~ TIL, data = subset(Usmpg, MIX == "comp"))
+```
+
+**Results**
+
+```{r group}
+mixes <- c("Null", "Perennial", 
+           "Compaction", "Weed Suppression")
+Usmpg$MIX <- factor(Usmpg$MIX,
+                    ordered = T, levels = mixes)
+Usmpgi$MIX <- factor(Usmpgi$MIX,
+                    ordered = T, levels = mixes)
+
+
+Usmpgsum <- group_by(Usmpg, SAMPL_TIME, TIL, MIX) %>%
+  summarise(PND.se = sd(PND) / length(sqrt(PND)),
+            PND = mean(PND, na.rm = T),
+            INFL.se = sd(INFL) /
+              length(sqrt(INFL)),
+            INFL = mean(INFL, na.rm = T),
+            TOTRAD.se = sd(TOTRAD) / length(sqrt(TOTRAD)),
+            TOTRAD = mean(TOTRAD, na.rm = T),
+            RADL.se = sd(RADL) / length(sqrt(RADL)),
+            RADL = mean(RADL, na.rm = T),
+            WEEDAB.se = sd(WEEDAB) / length(sqrt(WEEDAB)),
+            WEEDAB = mean(WEEDAB, na.rm = T),
+            WEEDEN.se = sd(WEEDEN) / length(sqrt(WEEDEN)),
+            WEEDEN = mean(WEEDEN, na.rm = T),
+            WEEDCOV.se = sd(WEEDCOV) / length(sqrt(WEEDCOV)),
+            WEEDCOV = mean(WEEDCOV, na.rm = T),
+            na.rm = T)
+```
+
+*Compaction*
+
+Tractor tilling significantly reduced compaction the most (approx. 8"), regardless of sampling time of cover crop mix, likely due to the depths that the subsoiler and moldboard plow reached. However, the most typical mix of native plants favored a slightly different response to tilling: tractor tilling did change reduce compaction much, and rototilled soils were actually more compact compared to no-till soils. The effects of tilling on compaction were most pronounced for the perennial plant mix. No-till plots varied the most in compaction depth (approx. 4.5") and included the most compacted plots. Rototilled plots averaged close to 5" depth to compacted soil. Across all treatments, compaction also tended to increase throughout the season, with magnitudes tending to correspond to intensity of tillage.
+
+```{r fig1}
+# Version A
+ggplot(data = subset(Usmpgsum, !is.na(TIL) & SAMPL_TIME != "Spring"),
+       aes(x = TIL,
+           shape = SAMPL_TIME)) +
+  geom_point(data = subset(Usmpg, !is.na(TIL) & SAMPL_TIME != "Spring"),
+             aes(y = PND * 2.5),
+             color = "gray",
+             cex = 1,
+             position = position_dodge(width = 0.5)) +
+  geom_point(aes(y = PND * 2.5),
+             cex = 2,
+             position = position_dodge(width = 0.5)) +
+  geom_errorbar(aes(ymax = PND * 2.5 + PND.se * 2.5,
+                    ymin = PND * 2.5 - PND.se * 2.5),
+                position = position_dodge(width = 0.5),
+                width = 0.25) +
+  facet_wrap( ~MIX) +
+  labs(x = "Tillage",
+       y = "Compaction depth (cm)",
+       shape = "Sample date") +
+  scale_y_continuous(trans = "reverse")
+
+
+#v2
+ggplot(data = subset(Usmpgsum, !is.na(TIL) & 
+                       SAMPL_TIME != "Spring"),
+       aes(x = MIX,
+           shape = SAMPL_TIME)) +
+  geom_point(data = subset(Usmpg, !is.na(TIL) & 
+                             SAMPL_TIME != "Spring"),
+             aes(y = PND * 2.5),
+             color = "gray",
+             cex = 1,
+             position = position_dodge(width = 0.5)) +
+  geom_point(aes(y = PND * 2.5),
+             cex = 1.5,
+             position = position_dodge(width = 0.5)) +
+  geom_errorbar(aes(ymax = PND * 2.5 + PND.se * 2.5,
+                    ymin = PND * 2.5 - PND.se * 2.5),
+                position = position_dodge(width = 0.5),
+                width = 0.25) +
+  facet_wrap( ~TIL) +
+  labs(x = "Cover crop mix",
+       y = "Compaction depth (cm)",
+       shape = "Sample date") +
+  scale_y_continuous(trans = "reverse") +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1)) +
+  stat_compare_means(aes(y = PND))
+```
+
+```{r fig1noMix, eval=F}
+group_by(.data = Usmp,
+         SAMPL_TIME, TIL) %>%
+  summarise(PND.se = sd(PND) / length(sqrt(PND)),
+            PND = mean(PND)) %>%
+ggplot(aes(x = TIL,
+           shape = SAMPL_TIME)) +
+  geom_point(data = Usmp,
+             aes(y = -PND),
+             color = "gray",
+             cex = 1,
+             position = position_dodge(width = 1)) +
+  geom_point(aes(y = -PND),
+             cex = 2,
+             position = position_dodge(width = 1)) +
+  geom_errorbar(aes(ymax = -PND + -PND.se,
+                    ymin = -PND - -PND.se),
+                position = position_dodge(width = 1),
+                width = 0.25) +
+  #facet_wrap( ~MIX) +
+  theme_bw() +
+  #scale_color_manual(values = c("dark green", "dark orange")) +
+  labs(x = "Tillage method",
+       y = "Compaction (depth/height, inches)",
+       shape = "Sample date")
+```
+
+**Fig 1**. Compaction by tillage, cover crop mix, sample date
+
+*Infiltration*
+
+Infiltration was significantly affected by both till method and sampling date, with no significant interaction. Infiltration was always faster during the early (July) sampling date than later in the season, with the greatest mean difference (\~0.75 fl oz / sec) appearing among rototilled plots. Measured values showed that the July (Early) average for rototilled plots could filter all of the rain water in close to 30 seconds, whereas the no-till and tractor tilled plots would take over one minute and thus likely have more runoff. In October (Late), all of the plots had a rate that would have taken over one minute.
+
+```{r infilPlotNew2}
+Ia <- group_by(Usmpgi, SAMPL_TIME, TIL) %>%
+  summarize(INFL.SE = sd(INFL) / sqrt(length(INFL)),
+            INFL = mean(INFL)) %>%
+  ggplot(aes(x = TIL, y = INFL, 
+             shape = SAMPL_TIME)) +
+  geom_point(data = Usmpgi, color = "gray",
+             position = position_jitterdodge()) +
+  geom_point(size = 2, position = position_dodge(width = 0.5)) + 
+  geom_errorbar(aes(ymax = INFL + INFL.SE,
+                    ymin = INFL - INFL.SE),
+                width = 0.25,
+                position = position_dodge(width = 0.5)) +
+  labs(x = "Tillage", 
+       y = expression(paste("Infiltration (mL sec"^-1,")")),
+       shape = "Season") +
+  scale_shape_discrete(labels = c("Summer", "Fall")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "bottom")
+
+
+Ib <- group_by(Usmpgi, MIX) %>%
+  summarize(INFL.SE = sd(INFL) / sqrt(length(INFL)),
+            INFL = mean(INFL)) %>%
+  ggplot(aes(x = MIX, y = INFL)) +
+  geom_point(data = Usmpgi, color = "gray",
+             position = position_jitter()) +
+  geom_point(size = 2) + 
+  geom_errorbar(aes(ymax = INFL + INFL.SE,
+                    ymin = INFL - INFL.SE),
+                width = 0.25) +
+  labs(x = "Cover crop mix", 
+       y = expression(paste("Infiltration (mL sec"^-1,")"))) +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+  #coord_fixed(ratio = 1)
+
+
+ggarrange(Ia, Ib, labels = c("a", "b"))
+```
+
+```{r infilPlotNew}
+Ia <- group_by(Usmpgi, SAMPL_TIME, TIL) %>%
+  summarize(INFL.SE = sd(INFL) / sqrt(length(INFL)),
+            INFL = mean(INFL)) %>%
+  ggplot(aes(x = TIL, y = INFL, 
+             shape = SAMPL_TIME)) +
+  geom_point(data = Usmpgi, color = "gray",
+             position = position_jitterdodge()) +
+  geom_point(size = 2, position = position_dodge(width = 0.5)) + 
+  geom_errorbar(aes(ymax = INFL + INFL.SE,
+                    ymin = INFL - INFL.SE),
+                width = 0.25,
+                position = position_dodge(width = 0.5)) +
+  labs(x = "Tillage", 
+       y = expression(paste("Infiltration (mL sec"^-1,")")),
+       shape = "Season") +
+  coord_fixed(ratio = 1)
+
+
+Ib <- group_by(Usmpgi, SAMPL_TIME, MIX) %>%
+  summarize(INFL.SE = sd(INFL) / sqrt(length(INFL)),
+            INFL = mean(INFL)) %>%
+  ggplot(aes(x = MIX, y = INFL, 
+             shape = SAMPL_TIME)) +
+  geom_point(data = Usmpgi, color = "gray",
+             position = position_jitterdodge()) +
+  geom_point(size = 2, position = position_dodge(width = 0.5)) + 
+  geom_errorbar(aes(ymax = INFL + INFL.SE,
+                    ymin = INFL - INFL.SE),
+                width = 0.25,
+                position = position_dodge(width = 0.5)) +
+  labs(x = "Cover crop mix", 
+       y = expression(paste("Infiltration (mL sec"^-1,")")),
+       shape = "Season") +
+  scale_shape_discrete(labels = c("Summer", "Fall"))
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+  #coord_fixed(ratio = 1)
+
+
+ggarrange(Ia, Ib, labels = c("A", "B"))
+```
+
+```{r infilPlot}
+ggplot(data = subset(Usmpgsum, MIX == "wdsp" & SAMPL_TIME != "Spring"),
+       aes(x = TIL, y = INFL * 30,
+           shape = SAMPL_TIME)) +
+  geom_point(data = subset(Usmpg, MIX == "wdsp" & SAMPL_TIME != "Spring"),
+             color = "gray",
+             cex = 2,
+             position = position_dodge(width = 0.5)) +
+  geom_point(cex = 3,
+           position = position_dodge(width = 0.5)) +
+  geom_errorbar(aes(ymax = INFL * 30 + INFL.se * 30,
+                    ymin = INFL * 30 - INFL.se * 30),
+                position = position_dodge(width = 0.5),
+                width = 0.25) +
+  labs(x = "Tillage",
+       y = "Infiltration (mL / sec)",
+       shape = "Sample date")
+```
+
+```{r infilPlotAll}
+ggplot(data = Usmpgsum,
+       aes(x = TIL, y = INFL,
+           shape = SAMPL_TIME)) +
+  geom_point(data = Usmpg,
+             color = "gray",
+             cex = 2,
+             position = position_dodge(width = 0.5)) +
+  geom_point(cex = 3,
+           position = position_dodge(width = 0.5)) +
+  geom_errorbar(aes(ymax = INFL + INFL.se,
+                    ymin = INFL - INFL.se),
+                position = position_dodge(width = 0.5),
+                width = 0.25) +
+  facet_wrap(~MIX) +
+  labs(x = "Tillage",
+       y = "Infiltration (fl oz / sec)",
+       shape = "Sample date")
+```
+
+```{r infilPlot2}
+ggplot(subset(Usmpgsum, MIX == "wdsp"),
+       aes(x = SAMPL_TIME)) +
+  geom_point(subset(Usmpg, MIX == "wdsp"),
+             aes(y = INFL), color = "gray") +
+  geom_point(aes(y = INFL)) +
+  geom_errorbar(aes(ymax = INFL + INFL.se,
+                    ymin = INFL - INFL.se)) +
+  theme_classic()
+```
+
+**Fig 2** Infiltration by tillage
+
+*Weed suppression: Density*
+
+Weed density was significantly affected by till method. The strongest patterns were among the perennial cover crop mix plots, which showed a consistent positive response of weed density to tilling intensity, and the weed supression plots, which showed the lowest weed densities regardless of tillage treatment.
+
+```{r fig3aDensity}
+# Version A
+dens <- ggplot(data = subset(Usmpgsum, !is.na(MIX)),
+       aes(x = MIX, y = WEEDEN * 10)) +
+  geom_point(data = subset(Usmpg, !is.na(MIX)),
+             color = "gray",
+             cex = 1) +
+  geom_point(cex = 2,
+             position = position_dodge(width = 0.5)) +
+             #fill = "dark green") +
+  geom_errorbar(aes(ymax = (WEEDEN + WEEDEN.se) * 10,
+                    ymin = (WEEDEN - WEEDEN.se) * 10),
+                position = position_dodge(width = 0.5),
+                width = 0.25) +
+  facet_wrap(~TIL) +
+  labs(x = "Tillage",
+       y = "Weed density")
+```
+
+**Fig 3a**
+
+*Weed suppression: Abundance*
+
+Weed abundance was significantly affected by cover crop mix. Most notable was that the abundance of the two focal common weeds, pigweed ( *Palmer amaranth*) and velvetleaf ( *Abutilon theophrasti*), were lowest among weed suppression plots.
+
+```{r fig3bRichness}
+# Version A
+rich <- ggplot(data = subset(Usmpgsum, !is.na(MIX)),
+       aes(x = MIX, y = WEEDAB)) +
+  geom_point(data = subset(Usmpg, !is.na(MIX)),
+             aes(y = WEEDAB),
+             color = "gray", cex = 1) +
+  geom_point(cex = 2) +
+             #fill = "light green") +
+  geom_errorbar(aes(ymax = WEEDAB + WEEDAB.se,
+                    ymin = WEEDAB - WEEDAB.se),
+                position = position_dodge(width = 0.5),
+                width = 0.25) +
+  facet_wrap(~TIL) +
+  labs(x = "Tillage",
+       y = "Weed richness")
+```
+
+**Fig 3b**
+
+```{r fig3cCover}
+cov <- ggplot(data = subset(Usmpgsum, !is.na(MIX)),
+       aes(x = MIX, y = WEEDCOV * 25)) +
+  geom_point(data = subset(Usmpg, !is.na(MIX)),
+             aes(y = WEEDCOV * 25),
+             color = "gray", cex = 1) +
+  geom_point(cex = 2) +
+             #fill = "light green") +
+  geom_errorbar(aes(ymax = (WEEDCOV + WEEDCOV.se) * 25,
+                    ymin = (WEEDCOV - WEEDCOV.se) * 25),
+                position = position_dodge(width = 0.5),
+                width = 0.25) +
+  facet_wrap(~TIL) +
+  labs(x = "Cover crop mix",
+       y = "Weed cover (%)")
+```
+
+```{r fig3}
+library(ggpubr)
+ggarrange(dens, rich, cov, 
+          labels = c("a", "b", "c"), 
+          nrow = 3)
+```
+
+*Yield and root length*
+
+Average yield did not vary significantly among tillage or cover crop treatments. Although, radishes tended to grow the largest in no-till plots.
+
+```{r radishYieldPlot}
+#radish <- subset(Usmpgsum, MIX == "comp" & SAMPL_TIME == "Late")
+rad <- ggplot(data = Usmpgsum, aes(x = TIL)) +
+  geom_point(data = Usmpg, aes(y = TOTRAD * 0.5),
+             color = "gray", cex = 2) +
+  geom_point(aes(y = TOTRAD * 0.5), cex = 3) +
+  geom_errorbar(aes(ymax = TOTRAD * 0.5 + TOTRAD.se * 0.5,
+                    ymin = TOTRAD * 0.5 - TOTRAD.se * 0.5),
+                width = 0.25) +
+  labs(x = "Tillage",
+       y = "Radish yield (kg)")
+```
+
+[There was no significant difference in average root length between tillage groups. The longest radishes grew close to 8.5 inches, and the average length of all sampled radishes was 4.6 inches. 40% of radishes sampled grew past the average compaction depth (4.5 inches) in the no-till and tractor till plots.]
+
+```{r rootLengthPlot}
+radl <- ggplot(data = subset(Usmpgsum, MIX == "comp" &
+                       SAMPL_TIME == "Late"),
+       aes(x = TIL)) +
+  geom_point(data = subset(Usmpg, MIX == "comp" &
+                       SAMPL_TIME == "Late"),
+             aes(y = RADL),
+             color = "gray", cex = 2) +
+  geom_point(aes(y = RADL),
+             cex = 3) +
+  geom_errorbar(aes(ymax = RADL + RADL.se,
+                    ymin = RADL - RADL.se),
+                width = 0.25) +
+  labs(x = "Tillage",
+       y = "Radish root length (cm)")
+```
+
+```{r fig4}
+ggarrange(rad, radl, labels = c("a", "b"))
+```
+
+**Discussion**
+
+*Overview*
+
+Our data show that tillage can significantly reduce compaction over a single growing season, but that root yield may respond better to conservation agriculture practices like no-till. This was supported by detecting significantly higher radish yields in no-till compared to rototill and tractor-till plots, while simultaneously measuring faster infiltration in rototill plots. We also observed significant suppression of weed abundance and overall density in plots with a planted species mix targeted for that function, showing that the particular speies mix used in this study can directly be applied locally.
+
+*Tillage*
+
+The results for tillage show that the intensity of tillage corresponds negatively to the degree of compaction (or positively to that of compaction relief). This effect also lasts throughout the growing season, even though this effect tended to reverse over the growing season, *i.e.* tractor-tilled soils appeared to become more compacted over the season compared to no-till soils. These data support our predictions, as do results from other studies (CITE), [where...].
+
+Depending on what crops are grown, addressing compaction may not be an immediate issue. Multiple crops have shallow root systems or are harvested before roots grow over 4 inches into the soil. If crops do not require deep root systems, a no-till method may suffice. One important observation we made was that rototilling and tractor tilling exposed debris (litter, rocks, and construction materials) that otherwise would not have been removed from soil prior to planting. Finally, the reduction in compaction in the rototilled plots may indicate that plant roots in cover crop mixes and from weeds reduced compaction. Over multiple seasons, if perennial plants are used, tilling may enable deeper growing roots to establish more quickly than no-till. This can allow plants to increase their access to nutrients and the soil and improve the soil's ability to hold air and water.
+
+*Infiltration*
+
+Rotoilled plots showed the fastet infiltration early in the growing season. This coincides with predictions compared to no-till plots, but is the reverse of what we expected when compared to more deeply disturbed tractor-tilled plots. This could be explained by potential differences in the size of soil clods made by each tilling method: rototilling may be prone to making smaller clods with larger pores between them, whereas tractor tilling is more effective at introducing large pores into subsoils, but may inadvertently make larger clods on average (CITE?). Throughout the season, however, infiltration decreased regardless of tillage treatment, which was consistent with the pattern of increased compaction throughout the season.
+
+Based on our findings, rototilling may be an effective method to improve water infiltration during the driest time of year. The slow drainage rates in the no-till and tractor till plots may have been due to compaction and soil texture respectively. The greater compaction in the no-till plots could reduce space in the soil for water to flow through. Meanwhile, the clayey texture and low organic matter in the tractor tilled plots could have also had reduced capacity to absorb water. Rototilling disturbed the soil enough to reduce compaction, but not to the extent where organic matter was lost or significantly changed. Overall, infiltration patterns may have also been due to cooler and wetter conditions, that would have reduced the soil's capacity to drain water and mask differences among treatments (anecdotal evidence?).
+
+*Weed suppression*
+
+Overall weed density (related to cover) tended to be highest in tractor-tilled plots. This presents an additional downside to the tillage of similar soils by tractor, aside from lower infiltration. This may be due to more pore space for fast-growing roots to settle into, or tractor tilling bringing up rhizomes from lower depths in the soil. In general, the other cover crop mixes did not significantly reduce weed pressure and actually performed similar to plots (null group) that only had weed seeds in them.
+
+Weed density, along with abundance, was also lowest in plots with the weed suppression plant mix. [comments about specific ecology of member species?] The weed suppression mix may serve as an effected barrier crop to frame in crop beds or to reduce weed pressure in an area that will be planted in the fall or following season.
+
+-   [This is likely due to the competitiveness of the buckwheat and sorghum-sudangrass, which accumulated a lot of biomass and grew better than other cover crops used.] \<-- where to put this?
+
+-   After tilling and sowing seeds, the plots were left to grow with no management (i.e. no irrigation or weeding). Most of the cover crop plants did not perform well, and were probably affected by the warmer and dryer conditions after seeding in late June.
+
+*Yield and root length*
+
+Somewhat surprisingly, radishes grew more massive in no-till plots. This may be attributed to the top two inches of those plots being mulched with compost, whereas the compost was tilled into the other plots. Thus the no-till radishes had more access to nutrients in earlier growth than the other tillage groups. It was also surprising that yield did not correspond with faster infiltration, since no-till plots has slower infiltration compared to rototilled plots. This suggests a more nuanced relationship between infiltration and root crop yield (unlike infiltration and compaction), where yield respond more to more stable or longer-term reservoirs of water and nutrients, such as those in mulched compost, than to shorter-term or mor transient influxes brought by infiltration processes--even though both play similar roles in bringing requirements to plant roots. Furthermore, more stable reservoirs of water an nutrients may also foster more productive associations with soil microbes, which serve as an additional source of available nutrients for plant roots, whose availability may depend less on pH (CITE?). Together, these data suggest that similar alternative soil management practices like no-till combined with compost and mulching application give better yields, at the very least for root crops. Thus, forage radish can be an effective cover crop in reducing compaction and building soil structure, with minimal or no mechanical tillage. Our study also warrants future studies on the processes tying yield to land management in similar soils.
