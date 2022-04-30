@@ -1,5 +1,6 @@
-library(vroom); library(tidyverse)
-library(ggpubr)
+here::i_am("data/clean.R"); library(vroom);
+library(rstatix)
+# library(ggpubr)
 # tidylog::
 # janitor::  # clean_names()
 # lubridate:: for dates
@@ -9,19 +10,19 @@ library(ggpubr)
 
 #reticulate:: #python
 
-datafolder <- "../data/raw"
+datafolder <- "data/raw/"
 
 #makespatial?
-initChem <- vroom(paste(datafolder, "init_chem.csv", sep = "")) %>%
-  group_by(element) %>% get_summary_stats(type = "median_mad")
-maxChem <- vroom(paste(datafolder, "stds.csv", sep = ""))
-
-Chem <- merge(initChem, maxChem, by = "element")
+# initChem <- vroom(paste(datafolder, "init_chem.csv", sep = "")) %>%
+#   group_by(element) %>% get_summary_stats(type = "median_mad")
+# maxChem <- vroom(paste(datafolder, "stds.csv", sep = ""))
+#
+# Chem <- merge(initChem, maxChem, by = "element")
 
 
 #clean
 
-Usmp <- vroom(paste(datafolder, "USMPdata2019.csv", sep = ""))
+Usmp <- vroom(paste(datafolder, "USMPdata19.csv", sep = ""))
 #na.strings = c("", "NA"))
 
 #cropmixes

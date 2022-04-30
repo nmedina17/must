@@ -65,10 +65,10 @@ To combat compaction, growers can focus on root crops like carrots, forage radis
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 #setwd("~/Box Sync/DPFLI/USMP/data/")
-source("flow/reportstyle.R")
-source("clean.R")
+source("scripts/flow/reportstyle.R")
+source("scripts/clean.R")
 #source("flow/statsflow.R")
-source("stats.R")
+source("scripts/stats.R")
 ```
 
 ### *Study site*

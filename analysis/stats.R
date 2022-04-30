@@ -1,7 +1,8 @@
-source("clean.R")
+here::i_am("analysis/stats.R"); source(here("data/clean.R"))
 
-library(ggstatsplot) #glance
+# library(ggstatsplot) #glance
 library(lmerTest); library(lme4) #glmer
+library(rstatix)
 
 
 Compact <- Usmpgg %>% filter(variable == "PNDcm")

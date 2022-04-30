@@ -1,0 +1,50 @@
+---
+title: "Introduction"
+output: html_notebook
+bibliography: ../../library.bib
+---
+
+
+Urban areas are the fastest growing regions of the world and soils within cities are often degraded due to human activity *(Oldeman, 1991)*. 
+Soil plays a significant role in ecosystem health, and urban soil restoration has implications for carbon sequestration, storm-water management, forestry, and agriculture *(Pavao-Zuckerman, 2008)*. 
+However, soil quality proves to be an obstacle to urban initiatives related to agriculture and green space. 
+Urban farmers in particular invest large amounts of money and time into amending soil for vegetable production, yet strategies to improve urban soil quality for production has scarcely been studied. 
+Thus, it is critical to study methods that can be applied within cities to improve the health of soils.
+
+\
+
+Urban soils are characterized by compaction, low organic matter, high pH, and contamination from pollution and debris *(Beniston & Lal 2011)*. 
+This renders them less practical for agricultural and landscaping projects because they are difficult to manage and support vigorous plants. 
+Nonetheless, urban farming continues to expand as communities work the soil to improve access to healthy food and creates a cleaner and safer environment *(Heckler, 2012)*. 
+The value of local food production and benefits of urban green space make it critical to study management practices that can improve the quality of urban soils to support the viable soil-based projects.
+
+\
+
+Applying compost is common and can improve physical, chemical, and biological soil properties of soil. 
+However, persistent focus on compost use leads to excessive phosphorus and nutrient imbalance in garden soils *(Small et al. 2019)*, making this management strategy limiting. 
+Instead, compost application should be combined with additional sustainable agriculture techniques that directly address the spectrum of challenges facing urban soils.
+
+\
+
+Tilling is one technique that is widely used to combat soil compaction *(Badalíková, 2009)*, incorporate compost, and reduce weed pressure, especially roto-tilling on smaller operations. 
+Other benefits of tilling include creating larger soil pores which enhance infiltration and drainage *(Hill et. al, 1985)*, but excessive tilling can weaken soil structure *(Catania et. al, 2018)* and increase dependence on tillage technology for management.
+
+\
+
+In response to the detrimental aspects of tillage, no-till farming has been promoted as a more sustainable alternative *(Xiao-Bin, 2006; Roger-Estrade et al. 2010)* although it’s application in cities has been scarcely studied. 
+Quantifying the short-term (1-2-year) benefits can support small-scale (e.g 232 m2 or 2,5000 ft2) farmers in developing effective and informed strategies to enhance soil performance.
+
+\
+
+Cover cropping can also be combined with tilling to build soil organic matter, lower pH, suppress weedy plants and insect pests, and/or alleviate compaction. 
+Based on species characteristics, plant mixes can be tailored to specific agricultural functions such as building soil, scavenging nutrients, fixing nitrogen and loosening soil. 
+Cover cropping is also recommended for reducing soil erosion and water runoff, which are issues for rural agricultural landscapes in the US Midwest as well as soils affected by sealed surfaces in urban settings *(National Science and Technology Council, 2017)*.
+
+\
+
+In this study, we investigated how different tillage techniques and cover crop mixes affected soil quality over the course of one growing season, with longer term effects anticipated. 
+The tillage methods ranged from high disturbance using a tractor and implements to minimal disturbance with a broadfork. 
+Cover crop mixes were selected based on target functions including reducing compaction, suppressing weeds, and accumulating organic matter. 
+We expected roto-tilling, a moderate soil disturbance, to be the most effective method for decreasing compaction and weed pressure. 
+We also expected the compaction cover crop mix to have higher water infiltration rates than the other mixes due to the roots of those species facilitating infiltration into the soil. 
+Finally, we documented how cover crop species and mixes performed in general regarding plant vigor.
