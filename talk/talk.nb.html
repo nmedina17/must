@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Naim Edwards, Nicholas Medina" />
 
 
-<title>Methods</title>
+<title>Management of Urban Soils</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1499,6 +1500,8 @@ window.initializeCodeFolding = function(show) {
   // select all R code blocks
   var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.julia, pre.foldable');
   rCodeBlocks.each(function() {
+    // skip if the block has fold-none class
+    if ($(this).hasClass('fold-none')) return;
 
     // create a collapsable div to wrap the code in
     var div = $('<div class="collapse r-code-collapse"></div>');
@@ -1760,145 +1763,132 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Methods</h1>
+<h1 class="title toc-ignore">Management of Urban Soils</h1>
+<h4 class="author">Naim Edwards, Nicholas Medina</h4>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<div id="study-site" class="section level1">
-<h1>Study site</h1>
-<p>The study site was located at the Michigan State University (MSU) -
-Detroit Partnership for Food, Learning, and Innovation (DPFLI)
-(42.4122141, -83.2623822), an urban agriculture center in Detroit, MI,
-USA. Mean annual temperature is 9.5 ̊C and precipitation is 787 mm. The
-site was formerly a school property where the building was demolished in
-2016. The site’s history is similar to that of many parcels across
-Detroit and other cities where urban decline has led to increased vacant
-land with degraded soil.</p>
-<p>The DPFLI is characterized by upland wetland properties with a
-relatively shallow A horizon (Fig. 1a) and metal artifacts from previous
-human construction. There is a nearby river, and soils have mostly clay
-texture (~37%), with some areas higher in silt and sand. Soil organic
-matter within the research plots is relatively low, the pH is high
-(alkaline), and water- stable aggregates is low (Table 1). Soil samples
-revealed concentrations of common contaminants and heavy metals below
-government direct contact standards. Various metals including Pb, Zn, Cu
-were found in the soil but at levels below the Agency direct contact
-standards <em><span class="citation">(<strong>angelone02?</strong>)</span></em>.</p>
-<div id="field-experimental-design" class="section level2">
-<h2>Field experimental design</h2>
-<p>The study area was a 278 <em>m<sup>2</sup></em> (3,000
-<em>ft<sup>2</sup></em>) plot divided into 36 separate 4.6
-<em>m<sup>2</sup></em> (50 <em>ft<sup>2</sup></em>) sub-plots (Fig. 1b).
-Sub-plots were sectioned into 9 rows with 4 columns (Fig. 1c). There
-were 12 plots per tillage group, and we submitted one aggregated soil
-sample from the entire plot to the Cornell soil lab to establish a
-baseline. One aggregated sample per tillage group was collected and
-analyzed for chemistry using modified Morgan extractable protocols at
-the MSU soil test lab <em><span class="citation">(<strong>moebius-clune16?</strong>)</span></em>.
-Approximately 0.24 <em>m<sup>3</sup></em> (8.5 <em>ft<sup>3</sup></em>)
-of compost was incorporated into each plot and analysis was also
-conducted on the compost.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="introduction-urban-soils" class="section level1">
+<h1>Introduction – Urban soils</h1>
 </div>
-<div id="tillage" class="section level2">
-<h2>Tillage</h2>
-<p>We tested three tillage techniques: 1) no-till with a broadfork (NT),
-2) moderate with a rototiller (RT), and 3) intensive tractor till (TT)
-with implements. TT plots were worked with a subsoiler, moldboard plow,
-and rototiller attached to a tractor up to 30 cm (12 in) deep. RT plots
-were tilled with a rototiller implement up to 20 cm (8 in) deep. NT
-plots were worked with a broadfork up to 10 cm (4 in) deep. These
-methods represent a spectrum of soil management practices for small
-scale agriculture and were selected based on varying tillage
-philosophies, costs of implementation, and degree of mechanization.</p>
+<div id="introduction-tillage" class="section level1">
+<h1>Introduction – Tillage</h1>
+<ul>
+<li>initially useful</li>
+</ul>
 </div>
-<div id="cover-crop-mixes" class="section level2">
-<h2>Cover crop mixes</h2>
-<p>Cover crop mixes were selected based on targeted outcomes associated
-with specific plant varieties. We tested the performance of three mixes
-composed of three different plant species (see Table 2). The compaction
-mix of crimson clover, forage radish, and cereal ryegrass contains
-plants with roots that penetrate and loosen soil <em>(Williams &amp;
-Weil 2004)</em>. The weed suppression mix consisted of heat- and
-drought-tolerant crops that grow rapidly, allowing them to outcompete
-other plants. Lastly, the perennial mix was made up of plants that would
-survive beyond one growing season and return in the spring, adding
-additional biomass and outcompeting early season weeds. We also had a
-null group consisting of established vegetation within the plot, where
-no additional seeds were sown.</p>
+<div id="introduction-cover-crops" class="section level1">
+<h1>Introduction – Cover crops</h1>
+<ul>
+<li>long understood, poorly adopted given extra cost</li>
+</ul>
 </div>
-<div id="data-collection" class="section level2">
-<h2>Data Collection</h2>
-<div id="compaction" class="section level3">
-<h3>Compaction</h3>
-<p>Soil compaction was measured with a penetrometer <em>(AgraTronix Soil
-Compaction Tester 08180)</em> in four randomly selected spots within
-each quarter of every sub-plot, which were later averaged at the plot
-level based on cover crop mix and tillage group. Readings were taken as
-the depth at which the penetrometer read 300 pounds per square inch
-(psi), or 2 MPa, since roots typically cannot penetrate with 2 MPa of
-force <em><span class="citation">(<strong>duiker02?</strong>)</span></em>. Sampling was
-conducted at two separate time periods, in July (“Early”) and October
-(“Late”) 2019. Samples were taken on dry days and recorded to the
-nearest inch.</p>
+<div id="introduction-this-study" class="section level1">
+<h1>Introduction – This study</h1>
+<ul>
+<li>Research Question – How can tillage and cover crops affect urban
+soil functions?</li>
+<li>Hypothesis –</li>
+<li>Predictions –
+<ul>
+<li>Tillage –
+<ul>
+<li>reduces compaction / increases depth to hardpan
+(root-inaccessible)</li>
+<li>increases –
+<ul>
+<li>water infiltration</li>
+<li>yield of rooting crops</li>
+</ul></li>
+</ul></li>
+<li>Cover crops …</li>
+</ul></li>
+</ul>
 </div>
-<div id="infiltration" class="section level3">
-<h3>Infiltration</h3>
-<p>We measured the water infiltration rate to determine the soil’s
-capacity to drain water, which has implications for managing stormwater
-runoff and holding water for plant roots. The infiltration rate was
-calculated by recording the amount of time it took for 32 fl oz (946 mL)
-to drain into the soil, which is similar to the amount of typical
-rainfall on 0.092 <em>m<sup>2</sup></em> (1 <em>ft<sup>2</sup></em>) per
-rain event <em>(United States Geological Services, n.d.)</em>. We
-cleared the soil surface of debris and cut vegetation low enough to
-observe the surface. Then, we pressed a 1.4 kg (48 oz) aluminum can
-about 2.5 cm into the soil and poured the water in. The maximum time
-allowed was 160 seconds.</p>
+<div id="methods-study-site" class="section level1">
+<h1>Methods – Study site</h1>
+<ul>
+<li>MSU Detroit Partnership for Food Learning and Innovation
+(DPFLI)</li>
+</ul>
 </div>
-<div id="weed-density-and-species-richness" class="section level3">
-<h3>Weed density and species richness</h3>
-<p>We quantified weed species richness and overall density within each
-sub-plot by counting the number of weed species present and relative
-abundance of the most common species. Weed species richness was measured
-by counting the number of plant species excluding the cover crop mix in
-a sub-plot. Weed density was measured as the relative cover of the two
-most abundant weed species, pigweed (<em>Palmer amaranth</em>) and
-velvetleaf (<em>Abutilon theophrasti</em>), using a comparative scale of
-0-5 (in increments of 10 individuals) with 0 indicating neither species
-present and 5 indicating 50 or more individuals of either species. Weed
-species richness was estimated as the relative abundance of weed species
-within a plot using a scale of 1-10 with one indicating only one species
-observed to 10 being 10 species present.</p>
+<div id="methods-experimental-design" class="section level1">
+<h1>Methods – Experimental design</h1>
 </div>
-<div id="yield" class="section level3">
-<h3>Yield</h3>
-<p>Five forage radish (<em>Raphanus sativus</em>) roots were randomly
-selected per sub-plot and measured for length (individually) and wet
-weight with foliage attached (bunched together). The length of a radish
-root was measured from the hypocotyl, or root cap, to where the root
-became ~6 mm (1⁄4 in) wide.</p>
+<div id="methods-data-collection" class="section level1">
+<h1>Methods – Data collection</h1>
+<ul>
+<li>Compaction – Penetrometer used to record depth where reading = 2
+MPa</li>
+<li>Infiltration – ## fl oz</li>
+<li>Weed suppression –
+<ul>
+<li>cover</li>
+<li>abundance</li>
+<li>diversity/richness</li>
+</ul></li>
+<li>Yield –
+<ul>
+<li>mass of tillage radish bunch</li>
+</ul></li>
+</ul>
 </div>
+<div id="methods-statistical-analysis" class="section level1">
+<h1>Methods – Statistical analysis</h1>
+<ul>
+<li>Data transferred from field, to Excel, to R version 4.2.0
+(2022-04-22)</li>
+<li>R packages …</li>
+<li>Conservative non-parametric Kruskal-Wallis tests for all comparisons
+shown</li>
+</ul>
 </div>
-<div id="statistical-analyses" class="section level2">
-<h2>Statistical analyses</h2>
-<p>An Analysis of Variance (ANOVA) was performed on plot-level
-compaction data, averaged by cover crop mix and tillage group, with a
-tillage-mix interaction and additional independent effect of season, and
-followed by a post-hoc test, using the base <em>‘aov’</em> function and
-standard pairwise function in the <em>‘emmeans’</em> package 1.7.3 in R
-version 4.1.3 (2022-03-10) <em>(R Core Team 2019)</em>. Kruskal-Wallis
-tests were run on infiltration, weed abundance, and richness, and radish
-yield data; with independent tests of tillage, mix, and season. Radish
-yield and longest root length were correlated, so they were analyzed
-using a MANOVA with tillage the independent factor, since these data
-were from compaction plots</p>
+<div id="results-compaction" class="section level1">
+<h1>Results – Compaction</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="results-infiltration" class="section level1">
+<h1>Results – Infiltration</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="results-weed-suppression" class="section level1">
+<h1>Results – Weed suppression</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="results-yield" class="section level1">
+<h1>Results – Yield</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="discussion-hypothesis" class="section level1">
+<h1>Discussion – Hypothesis</h1>
+</div>
+<div id="discussion-other-studies" class="section level1">
+<h1>Discussion – Other studies</h1>
+</div>
+<div id="discussion-conclusion" class="section level1">
+<h1>Discussion – Conclusion</h1>
 <!-- rnb-text-end -->
 </div>
-</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWV0aG9kcyIKb3V0cHV0OiBodG1sX25vdGVib29rCmJpYmxpb2dyYXBoeTogLi4vLi4vbGlicmFyeS5iaWIKLS0tCgoKIyBTdHVkeSBzaXRlCgoKVGhlIHN0dWR5IHNpdGUgd2FzIGxvY2F0ZWQgYXQgdGhlIE1pY2hpZ2FuIFN0YXRlIFVuaXZlcnNpdHkgKE1TVSkgLSBEZXRyb2l0IFBhcnRuZXJzaGlwIGZvciBGb29kLCBMZWFybmluZywgYW5kIElubm92YXRpb24gKERQRkxJKSAoYHIgUmdvb2dsZU1hcHM6OmdldEdlb0NvZGUoIjE2NzQ1IGxhbXBoZXJlIHN0IilgKSwgYW4gdXJiYW4gYWdyaWN1bHR1cmUgY2VudGVyIGluIERldHJvaXQsIE1JLCBVU0EuCk1lYW4gYW5udWFsIHRlbXBlcmF0dXJlIGlzIDkuNSDMikMgYW5kIHByZWNpcGl0YXRpb24gaXMgNzg3IG1tLiAKVGhlIHNpdGUgd2FzIGZvcm1lcmx5IGEgc2Nob29sIHByb3BlcnR5IHdoZXJlIHRoZSBidWlsZGluZyB3YXMgZGVtb2xpc2hlZCBpbiAyMDE2LiAKVGhlIHNpdGXigJlzIGhpc3RvcnkgaXMgc2ltaWxhciB0byB0aGF0IG9mIG1hbnkgcGFyY2VscyBhY3Jvc3MgRGV0cm9pdCBhbmQgb3RoZXIgY2l0aWVzIHdoZXJlIHVyYmFuIGRlY2xpbmUgaGFzIGxlZCB0byBpbmNyZWFzZWQgdmFjYW50IGxhbmQgd2l0aCBkZWdyYWRlZCBzb2lsLgoKVGhlIERQRkxJIGlzIGNoYXJhY3Rlcml6ZWQgYnkgdXBsYW5kIHdldGxhbmQgcHJvcGVydGllcyB3aXRoIGEgcmVsYXRpdmVseSBzaGFsbG93IEEgaG9yaXpvbiAoYHIgIkZpZy4gMWEiYCkgYW5kIG1ldGFsIGFydGlmYWN0cyBmcm9tIHByZXZpb3VzIGh1bWFuIGNvbnN0cnVjdGlvbi4gClRoZXJlIGlzIGEgbmVhcmJ5IHJpdmVyLCBhbmQgc29pbHMgaGF2ZSBtb3N0bHkgY2xheSB0ZXh0dXJlICh+MzclKSwgd2l0aCBzb21lIGFyZWFzIGhpZ2hlciBpbiBzaWx0IGFuZCBzYW5kLiAKU29pbCBvcmdhbmljIG1hdHRlciB3aXRoaW4gdGhlIHJlc2VhcmNoIHBsb3RzIGlzIHJlbGF0aXZlbHkgbG93LCB0aGUgcEggaXMgaGlnaCAoYWxrYWxpbmUpLCBhbmQgd2F0ZXItIHN0YWJsZSBhZ2dyZWdhdGVzIGlzIGxvdyAoYHIgIlRhYmxlIDEiYCkuIApTb2lsIHNhbXBsZXMgcmV2ZWFsZWQgY29uY2VudHJhdGlvbnMgb2YgY29tbW9uIGNvbnRhbWluYW50cyBhbmQgaGVhdnkgbWV0YWxzIGJlbG93IGdvdmVybm1lbnQgZGlyZWN0IGNvbnRhY3Qgc3RhbmRhcmRzLiAKVmFyaW91cyBtZXRhbHMgaW5jbHVkaW5nIFBiLCBabiwgQ3Ugd2VyZSBmb3VuZCBpbiB0aGUgc29pbCBidXQgYXQgbGV2ZWxzIGJlbG93IHRoZQpBZ2VuY3kgZGlyZWN0IGNvbnRhY3Qgc3RhbmRhcmRzICpbQGFuZ2Vsb25lMDJdKi4KCgojIyBGaWVsZCBleHBlcmltZW50YWwgZGVzaWduCgoKVGhlIHN0dWR5IGFyZWEgd2FzIGEgMjc4ICptXjJeKiAoMywwMDAgKmZ0XjJeKikgcGxvdCBkaXZpZGVkIGludG8gMzYgc2VwYXJhdGUgNC42ICptXjJeKiAoNTAgKmZ0XjJeKikgc3ViLXBsb3RzIChgciAiRmlnLiAxYiJgKS4gClN1Yi1wbG90cyB3ZXJlIHNlY3Rpb25lZCBpbnRvIDkgcm93cyB3aXRoIDQgY29sdW1ucyAoYHIgIkZpZy4gMWMiYCkuIApUaGVyZSB3ZXJlIDEyIHBsb3RzIHBlciB0aWxsYWdlIGdyb3VwLCBhbmQgd2Ugc3VibWl0dGVkIG9uZSBhZ2dyZWdhdGVkIHNvaWwgc2FtcGxlIGZyb20gdGhlIGVudGlyZSBwbG90IHRvIHRoZSBDb3JuZWxsIHNvaWwgbGFiIHRvIGVzdGFibGlzaCBhIGJhc2VsaW5lLiAKT25lIGFnZ3JlZ2F0ZWQgc2FtcGxlIHBlciB0aWxsYWdlIGdyb3VwICB3YXMgY29sbGVjdGVkIGFuZCBhbmFseXplZCBmb3IgY2hlbWlzdHJ5IHVzaW5nIG1vZGlmaWVkIE1vcmdhbiBleHRyYWN0YWJsZSBwcm90b2NvbHMgYXQgdGhlIE1TVSBzb2lsIHRlc3QgbGFiICpbQG1vZWJpdXMtY2x1bmUxNl0qLiAKQXBwcm94aW1hdGVseSAwLjI0ICptXjNeKiAoOC41ICpmdF4zXiopIG9mIGNvbXBvc3Qgd2FzIGluY29ycG9yYXRlZCBpbnRvIGVhY2ggcGxvdCBhbmQgYW5hbHlzaXMgd2FzIGFsc28gY29uZHVjdGVkIG9uIHRoZSBjb21wb3N0LgoKCiMjIFRpbGxhZ2UKCgpXZSB0ZXN0ZWQgdGhyZWUgdGlsbGFnZSB0ZWNobmlxdWVzOiAKMSkgbm8tdGlsbCB3aXRoIGEgYnJvYWRmb3JrIChOVCksIAoyKSBtb2RlcmF0ZSB3aXRoIGEgcm90b3RpbGxlciAoUlQpLCBhbmQgCjMpIGludGVuc2l2ZSB0cmFjdG9yIHRpbGwgKFRUKSB3aXRoIGltcGxlbWVudHMuIApUVCBwbG90cyB3ZXJlIHdvcmtlZCB3aXRoIGEgc3Vic29pbGVyLCBtb2xkYm9hcmQgcGxvdywgYW5kIHJvdG90aWxsZXIgYXR0YWNoZWQgdG8gYSB0cmFjdG9yIHVwIHRvIDMwIGNtICgxMiBpbikgZGVlcC4gClJUIHBsb3RzIHdlcmUgdGlsbGVkIHdpdGggYSByb3RvdGlsbGVyIGltcGxlbWVudCB1cCB0byAyMCBjbSAoOCBpbikgZGVlcC4gCk5UIHBsb3RzIHdlcmUgd29ya2VkIHdpdGggYSBicm9hZGZvcmsgdXAgdG8gMTAgY20gKDQgaW4pIGRlZXAuIApUaGVzZSBtZXRob2RzIHJlcHJlc2VudCBhIHNwZWN0cnVtIG9mIHNvaWwgbWFuYWdlbWVudCBwcmFjdGljZXMgZm9yIHNtYWxsIHNjYWxlIGFncmljdWx0dXJlIGFuZCB3ZXJlIHNlbGVjdGVkIGJhc2VkIG9uIHZhcnlpbmcgdGlsbGFnZSBwaGlsb3NvcGhpZXMsIGNvc3RzIG9mIGltcGxlbWVudGF0aW9uLCBhbmQgZGVncmVlIG9mIG1lY2hhbml6YXRpb24uCgoKIyMgQ292ZXIgY3JvcCBtaXhlcwoKCkNvdmVyIGNyb3AgbWl4ZXMgd2VyZSBzZWxlY3RlZCBiYXNlZCBvbiB0YXJnZXRlZCBvdXRjb21lcyBhc3NvY2lhdGVkIHdpdGggc3BlY2lmaWMgcGxhbnQgdmFyaWV0aWVzLiAKV2UgdGVzdGVkIHRoZSBwZXJmb3JtYW5jZSBvZiB0aHJlZSBtaXhlcyBjb21wb3NlZCBvZiB0aHJlZSBkaWZmZXJlbnQgcGxhbnQgc3BlY2llcyAoc2VlIGByICJUYWJsZSAyImApLiAKVGhlIGNvbXBhY3Rpb24gbWl4IG9mIGNyaW1zb24gY2xvdmVyLCBmb3JhZ2UgcmFkaXNoLCBhbmQgY2VyZWFsIHJ5ZWdyYXNzIGNvbnRhaW5zIHBsYW50cyB3aXRoIHJvb3RzIHRoYXQgcGVuZXRyYXRlIGFuZCBsb29zZW4gc29pbCAqKFdpbGxpYW1zICYgV2VpbCAyMDA0KSouIApUaGUgd2VlZCBzdXBwcmVzc2lvbiBtaXggY29uc2lzdGVkIG9mIGhlYXQtIGFuZCBkcm91Z2h0LXRvbGVyYW50IGNyb3BzIHRoYXQgZ3JvdyByYXBpZGx5LCBhbGxvd2luZyB0aGVtIHRvIG91dGNvbXBldGUgb3RoZXIgcGxhbnRzLiAKTGFzdGx5LCB0aGUgcGVyZW5uaWFsIG1peCB3YXMgbWFkZSB1cCBvZiBwbGFudHMgdGhhdCB3b3VsZCBzdXJ2aXZlIGJleW9uZCBvbmUgZ3Jvd2luZyBzZWFzb24gYW5kIHJldHVybiBpbiB0aGUgc3ByaW5nLCBhZGRpbmcgYWRkaXRpb25hbCBiaW9tYXNzIGFuZCBvdXRjb21wZXRpbmcgZWFybHkgc2Vhc29uIHdlZWRzLiAKV2UgYWxzbyBoYWQgYSBudWxsIGdyb3VwIGNvbnNpc3Rpbmcgb2YgZXN0YWJsaXNoZWQgdmVnZXRhdGlvbiB3aXRoaW4gdGhlIHBsb3QsIHdoZXJlIG5vIGFkZGl0aW9uYWwgc2VlZHMgd2VyZSBzb3duLgoKCiMjIERhdGEgQ29sbGVjdGlvbgoKCiMjIyBDb21wYWN0aW9uCgpTb2lsIGNvbXBhY3Rpb24gd2FzIG1lYXN1cmVkIHdpdGggYSBwZW5ldHJvbWV0ZXIgKihBZ3JhVHJvbml4IFNvaWwgQ29tcGFjdGlvbiBUZXN0ZXIgMDgxODApKiBpbiBmb3VyIHJhbmRvbWx5IHNlbGVjdGVkIHNwb3RzIHdpdGhpbiBlYWNoIHF1YXJ0ZXIgb2YgZXZlcnkgc3ViLXBsb3QsIHdoaWNoIHdlcmUgbGF0ZXIgYXZlcmFnZWQgYXQgdGhlIHBsb3QgbGV2ZWwgYmFzZWQgb24gY292ZXIgY3JvcCBtaXggYW5kIHRpbGxhZ2UgZ3JvdXAuIApSZWFkaW5ncyB3ZXJlIHRha2VuIGFzIHRoZSBkZXB0aCBhdCB3aGljaCB0aGUgcGVuZXRyb21ldGVyIHJlYWQgMzAwIHBvdW5kcyBwZXIgc3F1YXJlIGluY2ggKHBzaSksIG9yIDIgTVBhLCBzaW5jZSByb290cyB0eXBpY2FsbHkgY2Fubm90IHBlbmV0cmF0ZSB3aXRoIDIgTVBhIG9mIGZvcmNlICpbQGR1aWtlcjAyXSouIApTYW1wbGluZyB3YXMgY29uZHVjdGVkIGF0IHR3byBzZXBhcmF0ZSB0aW1lIHBlcmlvZHMsIGluIEp1bHkgKOKAnEVhcmx54oCdKSBhbmQgT2N0b2JlciAo4oCcTGF0ZeKAnSkgMjAxOS4gClNhbXBsZXMgd2VyZSB0YWtlbiBvbiBkcnkgZGF5cyBhbmQgcmVjb3JkZWQgdG8gdGhlIG5lYXJlc3QgaW5jaC4KCgojIyMgSW5maWx0cmF0aW9uCgpXZSBtZWFzdXJlZCB0aGUgd2F0ZXIgaW5maWx0cmF0aW9uIHJhdGUgdG8gZGV0ZXJtaW5lIHRoZSBzb2ls4oCZcyBjYXBhY2l0eSB0byBkcmFpbiB3YXRlciwgd2hpY2ggaGFzIGltcGxpY2F0aW9ucyBmb3IgbWFuYWdpbmcgc3Rvcm13YXRlciBydW5vZmYgYW5kIGhvbGRpbmcgd2F0ZXIgZm9yIHBsYW50IHJvb3RzLiAKVGhlIGluZmlsdHJhdGlvbiByYXRlIHdhcyBjYWxjdWxhdGVkIGJ5IHJlY29yZGluZyB0aGUgYW1vdW50IG9mIHRpbWUgaXQgdG9vayBmb3IgMzIgZmwgb3ogKDk0NiBtTCkgdG8gZHJhaW4gaW50byB0aGUgc29pbCwgd2hpY2ggaXMgc2ltaWxhciB0byB0aGUgYW1vdW50IG9mIHR5cGljYWwgcmFpbmZhbGwgb24gMC4wOTIgKm1eMl4qICgxICpmdF4yXiopIHBlciByYWluIGV2ZW50ICooVW5pdGVkIFN0YXRlcyBHZW9sb2dpY2FsIFNlcnZpY2VzLCBuLmQuKSouIApXZSBjbGVhcmVkIHRoZSBzb2lsIHN1cmZhY2Ugb2YgZGVicmlzIGFuZCBjdXQgdmVnZXRhdGlvbiBsb3cgZW5vdWdoIHRvIG9ic2VydmUgdGhlIHN1cmZhY2UuIApUaGVuLCB3ZSBwcmVzc2VkIGEgMS40IGtnICg0OCBveikgYWx1bWludW0gY2FuIGFib3V0IDIuNSBjbSBpbnRvIHRoZSBzb2lsIGFuZCBwb3VyZWQgdGhlIHdhdGVyIGluLiAKVGhlIG1heGltdW0gdGltZSBhbGxvd2VkIHdhcyAxNjAgc2Vjb25kcy4KCgojIyMgV2VlZCBkZW5zaXR5IGFuZCBzcGVjaWVzIHJpY2huZXNzCgpXZSBxdWFudGlmaWVkIHdlZWQgc3BlY2llcyByaWNobmVzcyBhbmQgb3ZlcmFsbCBkZW5zaXR5IHdpdGhpbiBlYWNoIHN1Yi1wbG90IGJ5IGNvdW50aW5nIHRoZSBudW1iZXIgb2Ygd2VlZCBzcGVjaWVzIHByZXNlbnQgYW5kIHJlbGF0aXZlIGFidW5kYW5jZSBvZiB0aGUgbW9zdCBjb21tb24gc3BlY2llcy4gCldlZWQgc3BlY2llcyByaWNobmVzcyB3YXMgbWVhc3VyZWQgYnkgY291bnRpbmcgdGhlIG51bWJlciBvZiBwbGFudCBzcGVjaWVzIGV4Y2x1ZGluZyB0aGUgY292ZXIgY3JvcCBtaXggaW4gYSBzdWItcGxvdC4gCldlZWQgZGVuc2l0eSB3YXMgbWVhc3VyZWQgYXMgdGhlIHJlbGF0aXZlIGNvdmVyIG9mIHRoZSB0d28gbW9zdCBhYnVuZGFudCB3ZWVkIHNwZWNpZXMsIHBpZ3dlZWQgKCpQYWxtZXIgYW1hcmFudGgqKSBhbmQgdmVsdmV0bGVhZiAoKkFidXRpbG9uIHRoZW9waHJhc3RpKiksIHVzaW5nIGEgY29tcGFyYXRpdmUgc2NhbGUgb2YgMC01IChpbiBpbmNyZW1lbnRzIG9mIDEwIGluZGl2aWR1YWxzKSB3aXRoIDAgaW5kaWNhdGluZyBuZWl0aGVyIHNwZWNpZXMgcHJlc2VudCBhbmQgNSBpbmRpY2F0aW5nIDUwIG9yIG1vcmUgaW5kaXZpZHVhbHMgb2YgZWl0aGVyIHNwZWNpZXMuIApXZWVkIHNwZWNpZXMgcmljaG5lc3Mgd2FzIGVzdGltYXRlZCBhcyB0aGUgcmVsYXRpdmUgYWJ1bmRhbmNlIG9mIHdlZWQgc3BlY2llcyB3aXRoaW4gYSBwbG90IHVzaW5nIGEgc2NhbGUgb2YgMS0xMCB3aXRoIG9uZSBpbmRpY2F0aW5nIG9ubHkgb25lIHNwZWNpZXMgb2JzZXJ2ZWQgdG8gMTAgYmVpbmcgMTAgc3BlY2llcyBwcmVzZW50LgoKCiMjIyBZaWVsZAoKRml2ZSBmb3JhZ2UgcmFkaXNoICgqUmFwaGFudXMgc2F0aXZ1cyopIHJvb3RzIHdlcmUgcmFuZG9tbHkgc2VsZWN0ZWQgcGVyIHN1Yi1wbG90IGFuZCBtZWFzdXJlZCBmb3IgbGVuZ3RoIChpbmRpdmlkdWFsbHkpIGFuZCB3ZXQgd2VpZ2h0IHdpdGggZm9saWFnZSBhdHRhY2hlZCAoYnVuY2hlZCB0b2dldGhlcikuIApUaGUgbGVuZ3RoIG9mIGEgcmFkaXNoIHJvb3Qgd2FzIG1lYXN1cmVkIGZyb20gdGhlIGh5cG9jb3R5bCwgb3Igcm9vdCBjYXAsIHRvIHdoZXJlIHRoZSByb290IGJlY2FtZSB+NiBtbSAoMeKBhDQgaW4pIHdpZGUuCgoKIyMgU3RhdGlzdGljYWwgYW5hbHlzZXMKCkFuIEFuYWx5c2lzIG9mIFZhcmlhbmNlIChBTk9WQSkgd2FzIHBlcmZvcm1lZCBvbiBwbG90LWxldmVsIGNvbXBhY3Rpb24gZGF0YSwgYXZlcmFnZWQgYnkgY292ZXIgY3JvcCBtaXggYW5kIHRpbGxhZ2UgZ3JvdXAsIHdpdGggYSB0aWxsYWdlLW1peCBpbnRlcmFjdGlvbiBhbmQgYWRkaXRpb25hbCBpbmRlcGVuZGVudCBlZmZlY3Qgb2Ygc2Vhc29uLCBhbmQgZm9sbG93ZWQgYnkgYSBwb3N0LWhvYyB0ZXN0LCB1c2luZyB0aGUgYmFzZSAq4oCYYW924oCZKiBmdW5jdGlvbiBhbmQgc3RhbmRhcmQgcGFpcndpc2UgZnVuY3Rpb24gaW4gdGhlICrigJhlbW1lYW5z4oCZKiBwYWNrYWdlIGByIHBhY2thZ2VWZXJzaW9uKCJlbW1lYW5zIilgIGluIGByIHZlcnNpb24kdmVyc2lvbi5zdHJpbmdgICooUiBDb3JlIFRlYW0gMjAxOSkqLiAKS3J1c2thbC1XYWxsaXMgdGVzdHMgd2VyZSBydW4gb24gaW5maWx0cmF0aW9uLCAKd2VlZCBhYnVuZGFuY2UsIGFuZCByaWNobmVzcywgYW5kIHJhZGlzaCB5aWVsZCBkYXRhOyB3aXRoIGluZGVwZW5kZW50IHRlc3RzIG9mIHRpbGxhZ2UsIG1peCwgYW5kIHNlYXNvbi4KUmFkaXNoIHlpZWxkIGFuZCBsb25nZXN0IHJvb3QgbGVuZ3RoIHdlcmUgY29ycmVsYXRlZCwgc28gdGhleSB3ZXJlIGFuYWx5emVkIHVzaW5nIGEgTUFOT1ZBIHdpdGggdGlsbGFnZSB0aGUgaW5kZXBlbmRlbnQgZmFjdG9yLCBzaW5jZSB0aGVzZSBkYXRhIHdlcmUgZnJvbSBjb21wYWN0aW9uIHBsb3RzCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFuYWdlbWVudCBvZiBVcmJhbiBTb2lscyIKYXV0aG9yOiAKICBOYWltIEVkd2FyZHMsCiAgTmljaG9sYXMgTWVkaW5hCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyIHNldHVwLCBlY2hvPUYsIHdhcm5pbmc9RiwgcmVzdWx0cz0naGlkZSd9CmhlcmU6OmlfYW0oInRhbGsvdGFsay5SbWQiKTsga25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBGLCB3YXJuaW5nID0gRikKYGBgCgojIEludHJvZHVjdGlvbiAtLSBVcmJhbiBzb2lscwojIEludHJvZHVjdGlvbiAtLSBUaWxsYWdlCiAgLSBpbml0aWFsbHkgdXNlZnVsCiAgCiMgSW50cm9kdWN0aW9uIC0tIENvdmVyIGNyb3BzCiAgLSBsb25nIHVuZGVyc3Rvb2QsIHBvb3JseSBhZG9wdGVkIGdpdmVuIGV4dHJhIGNvc3QKICAKIyBJbnRyb2R1Y3Rpb24gLS0gVGhpcyBzdHVkeQogIC0gUmVzZWFyY2ggUXVlc3Rpb24gLS0gSG93IGNhbiB0aWxsYWdlIGFuZCBjb3ZlciBjcm9wcyBhZmZlY3QgdXJiYW4gc29pbCBmdW5jdGlvbnM/CiAgLSBIeXBvdGhlc2lzIC0tCiAgLSBQcmVkaWN0aW9ucyAtLSAKICAgIC0gVGlsbGFnZSAtLQogICAgICAtIHJlZHVjZXMgY29tcGFjdGlvbiAvIGluY3JlYXNlcyBkZXB0aCB0byBoYXJkcGFuIChyb290LWluYWNjZXNzaWJsZSkKICAgICAgLSBpbmNyZWFzZXMgLS0KICAgICAgICAtIHdhdGVyIGluZmlsdHJhdGlvbgogICAgICAgIC0geWllbGQgb2Ygcm9vdGluZyBjcm9wcwogICAgLSBDb3ZlciBjcm9wcyAuLi4KCiMgTWV0aG9kcyAtLSBTdHVkeSBzaXRlCiAgLSBNU1UgRGV0cm9pdCBQYXJ0bmVyc2hpcCBmb3IgRm9vZCBMZWFybmluZyBhbmQgSW5ub3ZhdGlvbiAoRFBGTEkpCiAgCiMgTWV0aG9kcyAtLSBFeHBlcmltZW50YWwgZGVzaWduCiMgTWV0aG9kcyAtLSBEYXRhIGNvbGxlY3Rpb24KICAtIENvbXBhY3Rpb24gLS0gUGVuZXRyb21ldGVyIHVzZWQgdG8gcmVjb3JkIGRlcHRoIHdoZXJlIHJlYWRpbmcgPSAyIE1QYQogIC0gSW5maWx0cmF0aW9uIC0tICMjIGZsIG96CiAgLSBXZWVkIHN1cHByZXNzaW9uIC0tCiAgICAtIGNvdmVyCiAgICAtIGFidW5kYW5jZQogICAgLSBkaXZlcnNpdHkvcmljaG5lc3MKICAtIFlpZWxkIC0tCiAgICAtIG1hc3Mgb2YgdGlsbGFnZSByYWRpc2ggYnVuY2gKICAKIyBNZXRob2RzIC0tIFN0YXRpc3RpY2FsIGFuYWx5c2lzCiAgLSBEYXRhIHRyYW5zZmVycmVkIGZyb20gZmllbGQsIHRvIEV4Y2VsLCB0byBgciB2ZXJzaW9uJHZlcnNpb24uc3RyaW5nYAogIC0gUiBwYWNrYWdlcyAuLi4KICAtIENvbnNlcnZhdGl2ZSBub24tcGFyYW1ldHJpYyBLcnVza2FsLVdhbGxpcyB0ZXN0cyBmb3IgYWxsIGNvbXBhcmlzb25zIHNob3duCiAgCiMgUmVzdWx0cyAtLSBDb21wYWN0aW9uCmBgYHtyfQprbml0cjo6aW5jbHVkZV9ncmFwaGljcyhoZXJlOjpoZXJlKCJmaWdzL2NvbXBhY3Rpb25QbG90LnBuZyIpKQpgYGAKCiMgUmVzdWx0cyAtLSBJbmZpbHRyYXRpb24KYGBge3J9CmtuaXRyOjppbmNsdWRlX2dyYXBoaWNzKGhlcmU6OmhlcmUoImZpZ3MvaW5maWxQbG90LnBuZyIpKQpgYGAKCiMgUmVzdWx0cyAtLSBXZWVkIHN1cHByZXNzaW9uCmBgYHtyfQprbml0cjo6aW5jbHVkZV9ncmFwaGljcyhoZXJlOjpoZXJlKCJmaWdzL3dlZWRQbG90LnBuZyIpKQpgYGAKCiMgUmVzdWx0cyAtLSBZaWVsZApgYGB7cn0Ka25pdHI6OmluY2x1ZGVfZ3JhcGhpY3MoaGVyZTo6aGVyZSgiZmlncy95aWVsZFBsb3QucG5nIikpCmBgYAoKIyBEaXNjdXNzaW9uIC0tIEh5cG90aGVzaXMKIyBEaXNjdXNzaW9uIC0tIE90aGVyIHN0dWRpZXMKIyBEaXNjdXNzaW9uIC0tIENvbmNsdXNpb24K</div>
 
 
 
@@ -1945,7 +1935,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("meth.Rmd");
+  window.initializeSourceEmbed("talk.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

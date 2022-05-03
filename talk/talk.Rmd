@@ -1,0 +1,72 @@
+---
+title: "Management of Urban Soils"
+author: 
+  Naim Edwards,
+  Nicholas Medina
+output: html_notebook
+---
+
+```{r setup, echo=F, warning=F, results='hide'}
+here::i_am("talk/talk.Rmd"); knitr::opts_chunk$set(echo = F, warning = F)
+```
+
+# Introduction -- Urban soils
+# Introduction -- Tillage
+  - initially useful
+  
+# Introduction -- Cover crops
+  - long understood, poorly adopted given extra cost
+  
+# Introduction -- This study
+  - Research Question -- How can tillage and cover crops affect urban soil functions?
+  - Hypothesis --
+  - Predictions -- 
+    - Tillage --
+      - reduces compaction / increases depth to hardpan (root-inaccessible)
+      - increases --
+        - water infiltration
+        - yield of rooting crops
+    - Cover crops ...
+
+# Methods -- Study site
+  - MSU Detroit Partnership for Food Learning and Innovation (DPFLI)
+  
+# Methods -- Experimental design
+# Methods -- Data collection
+  - Compaction -- Penetrometer used to record depth where reading = 2 MPa
+  - Infiltration -- ## fl oz
+  - Weed suppression --
+    - cover
+    - abundance
+    - diversity/richness
+  - Yield --
+    - mass of tillage radish bunch
+  
+# Methods -- Statistical analysis
+  - Data transferred from field, to Excel, to `r version$version.string`
+  - R packages ...
+  - Conservative non-parametric Kruskal-Wallis tests for all comparisons shown
+  
+# Results -- Compaction
+```{r}
+knitr::include_graphics(here::here("figs/compactionPlot.png"))
+```
+
+# Results -- Infiltration
+```{r}
+knitr::include_graphics(here::here("figs/infilPlot.png"))
+```
+
+# Results -- Weed suppression
+```{r}
+knitr::include_graphics(here::here("figs/weedPlot.png"))
+```
+
+# Results -- Yield
+```{r}
+knitr::include_graphics(here::here("figs/yieldPlot.png"))
+```
+
+# Discussion -- Hypothesis
+# Discussion -- Other studies
+# Discussion -- Conclusion

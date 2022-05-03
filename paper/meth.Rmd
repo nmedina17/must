@@ -8,42 +8,47 @@ bibliography: ../../library.bib
 # Study site
 
 
-The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st")`), an urban agriculture center in Detroit, MI, USA. 
-Mean annual temperature is 9.5 ̊C and precipitation is 787 mm. The site was formerly a school property where the building was demolished in 2016. 
+The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st")`), an urban agriculture center in Detroit, MI, USA.
+Mean annual temperature is 9.5 ̊C and precipitation is 787 mm. 
+The site was formerly a school property where the building was demolished in 2016. 
 The site’s history is similar to that of many parcels across Detroit and other cities where urban decline has led to increased vacant land with degraded soil.
 
-The DPFLI is characterized by upland wetland properties with a relatively shallow A horizon *(Fig. 1a)* and metal artifacts from previous human construction. 
+The DPFLI is characterized by upland wetland properties with a relatively shallow A horizon (`r "Fig. 1a"`) and metal artifacts from previous human construction. 
 There is a nearby river, and soils have mostly clay texture (~37%), with some areas higher in silt and sand. 
-Soil organic matter within the research plots is relatively low, the pH is high (alkaline), and water- stable aggregates is low *(Table 1)*. 
+Soil organic matter within the research plots is relatively low, the pH is high (alkaline), and water- stable aggregates is low (`r "Table 1"`). 
 Soil samples revealed concentrations of common contaminants and heavy metals below government direct contact standards. 
 Various metals including Pb, Zn, Cu were found in the soil but at levels below the
-Agency direct contact standards *(Angelone, 2002)*.
+Agency direct contact standards *[@angelone02]*.
 
 
 ## Field experimental design
 
 
-The study area was a 278 m2 (3,000 ft2) plot divided into 36 separate 4.6 m2 (50 ft2) sub-plots *(Fig. 1b)*. 
-Sub-plots were sectioned into 9 rows with 4 columns *(Fig. 1c)*. 
+The study area was a 278 *m^2^* (3,000 *ft^2^*) plot divided into 36 separate 4.6 *m^2^* (50 *ft^2^*) sub-plots (`r "Fig. 1b"`). 
+Sub-plots were sectioned into 9 rows with 4 columns (`r "Fig. 1c"`). 
 There were 12 plots per tillage group, and we submitted one aggregated soil sample from the entire plot to the Cornell soil lab to establish a baseline. 
-One aggregated sample per tillage group  was collected and analyzed for chemistry using modified Morgan extractable protocols at the MSU soil test lab *(Moebius-Clune et al. 2016)*. 
-Approximately 0.24 m3 (8.5 ft3) of compost was incorporated into each plot and analysis was also conducted on the compost.
+One aggregated sample per tillage group  was collected and analyzed for chemistry using modified Morgan extractable protocols at the MSU soil test lab *[@moebius-clune16]*. 
+Approximately 0.24 *m^3^* (8.5 *ft^3^*) of compost was incorporated into each plot and analysis was also conducted on the compost.
 
 
 ## Tillage
 
 
-We tested three tillage techniques: 1) no-till with a broadfork (NT) , 2) moderate with a rototiller (RT), and 3) intensive tractor till (TT) with implements. 
-TT plots were worked with a subsoiler, moldboard plow, and rototiller attached to a tractor up to 30 cm (12 inches) deep. 
-RT plots were tilled with a rototiller implement up to 20 cm (8 inches) deep. 
-NT plots were worked with a broadfork up to 10 cm (4 inches) deep. 
+We tested three tillage techniques: 
+1) no-till with a broadfork (NT), 
+2) moderate with a rototiller (RT), and 
+3) intensive tractor till (TT) with implements. 
+TT plots were worked with a subsoiler, moldboard plow, and rototiller attached to a tractor up to 30 cm (12 in) deep. 
+RT plots were tilled with a rototiller implement up to 20 cm (8 in) deep. 
+NT plots were worked with a broadfork up to 10 cm (4 in) deep. 
 These methods represent a spectrum of soil management practices for small scale agriculture and were selected based on varying tillage philosophies, costs of implementation, and degree of mechanization.
 
 
 ## Cover crop mixes
 
 
-Cover crop mixes were selected based on targeted outcomes associated with specific plant varieties. We tested the performance of three mixes composed of three different plant species *(see Table 2)*. 
+Cover crop mixes were selected based on targeted outcomes associated with specific plant varieties. 
+We tested the performance of three mixes composed of three different plant species (see `r "Table 2"`). 
 The compaction mix of crimson clover, forage radish, and cereal ryegrass contains plants with roots that penetrate and loosen soil *(Williams & Weil 2004)*. 
 The weed suppression mix consisted of heat- and drought-tolerant crops that grow rapidly, allowing them to outcompete other plants. 
 Lastly, the perennial mix was made up of plants that would survive beyond one growing season and return in the spring, adding additional biomass and outcompeting early season weeds. 
@@ -56,7 +61,7 @@ We also had a null group consisting of established vegetation within the plot, w
 ### Compaction
 
 Soil compaction was measured with a penetrometer *(AgraTronix Soil Compaction Tester 08180)* in four randomly selected spots within each quarter of every sub-plot, which were later averaged at the plot level based on cover crop mix and tillage group. 
-Readings were taken as the depth at which the penetrometer read 300 pounds per square inch (psi), or 2 MPa, since roots typically cannot penetrate with 2 MPa of force *(Duiker 2002)*. 
+Readings were taken as the depth at which the penetrometer read 300 pounds per square inch (psi), or 2 MPa, since roots typically cannot penetrate with 2 MPa of force *[@duiker02]*. 
 Sampling was conducted at two separate time periods, in July (“Early”) and October (“Late”) 2019. 
 Samples were taken on dry days and recorded to the nearest inch.
 
@@ -64,29 +69,29 @@ Samples were taken on dry days and recorded to the nearest inch.
 ### Infiltration
 
 We measured the water infiltration rate to determine the soil’s capacity to drain water, which has implications for managing stormwater runoff and holding water for plant roots. 
-The infiltration rate was calculated by recording the amount of time it took for 32 fluid ounces (946 mL) to drain into the soil, which is similar to the amount of typical rainfall on 0.092 m2 (1 ft2) per rain event (United States Geological Services, n.d.). 
+The infiltration rate was calculated by recording the amount of time it took for 32 fl oz (946 mL) to drain into the soil, which is similar to the amount of typical rainfall on 0.092 *m^2^* (1 *ft^2^*) per rain event *(United States Geological Services, n.d.)*. 
 We cleared the soil surface of debris and cut vegetation low enough to observe the surface. 
-Then, we pressed a 1.4 kg (48 ounce) aluminum can about 2.5 cm into the soil and poured the water in. 
+Then, we pressed a 1.4 kg (48 oz) aluminum can about 2.5 cm into the soil and poured the water in. 
 The maximum time allowed was 160 seconds.
 
 
 ### Weed density and species richness
 
 We quantified weed species richness and overall density within each sub-plot by counting the number of weed species present and relative abundance of the most common species. 
-Weed species richness was measured by counting the number of plant species excluding the cover crop mix in a sub-plot. 
-Weed density was measured as the relative cover of the two most abundant weed species, pigweed (*Palmer amaranth*) and velvetleaf (*Abutilon theophrasti*), using a comparative scale of 0-5 (in increments of 10 individuals) with 0 indicating neither species present and 5 indicating 50 or more individuals of either species. 
-Weed species richness was estimated as the relative abundance of weed species within a plot using a scale of 1-10 with one indicating only one species observed to 10 being 10 species present.
+Weed species richness was measured by counting the number of unplanted species at all present in a sub-plot. 
+Weed density was measured as the relative cover of the two most abundant weed species, pigweed (*Palmer amaranth*) and velvetleaf (*Abutilon theophrasti*), using a comparative scale of 0-5 (in increments of 10 individuals) with 0 indicating neither species present and 5 indicating 50 or more total individuals (stems) of either species. 
+Weed cover was estimated as the relative abundance of all weed species combined within a plot using a scale of 1-10 with one indicating only one species observed to 10 being 10 species present.
 
 
 ### Yield
 
 Five forage radish (*Raphanus sativus*) roots were randomly selected per sub-plot and measured for length (individually) and wet weight with foliage attached (bunched together). 
-The length of a radish root was measured from the hypocotyl, or root cap, to where the root became ~6 mm (1⁄4 inch) wide.
+The length of a radish root was measured from the hypocotyl, or root cap, to where the root became ~6 mm (1⁄4 in) wide.
 
 
 ## Statistical analyses
 
-An Analysis of Variance (ANOVA) was performed on plot-level compaction data, averaged by cover crop mix and tillage group, with a tillage-mix interaction and additional independent effect of season, and followed by a post-hoc test, using the base ‘aov’ function and standard pairwise function in the *‘emmeans’* package `r packageVersion("emmeans")` in `r version$version.string` *(R Core Team 2019)*. 
+An Analysis of Variance (ANOVA) was performed on plot-level compaction data, averaged by cover crop mix and tillage group, with a tillage-mix interaction and additional independent effect of season, and followed by a post-hoc test, using the base *‘aov’* function and standard pairwise function in the *‘emmeans’* package `r packageVersion("emmeans")` in `r version$version.string` *(R Core Team 2019)*. 
 Kruskal-Wallis tests were run on infiltration, 
 weed abundance, and richness, and radish yield data; with independent tests of tillage, mix, and season.
 Radish yield and longest root length were correlated, so they were analyzed using a MANOVA with tillage the independent factor, since these data were from compaction plots
