@@ -2,71 +2,141 @@
 title: "Management of Urban Soils"
 author: 
   Naim Edwards,
-  Nicholas Medina
-output: html_notebook
+  Nicholas Medina,
+  Elizabeth Asker
+output: 
+  # html_notebook
+  bookdown::html_document2:
+    number_sections: false
+bibliography: ../../library.bib
 ---
 
-```{r setup, echo=F, warning=F, results='hide'}
-here::i_am("talk/talk.Rmd"); knitr::opts_chunk$set(echo = F, warning = F)
+```{r setup, echo=F, warning=F, results='hide', message=F}
+here::i_am("talk/talk.Rmd"); knitr::opts_chunk$set(echo=F, warning=F, message=F)
+# knitr::opts_knit$set(verbose = F)
 ```
 
 # Introduction -- Urban soils
+- Affect most of the world´s population *[@?]*
+- Past degradation by industry means soil organic matter is far from saturation *[@stewart07]*, also suggests fast recovery potential *[@kumar16]* while far from saturation 
+- Land can serve to improve autonomy of oppressed communities, especially in post-industrial cities *[@beniston16]*, including in tropics (global South)
+  
 # Introduction -- Tillage
-  - initially useful
+- Causes long-term degradation with tractor *[@reviewSoilTillage]*
+- But, may help jump-start agriculture on vacant land
+- Roto-tiller is more publicly accessible and may work as well as tractor
   
 # Introduction -- Cover crops
-  - long understood, poorly adopted given extra cost
+- Long understood *[@carver::white]*, but poorly adopted given extra cost *[@seedPatents; @sugarSaltFat]*
+- Improve multi-functionality beyond income to longer-term soil fertility *[@blesh17]* and ultimately food sovereignty
+- Can be mixed and tailored to specific functions based on needs in region *[@perfecto/Rodale?]*
   
 # Introduction -- This study
-  - Research Question -- How can tillage and cover crops affect urban soil functions?
-  - Hypothesis --
-  - Predictions -- 
-    - Tillage --
-      - reduces compaction / increases depth to hardpan (root-inaccessible)
-      - increases --
-        - water infiltration
-        - yield of rooting crops
-    - Cover crops ...
+- Research Question -- How can tillage and cover crops affect urban soil functions?
+- Hypothesis -- 
+- Predictions -- 
+  - Tillage --
+    - reduces compaction / increases depth to hardpan (root-inaccessible)
+    - increases --
+      - water infiltration
+      - yield of rooting crops
+  - Cover crops --
 
 # Methods -- Study site
-  - MSU Detroit Partnership for Food Learning and Innovation (DPFLI)
-  
+- Function -- 
+  - MSU Detroit Partnership for Food Learning and Innovation (DPFLI), extension outreach, education, and demonstration center
+  - Former elementary school since *2016*
+- Habitat -- Upland of river ~0.5 mi / 0.8 km away (`r RgoogleMaps::getGeoCode("16745 lamphere st")`)
+- Soils -- 
+  - Technosol classification, given large metal artifacts can be found from fillings during highway road construction
+  - Topsoil A horizon 1-2", subsoil B horizon "muted" yellow color
+  - Heavy metal elements below EPA human hazard levels *[@EPA]*
+```{r}
+# knitr::include_graphics(here::here("tables/chem.png"))
+# knitr::include_graphics(here::here("figs/plots.png"))
+```
+
 # Methods -- Experimental design
+  - Tillage -- No-, Roto-, Tractor-
+  - Cover crop mixes *(Table \@ref(tab:crops))*
+    - Null -- No manipulation
+    - Perennial -- vetch, clover, wheat
+    - Compaction -- radish, clover, ryegrass
+    - Weed Suppression -- cowpea, buckwheat, sorghum-sudangrass
+```{r crops}
+source(here::here("tables/crops.R")); cropTbl %>% distinct() %>% #quiet?
+  knitr::kable(caption = "Cover crop mixes") %>% kableExtra::kable_styling()
+```
+
 # Methods -- Data collection
-  - Compaction -- Penetrometer used to record depth where reading = 2 MPa
+  - Compaction -- Penetrometer reading of depth measuring 2 MPa
   - Infiltration -- ## fl oz
-  - Weed suppression --
-    - cover
-    - abundance
-    - diversity/richness
-  - Yield --
-    - mass of tillage radish bunch
-  
+  - Weed suppression -- cover, density, diversity/richness
+  - Yield -- root length, mass of tillage radish "bunch"/cluster
+  - One growing season May - October 2019
+
 # Methods -- Statistical analysis
-  - Data transferred from field, to Excel, to `r version$version.string`
-  - R packages ...
-  - Conservative non-parametric Kruskal-Wallis tests for all comparisons shown
+- Data --
+  - transferred from field, to Excel/Sheets, to `r version$version.string`
+  - centered at plot level, with median
+- R packages -- *rstatix* `r packageVersion("rstatix")`, *ggpubr* `r packageVersion("ggpubr")`, & *tidyverse* `r packageVersion("tidyverse")`
+- Conservative non-parametric rank tests -- Kruskal-Wallis, post-hoc Wilcoxon with *ggpubr::stat_compare_means()* for all comparisons shown
+  - sampling times pooled by variable, due to negligible effects, except infiltration
   
 # Results -- Compaction
-```{r}
+- Affected overall significantly under each cover crop mix *(Fig \@ref(fig:comp))*
+  - Perennial mix showed most consistent responses
+- vs. No-till --
+  - Tractor *hardpan depth was higher* in Perennial and Weed Suppression mixes (significantly), as well as Null and Compaction (marginally significantly)
+  - Roto-till *was lower* in Perennial mix (significantly)
+- vs. Roto-till --
+  - Tractor *had deeper hardpan* in Perennial mix (significantly)
+```{r comp, fig.cap="Compaction data"}
 knitr::include_graphics(here::here("figs/compactionPlot.png"))
 ```
 
 # Results -- Infiltration
-```{r}
+- Affected overall by tillage (significantly) but not cover crop mixes *(Fig \@ref(fig:infil))*
+- Roto-till showed faster infiltration vs. both No- and Tractor-till (marginally significantly) in each sampling period *(Fig \@ref(fig:infil)a)*
+- Weed Suppression mix independently showed higher infiltration vs. Null mix (significantly) *(Fig \@ref(fig:infil)b)*
+```{r infil, fig.cap="Infiltration data"}
 knitr::include_graphics(here::here("figs/infilPlot.png"))
 ```
 
 # Results -- Weed suppression
-```{r}
+- Affected overall more by cover crop mixes (significantly) rather than tillage *(Fig \@ref(fig:weeds))*
+- Tractor-till increased weed Density overall (significantly), and independently vs. both No- and Roto-till (significantly) *(Fig \@ref(fig:weeds)a)*
+- Weed Suppression mix reduced weed Density and Richness (but less so Cover) vs. Null, Perennial, and Compaction mixes (significantly)
+  - Weed Suppression did reduce weed Dover vs. Null mix (significantly)
+- Both Perennial and Compaction mixes also lowered weed Density vs. Null mix (marginally significantly)
+```{r weeds, fig.cap="Weed data"}
 knitr::include_graphics(here::here("figs/weedPlot.png"))
 ```
 
 # Results -- Yield
-```{r}
+- Not affected overall by tillage *(Fig \@ref(fig:yield))*
+- No-till yielded more massive radishes vs. Tractor-till (significantly)
+```{r yield, fig.cap="Yield data"}
 knitr::include_graphics(here::here("figs/yieldPlot.png"))
 ```
 
 # Discussion -- Hypothesis
+- tillage strongest, and cover crop can follow as second
+- hypothesis?
+- roto-till may be most balanced approach, justifying popularity
+  - relatively moderately improved compaction and infiltration
+  - tractor-till sacrificed topsoil infiltration for alleviating deeper subsoil compaction
+- cover crop mixes can have strongest effects on weed suppression, even while also tailored to other functions
+
+# Discussion -- Processes
+- till...
+- weed suppression mix effects may come from sorghum-sudangrass, since cowpea usually promotes growth via N-fixation
+
 # Discussion -- Other studies
+  -
+  
 # Discussion -- Conclusion
+- tillage strongest, and cover crop can follow as second
+- roto-till may be most balanced approach, justifying popularity
+
+# References
