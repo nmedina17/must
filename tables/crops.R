@@ -10,11 +10,11 @@ plants <- tibble(
   "Hairy Vetch" = taxize::comm2sci(mixes$Perennial[[1]])[[1]],
   "Red Clover" = taxize::comm2sci(mixes$Perennial[[2]])[[1]],
   "Wheat" = taxize::comm2sci(mixes$Perennial[[3]])[[1]],
-  "Forage Radish" = "Raphanus sativus",
+  "Forage Radish" = taxize::comm2sci(mixes$Compaction[[1]])[[1]],
   "Crimson Clover" = "Trifolium incarnatum",
   "Cereal Ryegrass" = "Secale cereale",
   "Sorghum-Sudangrass" = "Sorghum bicolor x S. bicolor var. sudanese",
-  "Cowpea" = "Vigna unguiculata",
+  "Cowpea" = taxize::comm2sci("Black-Eyed Pea")[[1]],
   "Buckwheat" = "Fagopyrum esculentum"
 ) %>% pivot_longer(everything(), names_to = "Plants", values_to = "Binomial")
 

@@ -4,21 +4,29 @@ here::i_am("figs/compaction.R"); source(here::here("analysis/stats1.R"))
 
 compactionData <- varTestTbl %>% filter(variable == "PNDcm") %>%
   mutate(varData = varData %>% modify(~.x %>% filter(SAMPL_TIME != "Spring"))) %>%
-  unnest()
+  unnest(variable:statTest_MIX)
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 8)))
-compactionPlot <- compactionData %>%
+compactionLabels <- c("Null", "Perennial", "Compaction", "Weed Suppression")
+names(compactionLabels) <- c("null", "pere", "comp", "wdsp")
+compactionPlot_a <- compactionData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
-  ggplot(aes(x = TIL, y = value)) +
+  ggplot(aes(x = TIL, y = value,
+             shape = MIX
+             )) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
-  labs(x = "Tillage", y = "Depth to hardpan (cm)") +
-  facet_wrap(~MIX) +
+  labs(x = "Tillage", y = "Depth to hardpan (cm)",
+       shape = "Cover crop mix"
+       ) +
+  scale_shape_discrete(labels = compactionLabels) +
+  theme(legend.position = "top") +
+  # facet_wrap(~MIX, labeller = labeller(MIX = compactionLabels)) +
   scale_y_reverse()
-compactionPlot <- compactionPlot %>%
+compactionPlot_a <- compactionPlot_a %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
-  stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
-  stat_compare_means(comparisons = list(c("Roto", "Tractor"),
+  ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
+  ggpubr::stat_compare_means(comparisons = list(c("Roto", "Tractor"),
                                         c("No", "Roto"),
                                         c("No", "Tractor")),
                      label = "p.signif",
@@ -31,30 +39,32 @@ compactionPlot <- compactionPlot %>%
                      ) +
   EnvStats::stat_n_text(size = 1.5)
 
-# compactionPlot_b <- compactionData %>%
-#   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
-#   # group_by(TIL) %>%
-#   ggplot(aes(x = MIX, y = value, color = TIL)) +
-#   theme(legend.position = "top") +
-#   ggbeeswarm::geom_quasirandom() +
-#   labs(x = "Cover crop mix", y = "Depth to hardpan (cm)") +
-#   # facet_grid(SAMPL_TIME ~ MIX) + #confusing
-#   scale_y_reverse()
-# compactionPlot_b <- compactionPlot_b %>%
-#   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
-#   stat_compare_means(size = 2, label = "p.format") +
-#   # stat_compare_means(comparisons = list(
-#   #   c("null", "comp"), c("null", "pere"), c("null", "wdsp"),
-#   #   c("comp", "pere"), c("comp", "wdsp"), c("pere", "wdsp")
-#   # ), label = "p.signif", # hide.ns = T,
-#   # symnum.args = list(
-#   #   cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
-#   #   symbols = c("****", "***", "**", "*'", "ns")),
-#   # size = 2
-#   # ) +
-#   EnvStats::stat_n_text(size = 2)
+compactionPlot_b <- compactionData %>%
+  # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
+  # group_by(TIL) %>%
+  ggplot(aes(x = MIX, y = value
+             # color = TIL
+             )) +
+  theme(legend.position = "top") +
+  ggbeeswarm::geom_quasirandom(color = "gray") +
+  labs(x = "Cover crop mix", y = "Depth to hardpan (cm)") +
+  scale_y_reverse() #+ facet_grid(~TIL)
+compactionPlot_b <- compactionPlot_b %>%
+  ggpubr::add_summary(fun = "median_mad", size = 0.25) +
+  ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
+  # ggpubr::stat_compare_means(comparisons = list(
+  #   c("null", "comp"), c("null", "pere"), c("null", "wdsp"),
+  #   c("comp", "pere"), c("comp", "wdsp"), c("pere", "wdsp")
+  # ), label = "p.signif", # hide.ns = T,
+  # symnum.args = list(
+  #   cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
+  #   symbols = c("****", "***", "**", "*'", "'")
+  # ),
+  # size = 1.5, vjust = 0.5
+  # ) +
+  EnvStats::stat_n_text(size = 1.5)
 
-# compactionPlot <- ggarrange(compactionPlot_a, compactionPlot_b,
-#                             labels = c("a", "b"))
+compactionPlot <- ggpubr::ggarrange(compactionPlot_a, compactionPlot_b,
+                            labels = c("a", "b"), nrow = 2)
 ggsave("figs/compactionPlot.png", compactionPlot,
        height = 3, width = 3, units = "in")

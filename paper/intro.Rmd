@@ -5,46 +5,49 @@ bibliography: ../../library.bib
 ---
 
 
-Urban areas are the fastest growing regions of the world and soils within cities are often degraded due to human activity *(Oldeman, 1991)*. 
-Soil plays a significant role in ecosystem health, and urban soil restoration has implications for carbon sequestration, storm-water management, forestry, and agriculture *(Pavao-Zuckerman, 2008)*. 
-However, soil quality proves to be an obstacle to urban initiatives related to agriculture and green space. 
-Urban farmers in particular invest large amounts of money and time into amending soil for vegetable production, yet strategies to improve urban soil quality for production has scarcely been studied. 
-Thus, it is critical to study methods that can be applied within cities to improve the health of soils.
+<!-- # Outline -->
+
+<!-- - urban soils -->
+<!-- - tilling -->
+<!-- - cover cropping [mixes] -->
+<!-- - this study -->
+
+
+Urban soils have the potential to improve the livelihoods of most of the world *[@ref?]* via implications for climate adaptation, erosion and storm-water runoff management, and local forestry *[@payao-zuckerman08]*, but many urban soils are in poor health for cultivation after decades of industrial use, including sealing and structural engineering *[@oldeman91]*.
+This is especially notable in post-industrial cities of the mid-western USA, where many vacant lots remain on soils can have relatively high compaction, pH, and chemical contamination *[@beniston11]*.
+Degraded urban soils with low organic matter are also likely far from organic carbon saturation *[@stewart07]*, making the potential response to tailored agricultural management large *[@kumar16; @kuzyakov19]*.
+However, popular single strategies like organic compost amendments to urban gardens, while widely beneficial across many physical, chemical, and biological properties *[@refs?]*, can also have other side effects like excess phosphorus *[@small19]*, which highlights the benefits of new and ongoing research studies of urban soil management, especially of integrated approaches for soil multifunctionality *[@blesh17]* including cover cropping, tillage, diverse mulching, and others.
+In response to various needs, urban agriculture continues to expand as local communities and non-profit organizations revitalize and establish a diversity of new green initiatives including landscaping to improve local access to healthy food and a cleaner and safer environment *[@heckler12]*. 
+Urban growers in particular often invest relatively large amounts of money, time, and resources from accessible capital into amending soils for vegetable production *[@ref?]*, 
+thereby improving the potential impact of research for promising accessible urban soil remediation strategies, which remains limited beyond compost *[@ref?]*.
 
 \
 
-Urban soils are characterized by compaction, low organic matter, high pH, and contamination from pollution and debris *(Beniston & Lal 2011)*. 
-This renders them less practical for agricultural and landscaping projects because they are difficult to manage and support vigorous plants. 
-Nonetheless, urban farming continues to expand as communities work the soil to improve access to healthy food and creates a cleaner and safer environment *(Heckler, 2012)*. 
-The value of local food production and benefits of urban green space make it critical to study management practices that can improve the quality of urban soils to support the viable soil-based projects.
+Mechanized tilling has long been a regular strategy improve short-term arability *[@badalikova09]*, among others like adding compost, although research studies increasingly report soil degradation after long-term and intensive tillage *[@refs?]*.
+Short-term tillage benefits include larger soil pores and lower soil bulk density *[@hill85]*, and more available nutrients *[@ref?]* yet fewer weed regeneration *[@ref?]*, making tillage useful against soil compaction and associated water infiltration and drainage issues, which facilitates faster seeding and crop establishment early in the season *[@ref?]*.
+However, longer-term side effects of excessive and/or very intensive tillage include weaker soil structure *[@catania18]*, increasing dependence on tillage to maintain past yields *[@ref?]*, ...*[@ref?]* and... faster soil erosion *[handelsman21]*, the latter of which has more recently led to events like the USA Dust Bowl *[@ref?]*, and historically poses an existential threat to agricultural societies when combined with other stressors *[@montgomery07]*.
+In response, sustainable and regenerative agriculture movements advise no-till or minimal-till management approaches, like broadfork tools, to re-focus on soil health and fertility *[@xiao-bin06; @roger-estrade10]*, which comes with different challenges like stronger pressure from weeds *[@ref?]*, highlighting a role for continuing research into diverse no-till strategies.
+For urban growers, machinery can also be cost-prohibitive, and limited access to agricultural loans *[@USDA]* has resulted in affected communities adapting by organizing equipment sharing systems, which can be more practical in denser urban housing arrangements compared to diffuse rural ones.
+This variation in accessibility of machinery can promote mixed tillage strategies by urban growers including tractor- and/or roto-till, which likely have different effects on soil and weed issues, but there remains little public documentation comparing benefits of various tillage styles on remediating urban soils *[@ref?]*, which slows the innovation of tailored management strategies for the array of urban grower goals.
 
 \
 
-Applying compost is common and can improve physical, chemical, and biological soil properties of soil. 
-However, persistent focus on compost use leads to excessive phosphorus and nutrient imbalance in garden soils *(Small et al. 2019)*, making this management strategy limiting. 
-Instead, compost application should be combined with additional sustainable agriculture techniques that directly address the spectrum of challenges facing urban soils.
+Cover cropping has been another long-recommended strategy of sustaining longer-term yields by maintaining soil fertility *[@carver/white; @handelsman]*, although current strategies could be improved from relying on single species to designing complementary species mixes.
+The namesake benefit of cover crops is to cover the soil in areas without active cultivation, which maintains root activity and weakens erosion *[@ref?]*, but different species will also vary in the benefits they can provide based on physiological traits.
+For example, legumes like cowpea (or black-eyed peas, *Vigna unguiculata*), clovers (*Trifolium sp.*), and hairy vetch (*`r taxize::comm2sci("hairy vetch")[[1]]`*) are popular cover crops because of their additional symbioses with root bacteria that fix nitrogen from the air into soils where it is more available for future crop use *[@grossman]*.
+Similarly, buckwheat helps scavenge soil phosphorus *[@SAREguide?]*, which is often a limiting macro-nutrient in the tropics *[@ref]*, and could also be combined with compost that is usually high in phosphorus to address a recurring soil phosphorus deficiency.
+Other plants, including grasses like *Sorghum sp.* tend to grow deep roots, or have other traits like chemical defenses named allelopathy, that compete with weeds enough to keep them suppressed over time *[@SAREguide]*.
+Broader implications of cover cropping include higher soil organic matter, though the underlying processes remain complex *[@king20]*, and few studies show direct correlations *[@oldfield19]*.
+Furthermore, while large rural organic farms can benefit from incorporating specifically-chosen cover cropping into their mechanized operations, the reliance of urban agriculture more on labor over machinery offers an opportunity to develop new cover cropping systems that combine seeding and terminating different species together to improve the potential efficiency of soil remediation efforts.
+For example, *Sorghum*, cowpea, and buckwheat could be combined into a mixed strategy that can increase soil nitrogen, soil phosphorus, and suppress weeds via deep and shallow roots with allelopathic chemical defenses, although cover crop synergisms remain understudied *[@ref?]*.
+An integrated complex approach to optimizing cover cropping systems including interspecific species interactions are well-posed to be initially researched in urban agriculture and followed by later adaptation to rural agriculture as well *[@nationalSciTechCouncil17]*.
 
 \
 
-Tilling is one technique that is widely used to combat soil compaction *(Badalíková, 2009)*, incorporate compost, and reduce weed pressure, especially roto-tilling on smaller operations. 
-Other benefits of tilling include creating larger soil pores which enhance infiltration and drainage *(Hill et. al, 1985)*, but excessive tilling can weaken soil structure *(Catania et. al, 2018)* and increase dependence on tillage technology for management.
-
-\
-
-In response to the detrimental aspects of tillage, no-till farming has been promoted as a more sustainable alternative *(Xiao-Bin, 2006; Roger-Estrade et al. 2010)* although it’s application in cities has been scarcely studied. 
-Quantifying the short-term (1-2-year) benefits can support small-scale (e.g 232 m2 or 2,5000 ft2) farmers in developing effective and informed strategies to enhance soil performance.
-
-\
-
-Cover cropping can also be combined with tilling to build soil organic matter, lower pH, suppress weedy plants and insect pests, and/or alleviate compaction. 
-Based on species characteristics, plant mixes can be tailored to specific agricultural functions such as building soil, scavenging nutrients, fixing nitrogen and loosening soil. 
-Cover cropping is also recommended for reducing soil erosion and water runoff, which are issues for rural agricultural landscapes in the US Midwest as well as soils affected by sealed surfaces in urban settings *(National Science and Technology Council, 2017)*.
-
-\
-
-In this study, we investigated how different tillage techniques and cover crop mixes affected soil quality over the course of one growing season, with longer term effects anticipated. 
+In this study, we investigated how different tillage techniques and cover crop species mixes affect soil physical properties and yield [over the course of one growing season].
 The tillage methods ranged from high disturbance using a tractor and implements to minimal disturbance with a broadfork. 
-Cover crop mixes were selected based on target functions including reducing compaction, suppressing weeds, and accumulating organic matter. 
-We expected roto-tilling, a moderate soil disturbance, to be the most effective method for decreasing compaction and weed pressure. 
-We also expected the compaction cover crop mix to have higher water infiltration rates than the other mixes due to the roots of those species facilitating infiltration into the soil. 
-Finally, we documented how cover crop species and mixes performed in general regarding plant vigor.
+Cover crop species mixes were selected based on target functions including reducing compaction, suppressing weeds, and perenniality, or potential for sustainable re-growth. 
+We hypothesized that the benefits of tillage and cover crop mixing would be interchangeable, meaning that both tillage and cover crop mixes could improve soil compaction and suppress weeds to similar degrees, also increasing yield.
+Accordingly, we predicted that roto-till, a moderate soil disturbance, would best balance compaction and weed pressure benefits, deepening where soil hardpan layers occur that limit root penetration, increasing soil water infiltration rates, and reducing weed cover, density, and diversity. 
+We also expected that the cover crop mix designed against soil compaction would have the deepest soil harpan depth and highest water infiltration rates compared to other mixes, due to the strong rooting by selected radish and ryegrass species.
+Finally we expected that the cover crop mix designed for weed suppression would experience the lowest local weed cover, density, and diversity, due to allelopathic chemical defense traits.

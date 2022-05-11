@@ -1,10 +1,11 @@
 ---
-title: "Tillage and Cover Crop Mix Effects on Urban Soil Performance"
+title: "Tillage and Cover Crop Mix Effects on Urban Soil Restoration"
 author:
-  Naim Edwards,
-  Nicholas Medina,
-  Elizabeth Asker
-output: html_notebook
+  Naim Edwards, Nicholas Medina, Elizabeth Asker
+output: 
+  # html_notebook
+  bookdown::html_document2:
+    number_sections: false
 bibliography: ../../library.bib
 ---
 

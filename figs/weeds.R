@@ -1,7 +1,8 @@
 here::i_am("figs/weeds.R"); source(here::here("figs/infil.R"))
 weedData <- varTestTbl %>% filter(variable == "Wd_Abn" |
                                     variable == "Wd_Cov" |
-                                    variable == "Wd_Dn") %>% unnest()
+                                    variable == "Wd_Dn") %>%
+  unnest(variable:statTest_MIX)
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 5)))
@@ -15,8 +16,8 @@ weedPlot_a <- weedData %>%
   labs(x = "Tillage", y = "Weeds")
 weedPlot_a <- weedPlot_a %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
-  stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
-  stat_compare_means(comparisons = list(c("Roto", "Tractor"),
+  ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
+  ggpubr::stat_compare_means(comparisons = list(c("Roto", "Tractor"),
                                         # c("No", "Roto"),
                                         c("No", "Tractor")),
                      label = "p.signif",
@@ -35,8 +36,8 @@ weedPlot_b <- weedData %>%
   labs(x = "Cover crop mix", y = "Weeds")
 weedPlot_b <- weedPlot_b %>%
   ggpubr::add_summary(fun = "mean_se_", size = 0.25) +
-  stat_compare_means(label = "p.format", size = 1.5, label.y.npc = "bottom") +
-  stat_compare_means(comparisons = list(
+  ggpubr::stat_compare_means(label = "p.format", size = 1.5, label.y.npc = "bottom") +
+  ggpubr::stat_compare_means(comparisons = list(
     c("null", "comp"), c("null", "pere"),
     c("null", "wdsp"),
     # c("comp", "pere"),

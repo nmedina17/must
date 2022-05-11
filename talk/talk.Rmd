@@ -17,7 +17,7 @@ here::i_am("talk/talk.Rmd"); knitr::opts_chunk$set(echo=F, warning=F, message=F)
 ```
 
 # Introduction -- Urban soils
-- Affect most of the world´s population *[@?]*
+- Affect most of the world´s population *[@ref?]*
 - Past degradation by industry means soil organic matter is far from saturation *[@stewart07]*, also suggests fast recovery potential *[@kumar16]* while far from saturation 
 - Land can serve to improve autonomy of oppressed communities, especially in post-industrial cities *[@beniston16]*, including in tropics (global South)
   
@@ -36,11 +36,18 @@ here::i_am("talk/talk.Rmd"); knitr::opts_chunk$set(echo=F, warning=F, message=F)
 - Hypothesis -- 
 - Predictions -- 
   - Tillage --
-    - reduces compaction / increases depth to hardpan (root-inaccessible)
+    - lowers depth of hardpan soil (root-inaccessible)
     - increases --
       - water infiltration
-      - yield of rooting crops
-  - Cover crops --
+      - yield of [rooting/tuber] crops
+  - Cover crop mixes --
+    - tailored toward alleviating compaction will --
+      - lower hardpan depth
+    - tailored toward suppressing weeds will --
+      - lower weed cover, density, and richness/diversity
+    - of perennials will --
+      - lower hardpan depth
+      - lower weed cover, density, and richness/diversity
 
 # Methods -- Study site
 - Function -- 
@@ -50,9 +57,9 @@ here::i_am("talk/talk.Rmd"); knitr::opts_chunk$set(echo=F, warning=F, message=F)
 - Soils -- 
   - Technosol classification, given large metal artifacts can be found from fillings during highway road construction
   - Topsoil A horizon 1-2", subsoil B horizon "muted" yellow color
-  - Heavy metal elements below EPA human hazard levels *[@EPA]*
-```{r}
-# knitr::include_graphics(here::here("tables/chem.png"))
+  - Heavy metal elements below EPA human hazard levels *(Table \@ref(tab:chem))* *[@EPA]*
+```{r chem}
+source(here::here("tables/chem.R")); chemKbl
 # knitr::include_graphics(here::here("figs/plots.png"))
 ```
 
@@ -64,8 +71,7 @@ here::i_am("talk/talk.Rmd"); knitr::opts_chunk$set(echo=F, warning=F, message=F)
     - Compaction -- radish, clover, ryegrass
     - Weed Suppression -- cowpea, buckwheat, sorghum-sudangrass
 ```{r crops}
-source(here::here("tables/crops.R")); cropTbl %>% distinct() %>% #quiet?
-  knitr::kable(caption = "Cover crop mixes") %>% kableExtra::kable_styling()
+source(here::here("tables/crops.R")); cropKbl
 ```
 
 # Methods -- Data collection
@@ -107,7 +113,7 @@ knitr::include_graphics(here::here("figs/infilPlot.png"))
 - Affected overall more by cover crop mixes (significantly) rather than tillage *(Fig \@ref(fig:weeds))*
 - Tractor-till increased weed Density overall (significantly), and independently vs. both No- and Roto-till (significantly) *(Fig \@ref(fig:weeds)a)*
 - Weed Suppression mix reduced weed Density and Richness (but less so Cover) vs. Null, Perennial, and Compaction mixes (significantly)
-  - Weed Suppression did reduce weed Dover vs. Null mix (significantly)
+  - Weed Suppression did reduce weed Cover vs. Null mix (significantly)
 - Both Perennial and Compaction mixes also lowered weed Density vs. Null mix (marginally significantly)
 ```{r weeds, fig.cap="Weed data"}
 knitr::include_graphics(here::here("figs/weedPlot.png"))

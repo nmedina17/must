@@ -1,10 +1,11 @@
 here::i_am("figs/yield.R"); source(here::here("figs/weeds.R"))
 yieldData <- varTestTbl %>% filter(variable == "RADL_CM" |
-                                     variable == "TOTRAD_kg") %>% unnest()
+                                     variable == "TOTRAD_kg_m2") %>%
+  unnest(variable:statTest_MIX)
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 8)))
-yieldLabels <- c("Length (cm)", "Mass (kg)")
+yieldLabels <- c("Length (cm)", expression(paste("Mass (kg m"^-2,")")))
 names(yieldLabels) <- c("RADL_CM", "TOTRAD_kg")
 yieldPlot <- yieldData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
@@ -16,8 +17,8 @@ yieldPlot <- yieldData %>%
   labs(x = "Tillage", y = "Radish yield")
 yieldPlot <- yieldPlot %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
-  stat_compare_means(label.y.npc = "bottom", label = "p.format", size = 1.5) +
-  stat_compare_means(comparisons = list(c("No", "Tractor")),
+  ggpubr::stat_compare_means(label.y.npc = "bottom", label = "p.format", size = 1.5) +
+  ggpubr::stat_compare_means(comparisons = list(c("No", "Tractor")),
     # c("Roto", "Tractor"), c("No", "Roto"),
                      label = "p.signif",
                      # hide.ns = T,

@@ -1,52 +1,83 @@
 ---
 title: "Results"
-output: html_notebook
+output: 
+  # html_notebook
+  bookdown::html_document2:
+    number_sections: false
 ---
 
 
-```{r setup, results='hide', warning=F, echo=F}
-here::i_am("paper/res.Rmd"); # source(here("stats.R"))
+```{r setup_res, results='hide', warning=F, echo=F, message=F}
+here::i_am("paper/res.Rmd"); source(here::here("analysis/stats1.R"))
+knitr::opts_chunk$set(echo = F, warning = F, message = F)
+# source(here::here("figs/compaction.R")); source(here::here("figs/infil.R"))
+# source(here::here("figs/weeds.R")); source(here::here("figs/yield.R"))
+options(digits = 2); library(measurements); library(rstatix) #p_format()
 ```
+
 
 ## Compaction
 
 
-Tilling and cover crop mixes both had significant effects on compaction, but tilling had effects that were nearly twice as strong in most cases, while cover crops had effects that were pronounced only under no-till conditions `r "(Fig. 2)"`. 
-Specifically, tractor tilling (TT) significantly decreased compaction (i.e. lowered the hardpan depth) from 7.5 cm (3”), down to 20 cm (8”) depth `r "(F2,59 = 61.05, p < 0.001)"`, which was approximately a 50% reduction on average compared to no-till, independent of cover crop mix `r "(t59 = -10.21, p < 0.0001)"`. 
-Rototilling, however, did not have a significant effect on compaction depth compared to no-till `r "(t59 = -1.44, p = 0.33)"`, with hardpan staying at 12 cm (5”) on average in both groups.
+Compaction was affected significantly overall by tillage treatments (*p* = `r filter(varTestTbl, variable=="PNDcm")$p_TIL %>% p_format()`) across cover crop treatments (Fig \@ref(fig:compactFig)).
+Tractor-till had the largest significant effect on depth to hardpan compared to no-till (*p* = `r filter(varTestTbl, variable=="PNDcm")$posthoc_TIL[[1]]$p.adj[2] %>% p_format()`), 
+deepening the depth to hardpan by **##** (conv_, or ~*30-100*%) compared to no-till down to ~`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$median` ± 
+`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$mad` cm 
+(`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$median, "cm", "inch")` ± 
+`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$mad, "cm", "inch")` in).
+across all cover crop mixes.
+Roto-till also had a marginally significant effect on depth to hardpan compared to no-till (*p* = `r filter(varTestTbl, variable=="PNDcm")$posthoc_TIL[[1]]$p.adj[1]`), 
+deepening the depth to hardpan by **##** (conv_, or ~*0-100*%) compared to no-till down to ~`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$median` ± 
+`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$mad` cm
+(`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$median, "cm", "inch")` ± 
+`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$mad, "cm", "inch")` in).
+The effect of roto-till was most pronounced in the perennial mix, where depth to hardpan was about twice as deep as in no-till plots (Fig \@ref(fig:compactFig)).
+There was also a significant difference of **###** (conv_, or ~*33*%) between tractor- and roto-till in all cover crop mixes (Fig \@ref(fig:compactFig)).
+<!-- test-static-vals? -->
 
-\
+```{r compactFig, fig.cap="Compaction data"}
+knitr::include_graphics(here::here("figs/compactionPlot.png"))
+```
 
 There was also a significant interactive effect of tilling and cover crop mixtures `r "(F6,59 = 3.88, p = 0.0025)"`. 
-Broadly, tilling effects tended to be slightly more pronounced under the perennial mix compared to other crop mixes `r "(Fig. 2)"`. 
+Broadly, tilling effects tended to be slightly more pronounced under the perennial mix compared to other crop mixes (\@ref(fig:compactionFig)). 
 Furthermore, the perennial and compaction mixes both had notably lower compaction depths compared to the null mix, but these differences were only observed within the no-till group. 
 The perennial mix had the strongest effect, with an increase in compaction depth of 3 cm (~1”) `r "(t59 = 4.62, p = 0.0001)"`, and the compaction mix was associated with a change in compaction depth of 1.5 cm (~0.5”) `r "(t59 = -2.6, p = 0.058)"`. 
 Finally, there appeared to be more variation in compaction depth among crop mixes under no-till plots, which ranged 7-20 cm (3-8”) and included the most compacted plots, [whereas tilling tended to homogenize these cover crop effects]. 
 Finally, there were no general differences between sampling dates, though there was a tendency for compaction to increase slightly by 1-2.5 cm (0.5-1”) `r "(F1,59 = 1.82, p = 0.183)"`.
 
 
+
 ## Infiltration
 
+Soil infiltration was significantly affected by tillage across sampling times (p = `r filter(varTestTbl, variable=="INFILmL")$p_TIL`) (Fig \@ref(fig:infilFig)).
+Roto-till showed significantly faster water infiltration rates compared to both no-till (pval) and tractor-till (pval), centering at ~**###** ± **###** (conv_), which was ~**###** (conv_) faster than in both no-till and tractor-till plots.
 
-Overall, infiltration was detectably affected by tilling, while cover cropping appeared to but did not yet significantly affect infiltration. 
-Among all measurements throughout the season, infiltration varied significantly by tillage group (`r "x22 = 8.51, p = 0.014"`), with rototilling showing the fastest infiltration on average, ~0.5 mL sec-1 faster than no-till and tractor-tilling (`r "Fig. 3a"`). 
-In this case, season also very significantly affected infiltration (`r "x22 = 15.02, p = 0.0001"`), with summer rates being 0.5-1 mL sec-1 (~0.5-1 gal hr-1) faster than autumn (dropping to ~0.25 gal hr-1 or slower, beyond observation period), and early season rates appeared to underlie observed management effects (`r "Fig. 3a"`). 
-While cover cropping did not affect infiltration detectably here (`r "x23 = 5.93, p = 0.11"`), mixes designed for perenniality and weed suppression appeared to begin showing somewhat faster infiltration compared to other groups (`r "Fig. 3b"`).
+
+In this case, season also very significantly affected infiltration (`r "x22 = 15.02, p = 0.0001"`), with summer rates being 0.5-1 mL sec-1 (~0.5-1 gal hr-1) faster than autumn (dropping to ~0.25 gal hr-1 or slower, beyond observation period), and early season rates appeared to underlie observed management effects (\@ref(fig:infilFig)). 
+
+
+Cover crops only marginally significantly affected infiltration overall (**pvals**), and the weed suppression mix marginally significantly showed faster infiltration compared to null plots, speeding it up by **###** up to **###** ± **###** mL per sec (**shown?**).
+```{r infilFig, fig.cap="Infiltration data"}
+knitr::include_graphics(here::here("figs/infilPlot.png"))
+```
 
 
 ## Weed density and richness
 
 
-Weed density was significantly affected by cover crop mix (`r "x23 = 20.07, p = 0.0002"`) and significantly by the tillage method (`r "x22 = 6.47, p = 0.04"`) (`r "Fig. 4"`). 
-Similarly, weed richness was significantly affected by cover crop mix (`r "x23 = 30.97, p < 0.0001"`), yet not by tillage method `r "(x22 = 1.64, p = 0.44)"` (`r "Fig. 3b"`). 
+Weed density was significantly affected by cover crop mix (`r "x23 = 20.07, p = 0.0002"`) and significantly by the tillage method (`r "x22 = 6.47, p = 0.04"`) (\@ref(fig:weedsFig)). 
+Similarly, weed richness was significantly affected by cover crop mix (`r "x23 = 30.97, p < 0.0001"`), yet not by tillage method `r "(x22 = 1.64, p = 0.44)"` (\@ref(fig:weedsFig)). 
 The weed suppression cover crop mix had the strongest effect on both weed species density and richness. 
 This mix of sorghum-sudangrass, buckwheat, and cowpea reduced the presence of the two focal common weeds, pigweed (*Palmer amaranth*) and velvetleaf (*Abutilon theophrasti*), regardless of tillage treatment. 
 The perennial cover crop mix seemed to show weed density that increased most consistently with tilling method intensity.
 
-\
+```{r weedsFig, fig.cap="Weeds data"}
+knitr::include_graphics(here::here("figs/weedPlot.png"))
+```
 
 We also monitored weed species presence and diversity in the spring of the following growing season, and the weed suppression mix plots had fewer early season weeds than the other plots as well (`r "x23 = 10.00, p = 0.02"`; `r "x22 = 0.17, p = 0.92"`). 
-From June to September, the other cover crop mixes did not significantly reduce weed pressure and actually performed similarly to our null group plots that only had weed seeds in them (`r "Fig. 4"`). 
+From June to September, the other cover crop mixes did not significantly reduce weed pressure and actually performed similarly to our null group plots that only had weed seeds in them (\@ref(fig:yieldFig)). 
 However, the wheat, rye, vetch, and clovers continued to grow from the Fall into the following Spring and did reduce weed presence compared to the null group in the spring. 
 Thus, although the other mixes did not reduce weeds in the summer or warm season, they were more effective at suppressing cool season weeds.
 
@@ -54,8 +85,11 @@ Thus, although the other mixes did not reduce weeds in the summer or warm season
 ## Radish Yield
 
 
-Tilling did not significantly affect radish yield or length (`r "F2,5 = 1.22, p = 0.36"`), despite the appearance of some tendencies in difference (`r "Fig. 5"`). 
+Radish yield was not significantly affected by tillage (Fig \@ref(fig:yieldFig)), and centered at ~**###** ± **###** *kg m^-2^* and **###** ± **###** cm long.
 
-\
 
-Average forage radish plant weight and root length did not vary significantly among tillage treatments (`r "x22 = 1.44, p = 0.49"`; `r "x22 = 2.87, p = 0.24"`). However, radish plants did tend to grow the largest in no-till plots (`r "Fig. 5"`). The longest radishes grew close to 21.6 cm or 8.5 inches, and the average length of all sampled radishes was 11.68 cm or 4.6 inches. Forty percent of radishes sampled grew past the average compaction depth 11.43 cm (4.5 inches) in the no-till and tractor till plots.
+However, radish plants did tend to grow the largest in no-till plots (`r "Fig. 5"`). The longest radishes grew close to 21.6 cm or 8.5 inches, ... Forty percent of radishes sampled grew past the average compaction depth 11.43 cm (4.5 inches) in the no-till and tractor till plots.
+
+```{r yieldFig, fig.cap="Yield data"}
+knitr::include_graphics(here::here("figs/yieldPlot.png"))
+```

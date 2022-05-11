@@ -1,7 +1,7 @@
 here::i_am("figs/infil.R"); source(here::here("figs/compaction.R"))
 infilData <- varTestTbl %>% filter(variable == "INFILmL") %>%
   mutate(varData = varData %>% modify(~.x %>% filter(SAMPL_TIME != "Spring"))) %>%
-  unnest()
+  unnest(variable:statTest_MIX)
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 8)))
@@ -14,8 +14,8 @@ infilPlot_a <- infilData %>%
        size = 8)
 infilPlot_a <- infilPlot_a %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
-  stat_compare_means(size = 1.5, label = "p.format") +
-  stat_compare_means(comparisons = list(c("Roto", "Tractor"),
+  ggpubr::stat_compare_means(size = 1.5, label = "p.format") +
+  ggpubr::stat_compare_means(comparisons = list(c("Roto", "Tractor"),
                                         c("No", "Roto"),
                                         c("No", "Tractor")),
                      label = "p.signif",
@@ -37,8 +37,8 @@ infilPlot_b <- infilData %>%
   scale_y_log10()
 infilPlot_b <- infilPlot_b %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
-  stat_compare_means(size = 1.5, label = "p.format") +
-  stat_compare_means(comparisons = list(
+  ggpubr::stat_compare_means(size = 1.5, label = "p.format", digits = 3) +
+  ggpubr::stat_compare_means(comparisons = list(
     # c("null", "comp"), c("null", "pere"),
     c("null", "wdsp")
     # c("comp", "pere"), c("comp", "wdsp"), c("pere", "wdsp")
