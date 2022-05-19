@@ -1,8 +1,8 @@
 here::i_am("figs/weeds.R"); source(here::here("figs/infil.R"))
-weedData <- varTestTbl %>% filter(variable == "Wd_Abn" |
-                                    variable == "Wd_Cov" |
-                                    variable == "Wd_Dn") %>%
-  unnest(variable:statTest_MIX)
+# weedData <- varTestTbl %>% filter(variable == "Wd_Abn" |
+#                                     variable == "Wd_Cov" |
+#                                     variable == "Wd_Dn") %>%
+#   unnest(variable:varData)
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 5)))
@@ -12,7 +12,7 @@ weedPlot_a <- weedData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
   ggplot(aes(x = TIL, y = value)) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
-  facet_wrap(~variable, labeller = labeller(variable = weedLabels)) +
+  facet_wrap(~variable, labeller = labeller(variable = weedLabels), scales = "free") +
   labs(x = "Tillage", y = "Weeds")
 weedPlot_a <- weedPlot_a %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
@@ -32,7 +32,7 @@ weedPlot_b <- weedData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
   ggplot(aes(x = MIX, y = value)) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
-  facet_wrap(~variable, labeller = labeller(variable = weedLabels)) +
+  facet_wrap(~variable, labeller = labeller(variable = weedLabels), scales = "free") +
   labs(x = "Cover crop mix", y = "Weeds")
 weedPlot_b <- weedPlot_b %>%
   ggpubr::add_summary(fun = "mean_se_", size = 0.25) +
@@ -49,6 +49,6 @@ weedPlot_b <- weedPlot_b %>%
   ), size = 1.5, vjust = 0.5) +
   EnvStats::stat_n_text(size = 1.5)
 
-weedPlot <- ggarrange(weedPlot_a, weedPlot_b, labels = c("a", "b"), nrow = 2)
-ggsave("figs/weedPlot.png", weedPlot,
+weedPlot <- ggpubr::ggarrange(weedPlot_a, weedPlot_b, labels = c("a", "b"), nrow = 2)
+ggplot2::ggsave("figs/weedPlot.png", weedPlot,
        height = 3, width = 3, units = "in")

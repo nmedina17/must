@@ -39,4 +39,4 @@ cropKbl <- cropTbl %>%
 
 #save----
 #library(magick)
-cropKbl %>% kableExtra::save_kable(here::here("tables/crops.png"))
+# cropKbl %>% kableExtra::save_kable(here::here("tables/crops.png"))

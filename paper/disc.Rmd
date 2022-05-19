@@ -2,10 +2,24 @@
 title: "Discussion"
 output: html_notebook
 bibliography: ../../library.bib
+link-citations: TRUE
 ---
 
 
-Our data indicated that tilling significantly reduced compaction over a single growing season in both rototilled and tractor tilled plots *(Fig. 1)*.
+<!-- # Outline -->
+
+<!-- - hypothesis -->
+<!-- - tillage -->
+<!-- - infiltration -->
+<!-- - weeds -->
+<!-- - yield -->
+<!-- - conclusion -->
+
+
+Overall this study informs urban soil management by supporting the use of tillage to address compaction issues and improve infiltration, together with cover crops to also reduce weed pressure.
+We observed partial support for our hypothesis, in that tilling weakened compaction...
+
+Our data indicated that tilling significantly reduced compaction over a single growing season in both roto-tilled and tractor tilled plots *(Fig. 1)*.
 However, several no-till plots reached similar depths to rototilled plots, which suggests rototilling is not significantly more effective than no-till at reducing compaction. 
 Forage radish plant weight with foliage responded better in no-till plots that rototill and tractor tilled plots and average weights in the tilled groups were similar. 
 This was supported by detecting significantly higher radish yields in no-till compared to rototill and tractor till plots, while simultaneously measuring faster infiltration in rototill plots. 

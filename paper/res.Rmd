@@ -13,82 +13,309 @@ knitr::opts_chunk$set(echo = F, warning = F, message = F)
 # source(here::here("figs/compaction.R")); source(here::here("figs/infil.R"))
 # source(here::here("figs/weeds.R")); source(here::here("figs/yield.R"))
 options(digits = 2); library(measurements); library(rstatix) #p_format()
+testStat <- "H" #kruskal-wallis
+posthocStat <- "T" #wilcoxon
 ```
 
 
 ## Compaction
 
 
-Compaction was affected significantly overall by tillage treatments (*p* = `r filter(varTestTbl, variable=="PNDcm")$p_TIL %>% p_format()`) across cover crop treatments (Fig \@ref(fig:compactFig)).
-Tractor-till had the largest significant effect on depth to hardpan compared to no-till (*p* = `r filter(varTestTbl, variable=="PNDcm")$posthoc_TIL[[1]]$p.adj[2] %>% p_format()`), 
-deepening the depth to hardpan by **##** (conv_, or ~*30-100*%) compared to no-till down to ~`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$median` ± 
-`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$mad` cm 
-(`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$median, "cm", "inch")` ± 
-`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Tractor")$mad, "cm", "inch")` in).
+```{r compData}
+compData_TIL <- filter(Usmpgg_TIL, variable=="PNDcm")
+compData_MIX <- filter(Usmpgg_MIX, variable=="PNDcm")
+```
+
+Compaction was affected significantly overall by tillage treatments (
+*`r testStat`* = `r compactionData$statistic_TIL[1]`,
+*df* = `r compactionData$df_TIL[1]`, 
+*n* = `r compactionData$n_TIL[1]`, 
+*p* = `r compactionData$p_TIL[1] %>% p_format()`
+) by 
+~`r compactionData$effsize_TIL[[1]]$effsize_TIL *100` % 
+across cover crop treatments (Fig \@ref(fig:compactFig)a).
+Tractor-till had the largest significant effect on depth to hardpan compared to no-till (
+*p~adj~* = `r compactionData$posthoc_TIL[[1]]$p.adj[2] %>% p_format()`
+), 
+deepening the depth to hardpan by **##** cm (conv_, or ~*30-100*%) compared to no-till down to 
+~`r filter(compData_TIL, TIL=="Tractor")$median` ± 
+`r filter(compData_TIL, TIL=="Tractor")$mad` cm 
+(`r conv_unit(filter(compData_TIL, TIL=="Tractor")$median, "cm", "inch")` ± 
+`r conv_unit(filter(compData_TIL, TIL=="Tractor")$mad, "cm", "inch")` in)
 across all cover crop mixes.
-Roto-till also had a marginally significant effect on depth to hardpan compared to no-till (*p* = `r filter(varTestTbl, variable=="PNDcm")$posthoc_TIL[[1]]$p.adj[1]`), 
-deepening the depth to hardpan by **##** (conv_, or ~*0-100*%) compared to no-till down to ~`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$median` ± 
-`r filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$mad` cm
-(`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$median, "cm", "inch")` ± 
-`r conv_unit(filter(Usmpgg_TIL, variable=="PNDcm" & TIL=="Roto")$mad, "cm", "inch")` in).
-The effect of roto-till was most pronounced in the perennial mix, where depth to hardpan was about twice as deep as in no-till plots (Fig \@ref(fig:compactFig)).
-There was also a significant difference of **###** (conv_, or ~*33*%) between tractor- and roto-till in all cover crop mixes (Fig \@ref(fig:compactFig)).
+Roto-till also had a marginally significant effect on depth to hardpan compared to no-till (
+*p~adj~* = `r compactionData$posthoc_TIL[[1]]$p.adj[1]`
+), 
+deepening the depth to hardpan by **##** cm (conv_, or ~*0-100*%) compared to no-till down to 
+~`r filter(compData_TIL, TIL=="Roto")$median` ± 
+`r filter(compData_TIL, TIL=="Roto")$mad` cm
+(`r conv_unit(filter(compData_TIL, TIL=="Roto")$median, "cm", "inch")` ± 
+`r conv_unit(filter(compData_TIL, TIL=="Roto")$mad, "cm", "inch")` in).
+The overall effect from tillage stemmed from significant effects among the perennial (
+*Holm-corrected alpha = 0.01, Wilcoxon p~adj~ = <0.01*
+) and weed suppression (
+*Holm-corrected alpha = 0.01, Wilcoxon p~adj~ = <0.01*
+) mixes (Fig \@ref(fig:compactFig)a).
+The effect of roto-till was more pronounced in the perennial mix (
+*Holm-corrected alpha = 0.01, Wilcoxon p~adj~ = <0.01*
+), where depth to hardpan was about twice as deep as in no-till plots (Fig \@ref(fig:compactFig)a).
+There was also a significant difference of **###** (conv_, or ~*33*%) between tractor- and roto-till among all cover crop mixes (Fig \@ref(fig:compactFig)a).
 <!-- test-static-vals? -->
 
 ```{r compactFig, fig.cap="Compaction data"}
 knitr::include_graphics(here::here("figs/compactionPlot.png"))
 ```
 
-There was also a significant interactive effect of tilling and cover crop mixtures `r "(F6,59 = 3.88, p = 0.0025)"`. 
-Broadly, tilling effects tended to be slightly more pronounced under the perennial mix compared to other crop mixes (\@ref(fig:compactionFig)). 
-Furthermore, the perennial and compaction mixes both had notably lower compaction depths compared to the null mix, but these differences were only observed within the no-till group. 
-The perennial mix had the strongest effect, with an increase in compaction depth of 3 cm (~1”) `r "(t59 = 4.62, p = 0.0001)"`, and the compaction mix was associated with a change in compaction depth of 1.5 cm (~0.5”) `r "(t59 = -2.6, p = 0.058)"`. 
-Finally, there appeared to be more variation in compaction depth among crop mixes under no-till plots, which ranged 7-20 cm (3-8”) and included the most compacted plots, [whereas tilling tended to homogenize these cover crop effects]. 
-Finally, there were no general differences between sampling dates, though there was a tendency for compaction to increase slightly by 1-2.5 cm (0.5-1”) `r "(F1,59 = 1.82, p = 0.183)"`.
-
+Compaction was not affected by cover crops among tillage groups overall (
+*`r testStat`* = `r compactionData$statistic_MIX[1]`,
+*df* = `r compactionData$df_MIX[1]`, 
+*n* = `r compactionData$n_MIX[1]`, 
+*p* = `r compactionData$p_MIX[1] %>% p_format()`
+), but was significantly affected by cover crops specifically under no-till conditions (
+*Holm-corrected alpha = 0.01*, 
+*df = 3*,
+*n = 6*,
+*Wilcoxon p~adj~ = <0.01*
+) (Fig \@ref(fig:compactFig)b).
+Under no-till, the perennial mix had significantly shallower depth to hardpan compared to both null (
+*Holm-corrected alpha = 0.01, Wilcoxon p~adj~ = <0.01*
+) and weed suppression mixes (
+*Holm-corrected alpha = 0.01, Wilcoxon p~adj~ = <0.01*
+),
+raising the depth to hardpan by 
+~*5* cm (
+`r conv_unit(5, "cm", "inch")`, or 
+~*30-100*%
+) compared to each mix,
+up to 
+~`r filter(compData_MIX, MIX=="pere")$median` ± 
+`r filter(compData_MIX, MIX=="pere")$mad` cm 
+(
+`r conv_unit(filter(compData_MIX, MIX=="pere")$median, "cm", "inch")` ± 
+`r conv_unit(filter(compData_MIX, MIX=="pere")$mad, "cm", "inch")` in
+) below the soil surface
+(Fig \@ref(fig:compactFig)b).
 
 
 ## Infiltration
 
-Soil infiltration was significantly affected by tillage across sampling times (p = `r filter(varTestTbl, variable=="INFILmL")$p_TIL`) (Fig \@ref(fig:infilFig)).
-Roto-till showed significantly faster water infiltration rates compared to both no-till (pval) and tractor-till (pval), centering at ~**###** ± **###** (conv_), which was ~**###** (conv_) faster than in both no-till and tractor-till plots.
+
+```{r infilData}
+infilData_TIL <- filter(Usmpgg_TIL, variable=="INFILmL")
+infilData_MIX <- filter(Usmpgg_MIX, variable=="INFILmL")
+```
+
+Soil infiltration was significantly affected by tillage (
+*`r testStat`* = `r infilData$statistic_TIL[1]`,
+*df* = `r infilData$df_TIL[1]`, 
+*n* = `r infilData$n_TIL[1]`, 
+*p* = `r infilData$p_TIL[1] %>% p_format()`
+) but not cover crop mix (
+*`r testStat`* = `r infilData$statistic_MIX[1]`,
+*df* = `r infilData$df_MIX[1]`, 
+*n* = `r infilData$n_MIX[1]`, 
+*p* = `r infilData$p_MIX[1] %>% p_format()`
+) (Fig \@ref(fig:infilFig)).
+Roto-till had significantly faster infiltration compared to no-till (
+*p~adj~* = `r infilData$posthoc_TIL[[1]]$p.adj[1]`
+) and marginally significantly compared to tractor-till (
+*p~adj~* = `r infilData$posthoc_TIL[[1]]$p.adj[3]`
+), speeding up infiltration by 
+~`r infilData$effsize_TIL[[1]]$effsize_TIL *100` % 
+compared to each tillage groups, 
+up to 
+~ `r filter(infilData_TIL, TIL=="Roto")$median` ±
+`r filter(infilData_TIL, TIL=="Roto")$mad` cm
+(
+`r conv_unit(filter(infilData_TIL, TIL=="Roto")$median, "cm", "inch")` ±
+`r conv_unit(filter(infilData_TIL, TIL=="Roto")$mad, "cm", "inch")` in
+)
+(Fig \@ref(fig:infilFig)a).
 
 
-In this case, season also very significantly affected infiltration (`r "x22 = 15.02, p = 0.0001"`), with summer rates being 0.5-1 mL sec-1 (~0.5-1 gal hr-1) faster than autumn (dropping to ~0.25 gal hr-1 or slower, beyond observation period), and early season rates appeared to underlie observed management effects (\@ref(fig:infilFig)). 
-
-
-Cover crops only marginally significantly affected infiltration overall (**pvals**), and the weed suppression mix marginally significantly showed faster infiltration compared to null plots, speeding it up by **###** up to **###** ± **###** mL per sec (**shown?**).
 ```{r infilFig, fig.cap="Infiltration data"}
 knitr::include_graphics(here::here("figs/infilPlot.png"))
 ```
 
 
-## Weed density and richness
+## Weed pressure
 
 
-Weed density was significantly affected by cover crop mix (`r "x23 = 20.07, p = 0.0002"`) and significantly by the tillage method (`r "x22 = 6.47, p = 0.04"`) (\@ref(fig:weedsFig)). 
-Similarly, weed richness was significantly affected by cover crop mix (`r "x23 = 30.97, p < 0.0001"`), yet not by tillage method `r "(x22 = 1.64, p = 0.44)"` (\@ref(fig:weedsFig)). 
-The weed suppression cover crop mix had the strongest effect on both weed species density and richness. 
-This mix of sorghum-sudangrass, buckwheat, and cowpea reduced the presence of the two focal common weeds, pigweed (*Palmer amaranth*) and velvetleaf (*Abutilon theophrasti*), regardless of tillage treatment. 
-The perennial cover crop mix seemed to show weed density that increased most consistently with tilling method intensity.
+```{r weedsData, results='hide'}
+weedDnData <- filter(weedData, variable=="Wd_Dn")
+weedAbnData <- filter(weedData, variable=="Wd_Abn")
+weedCovData <- filter(weedData, variable=="Wd_Cov")
+weedDnData_TIL <- filter(Usmpgg_TIL, variable=="Wd_Dn")
+weedAbnData_TIL <- filter(Usmpgg_TIL, variable=="Wd_Abn")
+weedCovData_TIL <- filter(Usmpgg_TIL, variable=="Wd_Cov")
+weedDnData_MIX <- filter(Usmpgg_MIX, variable=="Wd_Dn")
+weedAbnData_MIX <- filter(Usmpgg_MIX, variable=="Wd_Abn")
+weedCovData_MIX <- filter(Usmpgg_MIX, variable=="Wd_Cov")
+```
+
+Weed density was overall significantly affected by tillage (
+*`r testStat`* = `r weedDnData$statistic_TIL[1]`, 
+*df* = `r weedDnData$df_TIL[1]`, 
+*n* = `r weedDnData$n_TIL[1]`, 
+*p* = `r weedDnData$p_TIL[1] %>% p_format()`
+) by 
+~`r weedDnData$effsize_MIX[[1]]$effsize_MIX *100` %, 
+although weed cover (
+*`r testStat`* = `r weedCovData$statistic_TIL[1]`, 
+*df* = `r weedCovData$df_TIL[1]`, 
+*n* = `r weedCovData$n_TIL[1]`, 
+*p* = `r weedCovData$p_TIL[1] %>% p_format()`
+) and richness (
+*`r testStat`* = `r weedAbnData$statistic_TIL[1]`, 
+*df* = `r weedAbnData$df_TIL[1]`, 
+*n* = `r weedAbnData$n_TIL[1]`, 
+*p* = `r weedAbnData$p_TIL[1] %>% p_format()`
+) were not 
+(Fig \@ref(fig:weedsFig)a). 
+Weeds under tractor-till were marginally significantly denser compared to no-till (
+*p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[2]`
+) and roto-till (
+*p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[3]`
+), denser by 
+~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100` % 
+compared to each tillage group, 
+up to 
+~ `r filter(weedDnData_TIL, TIL=="Tractor")$median` ±
+`r filter(weedDnData_TIL, TIL=="Tractor")$mad` cm
+(
+`r conv_unit(filter(weedDnData_TIL, TIL=="Tractor")$median, "cm", "inch")` ±
+`r conv_unit(filter(weedDnData_TIL, TIL=="Tractor")$mad, "cm", "inch")` in
+).
 
 ```{r weedsFig, fig.cap="Weeds data"}
 knitr::include_graphics(here::here("figs/weedPlot.png"))
 ```
 
-We also monitored weed species presence and diversity in the spring of the following growing season, and the weed suppression mix plots had fewer early season weeds than the other plots as well (`r "x23 = 10.00, p = 0.02"`; `r "x22 = 0.17, p = 0.92"`). 
-From June to September, the other cover crop mixes did not significantly reduce weed pressure and actually performed similarly to our null group plots that only had weed seeds in them (\@ref(fig:yieldFig)). 
-However, the wheat, rye, vetch, and clovers continued to grow from the Fall into the following Spring and did reduce weed presence compared to the null group in the spring. 
-Thus, although the other mixes did not reduce weeds in the summer or warm season, they were more effective at suppressing cool season weeds.
+All measured weed variables were affected significantly by cover crop mix, including 
+weed density (
+*`r testStat`* = `r weedDnData$statistic_MIX[1]`,
+*df* = `r weedDnData$df_MIX[1]`, 
+*n* = `r weedDnData$n_MIX[1]`, 
+*p* = `r weedDnData$p_MIX[1] %>% p_format()`
+) changing overall by
+~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100` %, 
+weed cover (
+*`r testStat`* = `r weedCovData$statistic_MIX[1]`,
+*df* = `r weedCovData$df_MIX[1]`, 
+*n* = `r weedCovData$n_MIX[1]`, 
+*p* = `r weedCovData$p_MIX[1] %>% p_format()`
+) changing overall by
+~`r weedCovData$effsize_TIL[[1]]$effsize_TIL *100` %, and 
+weed richness (
+*`r testStat`* = `r weedAbnData$statistic_MIX[1]`,
+*df* = `r weedAbnData$df_MIX[1]`, 
+*n* = `r weedAbnData$n_MIX[1]`, 
+*p* = `r weedAbnData$p_MIX[1] %>% p_format()`
+) changing overall by
+~`r weedAbnData$effsize_TIL[[1]]$effsize_TIL *100` % 
+(Fig \@ref(fig:weedsFig)b). 
+The null mix covered significantly more plot area compared to the weed suppression mix (
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[3]`
+) and marginally significantly compared to perennial (
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[1]`
+) and compaction (
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[2]`
+) mixes,
+<!-- by  -->
+<!-- ~ **##** +-  -->
+<!-- **##** ( -->
+<!-- conv_, or  -->
+<!-- **%%%** -->
+<!-- ), -->
+up to 
+~ `r filter(weedCovData_MIX, MIX=="null")$median` ±
+`r filter(weedCovData_MIX, MIX=="null")$mad` %.
+The null mix also had marginally significantly higher weed density compared to the weed suppression mix (
+*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()`
+) and marginally significantly compared to perennial (
+*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[1]`
+) and compaction (
+*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[2]`
+) mixes,
+<!-- by  -->
+<!-- ~ **##** +-  -->
+<!-- **##** ( -->
+<!-- conv_, or  -->
+<!-- **%%%** -->
+<!-- ), -->
+up to 
+~ `r filter(weedDnData_MIX, MIX=="null")$median` ±
+`r filter(weedDnData_MIX, MIX=="null")$mad` stems.
+The weed suppression mix had the most detectable effects on both weed density and richness.
+The weed suppression mix significantly lowered weed density compared to all other cover crop mix treatments, namely the null (
+*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()`
+), perennial (
+*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[5]`
+), and compaction (
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[6]`
+) mixes, by 
+~ **##** +- 
+**##** (
+conv_, or 
+**%%%**
+), down to 
+~ `r filter(weedDnData_MIX, MIX=="wdsp")$median` ±
+`r filter(weedDnData_MIX, MIX=="wdsp")$mad` stems 
+<!-- ( -->
+<!-- conv_, or  -->
+<!-- **%%%** -->
+<!-- ) -->
+.
+The weed suppression mix also significantly lowered weed richness compared to all other cover crop mix treatments, namely the null (
+*p~adj~* = `r weedAbnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()`
+), perennial (
+*p~adj~* = `r weedAbnData$posthoc_MIX[[1]]$p.adj[5] %>% p_format()`
+), and compaction (
+*p~adj~* = `r weedAbnData$posthoc_MIX[[1]]$p.adj[6] %>% p_format()`
+) mixes, by 
+~ **##** +- 
+**##** (
+conv_, or 
+**%%%**
+), down to 
+~ `r filter(weedAbnData_MIX, MIX=="wdsp")$median` ±
+`r filter(weedAbnData_MIX, MIX=="wdsp")$mad` taxa 
+<!-- ( -->
+<!-- conv_, or  -->
+<!-- **%%%** -->
+<!-- ) -->
+.
 
 
 ## Radish Yield
 
 
-Radish yield was not significantly affected by tillage (Fig \@ref(fig:yieldFig)), and centered at ~**###** ± **###** *kg m^-2^* and **###** ± **###** cm long.
+```{r yieldsData}
+yieldLenData <- filter(Usmpgg_TIL, variable=="RADL_CM")
+yieldMassData <- filter(Usmpgg_TIL, variable=="TOTRAD_kg_m2")
+```
 
-
-However, radish plants did tend to grow the largest in no-till plots (`r "Fig. 5"`). The longest radishes grew close to 21.6 cm or 8.5 inches, ... Forty percent of radishes sampled grew past the average compaction depth 11.43 cm (4.5 inches) in the no-till and tractor till plots.
+Radish yield was not significantly affected by tillage (
+*`r testStat`* = `r yieldData$statistic_TIL[1]`, 
+*df* = `r yieldData$df_TIL[1]`, 
+*n* = `r yieldData$n_TIL[1]`, 
+*p* = `r yieldData$p_TIL[1]`
+), and centered at 
+~ `r filter(yieldLenData, TIL=="No")$median` ±
+`r filter(yieldLenData, TIL=="No")$mad` *kg m^-2^*
+(
+`r conv_unit(filter(yieldLenData, TIL=="No")$median, "kg", "lbs")` ±
+`r conv_unit(filter(yieldLenData, TIL=="No")$mad, "kg", "lbs")` *lbs m^-2^*
+) and 
+~ `r filter(yieldMassData, TIL=="No")$median` cm 
+<!-- ± -->
+<!-- `r filter(yieldMassData, TIL=="No")$mad` cm -->
+(
+`r conv_unit(filter(yieldMassData, TIL=="No")$median, "cm", "inch")` in
+<!-- ± -->
+<!-- `r conv_unit(filter(yieldMassData, TIL=="No")$mad, "cm", "inch")` in -->
+)
+long (Fig \@ref(fig:yieldFig)).
 
 ```{r yieldFig, fig.cap="Yield data"}
 knitr::include_graphics(here::here("figs/yieldPlot.png"))

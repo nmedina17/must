@@ -3,24 +3,24 @@ title: "Methods"
 output: 
   # html_notebook
   bookdown::html_document2:
-    number_sections: false
+    number_sections: FALSE
 bibliography: ../../library.bib
 ---
 
 ```{r setup_meth, warning=F, echo=F, results='hide'}
 knitr::opts_chunk$set(echo = F, warning = F, message = F); library(tidyverse)
-source(here::here("tables/chem.R")); options(digits = 1); library(measurements)
+options(digits = 1); library(measurements); source(here::here("tables/chem.R")); 
 ```
 
 # Study site
 
 
 The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st")`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha (`r site_acre` acres) extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
-The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` ̊C (`r conv_unit(MATc,"C","F")` ˚F) and precipitation at ~`r MAPmm=787` mm (`r conv_unit(MAPmm,"mm","inch")` in) *[@ref?]*. 
+The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` C (`r conv_unit(MATc,"C","F")` F) and precipitation at ~`r MAPmm=787` mm (`r conv_unit(MAPmm,"mm","inch")` in) *[@ref?]*. 
 The site was formerly a school building and associated playground until 2016 when it was demolished **after closing for ... reasons** and the land became vacant.
 The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r riverDist_mi` mi) away from a small river, conferring some wetland ecosystem properties like denser soils.
 It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)).
-```{r plots, fig.cap="Field site images. Map from federal web soil survey, which acknoledges less precision at this fine scale, however our baseline soil lab tests support this soil type distinction shown."}
+```{r plots, fig.cap="Field site images. Map data © 2022 USDA-NRCS SSURGO web soil survey. Map acknowledges less precision at this fine scale, however our baseline soil lab tests support this soil type distinction shown. Photo credit: Naim Edwards."}
 source(here::here("figs/plots.R")); siteImgs
 ```
 
@@ -30,9 +30,8 @@ and this study was done on the side with consistent clay ~37% (\@ref(fig:plots))
 Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color *YR##?!* (\@ref(fig:plots)).
 A baseline site-level soil lab assessment from Cornell determined that the top 4" (10 cm) of soils around the site together have relatively good organic matter at ~`r filter(chemTbl, variable == "SOM_pct") %>% .$median` ± `r filter(chemTbl, variable == "SOM_pct") %>% .$mad`% and nutrient levels, including those of heavy metals like lead and arsenic *(Table ???)* which were present below harmful government human-contact standards *[@angelone02; @EPA?]*, as well as decent but sub-optimal `r "CO"~2` respiration rates of `r filter(chemTbl, variable == "resp_mg_day") %>% .$median` ± `r filter(chemTbl, variable == "resp_mg_day") %>% .$mad` mg per day (Table \@ref(tab:chem).
 Some main concerns limiting productivity include high alkaline pH of `r filter(chemTbl, variable == "pH") %>% .$median` ± `r filter(chemTbl, variable == "pH") %>% .$mad` lowering availability of existing nutrients, as well as weak aggregate stability of `r filter(chemTbl, variable == "aggStability_pct") %>% .$median` ± `r filter(chemTbl, variable == "aggStability_pct") %>% .$mad` leading to issues with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chem)).
-
 ```{r chem}
-chem
+# chem
 ```
 
 
@@ -65,7 +64,7 @@ These treatments were selected based on varying tillage philosophies, costs of i
 
 Cover crop mixes were designed based on plants associated with targeted benefits.
 We tested the performance of three mixes, each composed of three different plant species (Table \@ref(tab:crops)). 
-The compaction mix focused on plants with roots that tend to penetrate and loosen soil well, specifically crimson clover (*Trifolium incarnatum*), forage radish (*taxize::comm2sci("radish")[[1]]*), and cereal ryegrass (*Secale cereale*) *[@williams/weil04]*. 
+The compaction mix focused on plants with roots that tend to penetrate and loosen soil well, specifically crimson clover (*Trifolium incarnatum*), forage radish (*`r taxize::comm2sci("radish")[[1]]`*), and cereal ryegrass (*Secale cereale*) *[@williams/weil04]*. 
 The weed suppression mix consisted of heat- and drought-tolerant crops that grow rapidly, allowing them to outcompete other plants *[@ref?]*, specifically sorghum-sudangrass (*Sorghum bicolor x Sorghum bicolor var. sudanese*), cowpea (*`r taxize::comm2sci("black-eyed pea")[[1]]`*), and buckwheat (*Fagopyrum esculentum*). 
 Lastly, the perennial mix was made up of plants that would survive beyond one growing season and return in the spring, adding additional biomass and outcompeting early season weeds *[@ref?]*, specifically hairy vetch (*`r taxize::comm2sci("hairy vetch")`*), red clover (*`r taxize::comm2sci("red clover")[[1]]`*), and wheat (*`r taxize::comm2sci("wheat")[[1]]`*). 
 We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
@@ -113,7 +112,7 @@ The length of a radish root was measured from the hypocotyl, or root cap, to whe
 All data were centered using plot-level medians and run through Kruskal-Wallis tests, which are non-parametric and so make minimal assumptions about underlying distributions, making them relatively generalized and suitable for data with less replication.
 Since these tests are limited in model formulation complexity, tests analyzing tillage and cover crop treatments were run separately, as reflected in the design of results figures.
 In cases where a treatment category was significant overall, pairwise Wicoxon tests between all individual treatment pairs were run post-hoc to determine specific differences underlying the overall treatment effect, with Holm corrections to p-values for multiple comparisons.
-Data were also pooled across sample times given no significant effect on data, to increase statistical power under these statistical model conditions, for all variables except infiltration rate.
-Tillage by cover crop analyses were not done for infiltration and yield, since infiltration data was taken from only **####** plots, and yield data came from only compaction plots.
-All calculations and analyzes were done in `r version$version.string` mainly using the packages *tidyverse* `r packageVersion("tidyverse")` *[@ref?]* and *rstatix* `r packageVersion("rstatix")` **[@ref]**.
+Data were also pooled across sample times given no preliminary significant effect on data, to increase statistical power under these statistical model conditions, for all variables except infiltration rate.
+Mixed tillage and cover crop analyses were not done for yield, since yield data came from only compaction plots.
+All calculations and analyzes were done in `r version$version.string` mainly using the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` **[@rstatix]**, and *ggpubr* `r packageVersion("ggpubr")` *[@ggpubr]* *compare_means()* function.
 Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must).

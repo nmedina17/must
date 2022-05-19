@@ -1,7 +1,7 @@
 here::i_am("figs/infil.R"); source(here::here("figs/compaction.R"))
-infilData <- varTestTbl %>% filter(variable == "INFILmL") %>%
-  mutate(varData = varData %>% modify(~.x %>% filter(SAMPL_TIME != "Spring"))) %>%
-  unnest(variable:statTest_MIX)
+# infilData <- varTestTbl %>% filter(variable == "INFILmL") %>%
+#   # mutate(varData = varData %>% modify(~.x %>% filter(SAMPL_TIME != "Spring"))) %>%
+#   unnest(variable:varData)
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 8)))
@@ -9,7 +9,7 @@ infilPlot_a <- infilData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
   ggplot(aes(x = TIL, y = value)) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
-  facet_wrap(~SAMPL_TIME) +
+  # facet_wrap(~SAMPL_TIME) +
   labs(x = "Tillage", y = expression(paste("Infiltration (mL sec"^-1, ")")),
        size = 8)
 infilPlot_a <- infilPlot_a %>%
@@ -33,8 +33,8 @@ infilPlot_b <- infilData %>%
   # facet_wrap(~SAMPL_TIME) +
   labs(x = "Cover crop mix",
        y = expression(paste("Infiltration (mL sec"^-1, ")")),
-       size = 8) +
-  scale_y_log10()
+       size = 8)
+  # scale_y_log10()
 infilPlot_b <- infilPlot_b %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format", digits = 3) +
@@ -50,6 +50,6 @@ infilPlot_b <- infilPlot_b %>%
   ) +
   EnvStats::stat_n_text(size = 1.5)
 
-infilPlot <- ggarrange(infilPlot_a, infilPlot_b, labels = c("a", "b"), nrow = 2)
-ggsave("figs/infilPlot.png", infilPlot,
+infilPlot <- ggpubr::ggarrange(infilPlot_a, infilPlot_b, labels = c("a", "b"), nrow = 2)
+ggplot2::ggsave("figs/infilPlot.png", infilPlot,
        height = 3, width = 3, units = "in")

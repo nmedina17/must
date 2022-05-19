@@ -2,6 +2,7 @@
 title: "Introduction"
 output: html_notebook
 bibliography: ../../library.bib
+link-citations: true
 ---
 
 
@@ -23,9 +24,9 @@ thereby improving the potential impact of research for promising accessible urba
 
 \
 
-Mechanized tilling has long been a regular strategy improve short-term arability *[@badalikova09]*, among others like adding compost, although research studies increasingly report soil degradation after long-term and intensive tillage *[@refs?]*.
-Short-term tillage benefits include larger soil pores and lower soil bulk density *[@hill85]*, and more available nutrients *[@ref?]* yet fewer weed regeneration *[@ref?]*, making tillage useful against soil compaction and associated water infiltration and drainage issues, which facilitates faster seeding and crop establishment early in the season *[@ref?]*.
-However, longer-term side effects of excessive and/or very intensive tillage include weaker soil structure *[@catania18]*, increasing dependence on tillage to maintain past yields *[@ref?]*, ...*[@ref?]* and... faster soil erosion *[handelsman21]*, the latter of which has more recently led to events like the USA Dust Bowl *[@ref?]*, and historically poses an existential threat to agricultural societies when combined with other stressors *[@montgomery07]*.
+Mechanized tilling has long been a regular strategy improve short-term arability, among others like adding compost, although research studies increasingly report soil degradation after long-term and intensive tillage.
+Short-term tillage benefits include larger soil pores and lower soil bulk density *[@hill85; @badalikova09]*, and more available nutrients *[@ref?]* yet less weed regeneration *[@ref?]*, making tillage useful against soil compaction and associated water infiltration and drainage issues, which facilitates faster seeding and crop establishment early in the season *[@ref?]*.
+However, longer-term side effects of excessive and/or very intensive tillage include weaker soil aggregate stability *[@six99]* and structure *[@catania18]*, increasing dependence on tillage to maintain past yields *[@ref?]*, ...*[@ref?]* and faster soil erosion *[@handelsman21]*, which has more recently led to events like the USA Dust Bowl *[@ref?]*, and historically poses an existential threat to agricultural societies when combined with other stressors *[@montgomery07; @amundson20]*.
 In response, sustainable and regenerative agriculture movements advise no-till or minimal-till management approaches, like broadfork tools, to re-focus on soil health and fertility *[@xiao-bin06; @roger-estrade10]*, which comes with different challenges like stronger pressure from weeds *[@ref?]*, highlighting a role for continuing research into diverse no-till strategies.
 For urban growers, machinery can also be cost-prohibitive, and limited access to agricultural loans *[@USDA]* has resulted in affected communities adapting by organizing equipment sharing systems, which can be more practical in denser urban housing arrangements compared to diffuse rural ones.
 This variation in accessibility of machinery can promote mixed tillage strategies by urban growers including tractor- and/or roto-till, which likely have different effects on soil and weed issues, but there remains little public documentation comparing benefits of various tillage styles on remediating urban soils *[@ref?]*, which slows the innovation of tailored management strategies for the array of urban grower goals.
@@ -36,10 +37,10 @@ Cover cropping has been another long-recommended strategy of sustaining longer-t
 The namesake benefit of cover crops is to cover the soil in areas without active cultivation, which maintains root activity and weakens erosion *[@ref?]*, but different species will also vary in the benefits they can provide based on physiological traits.
 For example, legumes like cowpea (or black-eyed peas, *Vigna unguiculata*), clovers (*Trifolium sp.*), and hairy vetch (*`r taxize::comm2sci("hairy vetch")[[1]]`*) are popular cover crops because of their additional symbioses with root bacteria that fix nitrogen from the air into soils where it is more available for future crop use *[@grossman]*.
 Similarly, buckwheat helps scavenge soil phosphorus *[@SAREguide?]*, which is often a limiting macro-nutrient in the tropics *[@ref]*, and could also be combined with compost that is usually high in phosphorus to address a recurring soil phosphorus deficiency.
-Other plants, including grasses like *Sorghum sp.* tend to grow deep roots, or have other traits like chemical defenses named allelopathy, that compete with weeds enough to keep them suppressed over time *[@SAREguide]*.
-Broader implications of cover cropping include higher soil organic matter, though the underlying processes remain complex *[@king20]*, and few studies show direct correlations *[@oldfield19]*.
+Other plants, including grasses like sorghum, tend to grow deep roots, or have other traits like chemical defenses named allelopathy, that compete with weeds enough to keep them suppressed over time *[@SAREguide]*.
+Broader implications of cover cropping also include higher soil organic matter, though the underlying processes remain complex *[@king20]*, and few studies show direct correlations *[@oldfield19]*.
 Furthermore, while large rural organic farms can benefit from incorporating specifically-chosen cover cropping into their mechanized operations, the reliance of urban agriculture more on labor over machinery offers an opportunity to develop new cover cropping systems that combine seeding and terminating different species together to improve the potential efficiency of soil remediation efforts.
-For example, *Sorghum*, cowpea, and buckwheat could be combined into a mixed strategy that can increase soil nitrogen, soil phosphorus, and suppress weeds via deep and shallow roots with allelopathic chemical defenses, although cover crop synergisms remain understudied *[@ref?]*.
+For example, sorghum, cowpea, and buckwheat could be combined into a mixed strategy that can increase soil nitrogen, soil phosphorus, and suppress weeds via deep and shallow roots with allelopathic chemical defenses, although cover crop synergisms remain understudied *[@ref?]*.
 An integrated complex approach to optimizing cover cropping systems including interspecific species interactions are well-posed to be initially researched in urban agriculture and followed by later adaptation to rural agriculture as well *[@nationalSciTechCouncil17]*.
 
 \

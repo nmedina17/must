@@ -1,24 +1,51 @@
 ---
 title: "Tillage and Cover Crop Mix Effects on Urban Soil Restoration"
 author:
-  Naim Edwards, Nicholas Medina, Elizabeth Asker
+  - name: Naim Edwards
+    email: edwar649@msu.edu
+    affiliation: Michigan State University
+  - name: Nicholas Medina
+    email: nmedina@umich.edu
+    affiliation: University of Michigan
+  - name: Elizabeth Asker
+    email: asker@msu.edu
+    affiliation: Michigan State University
+address:
+  - code: University of Michigan
+    address: Ecology and Evolutionary Biology, Ann Arbor, MI
+  - code: Michigan State University
+    address: Agriculture and Natural Resources Extension, Detroit, MI
+
+abstract: |
+  Urban soils are highly disturbed, resulting in the loss of vegetation, organic matter, and increased compaction. Urban farmers rely on compost to improve degraded soil, but an integrated strategy may enhance soil quality more than simply apply compost. This study examined how various tillage methods and cover crop mixes affected  soil attributes such as compaction, water infiltration rate, herbaceous weedy plant emergence, and crop yield. Tractor tilled plots relieved compaction to significantly greater depths compared to no-till (minimal disturbance) and roto-tilled (moderate disturbance) plots. Roto-tilled soils infiltrated water at a higher rate rate than the no-till and  tractor tilled soils, challenging cited benefits expected from extensive tillage. Cover crops varied in yield across tillage treatments and the average root mass of forage radish was greater no-till plots but not significantly different, despite that tillage group having lower water infiltration rates and higher compaction. The weed suppression cover crop mix (sorghum-sudangrass, buckwheat, and cowpea) had fewer weeds than the other two cover crop mixes. We posit that integrated approaches to soil management tailoring tillage to crop use can improve soil function better than simply adding compost.
+
+keywords:
+  - urban
+  - compaction
+  - cover crops
 output: 
   # html_notebook
-  bookdown::html_document2:
-    number_sections: false
+  bookdown::pdf_document2:
+    number_sections: FALSE
+always_allow_html: TRUE
 bibliography: ../../library.bib
+link-citations: TRUE
+# csl: ../../peerj.csl
+linenumbers: TRUE
 ---
 
+Journals: Elsevier--Soil & Tillage Research (IF=5), Urban Forestry & Urban Greening (1wk), or then Wiley--ASA Agronomy Journal (?), Ecology & Evolution (replicates), or lastly PCI Ecology submission (45d) w/ pre-print archived in agriRxiv, ecoEvoRxiv, or bioRxiv.
 
-# Abstract
+<!-- # Abstract -->
 
-```{r abs, child='abs.Rmd'}
-```
+<!-- ```{r abs, child='abs.Rmd'} -->
+<!-- ``` -->
 
 
 # Introduction
 
 ```{r intro, child='intro.Rmd'}
+# options(tinytex.verbose = TRUE)
 ```
 
 

@@ -28,4 +28,4 @@ chemKbl <-
   kableExtra::group_rows("physical", 3, 3) %>%
   kableExtra::group_rows("chemical", 4, 10) %>%
   kableExtra::group_rows("-- minor", 7, 10)
-kableExtra::save_kable(chemKbl, here::here("tables/chemTbl.png"))
+# kableExtra::save_kable(chemKbl, here::here("tables/chemTbl.png"))
