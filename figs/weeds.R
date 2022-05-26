@@ -6,7 +6,7 @@ here::i_am("figs/weeds.R"); source(here::here("figs/infil.R"))
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 5)))
-weedLabels <- c("Richness", "Cover (%)", "Density (stems)")
+weedLabels <- c("Richness", "Cover (%)", expression(paste("Density (n m)"^-2)))
 names(weedLabels) <- c("Wd_Abn", "Wd_Cov", "Wd_Dn")
 weedPlot_a <- weedData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
@@ -23,8 +23,8 @@ weedPlot_a <- weedPlot_a %>%
                      label = "p.signif",
                      # hide.ns = T,
                      symnum.args = list(
-                       cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
-                       symbols = c("****", "***", "**", "*'", "'")),
+                       cutpoints = c(0, 0.0001, 0.001, 0.01, 0.05, 0.11, 1),
+                       symbols = c("****", "***", "**", "*", "*'", "'")),
                      size = 1.5, vjust = 0.5) +
   EnvStats::stat_n_text(size = 1.5)
 
@@ -44,8 +44,12 @@ weedPlot_b <- weedPlot_b %>%
     c("comp", "wdsp"), c("pere", "wdsp")
   ), label = "p.signif", # hide.ns = T,
   symnum.args = list(
-    cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
-    symbols = c("****", "***", "**", "*'", "'")
+    cutpoints = c(0, 0.0001, 0.001, 0.01,
+                  # 0.11,
+                  1),
+    symbols = c("****", "***", "**",
+                # "*'",
+                "'")
   ), size = 1.5, vjust = 0.5) +
   EnvStats::stat_n_text(size = 1.5)
 

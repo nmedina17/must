@@ -6,7 +6,7 @@ theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 8)))
 yieldLabels <- c("Length (cm)", expression(paste("Mass (kg m"^-2,")")))
-names(yieldLabels) <- c("RADL_CM", "TOTRAD_kg")
+names(yieldLabels) <- c("RADL_CM", "TOTRAD_kg_m2")
 yieldPlot <- yieldData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
   ggplot(aes(x = TIL, y = value)) +

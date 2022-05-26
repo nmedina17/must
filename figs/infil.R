@@ -15,14 +15,18 @@ infilPlot_a <- infilData %>%
 infilPlot_a <- infilPlot_a %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format") +
-  ggpubr::stat_compare_means(comparisons = list(c("Roto", "Tractor"),
-                                        c("No", "Roto"),
-                                        c("No", "Tractor")),
+  ggpubr::stat_compare_means(comparisons = list(c("No", "Roto")),
+                                                # c("Roto", "Tractor"),
+                                                # c("No", "Tractor")),
                      label = "p.signif",
                      # hide.ns = T,
                      symnum.args = list(
-                       cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
-                       symbols = c("****", "***", "**", "*'", "'")),
+                       cutpoints = c(0, 0.0001, 0.001, 0.01,
+                                     0.11,
+                                     1),
+                       symbols = c("****", "***", "**",
+                                   "*'",
+                                   "'")),
                      size = 1.5, vjust = 0.5) +
   EnvStats::stat_n_text(size = 1.5)
 
@@ -40,12 +44,16 @@ infilPlot_b <- infilPlot_b %>%
   ggpubr::stat_compare_means(size = 1.5, label = "p.format", digits = 3) +
   ggpubr::stat_compare_means(comparisons = list(
     # c("null", "comp"), c("null", "pere"),
-    c("null", "wdsp")
+    # c("null", "wdsp")
     # c("comp", "pere"), c("comp", "wdsp"), c("pere", "wdsp")
   ), label = "p.signif", # hide.ns = T,
   symnum.args = list(
-    cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
-    symbols = c("****", "***", "**", "*'", "'")),
+    cutpoints = c(0, 0.0001, 0.001, 0.01,
+                  0.11,
+                  1),
+    symbols = c("****", "***", "**",
+                "*'",
+                "'")),
   size = 1.5, vjust = 0.5
   ) +
   EnvStats::stat_n_text(size = 1.5)

@@ -1,5 +1,5 @@
 ---
-title: "Tillage and Cover Crop Mix Effects on Urban Soil Restoration"
+title: "Combining medium-intensity tillage to improve soil compaction and infiltration with cover crop mixes to suppress weeds"
 author:
   - name: Naim Edwards
     email: edwar649@msu.edu
@@ -17,15 +17,25 @@ address:
     address: Agriculture and Natural Resources Extension, Detroit, MI
 
 abstract: |
-  Urban soils are highly disturbed, resulting in the loss of vegetation, organic matter, and increased compaction. Urban farmers rely on compost to improve degraded soil, but an integrated strategy may enhance soil quality more than simply apply compost. This study examined how various tillage methods and cover crop mixes affected  soil attributes such as compaction, water infiltration rate, herbaceous weedy plant emergence, and crop yield. Tractor tilled plots relieved compaction to significantly greater depths compared to no-till (minimal disturbance) and roto-tilled (moderate disturbance) plots. Roto-tilled soils infiltrated water at a higher rate rate than the no-till and  tractor tilled soils, challenging cited benefits expected from extensive tillage. Cover crops varied in yield across tillage treatments and the average root mass of forage radish was greater no-till plots but not significantly different, despite that tillage group having lower water infiltration rates and higher compaction. The weed suppression cover crop mix (sorghum-sudangrass, buckwheat, and cowpea) had fewer weeds than the other two cover crop mixes. We posit that integrated approaches to soil management tailoring tillage to crop use can improve soil function better than simply adding compost.
+  Urban soils have been degraded by decades of industrial activities, but they also represent opportunities to improve food sovereignty for urban residents practicing urban agriculture. 
+  Urban growers often rely on independent strategies of compost, tillage, or cover cropping, without distinguishing each's distinct benefits, ultimately informing an integrated approach. 
+  This study examined how tillage methods representing various intensities and cover crop mixes targeting different functions affected agricultural variables including soil compaction, water infiltration rate, herbaceous weedy plant pressure, and crop yield. 
+  Results showed that tractor-till significantly relieved compaction in deeper soils compared to roto-till, followed by roto-till compared to no-till.
+  However, roto-till showed the fastest infiltration and tractor-till allowed the densest weeds, challenging ubiquitous use of tractor-till for urban agriculture.
+  Results also showed that the mix of sorghum-sudangrass, buckwheat, and cowpea significantly reduced weed density and richness compared to all other mixes, and that the perennial plant mix significantly affected compaction, but without affecting soil water infiltration rates.
+  Despite theses differences, radish yield was not yet affected by tillage.
+  Overall, this study further informs urban soil agricultural management by analyzing specific benefits of common methods, advocating an integrated approach including both roto-till for compaction relief and water infiltration benefit, and mixed cover cropping for weed suppression.
 
 keywords:
   - urban
-  - compaction
-  - cover crops
+  - compact
+  - weed
+  - till
+  - cover
+  - water
 output: 
   # html_notebook
-  bookdown::pdf_document2:
+  bookdown::html_document2:
     number_sections: FALSE
 always_allow_html: TRUE
 bibliography: ../../library.bib
@@ -34,7 +44,15 @@ link-citations: TRUE
 linenumbers: TRUE
 ---
 
-Journals: Elsevier--Soil & Tillage Research (IF=5), Urban Forestry & Urban Greening (1wk), or then Wiley--ASA Agronomy Journal (?), Ecology & Evolution (replicates), or lastly PCI Ecology submission (45d) w/ pre-print archived in agriRxiv, ecoEvoRxiv, or bioRxiv.
+
+Journals: 
+- Elsevier--Soil & Tillage Research (IF=5, Elsevier), 
+*- Land Degradation & Development (Research vs. Original, IF=5, Wiley), *
+*- Urban Forestry & Urban Greening (1wk), or then [Wiley--]*
+- ASA Agronomy Journal (?), 
+- Ecology & Evolution (replicates), or lastly 
+- PCI Ecology submission (45d) w/ 
+  - pre-print archived in agriRxiv, ecoEvoRxiv, or bioRxiv.
 
 <!-- # Abstract -->
 
@@ -45,7 +63,6 @@ Journals: Elsevier--Soil & Tillage Research (IF=5), Urban Forestry & Urban Green
 # Introduction
 
 ```{r intro, child='intro.Rmd'}
-# options(tinytex.verbose = TRUE)
 ```
 
 

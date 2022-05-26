@@ -59,7 +59,7 @@ varTestTbl <- varTbl %>%
     "effsize_MIX" = varData %>% modify_if(
       ~ length(pull(distinct(na.omit(.x), MIX))) > 1, #ok
       ~ .x %>% kruskal_effsize(formula = model_MIX) %>%
-        select(!.y.) %>% rename_with(~ glue::glue("{.x}_TIL"))
+        select(!.y.) %>% rename_with(~ glue::glue("{.x}_MIX"))
     )
 
     # "statTestLmer" = varData %>% modify(
@@ -81,7 +81,7 @@ infilData <- varTestTbl %>% filter(variable == "INFILmL") %>%
   unnest(variable:varData)
 weedData <- varTestTbl %>% filter(variable == "Wd_Abn" |
                                     variable == "Wd_Cov" |
-                                    variable == "Wd_Dn") %>%
+                                    variable == "Wd_Dn_m2") %>%
   unnest(variable:varData)
 yieldData <- varTestTbl %>% filter(variable == "RADL_CM" |
                                      variable == "TOTRAD_kg_m2") %>%

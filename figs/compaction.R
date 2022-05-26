@@ -34,8 +34,12 @@ compactionPlot_a <- compactionPlot_a %>%
                      label = "p.signif",
                      # hide.ns = T,
                      symnum.args = list(
-                       cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
-                       symbols = c("****", "***", "**", "*'", "'")),
+                       cutpoints = c(0, 0.0001, 0.001, 0.01,
+                                     # 0.11,
+                                     1),
+                       symbols = c("****", "***", "**",
+                                   # "*'",
+                                   "'")),
                      size = 1.5,
                      vjust = 0.5
                      ) +
@@ -55,13 +59,17 @@ compactionPlot_b <- compactionPlot_b %>%
   ggpubr::add_summary(fun = "median_mad", size = 0.25) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
   ggpubr::stat_compare_means(comparisons = list(
-    c("null", "comp"), c("null", "pere"),
-    c("comp", "pere"), c("pere", "wdsp")
+    # c("null", "comp"), c("comp", "pere"),
+    c("null", "pere"), c("pere", "wdsp")
     # c("comp", "wdsp"), c("null", "wdsp")
   ), label = "p.signif", # hide.ns = T,
   symnum.args = list(
-    cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
-    symbols = c("****", "***", "**", "*'", "'")
+    cutpoints = c(0, 0.0001, 0.001, 0.01,
+                  # 0.11,
+                  1),
+    symbols = c("****", "***", "**",
+                # "*'",
+                "'")
   ),
   size = 1.5, vjust = 0.5
   ) +

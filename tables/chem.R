@@ -3,7 +3,8 @@ source(here::here("data/clean.R")) #initChem,Chem
 chem <- Chem %>% pivot_wider(everything(), names_from = Variable) %>%
   rstatix::get_summary_stats(type = "median_mad") %>%
   filter(variable != "resp_mg_4d") %>%
-  #bug!
+
+  mutate(variable = as_factor(variable)) %>% #needed
   reorder_levels(variable, c("SOM_pct", "resp_mg_day", "aggStability_pct",
                              "pH", "P_ppm", "K_ppm", "Fe_ppm",
                              "Mg_ppm", "Mn_ppm", "Zn_ppm"))
@@ -21,7 +22,7 @@ chemTbl <- chem %>%
 chemKbl <-
   # chem %>%
   chemTbl %>%
-  knitr::kable(caption = "Baseline Cornell Soil Health Assessment Lab Analysis") %>%
+  knitr::kable(caption = "Baseline Cornell Soil Health Assessment") %>%
   kableExtra::kable_styling() %>%
   # kableExtra::group_rows("major", 1, 6) %>%
   kableExtra::group_rows("biological", 1, 2) %>%

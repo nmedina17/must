@@ -1499,6 +1499,8 @@ window.initializeCodeFolding = function(show) {
   // select all R code blocks
   var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.julia, pre.foldable');
   rCodeBlocks.each(function() {
+    // skip if the block has fold-none class
+    if ($(this).hasClass('fold-none')) return;
 
     // create a collapsable div to wrap the code in
     var div = $('<div class="collapse r-code-collapse"></div>');
@@ -1766,28 +1768,32 @@ pre code {
 
 
 <!-- rnb-text-begin -->
-<p>Urban soils are highly disturbed, resulting in the loss of
-vegetation, organic matter, and increased compaction. Urban farmers rely
-on compost to improve degraded soil, but an integrated strategy may
-enhance soil quality more than simply apply compost. This study examined
-how various tillage methods and cover crop mixes affected soil
-attributes such as compaction, water infiltration rate, herbaceous weedy
-plant emergence, and crop yield. Tractor tilled plots relieved
-compaction to significantly greater depths compared to no-till (minimal
-disturbance) and roto-tilled (moderate disturbance) plots. Roto-tilled
-soils infiltrated water at a higher rate rate than the no-till and
-tractor tilled soils, challenging cited benefits expected from extensive
-tillage. Cover crops varied in yield across tillage treatments and the
-average root mass of forage radish was greater no-till plots but not
-significantly different, despite that tillage group having lower water
-infiltration rates and higher compaction. The weed suppression cover
-crop mix (sorghum-sudangrass, buckwheat, and cowpea) had fewer weeds
-than the other two cover crop mixes. We posit that integrated approaches
-to soil management tailoring tillage to crop use can improve soil
-function better than simply adding compost.</p>
+<p>Urban soils have been degraded by decades of industrial activities,
+but they also represent opportunities to improve food sovereignty for
+urban residents practicing urban agriculture. Urban growers often rely
+on independent strategies of compost, tillage, or cover cropping,
+without distinguishing each’s distinct benefits, ultimately informing an
+integrated approach. This study examined how tillage methods
+representing various intensities and cover crop mixes targeting
+different functions affected agricultural variables including soil
+compaction, water infiltration rate, herbaceous weedy plant pressure,
+and crop yield. Results showed that tractor-till significantly relieved
+compaction in deeper soils compared to roto-till, followed by roto-till
+compared to no-till. However, roto-till showed the fastest infiltration
+and tractor-till allowed the densest weeds, challenging ubiquitous use
+of tractor-till for urban agriculture. Results also showed that the mix
+of sorghum-sudangrass, buckwheat, and cowpea significantly reduced weed
+density and richness compared to all other mixes, and that the perennial
+plant mix significantly affected compaction, but without affecting soil
+water infiltration rates. Despite theses differences, radish yield was
+not yet affected by tillage. Overall, this study further informs urban
+soil agricultural management by analyzing specific benefits of common
+methods, advocating an integrated approach including both roto-till for
+compaction relief and water infiltration benefit, and mixed cover
+cropping for weed suppression.</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWJzdHJhY3QiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpVcmJhbiBzb2lscyBhcmUgaGlnaGx5IGRpc3R1cmJlZCwgcmVzdWx0aW5nIGluIHRoZSBsb3NzIG9mIHZlZ2V0YXRpb24sIG9yZ2FuaWMgbWF0dGVyLCBhbmQgaW5jcmVhc2VkIGNvbXBhY3Rpb24uIApVcmJhbiBmYXJtZXJzIHJlbHkgb24gY29tcG9zdCB0byBpbXByb3ZlIGRlZ3JhZGVkIHNvaWwsIGJ1dCBhbiBpbnRlZ3JhdGVkIHN0cmF0ZWd5IG1heSBlbmhhbmNlIHNvaWwgcXVhbGl0eSBtb3JlIHRoYW4gc2ltcGx5IGFwcGx5IGNvbXBvc3QuIApUaGlzIHN0dWR5IGV4YW1pbmVkIGhvdyB2YXJpb3VzIHRpbGxhZ2UgbWV0aG9kcyBhbmQgY292ZXIgY3JvcCBtaXhlcyBhZmZlY3RlZCAgc29pbCBhdHRyaWJ1dGVzIHN1Y2ggYXMgY29tcGFjdGlvbiwgd2F0ZXIgaW5maWx0cmF0aW9uIHJhdGUsIGhlcmJhY2VvdXMgd2VlZHkgcGxhbnQgZW1lcmdlbmNlLCBhbmQgY3JvcCB5aWVsZC4gClRyYWN0b3IgdGlsbGVkIHBsb3RzIHJlbGlldmVkIGNvbXBhY3Rpb24gdG8gc2lnbmlmaWNhbnRseSBncmVhdGVyIGRlcHRocyBjb21wYXJlZCB0byBuby10aWxsIChtaW5pbWFsIGRpc3R1cmJhbmNlKSBhbmQgcm90by10aWxsZWQgKG1vZGVyYXRlIGRpc3R1cmJhbmNlKSBwbG90cy4gClJvdG8tdGlsbGVkIHNvaWxzIGluZmlsdHJhdGVkIHdhdGVyIGF0IGEgaGlnaGVyIHJhdGUgcmF0ZSB0aGFuIHRoZSBuby10aWxsIGFuZCAgdHJhY3RvciB0aWxsZWQgc29pbHMsIGNoYWxsZW5naW5nIGNpdGVkIGJlbmVmaXRzIGV4cGVjdGVkIGZyb20gZXh0ZW5zaXZlIHRpbGxhZ2UuIApDb3ZlciBjcm9wcyB2YXJpZWQgaW4geWllbGQgYWNyb3NzIHRpbGxhZ2UgdHJlYXRtZW50cyBhbmQgdGhlIGF2ZXJhZ2Ugcm9vdCBtYXNzIG9mIGZvcmFnZSByYWRpc2ggd2FzIGdyZWF0ZXIgbm8tdGlsbCBwbG90cyBidXQgbm90IHNpZ25pZmljYW50bHkgZGlmZmVyZW50LCBkZXNwaXRlIHRoYXQgdGlsbGFnZSBncm91cCBoYXZpbmcgbG93ZXIgd2F0ZXIgaW5maWx0cmF0aW9uIHJhdGVzIGFuZCBoaWdoZXIgY29tcGFjdGlvbi4gClRoZSB3ZWVkIHN1cHByZXNzaW9uIGNvdmVyIGNyb3AgbWl4IChzb3JnaHVtLXN1ZGFuZ3Jhc3MsIGJ1Y2t3aGVhdCwgYW5kIGNvd3BlYSkgaGFkIGZld2VyIHdlZWRzIHRoYW4gdGhlIG90aGVyIHR3byBjb3ZlciBjcm9wIG1peGVzLiAKV2UgcG9zaXQgdGhhdCBpbnRlZ3JhdGVkIGFwcHJvYWNoZXMgdG8gc29pbCBtYW5hZ2VtZW50IHRhaWxvcmluZyB0aWxsYWdlIHRvIGNyb3AgdXNlIGNhbiBpbXByb3ZlIHNvaWwgZnVuY3Rpb24gYmV0dGVyIHRoYW4gc2ltcGx5IGFkZGluZyBjb21wb3N0Lgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWJzdHJhY3QiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpVcmJhbiBzb2lscyBoYXZlIGJlZW4gZGVncmFkZWQgYnkgZGVjYWRlcyBvZiBpbmR1c3RyaWFsIGFjdGl2aXRpZXMsIGJ1dCB0aGV5IGFsc28gcmVwcmVzZW50IG9wcG9ydHVuaXRpZXMgdG8gaW1wcm92ZSBmb29kIHNvdmVyZWlnbnR5IGZvciB1cmJhbiByZXNpZGVudHMgcHJhY3RpY2luZyB1cmJhbiBhZ3JpY3VsdHVyZS4KVXJiYW4gZ3Jvd2VycyBvZnRlbiByZWx5IG9uIGluZGVwZW5kZW50IHN0cmF0ZWdpZXMgb2YgY29tcG9zdCwgdGlsbGFnZSwgb3IgY292ZXIgY3JvcHBpbmcsIHdpdGhvdXQgZGlzdGluZ3Vpc2hpbmcgZWFjaCdzIGRpc3RpbmN0IGJlbmVmaXRzLCB1bHRpbWF0ZWx5IGluZm9ybWluZyBhbiBpbnRlZ3JhdGVkIGFwcHJvYWNoLgpUaGlzIHN0dWR5IGV4YW1pbmVkIGhvdyB0aWxsYWdlIG1ldGhvZHMgcmVwcmVzZW50aW5nIHZhcmlvdXMgaW50ZW5zaXRpZXMgYW5kIGNvdmVyIGNyb3AgbWl4ZXMgdGFyZ2V0aW5nIGRpZmZlcmVudCBmdW5jdGlvbnMgYWZmZWN0ZWQgYWdyaWN1bHR1cmFsIHZhcmlhYmxlcyBpbmNsdWRpbmcgc29pbCBjb21wYWN0aW9uLCB3YXRlciBpbmZpbHRyYXRpb24gcmF0ZSwgaGVyYmFjZW91cyB3ZWVkeSBwbGFudCBwcmVzc3VyZSwgYW5kIGNyb3AgeWllbGQuIApSZXN1bHRzIHNob3dlZCB0aGF0IHRyYWN0b3ItdGlsbCBzaWduaWZpY2FudGx5IHJlbGlldmVkIGNvbXBhY3Rpb24gaW4gZGVlcGVyIHNvaWxzIGNvbXBhcmVkIHRvIHJvdG8tdGlsbCwgZm9sbG93ZWQgYnkgcm90by10aWxsIGNvbXBhcmVkIHRvIG5vLXRpbGwuCkhvd2V2ZXIsIHJvdG8tdGlsbCBzaG93ZWQgdGhlIGZhc3Rlc3QgaW5maWx0cmF0aW9uIGFuZCB0cmFjdG9yLXRpbGwgYWxsb3dlZCB0aGUgZGVuc2VzdCB3ZWVkcywgY2hhbGxlbmdpbmcgdWJpcXVpdG91cyB1c2Ugb2YgdHJhY3Rvci10aWxsIGZvciB1cmJhbiBhZ3JpY3VsdHVyZS4KUmVzdWx0cyBhbHNvIHNob3dlZCB0aGF0IHRoZSBtaXggb2Ygc29yZ2h1bS1zdWRhbmdyYXNzLCBidWNrd2hlYXQsIGFuZCBjb3dwZWEgc2lnbmlmaWNhbnRseSByZWR1Y2VkIHdlZWQgZGVuc2l0eSBhbmQgcmljaG5lc3MgY29tcGFyZWQgdG8gYWxsIG90aGVyIG1peGVzLCBhbmQgdGhhdCB0aGUgcGVyZW5uaWFsIHBsYW50IG1peCBzaWduaWZpY2FudGx5IGFmZmVjdGVkIGNvbXBhY3Rpb24sIGJ1dCB3aXRob3V0IGFmZmVjdGluZyBzb2lsIHdhdGVyIGluZmlsdHJhdGlvbiByYXRlcy4KRGVzcGl0ZSB0aGVzZXMgZGlmZmVyZW5jZXMsIHJhZGlzaCB5aWVsZCB3YXMgbm90IHlldCBhZmZlY3RlZCBieSB0aWxsYWdlLgpPdmVyYWxsLCB0aGlzIHN0dWR5IGZ1cnRoZXIgaW5mb3JtcyB1cmJhbiBzb2lsIGFncmljdWx0dXJhbCBtYW5hZ2VtZW50IGJ5IGFuYWx5emluZyBzcGVjaWZpYyBiZW5lZml0cyBvZiBjb21tb24gbWV0aG9kcywgYWR2b2NhdGluZyBhbiBpbnRlZ3JhdGVkIGFwcHJvYWNoIGluY2x1ZGluZyBib3RoIHJvdG8tdGlsbCBmb3IgY29tcGFjdGlvbiByZWxpZWYgYW5kIHdhdGVyIGluZmlsdHJhdGlvbiBiZW5lZml0LCBhbmQgbWl4ZWQgY292ZXIgY3JvcHBpbmcgZm9yIHdlZWQgc3VwcHJlc3Npb24uCg==</div>
 
 
 

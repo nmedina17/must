@@ -4,69 +4,94 @@ output:
   # html_notebook
   bookdown::html_document2:
     number_sections: FALSE
-bibliography: ../../library.bib
+bibliography: 
+  - ../../library.bib
+  - ../../grateful-refs.bib
+link-citations: TRUE
 ---
 
-```{r setup_meth, warning=F, echo=F, results='hide'}
+
+```{r setup_meth, warning=F, echo=F, results='hide', message=F}
 knitr::opts_chunk$set(echo = F, warning = F, message = F); library(tidyverse)
 options(digits = 1); library(measurements); source(here::here("tables/chem.R")); 
 ```
 
-# Study site
+
+## Study site
 
 
-The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st")`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha (`r site_acre` acres) extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
-The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` C (`r conv_unit(MATc,"C","F")` F) and precipitation at ~`r MAPmm=787` mm (`r conv_unit(MAPmm,"mm","inch")` in) *[@ref?]*. 
+The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st") %>% round(5)`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha (`r site_acre` acres) extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
+The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` C (`r conv_unit(MATc,"C","F")` F) and precipitation at ~`r MAPmm=787;MAPmm` mm (`r conv_unit(MAPmm,"mm","inch")` in) ([ncdc.noaa.gov](ncdc.noaa.gov)). 
 The site was formerly a school building and associated playground until 2016 when it was demolished **after closing for ... reasons** and the land became vacant.
 The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r riverDist_mi` mi) away from a small river, conferring some wetland ecosystem properties like denser soils.
-It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)).
-```{r plots, fig.cap="Field site images. Map data © 2022 USDA-NRCS SSURGO web soil survey. Map acknowledges less precision at this fine scale, however our baseline soil lab tests support this soil type distinction shown. Photo credit: Naim Edwards."}
+It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)a).
+```{r plots, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near education center, (c) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (c) Edgar Cardenas."}
 source(here::here("figs/plots.R")); siteImgs
 ```
 
-The soils can be classified as Technosols, given that large metal artifacts can be found throughout various profiles *[@fao14]*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
-Accordingly, the growing area has both a finer- and coarser-textured side *[@USDA-NRCSwebsoilsurvey--designPlots??]*, 
-and this study was done on the side with consistent clay ~37% (\@ref(fig:plots)).
-Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color *YR##?!* (\@ref(fig:plots)).
-A baseline site-level soil lab assessment from Cornell determined that the top 4" (10 cm) of soils around the site together have relatively good organic matter at ~`r filter(chemTbl, variable == "SOM_pct") %>% .$median` ± `r filter(chemTbl, variable == "SOM_pct") %>% .$mad`% and nutrient levels, including those of heavy metals like lead and arsenic *(Table ???)* which were present below harmful government human-contact standards *[@angelone02; @EPA?]*, as well as decent but sub-optimal `r "CO"~2` respiration rates of `r filter(chemTbl, variable == "resp_mg_day") %>% .$median` ± `r filter(chemTbl, variable == "resp_mg_day") %>% .$mad` mg per day (Table \@ref(tab:chem).
-Some main concerns limiting productivity include high alkaline pH of `r filter(chemTbl, variable == "pH") %>% .$median` ± `r filter(chemTbl, variable == "pH") %>% .$mad` lowering availability of existing nutrients, as well as weak aggregate stability of `r filter(chemTbl, variable == "aggStability_pct") %>% .$median` ± `r filter(chemTbl, variable == "aggStability_pct") %>% .$mad` leading to issues with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chem)).
+Site soils can be classified as Technosols (Fig \@ref(fig:plots)b), given that large metal artifacts can be found throughout various profiles *[@fao14]*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
+Accordingly, the growing area has both a finer- and coarser-textured side (Fig \@ref(fig:plots)a), 
+and this study was done on the side with consistent clay of ~37%.
+Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color **YR##?!** (Fig \@ref(fig:plots)b).
+A baseline site-level soil lab assessment from Cornell determined that the top *4 in (10 cm)* of soils around the site together have relatively good organic matter at 
+~`r filter(chemTbl, variable == "SOM_pct") %>% .$median` ± 
+`r filter(chemTbl, variable == "SOM_pct") %>% .$mad`% 
+and nutrient levels, including concentrations of heavy metals like lead and arsenic *(Table ???)* which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
+The soils were also assesed to have decent but sub-optimal *CO~2~* respiration rates of 
+`r filter(chemTbl, variable == "resp_mg_day") %>% .$median` ± 
+`r filter(chemTbl, variable == "resp_mg_day") %>% .$mad` mg per day 
+(Table \@ref(tab:chem).
+Some main concerns limiting productivity include high alkaline pH of 
+`r filter(chemTbl, variable == "pH") %>% .$median` ± 
+`r filter(chemTbl, variable == "pH") %>% .$mad`, 
+lowering availability of existing nutrients, as well as weak aggregate stability of 
+`r filter(chemTbl, variable == "aggStability_pct") %>% .$median` ± 
+`r filter(chemTbl, variable == "aggStability_pct") %>% .$mad`, 
+leading to concerns with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chem)).
 ```{r chem}
-# chem
+# chemKbl
+chemTbl %>%
+  knitr::kable(caption = "Baseline Cornell Soil Health Assessment") %>%
+  kableExtra::kable_styling() %>%
+  # kableExtra::group_rows("major", 1, 6) %>%
+  kableExtra::group_rows("biological", 1, 2) %>%
+  kableExtra::group_rows("physical", 3, 3) %>%
+  kableExtra::group_rows("chemical", 4, 10) %>%
+  kableExtra::group_rows("-- minor", 7, 10)
 ```
 
 
 ## Study design
 
 
-The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:plots)).
-Tillage groups spanned the nine columns in adjacent groups of three, while cover crop mix treatments spanned the rows with one row per cover crop mix, which totaled 12 plots per tillage group and nine plots per cover crop mix.
+The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:plots)c).
+Tillage groups spanned the nine columns in adjacent groups of three, while cover crop mix treatments spanned the rows with one row per cover crop mix, totaling 26 plots, or 12 plots per tillage group and nine plots per cover crop mix.
 Before applying treatments, approximately `r compost_plot_m3=0.24;compost_plot_m3` *m^3^* (`r conv_unit(compost_plot_m3,"m3","ft3")` *ft^3^*) of compost was incorporated into each plot.
 
-*One aggregated sample per tillage group was collected and analyzed for chemistry using modified Morgan-extractable protocols at the MSU soil test lab [@moebius-clune16] and analysis was also conducted on the compost.*
+**One aggregated sample per tillage group was collected and analyzed for chemistry using modified Morgan-extractable protocols at the MSU soil test lab [@moebius-clune16] and analysis was also conducted on the compost.**
 
 
-## Tillage
+<!-- ## Tillage -->
 
 
-These methods represent a spectrum of soil management practices used and potentially available for small scale agriculture.
-Specifically we tested three tillage techniques: 
-1) no-till with a broadfork (NT), 
-2) moderate intensity with a roto-tiller (RT), and 
-3) intensive tractor-till (TT) with implements. 
-Tractor-till plots were worked with a subsoiler, moldboard plow, and rototiller attached to a tractor up to `r TTft=1;conv_unit(TTft,"ft","cm")` cm (`r TTft` ft) deep. 
-RT plots were tilled with a rototiller implement up to `r RTcm=20;RTcm` cm (`r conv_unit(RTcm,"cm","inch")` in) deep. 
-NT plots were worked with a broadfork up to `r NTcm=10;NTcm` cm (`r conv_unit(NTcm,"cm","inch")` in) deep. 
-These treatments were selected based on varying tillage philosophies, costs of implementation, and degree of mechanization.
+Tillage treatments represented methods of increasing intensity available for small scale agriculture, also varying in cost, machinery needed, and also grower preference *(@drugova22, pers. comms.)*.
+Specifially, treatments included no-till with a broadfork *(NT)*, roto-tiller *(RT)*, and tractor-till *(TT)* with implements. 
+Tractor-till plots were worked with a subsoiler, moldboard plow, and roto-tiller attached to a tractor up to `r TTft=1;conv_unit(TTft,"ft","cm")` cm (`r TTft` ft) deep. 
+Roto-till plots were treated with a rototiller implement up to `r RTcm=20;RTcm` cm (`r conv_unit(RTcm,"cm","inch")` in) deep. 
+Lastly, no-till plots were worked with only a broadfork up to `r NTcm=10;NTcm` cm (`r conv_unit(NTcm,"cm","inch")` in) deep. 
+All tilling was done once early in the season after compost application.
 
 
-## Cover crop mixes
+<!-- ## Cover crop mixes -->
 
 
-Cover crop mixes were designed based on plants associated with targeted benefits.
-We tested the performance of three mixes, each composed of three different plant species (Table \@ref(tab:crops)). 
-The compaction mix focused on plants with roots that tend to penetrate and loosen soil well, specifically crimson clover (*Trifolium incarnatum*), forage radish (*`r taxize::comm2sci("radish")[[1]]`*), and cereal ryegrass (*Secale cereale*) *[@williams/weil04]*. 
-The weed suppression mix consisted of heat- and drought-tolerant crops that grow rapidly, allowing them to outcompete other plants *[@ref?]*, specifically sorghum-sudangrass (*Sorghum bicolor x Sorghum bicolor var. sudanese*), cowpea (*`r taxize::comm2sci("black-eyed pea")[[1]]`*), and buckwheat (*Fagopyrum esculentum*). 
-Lastly, the perennial mix was made up of plants that would survive beyond one growing season and return in the spring, adding additional biomass and outcompeting early season weeds *[@ref?]*, specifically hairy vetch (*`r taxize::comm2sci("hairy vetch")`*), red clover (*`r taxize::comm2sci("red clover")[[1]]`*), and wheat (*`r taxize::comm2sci("wheat")[[1]]`*). 
+Cover crop mixes were designed primarily based on plants associated with targeted benefits, and as possible, relative simplicity of re-seeding and winter-kill (e.g. more heat tolerant) *[@clark07]*.
+Three mixes were designed to target three functions, with each mix containing three different plant species (Table \@ref(tab:crops)). 
+The mix designed to alleviate compaction generally focused on plants with roots that tend to penetrate and loosen soil well, and ultimately included crimson clover (*Trifolium incarnatum*), forage radish (*`r taxize::comm2sci("radish")[[1]]`*), and cereal ryegrass (*Secale cereale*) 
+<!-- *[@williams/weil04]* -->
+. 
+The mix targeting weed suppression included heat- and drought-tolerant crops that tend to grow rapidly, allowing them to outcompete other plants *[@ref?]*--the taxa chosed were sorghum-sudangrass (*Sorghum bicolor x Sorghum bicolor var. sudanese*), cowpea (*`r taxize::comm2sci("black-eyed pea")[[1]]`*), and buckwheat (*Fagopyrum esculentum*). 
+Lastly, a mix was dedicated to perennial cover crops, which in contrast to annuals can survive the winter and thus tend to accumulate biomass and establish before spring weeds--this mix included hairy vetch (*`r taxize::comm2sci("hairy vetch")`*), red clover (*`r taxize::comm2sci("red clover")[[1]]`*), and wheat (*`r taxize::comm2sci("wheat")[[1]]`*). 
 We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
 ```{r crops}
 source(here::here("tables/crops.R")); cropKbl
@@ -76,43 +101,47 @@ source(here::here("tables/crops.R")); cropKbl
 ## Data Collection
 
 
-### Compaction
+<!-- ### Compaction -->
 
-Soil compaction was measured with a penetrometer *(AgraTronix, Soil Compaction Tester #08180)* in four randomly selected spots within each quarter of every plot, which were later averaged at the plot level. 
-Individual measurements were recorded as the depth at which the penetrometer read `r compactionLimit_MPa=2;compactionLimit_MPa` MPa (`r conv_unit(compactionLimit_MPa*1000,"kPa","psi")`) pounds per square inch or psi), since roots typically cannot penetrate with 2 MPa of force *[@duiker02]*. 
-Sampling was conducted at two separate time periods, in July (“Early”) and October (“Late”) 2019. 
-Samples were taken on dry days and recorded to the nearest inch.
+Soil compaction was measured with a penetrometer *(AgraTronix #08180)* in four randomly selected spots within each quarter of every plot, as the depth where resistance was `r compactionLimit_MPa=2;compactionLimit_MPa` MPa (`r conv_unit(compactionLimit_MPa*1000,"kPa","psi")` psi, *lbs in^-2^*), which is considered hardpan that roots typically cannot penetrate *[@correa19]*. 
+Measurements were recorded to the nearest *2.5 cm (1 inch)* on dry days in July and October 2019.
 
 
-### Infiltration
+<!-- ### Infiltration -->
 
-We measured the water infiltration rate to determine the soil’s capacity to drain water, which has implications for managing storm-water runoff and holding water for plant roots. 
-The infiltration rate was calculated by recording the amount of time it took for ~1 L (32 fl oz) to drain into the soil, which is similar to the amount of typical rainfall on ~0.10 *m^2^* (~1 *ft^2^*) per rain event *[@USGS,n.d.?]*. 
-For each plot we cleared the soil surface of debris and cut vegetation low enough to explose the surface. 
-Then we pressed an empty ~`r infilCan_oz=48;conv_unit(infilCan_oz,"oz","kg")` kg (`r infilCan_oz` oz) aluminum can ~`r infilCanDepth_in=1;conv_unit(infilCanDepth_in,"inch","cm")` cm (`r infilCanDepth_in` in) into the soil and poured the water in. 
-The maximum time allowed was 160 seconds **recorded as...??**.
+Soil water infiltration down to `r conv_unit(8.75 / 2, "inch", "cm")` cm *(8.75 in)* depth was measured using a `r conv_unit(6.5, "inch", "cm")` *(9.5 in)* wide aluminum cylinder, and recording the time up to 160 sec for *1 L (32 fl oz)* to pass through, which represented a typical rainfall amount onto ~0.10 *m^2^* (~1 *ft^2^*) of soil area ([waterdata.usgs.gov](waterdata.usgs.gov)). 
 
 
-### Weed cover, density, and richness
+<!-- ### Weed cover, density, and richness -->
 
-We recorded three measures of weed activity that described overall weed pressure in different ways.
-Weed cover was estimated as the proportion of total area covered by all weed species combined within a plot, using a scale of 1-10 with one indicating **only one species / near zero stems** observed to 10 being **10 species present / almost the entire plot surface covered at some level with at least part of a weed plant (e.g. stem or leaf)**.
-Weed richness was measured by counting the total number of morphologically distinguishable weedy plants with at least one individual stem observed in a plot.
-Weed density was measured as the **number of individual stems / relative cover** of either of the two most abundant weed species -- pigweed (*Palmer amaranth / Amaranthus viridis*) and velvetleaf (*`r taxize::comm2sci("velvetleaf")[[1]]`*) -- using a discrete scale in increments of 10 with 0 indicating neither species present and 5 indicating 50 or more total individuals stems of either species.
+Weed pressure was measured using percent cover, richness, and density.
+Weed cover was estimated as the total proportion of plot area covered by any weeds, 
+using a scale of 1-10 with one indicating **only one species / near zero stems** observed to 10 being **10 species present / almost the entire plot surface covered at some level with at least part of a weed plant (e.g. stem or leaf)**.
+Weed richness was measured as in other studies *[@storkey18]* as a unique count of morphospecies observed in each plot.
+Weed density was measured as the number of individual stems of either of the two most abundant weed species -- pigweed (*Amaranthus viridis*) and velvetleaf (*`r taxize::comm2sci("velvetleaf")[[1]]`*) -- using a discrete scale in increments of 10 with zero indicating neither species present and five indicating 50 or more total individuals stems of either species.
 
 
-### Yield
+<!-- ### Yield -->
 
-Five forage radish (*Raphanus sativus*) roots were randomly selected from each plot and measured for length, individually, and wet weight, as a cluster. 
+Five forage radish (Brassica *Raphanus sativus var. longipinnatus*) roots were randomly selected from each plot in the compaction treatment and measured for length, individually, and wet weight, as a cluster. 
 The length of a radish root was measured from the hypocotyl, or root cap, to where the root became ~`r radishLenLimit_in=0.25;conv_unit(radishLenLimit_in,"inch","mm")` mm (~1⁄4 in) wide.
 
 
 ## Statistical analyses
 
-All data were centered using plot-level medians and run through Kruskal-Wallis tests, which are non-parametric and so make minimal assumptions about underlying distributions, making them relatively generalized and suitable for data with less replication.
-Since these tests are limited in model formulation complexity, tests analyzing tillage and cover crop treatments were run separately, as reflected in the design of results figures.
-In cases where a treatment category was significant overall, pairwise Wicoxon tests between all individual treatment pairs were run post-hoc to determine specific differences underlying the overall treatment effect, with Holm corrections to p-values for multiple comparisons.
-Data were also pooled across sample times given no preliminary significant effect on data, to increase statistical power under these statistical model conditions, for all variables except infiltration rate.
-Mixed tillage and cover crop analyses were not done for yield, since yield data came from only compaction plots.
-All calculations and analyzes were done in `r version$version.string` mainly using the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` **[@rstatix]**, and *ggpubr* `r packageVersion("ggpubr")` *[@ggpubr]* *compare_means()* function.
-Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must).
+```{r pkgs, results='hide'}
+grateful::get_pkgs_info(out.dir = "../.."); 
+```
+
+Given limited field space for strict plot replication (*n*=3) and thus limited inference from nested mixed models *[@silk20]*, more conservative post-hoc non-parametric tests were used, which make few underlying assumptions, followed by alpha corrections to 0.01 and p-value adjustments for multiple corrections where needed to test specific hypothesis, and where relevant offer instead descriptive assessments of any treatment interactions.
+To accomodate simpler non-parametric modeling, particularly for dependent variables with uneven sampling, all data were centered at plot-level medians, and also across sampling times when available, particularly given no preliminary significant effects of sampling time on dependent variables, as well as low relevance to expected hypotheses, since spatio-temporal sampling is common in field studies *[@davies15b]*, which also offered sightly higher statistical power (*n* ≥ 3-6).
+Separate hypotheses focusing on tillage and cover crop mix were tested with all dependent variables using Kruskal-Wallis tests, followed by posthoc pairwise Wilcoxon tests with Holm corrections and p/value adjustments setting alpha to 0.01, and all significant comparisons are shown in figures.
+Effect sizes were reported using *eta^2^* estimates *[@tomczak14]* at broader treatment levels and simple median differences at finer pairwise levels.
+All calculations and analyzes were done in `r version$version.string` with useful functions from the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` *[@rstatix]*, and *ggpubr* `r packageVersion("ggpubr")` *[@ggpubr]*.
+Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must) and documented with help from R packages in (Table \@ref(tab:pkgsTab)).
+```{r pkgsTab}
+grateful::cite_packages("table") %>% unnest() %>% 
+  knitr::kable(caption = "Software packages used")
+```
+
+

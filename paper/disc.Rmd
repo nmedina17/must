@@ -1,6 +1,9 @@
 ---
 title: "Discussion"
-output: html_notebook
+output: 
+  # html_notebook
+  bookdown::html_document2:
+    number_sections: FALSE
 bibliography: ../../library.bib
 link-citations: TRUE
 ---
@@ -16,102 +19,82 @@ link-citations: TRUE
 <!-- - conclusion -->
 
 
+```{r setup, echo=F, message=F, warning=F}
+source(here::here("analysis/stats1.R"))
+```
+
+
 Overall this study informs urban soil management by supporting the use of tillage to address compaction issues and improve infiltration, together with cover crops to also reduce weed pressure.
-We observed partial support for our hypothesis, in that tilling weakened compaction...
-
-Our data indicated that tilling significantly reduced compaction over a single growing season in both roto-tilled and tractor tilled plots *(Fig. 1)*.
-However, several no-till plots reached similar depths to rototilled plots, which suggests rototilling is not significantly more effective than no-till at reducing compaction. 
-Forage radish plant weight with foliage responded better in no-till plots that rototill and tractor tilled plots and average weights in the tilled groups were similar. 
-This was supported by detecting significantly higher radish yields in no-till compared to rototill and tractor till plots, while simultaneously measuring faster infiltration in rototill plots. 
-We also observed significant suppression of weed species diversity and overall density in the cover crop mix plots named for that targeted function, showing that the weed suppression mix used in this study can directly be applied in soils like these.
+Our hypothesis was partially supported, because overall tillage significantly deepened the depth to hardpan by ~`r compactionData$effsize_TIL[[1]]$effsize_TIL` (Fig \@ref(fig:compactFig)a), which was within the range of effect sizes measured among the various cover crop mixes within the no-till treatment (Fig \@ref(fig:compactFig)b). 
+Additionally, infiltration was significantly affected by tillage, with roto-till showing the fastest rates (Fig \@ref(fig:infilFig)a), which agreed with our predictions.
+Furthermore, weed pressure was significantly affected by both cover crop mixes and tillage (Fig \@ref(fig:weedsFig)), although effects from cover crop mixes, especially the weed suppression mix, were more widespread among multiple measured variables (Fig \@ref(fig:weedsFig)b).
+Despite these significant effects on soils, infiltration, and weeds, yields did not respond to tillage treatments.
 
 
-## Tillage
+<!-- ## Compaction -->
 
 
-Two reasons for tilling soil are reducing compaction and killing weeds. 
-In this experiment, both tractor and rototilling reduced compaction, loosening soil at lower depths than the no-till method *(Fig. 2)*. 
-Tractor tilling with a subsoiler, moldboard plow, and rototiller likely created a high soil disturbance from the soil surface to depths as low as 30.48 cm or 12 inches. 
-The data show that greater levels of soil disturbance increased the density of the two most common weeds, velvet leaf (*Abutilon theophrasti*) and pigweed (*Palmer amaranth*), and decreased the diversity of other weed species *(Fig. 4)*.
-
-\
-
-The results show that the intensity of tillage corresponds negatively to compaction depth. 
-This effect also lasts throughout the growing season, even though the average depth of compaction tended to decrease over the growing season *(Fig. 2)*. 
-Specifically, tractor tilled soils appeared to have a greater loss in compaction depth compared to no-till soils. 
-This is probably a combination of the natural tendency for clay soils to increase in compaction over time and weather conditions, limiting plant root penetration of soil to depths that would maintain soil looseness *(Boswell et al. 2020)*. 
-Our data align with our previous predictions and other studies *(Özpinar & Çay, 2005)*.
-Depending on what crops are grown, addressing compaction may not be an immediate issue. 
-Multiple crops have shallow root systems or are harvested before roots grow over 10.16 cm or 4 inches into the soil. 
-If crops do not require deep root systems, a no-till method may suffice *(Krause & Black, 1995)*, eliminating the time, energy, and costs of tilling. 
-An important observation for urban soil management was that rototilling and tractor tilling in particular exposed and removed debris from soil that would have remained in place with a no-till system. 
-The debris consisted of construction materials like rebar, wires, cables, bricks, cinder blocks, and pipes as well as other refuse. 
-
-\
-
-Finally, the reduction in compaction in the rototilled plots *(Fig. 2)* may indicate that plant roots from both cover crops and weeds can reduce compaction. 
-Over multiple seasons, if crops with deep root systems are used, tilling may loosen soils at lower depths and facilitate deeper roots to establish more quickly than no-till. 
-Roots that penetrate to lower depths in soil allow plants to increase their access to nutrients and the water *(Arshad, 1990)*.
+Short-term soil compaction issues are commonly alleviated by annual tilling *[@ref?]*, and in addition to validating this practice, this study showed that cover cropping can also be used to manage compaction under no-till, although effects vary by mixture of taxa used.
+Under tillage, this study validates that tillage intensity corresponds negatively with compaction (measured as depth to hardpan), and additionally clarifies that tractor-till can alleviate compaction in slightly deeper soils below main root zones under 
+~`r filter(compData_TIL, TIL=="Tractor")$median` ± 
+`r filter(compData_TIL, TIL=="Tractor")$mad` cm 
+(`r conv_unit(filter(compData_TIL, TIL=="Tractor")$median, "cm", "inch")` ± 
+`r conv_unit(filter(compData_TIL, TIL=="Tractor")$mad, "cm", "inch")` in), 
+as well as that roto-till can be useful under perennial crops, although under annuals, no-till can be just as effective as roto-till, saving grower time, energy, and cost for areas with crops harvested before rooting surpasses *~10 cm (4 in)* *[@krauseBlack95]*.
+However for urban technosol soils, tilling can beneficially remove large metal artifacts and legacy construction debris like rebar, wires, cables, bricks, cinder blacks, and pipes, all of which could limit root growth under strict no-till management. 
+Tillage might also obscure cover crop effects on compaction, although cover crops may still provide other benefits, like soil macro-nutrients *[@ref]*.
+Under no-till, this study found that perennial crop mixes can have significant effects on compaction, but rather than deep roots loosening soils in other studies *[@ref]*, in some cases depth to hardpan can instead become shallower.
+This may be due to dense root mats that can form under grasses *[@ref?]* like sorghum-sudangrass, which could further fill already limited pore space in densely-structured clay soils, helping water to pool under the soil surface *[@ref]*.
+Overall other studies have found similar results *[@OzpinarCay05]*, suggesting short-term benefits of tillage to soil functions (yet long-term costs).
 
 
-## Infiltration
+<!-- ## Infiltration -->
 
 
-Soil’s ability to absorb water is critical for stormwater management, minimizing erosion, and making water available to plant roots. 
-Rototilled plots had the fastest infiltration early in the growing season *(Fig. 3)*. 
-This coincides with predictions compared to no-till plots, but is the opposite of what we expected when compared to more deeply disturbed tractor tilled plots. 
-This may be explained by how compost was incorporated into the plots.
-
-\
-
-For the no-till plots, compost was simply mulched on the surface, and after passing through this layer, water accumulated on the more compacted layer beneath. 
-In rototilled plots, compost was incorporated into the top six inches creating a more porous soil with organic matter throughout. 
-Compost in the tractor tilled plots was mixed in deeper than the other two treatments and may have become too sparse. 
-Thus, these more clayey soils were not porous enough to infiltrate water at high rates. 
-The infiltration rate decreased regardless of tillage treatment between the sampling dates, which was consistent with the pattern of increased compaction throughout the season. 
-The rate was so slow in the no-till and tractor till plots that these soils were draining  less than one hundredth of a gallon in one minute. 
-This suggests that most water from a one inch rain event would result in runoff. 
-We posit that maintaining porosity and deeper compaction depths will allow soils to infiltrate water at rates that can absorb 2.54 cm or 1 inch rain events. 
-Based on our findings, rototilling and incorporating additional compost, may be an effective method to improve water infiltration during the driest time of year. 
-Rototilling disturbed the soil enough to reduce compaction, but not to the extent where organic matter was lost or highly dispersed.
+Water infiltration is a key function to improve urban soil functioning for agriculture by minimizing erosion and improving root available water, as well as mitigating storm-water runoff and flooding that often occurs after short heavy rains, due to soil sealing by concrete near hillslopes *[@ref]*.
+This study found that roto-till resulted in significantly faster infiltration compared to no-till, unlike tractor-till, suggesting that roto-till management can generally be effective for improving infiltration and drainage.
+This result could be explained by medium intensity roto-till increasing soil macro-porosity, which compared to soil micro-pores bind water less tightly allowing to flow faster *[@ref]*.
+In contrast, the tractor diffused tillage energy across deeper soil volume, lowering the density of any added soil macro-pores and thereby making it easier for soil particles to settle back together, whereas no-till may have needed more time to improve macro-porosity via organic matter effects on soil structure *[@king20]*.
+It is also possible that this result could be explained by compost incorporation, where tractor-till similarly incorporated compost more diffusely throughout the soil profile, diluting any compost benefits to infiltration.
+Against a one inch rain event, this study supported the use of roto-till, but not no-till or tractor-till, which showed rates of only 
+~ `r filter(infilData_TIL, TIL=="No")$median` ±
+`r filter(infilData_TIL, TIL=="No")$mad` mL per sec
+(
+`r conv_unit(filter(infilData_TIL, TIL=="No")$median, "ml_per_sec", "gal_per_min")` ±
+`r conv_unit(filter(infilData_TIL, TIL=="No")$mad, "ml_per_sec", "gal_per_min")` gal per min
+), 
+which would likely result in runoff pooling in roads and soil erosion.
+Regarding cover crops, this study suggests that perennials may not have notable significant effects on infiltration rates, despite detectable effects on compaction.
+Based on these findings, roto-till together with compost may be an effective strategy to improve urban soil water infiltration in the short-term, even if no-till may have more evidence as a longer-term strategy *[@ref]*. 
 
 
-## Weed suppression
+<!-- ## Weed suppression -->
 
 
-Overall weed density tended to be highest in tractor-tilled plots *(Fig. 4)*. 
-This was likely due to increased soil disturbance exposing seeds in the soil seed bank and creating open space for weeds to emerge. 
-Higher weed density is an additional downside to the tillage of similar soils by tractor, along with lower infiltration rates. 
-Regardless of tillage treatment, the weed suppression mix of sorghum-sudangrass, buckwheat, and cowpea significantly reduced both weed density and species richness by more than a factor of two in some plots compared to the other cover crop mixes. 
-This result is supported by recommendations from other studies that pair buckwheat and sorghum-sudangrass *(Smith et. al, 2015)*. 
-Weed richness may have decreased due to competitive exclusion by sorghum-sudangrass via allelopathy, and by buckwheat via better phosphorus mining and use *(Jabran 2017; Zhu et al. 2002)*.
-
-\
-
-The weed suppression mix can be utilized to frame crop beds, keeping out encroaching weeds, or to reduce weed pressure in an area that will be planted in the fall or following season. 
-The buckwheat and sorghum-sudan grass grows quickly in poor soils and even dry conditions. 
-These plants accumulate a lot of biomass, which allows them to shade out weeds. 
-They also can be mowed to prevent re-seeding and winter-kill, making them easier crops to manage than crops that require more maintenance. 
-This experiment was designed to require no management after seeding (i.e. no irrigation, weeding, or mowing). 
-Under these conditions, most of the cover crops did not perform well, and were probably inhibited by the warm and dry summer conditions. 
-Crops in other mix treatments used here usually prefer to be sown in the cooler early season *(United States Department of Agriculture, 2015)*. 
-This experiment highlighted crops could be used in clayey soils under these conditions: forage radish, buckwheat, cowpea, and sorghum-sudangrass. 
-Aside from reducing weeds for crop production, weed suppression can reduce pollen counts and the likelihood of direct contact with people *(Katz et al. 2014; Katz & Carey 2014)*. 
-In urban areas this has implications for serving communities where asthma and respiratory illness is common, as well as preventing exposure to weeds that may cause irritation. 
-Under managed landscapes could have cover crops sowed to alleviate some of these urban issues. 
+Weed suppression is important for reducing competition with crops as well as asthma and respiratory health risks from pollen *[@katz14]*, and can also be achieved by tilling *[@ref]*, but this study additionally suggests that cover crops may be more likely to be effective.
+Tractor-till, while able to combat relatively deep soil compaction, resulted in the highest weed density of the two most common weeds, velvet leaf (*Abutilon theophrasti*) and pigweed (*Palmer amaranth*), whose root density may have also slowed soil water infiltration rates.
+This may have been due to fast-growing weed life histories taking advantage of looser soil, such as to re-sprout clonally *[@ref]*, and/or looser soil facilitating the establishment of weed seed banks.
+However more notably, the targeted weed suppression mix of sorghum-sudangrass, buckwheat, and cowpea significantly reduced both weed density and richness by about `r "half"` compared to the other cover crop mixes. 
+This result agrees with other studies pairing buckwheat and sorghum-sudangrass *[@smith15]*, and may have occurred due to competitive exclusion by sorghum-sudangrass and/or buckwheat via allelopathic chemical root defenses *[@ref]* or competition for light *[@ref]*, better phosphorus mining and use by buckwheat *[@jabran17; @zhu02]*, facilitation or amplification of these previous effects by cowpea's added nitrogen supply *[@ref]*, and/or existing adaptations to poor dry soils *[@ref]* allowing high biomass accumulation.
+Given both effectiveness and relative ease of re-seeding and winter-kill, this weed suppression mix can be used to frame crop beds, keeping out encroaching weeds, or to reduce weed pressure in an area that might be planted in the fall or following season. 
 
 
-## Yield and root length
+<!-- ## Yield -->
 
 
-Forage Radish tended to grow the most in no-till plots, which was unexpected based on the higher compaction in these plots. 
-We posit that the radishes benefited from having more access to the nutrients in the compost that was simply mulched on the top two inches of the no-till plots. 
-The compost in the other tillage treatments was incorporated throughout the soil of other plots and less available. 
-It was also surprising that yield did not correspond with faster infiltration, since no-till plots had slower infiltration compared to rototilled plots. 
-This suggests a more nuanced relationship between infiltration and root crop yield unlike the relationship between infiltration and compaction. 
-Yield responds more to more stable or longer-term reservoirs of water and nutrients, such as those in mulched compost, than to shorter-term or more transient influxes brought by infiltration processes *(Schlegel & Havlin 2017)*. 
-Furthermore, more stable reservoirs of water and nutrients may also foster more productive associations with soil microbes, which serve as an additional source of available nutrients for plant roots. 
-In these cases, soil microbe availability might depend less on pH. 
-These data suggest that similar alternative soil management practices like no-till combined with compost and mulching application gives better yields. 
-Thus, forage radish can be an effective cover crop in reducing compaction and building soil structure, with minimal or no mechanical tillage *(Chen, 2010)*. 
-Our study also warrants future studies on the processes tying yield to land management in similar soils.
+Despite overall significant effects by tillage on compaction, infiltration, and weeds, tillage did not significantly affect radish yield.
+As is, this study does not rule out more complex relationships between soil compaction, infiltration, and crop yield, as suggested by other studies *[@ref]*.
+However, with more statistical replication, it is possible that no-till would show slightly higher yields, validating similar studies *[@refs]* pointing to more fundamental soil structure and microbial benefits under no-till.
+Overall yields tend to respond more to longer-term reservoirs of water and nutrients like mulched compost compared to shorter-term, transient influxes brought by infiltration processes *[@schlegelHavlin17]*. 
+As a result, it is possible that similar alternative soil management practices like no-till combined with compost and mulching application may lead to better yields. 
+Additionally, other studies suggest that forage radish can be an effective cover crop in reducing compaction and building soil structure, with minimal or no mechanical tillage **[@chen10]**. 
+However ultimately this study suggests the need for future studies of processes tying yield to land management strategies particularly in similar urban clay soils with legacy compaction and pH concerns.
+
+
+<!-- ## Conclusion -->
+
+
+Taken together, this study presents data that, in addition to validating previous studies supporting general tillage for short-term soil fertility, also validates the use of medium-intensity roto-till and cover crop mixtures specifically for weed suppression. 
+This study serves as a model demonstration of both widely accessible and effective strategies for growing on re-purposed urban soils after urban land-use turnover.
+We advocate for the maximal use of cover crop mixes for various target functions, with medium-intensity tillage to jump-start urban cultivation.
+
