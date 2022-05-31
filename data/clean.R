@@ -77,3 +77,10 @@ Usmpgg_TIL <- Usmpg %>% group_by(TIL) %>%
   rstatix::get_summary_stats(type = "median_mad")
 Usmpgg_MIX <- Usmpg %>% group_by(MIX) %>%
   rstatix::get_summary_stats(type = "median_mad")
+
+
+compData_TIL <- filter(Usmpgg_TIL, variable=="PNDcm")
+compData_MIX <- filter(Usmpgg_MIX, variable=="PNDcm")
+
+infilData_TIL <- filter(Usmpgg_TIL, variable=="INFILmL")
+infilData_MIX <- filter(Usmpgg_MIX, variable=="INFILmL")

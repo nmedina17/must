@@ -2,8 +2,8 @@
 title: "Methods"
 output: 
   # html_notebook
-  bookdown::html_document2:
-    number_sections: FALSE
+  bookdown::pdf_document2:
+    # number_sections: FALSE
 bibliography: 
   - ../../library.bib
   - ../../grateful-refs.bib
@@ -11,21 +11,27 @@ link-citations: TRUE
 ---
 
 
-```{r setup_meth, warning=F, echo=F, results='hide', message=F}
+```{r setupM, warning=F, echo=F, results='hide', message=F}
 knitr::opts_chunk$set(echo = F, warning = F, message = F); library(tidyverse)
-options(digits = 1); library(measurements); source(here::here("tables/chem.R")); 
+options(digits = 1); library(measurements); 
+# library(taxize); taxize::taxize_options(taxon_state_messages = T, quiet = T)
 ```
 
 
-## Study site
+## Site
 
 
-The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st") %>% round(5)`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha (`r site_acre` acres) extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
+```{r chem}
+source(here::here("tables/chem.R")); 
+```
+
+
+The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st") %>% round(digits=5)`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha (`r site_acre` acres) extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
 The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` C (`r conv_unit(MATc,"C","F")` F) and precipitation at ~`r MAPmm=787;MAPmm` mm (`r conv_unit(MAPmm,"mm","inch")` in) ([ncdc.noaa.gov](ncdc.noaa.gov)). 
 The site was formerly a school building and associated playground until 2016 when it was demolished **after closing for ... reasons** and the land became vacant.
 The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r riverDist_mi` mi) away from a small river, conferring some wetland ecosystem properties like denser soils.
 It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)a).
-```{r plots, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near education center, (c) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (c) Edgar Cardenas."}
+```{r plots, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near education center, (c) plot layout design, and (d) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (d) Edgar Cardenas."}
 source(here::here("figs/plots.R")); siteImgs
 ```
 
@@ -34,34 +40,28 @@ Accordingly, the growing area has both a finer- and coarser-textured side (Fig \
 and this study was done on the side with consistent clay of ~37%.
 Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color **YR##?!** (Fig \@ref(fig:plots)b).
 A baseline site-level soil lab assessment from Cornell determined that the top *4 in (10 cm)* of soils around the site together have relatively good organic matter at 
-~`r filter(chemTbl, variable == "SOM_pct") %>% .$median` ± 
-`r filter(chemTbl, variable == "SOM_pct") %>% .$mad`% 
-and nutrient levels, including concentrations of heavy metals like lead and arsenic *(Table ???)* which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
+~`r filter(chem, variable == "SOM_pct") %>% .$median` ± 
+`r filter(chem, variable == "SOM_pct") %>% .$mad`% 
+and nutrient levels, including concentrations of heavy metals like lead and arsenic **(Table ??)** which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
 The soils were also assesed to have decent but sub-optimal *CO~2~* respiration rates of 
-`r filter(chemTbl, variable == "resp_mg_day") %>% .$median` ± 
-`r filter(chemTbl, variable == "resp_mg_day") %>% .$mad` mg per day 
+`r filter(chem, variable == "resp_mg_day") %>% .$median` ± 
+`r filter(chem, variable == "resp_mg_day") %>% .$mad` mg per day 
 (Table \@ref(tab:chem).
 Some main concerns limiting productivity include high alkaline pH of 
-`r filter(chemTbl, variable == "pH") %>% .$median` ± 
-`r filter(chemTbl, variable == "pH") %>% .$mad`, 
+`r filter(chem, variable == "pH") %>% .$median` ± 
+`r filter(chem, variable == "pH") %>% .$mad`, 
 lowering availability of existing nutrients, as well as weak aggregate stability of 
-`r filter(chemTbl, variable == "aggStability_pct") %>% .$median` ± 
-`r filter(chemTbl, variable == "aggStability_pct") %>% .$mad`, 
+`r filter(chem, variable == "aggStability_pct") %>% .$median` ± 
+`r filter(chem, variable == "aggStability_pct") %>% .$mad`, 
 leading to concerns with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chem)).
-```{r chem}
-# chemKbl
-chemTbl %>%
-  knitr::kable(caption = "Baseline Cornell Soil Health Assessment") %>%
-  kableExtra::kable_styling() %>%
-  # kableExtra::group_rows("major", 1, 6) %>%
-  kableExtra::group_rows("biological", 1, 2) %>%
-  kableExtra::group_rows("physical", 3, 3) %>%
-  kableExtra::group_rows("chemical", 4, 10) %>%
-  kableExtra::group_rows("-- minor", 7, 10)
+
+```{r chemKbl}
+chemKbl
 ```
 
 
-## Study design
+
+## Design
 
 
 The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:plots)c).
@@ -74,7 +74,7 @@ Before applying treatments, approximately `r compost_plot_m3=0.24;compost_plot_m
 <!-- ## Tillage -->
 
 
-Tillage treatments represented methods of increasing intensity available for small scale agriculture, also varying in cost, machinery needed, and also grower preference *(@drugova22, pers. comms.)*.
+Tillage treatments represented methods of increasing intensity available for small scale agriculture, also varying in cost, machinery needed, and sometimes grower preferences *[@drugova22]*.
 Specifially, treatments included no-till with a broadfork *(NT)*, roto-tiller *(RT)*, and tractor-till *(TT)* with implements. 
 Tractor-till plots were worked with a subsoiler, moldboard plow, and roto-tiller attached to a tractor up to `r TTft=1;conv_unit(TTft,"ft","cm")` cm (`r TTft` ft) deep. 
 Roto-till plots were treated with a rototiller implement up to `r RTcm=20;RTcm` cm (`r conv_unit(RTcm,"cm","inch")` in) deep. 
@@ -87,18 +87,27 @@ All tilling was done once early in the season after compost application.
 
 Cover crop mixes were designed primarily based on plants associated with targeted benefits, and as possible, relative simplicity of re-seeding and winter-kill (e.g. more heat tolerant) *[@clark07]*.
 Three mixes were designed to target three functions, with each mix containing three different plant species (Table \@ref(tab:crops)). 
-The mix designed to alleviate compaction generally focused on plants with roots that tend to penetrate and loosen soil well, and ultimately included crimson clover (*Trifolium incarnatum*), forage radish (*`r taxize::comm2sci("radish")[[1]]`*), and cereal ryegrass (*Secale cereale*) 
+The mix designed to alleviate compaction generally focused on plants with roots that tend to penetrate and loosen soil well, and ultimately included 
+crimson clover (*Trifolium incarnatum*), 
+forage radish (*`r taxize::comm2sci("radish", taxon_state_messages=T)[[1]]`*), and 
+cereal ryegrass (*Secale cereale*) 
 <!-- *[@williams/weil04]* -->
 . 
-The mix targeting weed suppression included heat- and drought-tolerant crops that tend to grow rapidly, allowing them to outcompete other plants *[@ref?]*--the taxa chosed were sorghum-sudangrass (*Sorghum bicolor x Sorghum bicolor var. sudanese*), cowpea (*`r taxize::comm2sci("black-eyed pea")[[1]]`*), and buckwheat (*Fagopyrum esculentum*). 
-Lastly, a mix was dedicated to perennial cover crops, which in contrast to annuals can survive the winter and thus tend to accumulate biomass and establish before spring weeds--this mix included hairy vetch (*`r taxize::comm2sci("hairy vetch")`*), red clover (*`r taxize::comm2sci("red clover")[[1]]`*), and wheat (*`r taxize::comm2sci("wheat")[[1]]`*). 
+The mix targeting weed suppression included heat- and drought-tolerant crops that tend to grow rapidly, allowing them to outcompete other plants--the taxa chosed were 
+sorghum-sudangrass (*Sorghum bicolor x Sorghum bicolor var. sudanese*), 
+cowpea (*`r taxize::comm2sci("black-eyed pea", taxon_state_messages=T)[[1]]`*), and 
+buckwheat (*Fagopyrum esculentum*). 
+Lastly, a mix was dedicated to perennial cover crops, which in contrast to annuals can survive the winter and thus tend to accumulate biomass and establish before spring weeds--this mix included 
+hairy vetch (*`r taxize::comm2sci("hairy vetch", taxon_state_messages=T)`*), 
+red clover (*`r taxize::comm2sci("red clover", taxon_state_messages=T)[[1]]`*), and 
+wheat (*`r taxize::comm2sci("wheat", taxon_state_messages=T)[[1]]`*). 
 We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
 ```{r crops}
 source(here::here("tables/crops.R")); cropKbl
 ```
 
 
-## Data Collection
+## Sampling
 
 
 <!-- ### Compaction -->
@@ -127,18 +136,21 @@ Five forage radish (Brassica *Raphanus sativus var. longipinnatus*) roots were r
 The length of a radish root was measured from the hypocotyl, or root cap, to where the root became ~`r radishLenLimit_in=0.25;conv_unit(radishLenLimit_in,"inch","mm")` mm (~1⁄4 in) wide.
 
 
-## Statistical analyses
+## Statistics
 
 ```{r pkgs, results='hide'}
 grateful::get_pkgs_info(out.dir = "../.."); 
 ```
 
-Given limited field space for strict plot replication (*n*=3) and thus limited inference from nested mixed models *[@silk20]*, more conservative post-hoc non-parametric tests were used, which make few underlying assumptions, followed by alpha corrections to 0.01 and p-value adjustments for multiple corrections where needed to test specific hypothesis, and where relevant offer instead descriptive assessments of any treatment interactions.
-To accomodate simpler non-parametric modeling, particularly for dependent variables with uneven sampling, all data were centered at plot-level medians, and also across sampling times when available, particularly given no preliminary significant effects of sampling time on dependent variables, as well as low relevance to expected hypotheses, since spatio-temporal sampling is common in field studies *[@davies15b]*, which also offered sightly higher statistical power (*n* ≥ 3-6).
-Separate hypotheses focusing on tillage and cover crop mix were tested with all dependent variables using Kruskal-Wallis tests, followed by posthoc pairwise Wilcoxon tests with Holm corrections and p/value adjustments setting alpha to 0.01, and all significant comparisons are shown in figures.
-Effect sizes were reported using *eta^2^* estimates *[@tomczak14]* at broader treatment levels and simple median differences at finer pairwise levels.
-All calculations and analyzes were done in `r version$version.string` with useful functions from the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` *[@rstatix]*, and *ggpubr* `r packageVersion("ggpubr")` *[@ggpubr]*.
-Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must) and documented with help from R packages in (Table \@ref(tab:pkgsTab)).
+Field space limited strict plot replication for combined treatments (*n*=3), and thus inference from advanced nested mixed models *[@silk20]*, so analysis focused on specific hypotheses tested using simpler, more conservative non-parametric tests that make few underlying assumptions about data and thus appropriate for data with lower replication.
+Kruskal-Wallis tests were run for tillage and cover crop treatments separately, with alpha corrections from 0.05 to 0.01 under multiple comparisons to descriptively parse any treatment interactions, and overall significant treatment effects were followed up by post-hoc Wilcoxon pairwise tests with Holm-corrected p-value adjustments.
+All data were centered at plot-level medians, and where applicable pooled across sampling times given no preliminary significant variation along this axis, together with minimal relevance to focal hypotheses in field studies *[@davies15b]*, and was a general solution to uneven sampling across response variables, minimally increasing statistical power (base *n* ≥ 3-6).
+For clarity, results figures were designed to reflect statistical models and grouping transparently.
+Significant treatment effect sizes were estimated with *eta^2^* *[@tomczak14]* and simpler raw median differences at finer pairwise levels.
+All calculations and analyzes were done in `r version$version.string` *[@base]* with useful functions from the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` and *ggpubr* `r packageVersion("ggpubr")` *[@rstatix]*.
+Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must), 
+documented using R packages *here* *[@here]*, *bookdown* *[@bookdown2022]*, *measurements* *[@measurements]*, *taxize* *[@taxize2020]*, *knitr* *[@knitr2022]*, and *rmarkdown* *[@rmarkdown2022]*.
+<!-- in Table \@ref(tab:pkgsTab). -->
 ```{r pkgsTab}
 grateful::cite_packages("table") %>% unnest() %>% 
   knitr::kable(caption = "Software packages used")

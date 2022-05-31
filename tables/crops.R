@@ -1,4 +1,4 @@
-here::i_am("tables/crops.R"); library(tidyverse)
+here::i_am("tables/crops.R"); library(tidyverse); #taxize::taxize_options(quiet=T)
 #info----
 mixes <- tibble(
   "Null" = "Existing vegetation (no manipulation)",
@@ -8,7 +8,7 @@ mixes <- tibble(
 )
 plantCommNames <- c("Hairy Vetch", "Red Clover", "Wheat", "Forage Radish",
                     "Crimson Clover", "Cereal Ryegrass", "Sorghum-Sudangrass",
-                    "Cowpea", "Buckwheat")
+                    "Cowpea/Black-Eyed Pea", "Buckwheat")
 plants <- c(
   "Hairy Vetch" = taxize::comm2sci(mixes$Perennial[[1]])[[1]],
   "Red Clover" = taxize::comm2sci(mixes$Perennial[[2]])[[1]],
@@ -17,7 +17,7 @@ plants <- c(
   "Crimson Clover" = "Trifolium incarnatum",
   "Cereal Ryegrass" = "Secale cereale",
   "Sorghum-Sudangrass" = "Sorghum bicolor x S. bicolor var. sudanese",
-  "Cowpea" = taxize::comm2sci("Black-Eyed Pea")[[1]],
+  "Cowpea/Black-Eyed Pea" = taxize::comm2sci("Black-Eyed Pea")[[1]],
   "Buckwheat" = "Fagopyrum esculentum"
 ) %>% as_tibble() %>% rename("Binomial" = value) %>% mutate("Plants" = plantCommNames)
   # pivot_longer(everything(), names_to = "Plants", values_to = "Binomial")
@@ -26,20 +26,27 @@ plants <- c(
 cropTbl <- mixes %>% as_tibble() %>%
   pivot_longer(everything(), names_to = "Function", values_to = "Plants") %>%
 
-  full_join(plants) %>% nest(!Function) %>% unnest()
+  full_join(plants) %>%
+  reorder_levels(Function, c(
+    "Weed Suppression", "Perennial", "Compaction", "Null"
+  )) %>% arrange(Function) %>%
+  nest(!Function) %>% unnest()
   # mutate(Binomial = Binomial)
 
 #style----
 cropKbl <- cropTbl %>%
-  # select(!Function) %>%
   distinct() %>%
-  knitr::kable(caption = "Cover crop mixes") %>%
+  mutate(Function = ifelse(duplicated(Function), "", as.character(Function)),
+         Binomial = ifelse(is.na(Binomial), "", as.character(Binomial))) %>%
+  # select(!Function) %>%
+
+  knitr::kable(caption = "Cover crop mixes", align = "c") %>%
   # as.data.frame(rvest::html_table()) %>%
   kableExtra::collapse_rows() %>% #bug
-  # kableExtra::group_rows(names(mixes)[1], 1, 3) %>%
+  # kableExtra::group_rows(names(mixes)[4], 1, 3) %>%
   # kableExtra::group_rows(names(mixes)[2], 4, 6) %>%
   # kableExtra::group_rows(names(mixes)[3], 7, 9) %>%
-  # kableExtra::group_rows(names(mixes)[4], 10, 12) %>%
+  # kableExtra::group_rows(names(mixes)[1], 10, 10) %>%
   kableExtra::kable_styling() %>%
   kableExtra::column_spec(3, italic = T)
 

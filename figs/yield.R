@@ -1,4 +1,9 @@
 here::i_am("figs/yield.R"); source(here::here("figs/weeds.R"))
+yieldNT <- magick::image_read(here::here("figs/yieldNT.jpg")) %>%
+  magick::image_ggplot()
+yieldTT <- magick::image_read(here::here("figs/yieldTT.jpg")) %>%
+  magick::image_ggplot()
+
 # yieldData <- varTestTbl %>% filter(variable == "RADL_CM" |
 #                                      variable == "TOTRAD_kg_m2") %>%
 #   unnest(variable:varData)
@@ -13,7 +18,7 @@ yieldPlot <- yieldData %>%
   ggbeeswarm::geom_quasirandom(color = "gray") +
   facet_wrap(~variable, labeller = labeller(variable = yieldLabels),
              # scales = "free",
-             nrow = 2) + #scale_y_log10() +
+             nrow = 1) + #scale_y_log10() +
   labs(x = "Tillage", y = "Radish yield")
   # scale_y_reverse()
 yieldPlot <- yieldPlot %>%
@@ -50,6 +55,9 @@ yieldPlot <- yieldPlot %>%
 #   ), size = 2) +
 #   EnvStats::stat_n_text(size = 2)
 
-# yieldPlot <- ggarrange(yieldPlot_a, yieldPlot_b, labels = c("a", "b"))
+yieldPlot <- ggpubr::ggarrange(
+  ggpubr::ggarrange(yieldNT, yieldTT, labels = c("a", "b"), nrow = 1),
+  yieldPlot, labels = c("", "c"), nrow = 2
+)
 ggplot2::ggsave("figs/yieldPlot.png", yieldPlot,
        height = 3, width = 3, units = "in")

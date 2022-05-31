@@ -2,8 +2,8 @@
 title: "Results"
 output: 
   # html_notebook
-  bookdown::html_document2:
-    number_sections: false
+  bookdown::pdf_document2:
+    # number_sections: FALSE
 ---
 
 
@@ -20,11 +20,6 @@ posthocStat <- "T" #wilcoxon
 
 ## Compaction
 
-
-```{r compData}
-compData_TIL <- filter(Usmpgg_TIL, variable=="PNDcm")
-compData_MIX <- filter(Usmpgg_MIX, variable=="PNDcm")
-```
 
 Compaction was affected significantly overall by tillage treatments (
 *`r testStat`* = `r compactionData$statistic_TIL[1]`, 
@@ -63,7 +58,7 @@ The effect of roto-till was more pronounced in the perennial mix (
 There was also a significant difference of **###** (conv_, or ~*33*%) between tractor- and roto-till among all cover crop mixes (Fig \@ref(fig:compactFig)a).
 <!-- test-static-vals? -->
 
-```{r compactFig, fig.cap="Compaction data"}
+```{r compactFig, fig.cap="Compaction data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
 knitr::include_graphics(here::here("figs/compactionPlot.png"))
 ```
 
@@ -101,11 +96,6 @@ up to
 ## Infiltration
 
 
-```{r infilData}
-infilData_TIL <- filter(Usmpgg_TIL, variable=="INFILmL")
-infilData_MIX <- filter(Usmpgg_MIX, variable=="INFILmL")
-```
-
 Soil infiltration was significantly affected by tillage (
 *`r testStat`* = `r infilData$statistic_TIL[1]`,
 *df* = `r infilData$df_TIL[1]`, 
@@ -134,7 +124,7 @@ up to
 (Fig \@ref(fig:infilFig)a).
 
 
-```{r infilFig, fig.cap="Infiltration data"}
+```{r infilFig, fig.cap="Infiltration data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
 knitr::include_graphics(here::here("figs/infilPlot.png"))
 ```
 
@@ -185,7 +175,7 @@ up to
 `r filter(weedDnData_TIL, TIL=="Tractor")$mad` *stems per m^-2^*
 .
 
-```{r weedsFig, fig.cap="Weeds data"}
+```{r weedsFig, fig.cap="Weeds data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
 knitr::include_graphics(here::here("figs/weedPlot.png"))
 ```
 
@@ -315,6 +305,6 @@ Radish yield was not significantly affected by tillage (
 )
 long (Fig \@ref(fig:yieldFig)).
 
-```{r yieldFig, fig.cap="Yield data"}
+```{r yieldFig, fig.cap="Yield data (a) from no-till and (b) tractor-till. Photo credits: Naim Edwards."}
 knitr::include_graphics(here::here("figs/yieldPlot.png"))
 ```
