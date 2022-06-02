@@ -25,8 +25,8 @@ compactionPlot_a <- compactionData %>%
   theme(legend.position = "top") +
   facet_wrap(~MIX, labeller = labeller(MIX = compactionLabels)) +
   scale_y_reverse()
-compactionPlot_a <- compactionPlot_a %>%
-  ggpubr::add_summary(fun = "median_mad", size = 0.25) +
+compactionPlot_a <- compactionPlot_a +
+  ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
   ggpubr::stat_compare_means(comparisons = list(c("Roto", "Tractor"),
                                         c("No", "Roto"),
@@ -55,8 +55,8 @@ compactionPlot_b <- compactionData %>%
   ggbeeswarm::geom_quasirandom(color = "gray") +
   labs(x = "Cover crop mix", y = "Depth to hardpan (cm)") +
   scale_y_reverse() + facet_grid(~TIL)
-compactionPlot_b <- compactionPlot_b %>%
-  ggpubr::add_summary(fun = "median_mad", size = 0.25) +
+compactionPlot_b <- compactionPlot_b +
+  ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
   ggpubr::stat_compare_means(comparisons = list(
     # c("null", "comp"), c("comp", "pere"),
@@ -77,5 +77,5 @@ compactionPlot_b <- compactionPlot_b %>%
 
 compactionPlot <- ggpubr::ggarrange(compactionPlot_a, compactionPlot_b,
                             labels = c("a", "b"), nrow = 2)
-ggplot2::ggsave("figs/compactionPlot.png", compactionPlot,
-       height = 3, width = 3, units = "in")
+# ggplot2::ggsave("figs/compactionPlot.png", compactionPlot,
+#        height = 3, width = 3, units = "in")

@@ -1,50 +1,77 @@
 ---
-title: Combining medium-intensity tillage to improve soil compaction and infiltration with cover crop mixes to suppress weeds
+title: "Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration"
 author:
-  - name: Naim Edwards
-    email: edwar649@msu.edu
-    affiliation: Michigan State University
-  - name: Nicholas Medina
-    email: nmedina@umich.edu
-    affiliation: University of Michigan
-  - name: Elizabeth Asker
-    email: asker@msu.edu
-    affiliation: Michigan State University
-address:
-  - code: University of Michigan
-    address: Ecology and Evolutionary Biology, 1105 N University Ave, Ann Arbor, MI 48109
-  - code: Michigan State University
-    address: Agriculture and Natural Resources Extension, Detroit, MI
+  - Naim Edwards ^a^*
+  - Nicholas Medina ^b^
+  - Elizabeth Asker ^a^
+#   - name: Naim Edwards
+#     email: edwar649@msu.edu
+#     affiliation: Michigan State University
+#     correspondence: yes
+#   - name: Nicholas Medina
+#     email: nmedina@umich.edu
+#     affiliation: University of Michigan
+#     correspondence: yes
+#   - name: Elizabeth Asker
+#     email: asker@msu.edu
+#     affiliation: Michigan State University
+# address:
+#   - code: University of Michigan
+#     address: Ecology and Evolutionary Biology, 1105 N University Ave, Ann Arbor, MI 48109
+#   - code: Michigan State University
+#     address: Agriculture and Natural Resources Extension, Detroit, MI
+date: \scriptsize 
+  ^a^ edwar649@msu.edu, Agriculture and Natural Resources, Michigan State University, 16745 Lamphere St, Detroit, MI, USA 48219;  
+  ^b^ nmedina@umich.edu, Ecology and Evolutionary Biology, University of Michigan, 1105 N University Ave, Ann Arbor, MI, USA
 
 abstract: |
+  \singlespacing
+  
   Urban soils have been degraded by decades of industrial activities, but they also represent opportunities to improve food sovereignty for urban residents practicing urban agriculture.
   Urban growers often use varying practices of compost, tillage, and cover cropping, but without distinguishing their benefits to optimize integrated approaches.
   This study examined how tillage methods representing various intensities and cover crop mixes targeting different functions affected agricultural variables including soil compaction, water infiltration rate, herbaceous weedy plant pressure, and crop yield. 
   Results showed that both roto- and tractor-till significantly affected compaction but not yield compared to no-till, and roto-till also improved infiltration, while tractor-till reached deeper soils but allowed denser weed growth.
   Mixing sorghum-sudangrass, buckwheat, and cowpea cover crops significantly reduced weed pressure compared to other mixtures, and perennials affected compaction but not soil water infiltration under no-till.
   These results reveal that medium-intensity tillage may offer more balanced trade-offs for initial management, and that cover crops can help reduce weeds under low-till strategies.
-  Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.
+  Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.  
+  
+  **Keywords**: urban agriculture; soil compaction; weed suppression; roto-till, cover crop mix; soil infiltration  
+  
+  **Highlights:**  
+    - Roto-till improves urban soil compaction and infiltration vs. no-till  
+    - Tractor-till improves compaction but not infiltration and also increases weeds  
+    - Cover crop mixes suppress weeds  
+    - Forage radish yield not affected by till or cover crop mixes  
+    - Roto-till and cover crop mixes help improve soils for urban agriculture  
+  
+  ***Corresponding author**: Naim Edwards, edwar649@msu.edu  
 
-keywords:
-  - urban
-  - compact
-  - weed
-  - till
-  - cover
-  - water
+# keywords: "Keywords: urban, compact, weed, till, cover, water"
+  
 output: 
-  # html_notebook
-  bookdown::pdf_book:
+  # bookdown::html_notebook2:
+  #   toc: FALSE
+  bookdown::pdf_document2:
     # number_sections: FALSE
-always_allow_html: FALSE
+    toc: FALSE
+    keep_tex: TRUE
+  # rticles::elsevier_article:
+  #   keep_tex: TRUE
+# always_allow_html: TRUE
 bibliography: 
-- ../../library.bib
-- ../../grateful-refs.bib
+  - ../../library.bib
+  - ../../grateful-refs.bib
+csl: ../../styles-master/elsevier-harvard.csl
+# documentclass: elsarticle
+  
 link-citations: TRUE
-# csl: ../../peerj.csl
-linenumbers: TRUE
 fontsize: 12pt
 geometry: margin=1in
+header-includes:
+  - \usepackage[left]{lineno}
+  - \linenumbers
+  - \usepackage{setspace}\doublespace
+font-family: Helvetica
 ---
 
 
@@ -58,13 +85,21 @@ geometry: margin=1in
 <!--   - pre-print archived in agriRxiv, ecoEvoRxiv, or bioRxiv. -->
 
 
-`r options(digits = 1)`
-
+```{r setupFull, echo=F}
+options(digits = 1, knitr.table.format = "latex");
+# knitr::opts_chunk$set(fig.width = 3, fig.height = 3)
+```
 
 
 <!-- # Abstract -->
 
 <!-- ```{r abs, child='abs.Rmd'} -->
+<!-- ``` -->
+
+
+<!-- # Highlights -->
+
+<!-- ```{r intro, child='highlights.Rmd'} -->
 <!-- ``` -->
 
 
@@ -94,24 +129,25 @@ geometry: margin=1in
 
 # Acknowledgements
 
-
 Thanks to previous anonymous reviewers, and peer student (Kristel, Zach,) discussion of initial drafts.
+
+
+# Author contributions
+
+NE conceived, designed, and performed the study; NE and NM collected data; NM analyzed data; NE and NM wrote the paper; NE, NM, and EA revised the paper.
 
 
 # Funding
 
-
 *This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.*
 
 
-# Conflicts of interest
-
+# Declaration of interests
 
 Authors declare no conflicts of interest. 
 
 
 # Data statement
-
 
 Data and code available at [nmedina17.github.com/must](nmedina17.github.com/must).
 

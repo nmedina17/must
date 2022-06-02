@@ -12,8 +12,8 @@ infilPlot_a <- infilData %>%
   # facet_wrap(~SAMPL_TIME) +
   labs(x = "Tillage", y = expression(paste("Infiltration (mL sec"^-1, ")")),
        size = 8)
-infilPlot_a <- infilPlot_a %>%
-  ggpubr::add_summary(fun = "median_mad", size = 0.25) +
+infilPlot_a <- infilPlot_a +
+  ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format") +
   ggpubr::stat_compare_means(comparisons = list(c("No", "Roto")),
                                                 # c("Roto", "Tractor"),
@@ -39,8 +39,8 @@ infilPlot_b <- infilData %>%
        y = expression(paste("Infiltration (mL sec"^-1, ")")),
        size = 8)
   # scale_y_log10()
-infilPlot_b <- infilPlot_b %>%
-  ggpubr::add_summary(fun = "median_mad", size = 0.25) +
+infilPlot_b <- infilPlot_b +
+  ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format", digits = 3) +
   ggpubr::stat_compare_means(comparisons = list(
     # c("null", "comp"), c("null", "pere"),
@@ -59,5 +59,5 @@ infilPlot_b <- infilPlot_b %>%
   EnvStats::stat_n_text(size = 1.5)
 
 infilPlot <- ggpubr::ggarrange(infilPlot_a, infilPlot_b, labels = c("a", "b"), nrow = 2)
-ggplot2::ggsave("figs/infilPlot.png", infilPlot,
-       height = 3, width = 3, units = "in")
+# ggplot2::ggsave("figs/infilPlot.png", infilPlot,
+#        height = 3, width = 3, units = "in")

@@ -37,8 +37,8 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Combining medium-intensity tillage to improve soil compaction and infiltration with cover crop mixes to suppress weeds},
-  pdfkeywords={urban, compact, weed, till, cover, water},
+  pdftitle={Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration},
+  pdfauthor={Naim Edwards a*; Nicholas Medina b; Elizabeth Asker a},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -93,6 +93,9 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage[left]{lineno}
+\linenumbers
+\usepackage{setspace}\doublespace
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -111,13 +114,15 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\title{Combining medium-intensity tillage to improve soil compaction and infiltration with cover crop mixes to suppress weeds}
-\author{true \and true \and true}
-\date{}
+\title{Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration}
+\author{Naim Edwards \textsuperscript{a}* \and Nicholas Medina \textsuperscript{b} \and Elizabeth Asker \textsuperscript{a}}
+\date{\scriptsize \textsuperscript{a} \href{mailto:edwar649@msu.edu}{\nolinkurl{edwar649@msu.edu}}, Agriculture and Natural Resources, Michigan State University, 16745 Lamphere St, Detroit, MI, USA 48219; \textsuperscript{b} \href{mailto:nmedina@umich.edu}{\nolinkurl{nmedina@umich.edu}}, Ecology and Evolutionary Biology, University of Michigan, 1105 N University Ave, Ann Arbor, MI, USA}
 
 \begin{document}
 \maketitle
 \begin{abstract}
+\singlespacing
+
 Urban soils have been degraded by decades of industrial activities, but they also represent opportunities to improve food sovereignty for urban residents practicing urban agriculture.
 Urban growers often use varying practices of compost, tillage, and cover cropping, but without distinguishing their benefits to optimize integrated approaches.
 This study examined how tillage methods representing various intensities and cover crop mixes targeting different functions affected agricultural variables including soil compaction, water infiltration rate, herbaceous weedy plant pressure, and crop yield.
@@ -125,39 +130,46 @@ Results showed that both roto- and tractor-till significantly affected compactio
 Mixing sorghum-sudangrass, buckwheat, and cowpea cover crops significantly reduced weed pressure compared to other mixtures, and perennials affected compaction but not soil water infiltration under no-till.
 These results reveal that medium-intensity tillage may offer more balanced trade-offs for initial management, and that cover crops can help reduce weeds under low-till strategies.
 Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.
+
+\textbf{Keywords}: urban, compact, weed, till, cover, water
+
+\textbf{Highlights:}\\
+- Roto-till improves urban soil compaction and infiltration vs.~no-till\\
+- Tractor-till improves compaction but not infiltration and also increases weeds\\
+- Cover crop mixes suppress weeds\\
+- Forage radish yield not affected by till or cover crop mixes\\
+- Roto-till and cover crop mixes help improve soils for urban agriculture
+
+*\textbf{Corresponding author}: Naim Edwards, \href{mailto:edwar649@msu.edu}{\nolinkurl{edwar649@msu.edu}}
 \end{abstract}
 
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Urban soils have the potential to improve the livelihoods of most of the world \emph{(\protect\hyperlink{ref-acuto18}{Acuto, Parnell, and Seto 2018})} via implications for climate adaptation, erosion and storm-water runoff management, and local forestry \emph{(\protect\hyperlink{ref-pavao-zuckerman08}{Pavao-Zuckerman 2008})}, but many urban soils are in poor health for cultivation after decades of industrial use, including sealing and structural engineering \emph{(\protect\hyperlink{ref-lal15}{Lal, Negassa, and Lorenz 2015})}.
-This is especially notable in post-industrial cities of the mid-western USA, where many vacant lots remain on soils can have relatively high compaction, pH, and chemical contamination \emph{(\protect\hyperlink{ref-beniston16}{Beniston, Lal, and Mercer 2016})}.
-Degraded urban soils with low organic matter are also likely far from organic carbon saturation \emph{(\protect\hyperlink{ref-stewart07}{C. E. Stewart et al. 2007})}, making the potential benefit from tailored agricultural management large \emph{(\protect\hyperlink{ref-kumar16}{Kumar and Hundal 2016}; \protect\hyperlink{ref-kuzyakov19}{Kuzyakov and Zamanian 2019})}.
-However, popular single strategies like organic compost amendments to urban gardens, while widely beneficial across many physical, chemical, and biological properties \emph{(\protect\hyperlink{ref-cogger05}{Cogger 2005})}, can also have other side effects like excess phosphorus \emph{(\protect\hyperlink{ref-small19}{Small et al. 2019})}, which highlights the benefits of new and ongoing research studies of urban soil management, especially of integrated approaches for soil multi-functionality \emph{(\protect\hyperlink{ref-blesh17}{Blesh 2017})} including cover cropping, tillage, diverse mulching, and others.
-In response to various needs, urban agriculture continues to expand as local communities and non-profit organizations revitalize and establish a diversity of new green initiatives including landscaping to improve local access to healthy food and a cleaner and safer environment \emph{(\protect\hyperlink{ref-block12}{Block et al. 2012}; \protect\hyperlink{ref-clendenning16}{Clendenning, Dressler, and Richards 2016}; \protect\hyperlink{ref-garcia-sempere19}{García-Sempere et al. 2019}; \protect\hyperlink{ref-siebert20}{Siebert 2020})}.
+Urban soils have the potential to improve the livelihoods of most of the world \emph{(\protect\hyperlink{ref-acuto18}{Acuto et al., 2018})} via implications for climate adaptation, erosion and storm-water runoff management, and local forestry \emph{(\protect\hyperlink{ref-pavao-zuckerman08}{Pavao-Zuckerman, 2008})}, but many urban soils are in poor health for cultivation after decades of industrial use, including sealing and structural engineering \emph{(\protect\hyperlink{ref-lal15}{Lal et al., 2015})}.
+This is especially notable in post-industrial cities of the mid-western USA, where many vacant lots remain on soils can have relatively high compaction, pH, and chemical contamination \emph{(\protect\hyperlink{ref-beniston16}{Beniston et al., 2016})}.
+Degraded urban soils with low organic matter are also likely far from organic carbon saturation \emph{(\protect\hyperlink{ref-stewart07}{Stewart et al., 2007})}, making the potential benefit from tailored agricultural management large \emph{(\protect\hyperlink{ref-kumar16}{Kumar and Hundal, 2016}; \protect\hyperlink{ref-kuzyakov19}{Kuzyakov and Zamanian, 2019})}.
+However, popular single strategies like organic compost amendments to urban gardens, while widely beneficial across many physical, chemical, and biological properties \emph{(\protect\hyperlink{ref-cogger05}{Cogger, 2005})}, can also have other side effects like excess phosphorus \emph{(\protect\hyperlink{ref-small19}{Small et al., 2019})}, which highlights the benefits of new and ongoing research studies of urban soil management, especially of integrated approaches for soil multi-functionality \emph{(\protect\hyperlink{ref-blesh17}{Blesh, 2017})} including cover cropping, tillage, diverse mulching, and others.
+In response to various needs, urban agriculture continues to expand as local communities and non-profit organizations revitalize and establish a diversity of new green initiatives including landscaping to improve local access to healthy food and a cleaner and safer environment \emph{(\protect\hyperlink{ref-block12}{Block et al., 2012}; \protect\hyperlink{ref-clendenning16}{Clendenning et al., 2016}; \protect\hyperlink{ref-garcia-sempere19}{García-Sempere et al., 2019}; \protect\hyperlink{ref-siebert20}{Siebert, 2020})}.
 Urban growers in particular often invest relatively large amounts of money, time, and resources from accessible capital into amending soils for vegetable production \emph{(pers. comms.)},
-thereby improving the potential impact of research for promising accessible urban soil remediation strategies, which remains limited beyond compost \emph{(\protect\hyperlink{ref-grossman03}{Grossman 2003})}.
+thereby improving the potential impact of research for promising accessible urban soil remediation strategies, which remains limited beyond compost \emph{(\protect\hyperlink{ref-grossman03}{Grossman, 2003})}.
 
 Mechanized tilling has long been a regular strategy improve short-term arability, among others like adding compost, although research studies increasingly report soil degradation after long-term and intensive tillage.
-Short-term tillage benefits include larger soil pores and lower soil bulk density \emph{(\protect\hyperlink{ref-hill85}{Hill, Horton, and Cruse 1985}; \protect\hyperlink{ref-badalikova10}{Badalíková 2010})}, and potentially more available nutrients \emph{(\protect\hyperlink{ref-wolkowski90}{Wolkowski 1990})} with less potential weed regeneration \emph{(\protect\hyperlink{ref-barberi01}{Barberi and Lo Cascio 2001}; \protect\hyperlink{ref-cordeau20}{Cordeau, Baudron, and Adeux 2020})}, making tillage useful against soil compaction and associated water infiltration and drainage issues, which can facilitate faster seeding and crop establishment early in the season \emph{(\protect\hyperlink{ref-monti01}{Monti, Venturi, and Elbersen 2001})}.
-However, longer-term side effects of excessive and/or very intensive tillage include weaker soil aggregate stability and structure \emph{(\protect\hyperlink{ref-six02a}{Six et al. 2002}; \protect\hyperlink{ref-catania18}{Catania et al. 2018})}, increasing dependence on tillage to maintain past yields \emph{(\protect\hyperlink{ref-decarcer19}{de Cárcer et al. 2019})}, and faster soil erosion \emph{(\protect\hyperlink{ref-richter21}{Richter 2021})}, which has more recently led to events like the USA Dust Bowl, and historically poses an existential threat to agricultural societies when combined with other stressors \emph{(\protect\hyperlink{ref-lal07}{Lal 2007}; \protect\hyperlink{ref-montgomery07}{Montgomery 2007}; \protect\hyperlink{ref-amundson15}{Amundson et al. 2015})}.
-In response, sustainable and regenerative agriculture theories promote no-till or minimal-till management approaches like broadfork tools to re-focus on soil health and fertility \emph{(\protect\hyperlink{ref-wang06}{Wang et al. 2006}; \protect\hyperlink{ref-roger-estrade10}{Roger-Estrade et al. 2010})}, which comes with different challenges like stronger pressure from weeds \emph{(\protect\hyperlink{ref-anderson07}{Anderson 2007})}, highlighting a role for continuing research into diverse no-till strategies.
-For urban growers, machinery can also be cost-prohibitive, and limited access to agricultural loans \emph{(\protect\hyperlink{ref-daniel07}{Daniel 2007})} has resulted in affected communities adapting by organizing equipment sharing systems, which can be more practical in denser urban housing arrangements compared to diffuse rural ones.
-This variation in accessibility of machinery can promote mixed tillage strategies by urban growers including tractor- and/or roto-till, which likely have different effects on soil and weed issues, but there remains little public documentation comparing benefits of various tillage styles on remediating urban soils \emph{(\protect\hyperlink{ref-bazzoffi98}{Bazzoffi 1998}; \protect\hyperlink{ref-materechera09}{Materechera 2009})}, which slows the innovation of tailored management strategies for the array of urban grower goals.
+Short-term tillage benefits include larger soil pores and lower soil bulk density \emph{(\protect\hyperlink{ref-badalikova10}{Badalíková, 2010}; \protect\hyperlink{ref-hill85}{Hill et al., 1985})}, and potentially more available nutrients \emph{(\protect\hyperlink{ref-wolkowski90}{Wolkowski, 1990})} with less potential weed regeneration \emph{(\protect\hyperlink{ref-barberi01}{Barberi and Lo Cascio, 2001}; \protect\hyperlink{ref-cordeau20}{Cordeau et al., 2020})}, making tillage useful against soil compaction and associated water infiltration and drainage issues, which can facilitate faster seeding and crop establishment early in the season \emph{(\protect\hyperlink{ref-monti01}{Monti et al., 2001})}.
+However, longer-term side effects of excessive and/or very intensive tillage include weaker soil aggregate stability and structure \emph{(\protect\hyperlink{ref-catania18}{Catania et al., 2018}; \protect\hyperlink{ref-six02a}{Six et al., 2002})}, increasing dependence on tillage to maintain past yields \emph{(\protect\hyperlink{ref-decarcer19}{de Cárcer et al., 2019})}, and faster soil erosion \emph{(\protect\hyperlink{ref-richter21}{Richter, 2021})}, which has more recently led to events like the USA Dust Bowl, and historically poses an existential threat to agricultural societies when combined with other stressors \emph{(\protect\hyperlink{ref-amundson15}{Amundson et al., 2015}; \protect\hyperlink{ref-lal07}{Lal, 2007}; \protect\hyperlink{ref-montgomery07}{Montgomery, 2007})}.
+In response, sustainable and regenerative agriculture theories promote no-till or minimal-till management approaches like broadfork tools to re-focus on soil health and fertility \emph{(\protect\hyperlink{ref-roger-estrade10}{Roger-Estrade et al., 2010}; \protect\hyperlink{ref-wang06}{Wang et al., 2006})}, which comes with different challenges like stronger pressure from weeds \emph{(\protect\hyperlink{ref-anderson07}{Anderson, 2007})}, highlighting a role for continuing research into diverse no-till strategies.
+For urban growers, machinery can also be cost-prohibitive, and limited access to agricultural loans \emph{(\protect\hyperlink{ref-daniel07}{Daniel, 2007})} has resulted in affected communities adapting by organizing equipment sharing systems, which can be more practical in denser urban housing arrangements compared to diffuse rural ones.
+This variation in accessibility of machinery can promote mixed tillage strategies by urban growers including tractor- and/or roto-till, which likely have different effects on soil and weed issues, but there remains little public documentation comparing benefits of various tillage styles on remediating urban soils \emph{(\protect\hyperlink{ref-bazzoffi98}{Bazzoffi, 1998}; \protect\hyperlink{ref-materechera09}{Materechera, 2009})}, which slows the innovation of tailored management strategies for the array of urban grower goals.
 
-Cover cropping has been another long-recommended strategy of sustaining longer-term yields by maintaining soil fertility \emph{(\protect\hyperlink{ref-perez21}{Perez 2021}; \protect\hyperlink{ref-richter21}{Richter 2021})}, although current strategies could be improved from relying on single species to designing complementary species mixes.
-The namesake benefit of cover crops is to cover the soil in areas without active cultivation, which maintains root activity and weakens erosion \emph{(\protect\hyperlink{ref-garcia-gonzalez18}{García-González et al. 2018})}, but different species will also vary in the benefits they can provide based on physiological traits.
-For example, legumes like cowpea (or black-eyed peas, \emph{Vigna unguiculata subsp. unguiculata}), clovers (\emph{Trifolium sp.}), and hairy vetch (\emph{Vicia villosa}) are popular cover crops because of their additional symbioses with root bacteria that fix nitrogen from the air into soils where it is more available for future crop use \emph{(\protect\hyperlink{ref-grossman05}{Grossman et al. 2005})}.
-Similarly, buckwheat helps scavenge soil phosphorus \emph{(\protect\hyperlink{ref-possinger13}{Possinger, Byrne, and Breen 2013})}, which is often a limiting macro-nutrient in clay soils \emph{(\protect\hyperlink{ref-mori22}{Mori et al. 2022})}, and could also be combined with compost that is usually high in phosphorus to address recurring soil phosphorus deficiencies.
-Other plants, including grasses like sorghum (\emph{Sorghum bicolor}), tend to grow deep roots, or have other traits like allelopathic chemical defenses, that compete with weeds enough to keep them suppressed over time \emph{(\protect\hyperlink{ref-weston89}{Weston, Harmon, and Mueller 1989})}.
-Broader implications of cover cropping also include higher soil organic matter, though the underlying processes remain complex \emph{(\protect\hyperlink{ref-king20}{King 2020})}, and few studies show direct correlations between soil organic matter and yield \emph{(\protect\hyperlink{ref-oldfield19}{Oldfield, Bradford, and Wood 2019})}.
+Cover cropping has been another long-recommended strategy of sustaining longer-term yields by maintaining soil fertility \emph{(\protect\hyperlink{ref-perez21}{Perez, 2021}; \protect\hyperlink{ref-richter21}{Richter, 2021})}, although current strategies could be improved from relying on single species to designing complementary species mixes.
+The namesake benefit of cover crops is to cover the soil in areas without active cultivation, which maintains root activity and weakens erosion \emph{(\protect\hyperlink{ref-garcia-gonzalez18}{García-González et al., 2018})}, but different species will also vary in the benefits they can provide based on physiological traits.
+For example, legumes like cowpea (or black-eyed peas, \emph{Vigna unguiculata subsp. unguiculata}), clovers (\emph{Trifolium sp.}), and hairy vetch (\emph{Vicia villosa}) are popular cover crops because of their additional symbioses with root bacteria that fix nitrogen from the air into soils where it is more available for future crop use \emph{(\protect\hyperlink{ref-grossman05}{Grossman et al., 2005})}.
+Similarly, buckwheat helps scavenge soil phosphorus \emph{(\protect\hyperlink{ref-possinger13}{Possinger et al., 2013})}, which is often a limiting macro-nutrient in clay soils \emph{(\protect\hyperlink{ref-mori22}{Mori et al., 2022})}, and could also be combined with compost that is usually high in phosphorus to address recurring soil phosphorus deficiencies.
+Other plants, including grasses like sorghum (\emph{Sorghum bicolor}), tend to grow deep roots, or have other traits like allelopathic chemical defenses, that compete with weeds enough to keep them suppressed over time \emph{(\protect\hyperlink{ref-weston89}{Weston et al., 1989})}.
+Broader implications of cover cropping also include higher soil organic matter, though the underlying processes remain complex \emph{(\protect\hyperlink{ref-king20}{King, 2020})}, and few studies show direct correlations between soil organic matter and yield \emph{(\protect\hyperlink{ref-oldfield19}{Oldfield et al., 2019})}.
 Furthermore, while large rural organic farms can benefit from incorporating specifically-chosen cover cropping into their mechanized operations, the reliance of urban agriculture more on labor over machinery offers an opportunity to develop new cover cropping systems that combine seeding and terminating different species together to improve the potential efficiency of soil remediation efforts.
-For example, sorghum, cowpea, and buckwheat could be combined into a mixed strategy that can increase soil nitrogen, soil phosphorus, and suppress weeds via deep and shallow roots with allelopathic chemical defenses, although cover crop synergisms generally remain understudied \emph{(\protect\hyperlink{ref-mead81}{Mead and Riley 1981}; \protect\hyperlink{ref-bedoussac15}{Bedoussac et al. 2015}; \protect\hyperlink{ref-bourke21}{Bourke et al. 2021})}.
-An integrated complex approach to optimizing cover cropping systems including interspecific species interactions are well-posed to be validated by research studies in urban agriculture followed by adaptation to rural agriculture, and even international implications \emph{(\protect\hyperlink{ref-stewart13}{R. Stewart et al. 2013})}.
+For example, sorghum, cowpea, and buckwheat could be combined into a mixed strategy that can increase soil nitrogen, soil phosphorus, and suppress weeds via deep and shallow roots with allelopathic chemical defenses, although cover crop synergisms generally remain understudied \emph{(\protect\hyperlink{ref-bedoussac15}{Bedoussac et al., 2015}; \protect\hyperlink{ref-bourke21}{Bourke et al., 2021}; \protect\hyperlink{ref-mead81}{Mead and Riley, 1981})}.
+An integrated complex approach to optimizing cover cropping systems including interspecific species interactions are well-posed to be validated by research studies in urban agriculture followed by adaptation to rural agriculture, and even international implications \emph{(\protect\hyperlink{ref-stewart13}{Stewart et al., 2013})}.
 
 In this study, we investigated how different tillage techniques and cover crop species mixes affect soil physical properties and yield.
 Tillage methods ranged from high disturbance using a tractor and implements to minimal disturbance with a broadfork.
@@ -180,7 +192,7 @@ The habitat is \textasciitilde1.2 km (\textasciitilde0.8 mi) away from a small r
 It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \ref{fig:plots}a).
 \includegraphics{merge_files/figure-latex/plots-1.pdf}
 
-Site soils can be classified as Technosols (Fig \ref{fig:plots}b), given that large metal artifacts can be found throughout various profiles \emph{(\protect\hyperlink{ref-fao14}{FAO 2014})}, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the \emph{1960s} \emph{(\protect\hyperlink{ref-beniston16}{Beniston, Lal, and Mercer 2016})}.
+Site soils can be classified as Technosols (Fig \ref{fig:plots}b), given that large metal artifacts can be found throughout various profiles \emph{(\protect\hyperlink{ref-fao14}{FAO, 2014})}, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the \emph{1960s} \emph{(\protect\hyperlink{ref-beniston16}{Beniston et al., 2016})}.
 Accordingly, the growing area has both a finer- and coarser-textured side (Fig \ref{fig:plots}a),
 and this study was done on the side with consistent clay of \textasciitilde37\%.
 Topsoil A horizons are 1-2'' (\textless5 cm) deep, and subsoil B horizons can be \textgreater30.5 cm (1 ft) deep, with a muted yellow color \textbf{YR\#\#?!} (Fig \ref{fig:plots}b).
@@ -200,45 +212,6 @@ lowering availability of existing nutrients, as well as weak aggregate stability
 4.4,
 leading to concerns with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \ref{tab:chem}).
 
-\begin{table}
-
-\caption{\label{tab:chem}Baseline Cornell Soil Health Assessment}
-\centering
-\begin{tabular}[t]{c|c|c}
-\hline
-Variable & Median & Deviation\\
-\hline
-\multicolumn{3}{l}{\textbf{Biological}}\\
-\hline
-\hspace{1em}Organic Matter (\%) & 2.5 & 0.3\\
-\hline
-\hspace{1em}Respiration (mg per day) & 0.2 & 0.0\\
-\hline
-\multicolumn{3}{l}{\textbf{Physical}}\\
-\hline
-\hspace{1em}Aggregate Stability (\%) & 19.0 & 4.4\\
-\hline
-\multicolumn{3}{l}{\textbf{Chemical}}\\
-\hline
-\hspace{1em}pH & 8.1 & 0.1\\
-\hline
-\hspace{1em}Phosphorus (ppm) & 2.2 & 1.0\\
-\hline
-\hspace{1em}Potassium (ppm) & 103.8 & 36.3\\
-\hline
-\multicolumn{3}{l}{\textbf{-- minor}}\\
-\hline
-\hspace{1em}\hspace{1em}Iron (ppm) & 6.0 & 4.4\\
-\hline
-\hspace{1em}\hspace{1em}Magnesium (ppm) & 463.6 & 24.9\\
-\hline
-\hspace{1em}\hspace{1em}Manganese (ppm) & 42.1 & 4.9\\
-\hline
-\hspace{1em}\hspace{1em}Zinc (ppm) & 3.8 & 2.9\\
-\hline
-\end{tabular}
-\end{table}
-
 \hypertarget{design}{%
 \subsection{Design}\label{design}}
 
@@ -248,14 +221,14 @@ Before applying treatments, approximately 0.2 \emph{m\textsuperscript{3}} (8.5 \
 
 \textbf{One aggregated sample per tillage group was collected and analyzed for chemistry using modified Morgan-extractable protocols at the MSU soil test lab (\protect\hyperlink{ref-moebius-clune16}{\textbf{moebius-clune16?}}) and analysis was also conducted on the compost.}
 
-Tillage treatments represented methods of increasing intensity available for small scale agriculture, also varying in cost, machinery needed, and sometimes grower preferences \emph{(\protect\hyperlink{ref-drugova22}{Drugova, Curtis, and Ward 2022})}.
+Tillage treatments represented methods of increasing intensity available for small scale agriculture, also varying in cost, machinery needed, and sometimes grower preferences \emph{(\protect\hyperlink{ref-drugova22}{Drugova et al., 2022})}.
 Specifially, treatments included no-till with a broadfork \emph{(NT)}, roto-tiller \emph{(RT)}, and tractor-till \emph{(TT)} with implements.
 Tractor-till plots were worked with a subsoiler, moldboard plow, and roto-tiller attached to a tractor up to 30.5 cm (1 ft) deep.
 Roto-till plots were treated with a rototiller implement up to 20 cm (7.9 in) deep.
 Lastly, no-till plots were worked with only a broadfork up to 10 cm (3.9 in) deep.
 All tilling was done once early in the season after compost application.
 
-Cover crop mixes were designed primarily based on plants associated with targeted benefits, and as possible, relative simplicity of re-seeding and winter-kill (e.g.~more heat tolerant) \emph{(\protect\hyperlink{ref-clark07}{Clark 2007})}.
+Cover crop mixes were designed primarily based on plants associated with targeted benefits, and as possible, relative simplicity of re-seeding and winter-kill (e.g.~more heat tolerant) \emph{(\protect\hyperlink{ref-clark07}{Clark, 2007})}.
 Three mixes were designed to target three functions, with each mix containing three different plant species (Table \ref{tab:crops}).
 The mix designed to alleviate compaction generally focused on plants with roots that tend to penetrate and loosen soil well, and ultimately included
 crimson clover (\emph{Trifolium incarnatum}),
@@ -272,72 +245,10 @@ red clover (\emph{Trifolium pratense}), and
 wheat (\emph{Triticum aestivum}).
 We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
 
-\begin{verbatim}
-## ==  1 queries  ===============
-## ✔  Found:  Hairy+Vetch[Common Name]
-## ==  Results  =================
-## 
-## • Total: 1 
-## • Found: 1 
-## • Not Found: 0
-## ==  1 queries  ===============
-## ✔  Found:  Red+Clover[Common Name]
-## ==  Results  =================
-## 
-## • Total: 1 
-## • Found: 1 
-## • Not Found: 0
-## ==  1 queries  ===============
-## ✔  Found:  Wheat[Common Name]
-## ==  Results  =================
-## 
-## • Total: 1 
-## • Found: 1 
-## • Not Found: 0
-## ==  1 queries  ===============
-## ✔  Found:  Black-Eyed+Pea[Common Name]
-## ==  Results  =================
-## 
-## • Total: 1 
-## • Found: 1 
-## • Not Found: 0
-\end{verbatim}
-
-\begin{table}
-
-\caption{\label{tab:crops}Cover crop mixes}
-\centering
-\begin{tabular}[t]{c|c|>{}c}
-\hline
-Function & Plants & Binomial\\
-\hline
-Weed Suppression & Sorghum-Sudangrass & \em{Sorghum bicolor x S. bicolor var. sudanese}\\
-\cline{1-3}
- & Cowpea/Black-Eyed Pea & \em{Vigna unguiculata subsp. unguiculata}\\
-\cline{2-3}
-\multirow{-2}{*}{\centering\arraybackslash } & Buckwheat & \em{Fagopyrum esculentum}\\
-\cline{1-3}
-Perennial & Hairy Vetch & \em{Vicia villosa}\\
-\cline{1-3}
- & Red Clover & \em{Trifolium pratense}\\
-\cline{2-3}
-\multirow{-2}{*}{\centering\arraybackslash } & Wheat & \em{Triticum aestivum}\\
-\cline{1-3}
-Compaction & Forage Radish & \em{Raphanus sativus var. longipinnatus}\\
-\cline{1-3}
- & Crimson Clover & \em{Trifolium incarnatum}\\
-\cline{2-3}
-\multirow{-2}{*}{\centering\arraybackslash } & Cereal Ryegrass & \em{Secale cereale}\\
-\cline{1-3}
-Null & Existing vegetation (no manipulation) & \em{}\\
-\hline
-\end{tabular}
-\end{table}
-
 \hypertarget{sampling}{%
 \subsection{Sampling}\label{sampling}}
 
-Soil compaction was measured with a penetrometer \emph{(AgraTronix \#08180)} in four randomly selected spots within each quarter of every plot, as the depth where resistance was 2 MPa (290.1 psi, \emph{lbs in\textsuperscript{-2}}), which is considered hardpan that roots typically cannot penetrate \emph{(\protect\hyperlink{ref-correa19}{Correa et al. 2019})}.
+Soil compaction was measured with a penetrometer \emph{(AgraTronix \#08180)} in four randomly selected spots within each quarter of every plot, as the depth where resistance was 2 MPa (290.1 psi, \emph{lbs in\textsuperscript{-2}}), which is considered hardpan that roots typically cannot penetrate \emph{(\protect\hyperlink{ref-correa19}{Correa et al., 2019})}.
 Measurements were recorded to the nearest \emph{2.5 cm (1 inch)} on dry days in July and October 2019.
 
 Soil water infiltration down to 11.1 cm \emph{(8.75 in)} depth was measured using a 16.5 \emph{(9.5 in)} wide aluminum cylinder, and recording the time up to 160 sec for \emph{1 L (32 fl oz)} to pass through, which represented a typical rainfall amount onto \textasciitilde0.10 \emph{m\textsuperscript{2}} (\textasciitilde1 \emph{ft\textsuperscript{2}}) of soil area (\url{waterdata.usgs.gov}).
@@ -345,7 +256,7 @@ Soil water infiltration down to 11.1 cm \emph{(8.75 in)} depth was measured usin
 Weed pressure was measured using percent cover, richness, and density.
 Weed cover was estimated as the total proportion of plot area covered by any weeds,
 using a scale of 1-10 with one indicating \textbf{only one species / near zero stems} observed to 10 being \textbf{10 species present / almost the entire plot surface covered at some level with at least part of a weed plant (e.g.~stem or leaf)}.
-Weed richness was measured as in other studies \emph{(\protect\hyperlink{ref-storkey18}{Storkey and Neve 2018})} as a unique count of morphospecies observed in each plot.
+Weed richness was measured as in other studies \emph{(\protect\hyperlink{ref-storkey18}{Storkey and Neve, 2018})} as a unique count of morphospecies observed in each plot.
 Weed density was measured as the number of individual stems of either of the two most abundant weed species -- pigweed (\emph{Amaranthus viridis}) and velvetleaf (\emph{Abutilon theophrasti}) -- using a discrete scale in increments of 10 with zero indicating neither species present and five indicating 50 or more total individuals stems of either species.
 
 Five forage radish (Brassica \emph{Raphanus sativus var. longipinnatus}) roots were randomly selected from each plot in the compaction treatment and measured for length, individually, and wet weight, as a cluster.
@@ -354,49 +265,14 @@ The length of a radish root was measured from the hypocotyl, or root cap, to whe
 \hypertarget{statistics}{%
 \subsection{Statistics}\label{statistics}}
 
-Field space limited strict plot replication for combined treatments (\emph{n}=3), and thus inference from advanced nested mixed models \emph{(\protect\hyperlink{ref-silk20}{Silk, Harrison, and Hodgson 2020})}, so analysis focused on specific hypotheses tested using simpler, more conservative non-parametric tests that make few underlying assumptions about data and thus appropriate for data with lower replication.
+Field space limited strict plot replication for combined treatments (\emph{n}=3), and thus inference from advanced nested mixed models \emph{(\protect\hyperlink{ref-silk20}{Silk et al., 2020})}, so analysis focused on specific hypotheses tested using simpler, more conservative non-parametric tests that make few underlying assumptions about data and thus appropriate for data with lower replication.
 Kruskal-Wallis tests were run for tillage and cover crop treatments separately, with alpha corrections from 0.05 to 0.01 under multiple comparisons to descriptively parse any treatment interactions, and overall significant treatment effects were followed up by post-hoc Wilcoxon pairwise tests with Holm-corrected p-value adjustments.
-All data were centered at plot-level medians, and where applicable pooled across sampling times given no preliminary significant variation along this axis, together with minimal relevance to focal hypotheses in field studies \emph{(\protect\hyperlink{ref-davies15b}{Davies and Gray 2015})}, and was a general solution to uneven sampling across response variables, minimally increasing statistical power (base \emph{n} ≥ 3-6).
+All data were centered at plot-level medians, and where applicable pooled across sampling times given no preliminary significant variation along this axis, together with minimal relevance to focal hypotheses in field studies \emph{(\protect\hyperlink{ref-davies15b}{Davies and Gray, 2015})}, and was a general solution to uneven sampling across response variables, minimally increasing statistical power (base \emph{n} \textgreater{} 3-6).
 For clarity, results figures were designed to reflect statistical models and grouping transparently.
-Significant treatment effect sizes were estimated with \emph{eta\textsuperscript{2}} \emph{(\protect\hyperlink{ref-tomczak14}{Tomczak and Tomczak 2014})} and simpler raw median differences at finer pairwise levels.
-All calculations and analyzes were done in R version 4.2.0 (2022-04-22) \emph{(\protect\hyperlink{ref-base}{R Core Team 2022})} with useful functions from the packages \emph{tidyverse} 1.3.1 \emph{(\protect\hyperlink{ref-tidyverse}{Wickham et al. 2019})}, \emph{rstatix} 0.7.0 and \emph{ggpubr} 0.4.0 \emph{(\protect\hyperlink{ref-rstatix}{Kassambara 2021})}.
+Significant treatment effect sizes were estimated with \emph{eta\textsuperscript{2}} \emph{(\protect\hyperlink{ref-tomczak14}{Tomczak and Tomczak, 2014})} and simpler raw median differences at finer pairwise levels.
+All calculations and analyzes were done in R version 4.2.0 (2022-04-22) \emph{(\protect\hyperlink{ref-base}{R Core Team, 2022})} with useful functions from the packages \emph{tidyverse} 1.3.1 \emph{(\protect\hyperlink{ref-tidyverse}{Wickham et al., 2019})}, \emph{rstatix} 0.7.0 and \emph{ggpubr} 0.4.0 \emph{(\protect\hyperlink{ref-rstatix}{Kassambara, 2021})}.
 Data and code are stored at \url{nmedina17.github.com/must},
-documented using R packages \emph{here} \emph{(\protect\hyperlink{ref-here}{Müller 2020})}, \emph{bookdown} \emph{(\protect\hyperlink{ref-bookdown2022}{Xie 2022a})}, \emph{measurements} \emph{(\protect\hyperlink{ref-measurements}{Birk 2019})}, \emph{taxize} \emph{(\protect\hyperlink{ref-taxize2020}{Chamberlain et al. 2020})}, \emph{knitr} \emph{(\protect\hyperlink{ref-knitr2022}{Xie 2022b})}, and \emph{rmarkdown} \emph{(\protect\hyperlink{ref-rmarkdown2022}{Allaire et al. 2022})}.
-
-\begin{table}
-
-\caption{\label{tab:pkgsTab}Software packages used}
-\centering
-\begin{tabular}[t]{l|l|l}
-\hline
-Package & Version & Citation\\
-\hline
-base & 4.2.0 & @base\\
-\hline
-bookdown & 0.26 & @bookdown2016; @bookdown2022\\
-\hline
-grateful & 0.1.11 & @grateful\\
-\hline
-here & 1.0.1 & @here\\
-\hline
-knitr & 1.39 & @knitr2014; @knitr2015; @knitr2022\\
-\hline
-measurements & 1.4.0 & @measurements\\
-\hline
-RgoogleMaps & 1.4.5.3 & @RgoogleMaps\\
-\hline
-rmarkdown & 2.14 & @rmarkdown2018; @rmarkdown2020; @rmarkdown2022\\
-\hline
-rstatix & 0.7.0 & @rstatix\\
-\hline
-rticles & 0.23 & @rticles\\
-\hline
-taxize & 0.9.100 & @taxize2013; @taxize2020\\
-\hline
-tidyverse & 1.3.1 & @tidyverse\\
-\hline
-\end{tabular}
-\end{table}
+documented using R packages \emph{here} \emph{(\protect\hyperlink{ref-here}{Müller, 2020})}, \emph{bookdown} \emph{(\protect\hyperlink{ref-bookdown2022}{Xie, 2022a})}, \emph{measurements} \emph{(\protect\hyperlink{ref-measurements}{Birk, 2019})}, \emph{taxize} \emph{(\protect\hyperlink{ref-taxize2020}{Chamberlain et al., 2020})}, \emph{knitr} \emph{(\protect\hyperlink{ref-knitr2022}{Xie, 2022b})}, and \emph{rmarkdown} \emph{(\protect\hyperlink{ref-rmarkdown2022}{Allaire et al., 2022})}.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -441,7 +317,9 @@ The effect of roto-till was more pronounced in the perennial mix (
 There was also a significant difference of \textbf{\#\#\#} (conv\_, or \textasciitilde{}\emph{33}\%) between tractor- and roto-till among all cover crop mixes (Fig \ref{fig:compactFig}a).
 
 \begin{figure}
-\includegraphics[width=12.5in]{../figs/compactionPlot} \caption{Compaction data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)}\label{fig:compactFig}
+\centering
+\includegraphics{merge_files/figure-latex/compactFig-1.pdf}
+\caption{\label{fig:compactFig}Compaction data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
 \end{figure}
 
 Compaction was not affected by cover crops among tillage groups overall (
@@ -450,15 +328,14 @@ Compaction was not affected by cover crops among tillage groups overall (
 \emph{n} = 72,
 \emph{p} = 0.57
 ), but was significantly affected by cover crops specifically under no-till conditions (
-\emph{Holm-corrected alpha = 0.01},
 \emph{df = 3},
 \emph{n = 6},
-\emph{Wilcoxon p\textsubscript{adj} = \textless0.01}
+\emph{p\textsubscript{adj} = \textless0.01}
 ) (Fig \ref{fig:compactFig}b).
 Under no-till, the perennial mix had significantly shallower depth to hardpan compared to both null (
-\emph{Holm-corrected alpha = 0.01, Wilcoxon p\textsubscript{adj} = \textless0.01}
+\emph{p\textsubscript{adj} = \textless0.01}
 ) and weed suppression mixes (
-\emph{Holm-corrected alpha = 0.01, Wilcoxon p\textsubscript{adj} = \textless0.01}
+\emph{p\textsubscript{adj} = \textless0.01}
 ),
 raising the depth to hardpan by
 \textasciitilde{}\emph{5} cm (
@@ -500,12 +377,14 @@ up to
 10.7 mL per sec
 (
 0.2 ±
-0.2 in
+0.2 gal per min
 )
 (Fig \ref{fig:infilFig}a).
 
 \begin{figure}
-\includegraphics[width=12.5in]{../figs/infilPlot} \caption{Infiltration data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)}\label{fig:infilFig}
+\centering
+\includegraphics{merge_files/figure-latex/infilFig-1.pdf}
+\caption{\label{fig:infilFig}Infiltration data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
 \end{figure}
 
 \hypertarget{weed-pressure}{%
@@ -543,7 +422,9 @@ up to
 .
 
 \begin{figure}
-\includegraphics[width=12.5in]{../figs/weedPlot} \caption{Weeds data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)}\label{fig:weedsFig}
+\centering
+\includegraphics{merge_files/figure-latex/weedsFig-1.pdf}
+\caption{\label{fig:weedsFig}Weeds data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
 \end{figure}
 
 All measured weed variables were affected significantly by cover crop mix, including
@@ -643,7 +524,9 @@ Radish yield was not significantly affected by tillage (
 long (Fig \ref{fig:yieldFig}).
 
 \begin{figure}
-\includegraphics[width=12.5in]{../figs/yieldPlot} \caption{Yield data (a) from no-till and (b) tractor-till. Photo credits: Naim Edwards.}\label{fig:yieldFig}
+\centering
+\includegraphics{merge_files/figure-latex/yieldFig-1.pdf}
+\caption{\label{fig:yieldFig}Yield data (a) from no-till and (b) tractor-till. Photo credits: Naim Edwards.}
 \end{figure}
 
 \hypertarget{discussion}{%
@@ -655,23 +538,23 @@ Additionally, infiltration was significantly affected by tillage, with roto-till
 Furthermore, weed pressure was significantly affected by both cover crop mixes and tillage (Fig \ref{fig:weedsFig}), although effects from cover crop mixes, especially the weed suppression mix, were more widespread among multiple measured variables (Fig \ref{fig:weedsFig}b).
 Despite these significant effects on soils, infiltration, and weeds, yields did not respond to tillage treatments.
 
-Short-term soil compaction issues are commonly alleviated by annual tilling \emph{(\protect\hyperlink{ref-badalikova10}{Badalíková 2010}; \protect\hyperlink{ref-salem15}{Salem et al. 2015})}, and in addition to validating this practice, this study showed that cover cropping can also be used to manage compaction under no-till, although effects vary by mixture of taxa used.
+Short-term soil compaction issues are commonly alleviated by annual tilling \emph{(\protect\hyperlink{ref-badalikova10}{Badalíková, 2010}; \protect\hyperlink{ref-salem15}{Salem et al., 2015})}, and in addition to validating this practice, this study showed that cover cropping can also be used to manage compaction under no-till, although effects vary by mixture of taxa used.
 Under tillage, this study validates that tillage intensity corresponds negatively with compaction (measured as depth to hardpan), and additionally clarifies that tractor-till can alleviate compaction in slightly deeper soils below main root zones under
 \textasciitilde20.6 ±
 4.6 cm
 (8.1 ±
 1.8 in),
-as well as that roto-till can be useful under perennial crops, although under annuals, no-till can be just as effective as roto-till, saving grower time, energy, and cost for areas with crops harvested before rooting surpasses \emph{\textasciitilde10 cm (4 in)} \emph{(\protect\hyperlink{ref-krause95}{Krause and Black 1995})}.
+as well as that roto-till can be useful under perennial crops, although under annuals, no-till can be just as effective as roto-till, saving grower time, energy, and cost for areas with crops harvested before rooting surpasses \emph{\textasciitilde10 cm (4 in)} \emph{(\protect\hyperlink{ref-krause95}{Krause and Black, 1995})}.
 However for urban technosol soils, tilling can beneficially remove large metal artifacts and legacy construction debris like rebar, wires, cables, bricks, cinder blacks, and pipes, all of which could limit root growth under strict no-till management.
-Tillage might also obscure cover crop effects on compaction, although cover crops may still provide other benefits, like soil macro-nutrients \emph{(\protect\hyperlink{ref-chapagain20}{Chapagain, Lee, and Raizada 2020})}.
+Tillage might also obscure cover crop effects on compaction, although cover crops may still provide other benefits, like soil macro-nutrients \emph{(\protect\hyperlink{ref-chapagain20}{Chapagain et al., 2020})}.
 Under no-till, this study found that perennial crop mixes can have significant effects on compaction, but rather than deep roots loosening soils, in some cases depth to hardpan can instead become shallower.
-This may be due to dense root mats that can form under grasses \emph{(\protect\hyperlink{ref-douglas92}{Douglas, Koppi, and Moran 1992})} like sorghum-sudangrass, which could further fill already limited pore space in densely-structured clay soils, helping water to pool under the soil surface \emph{(\protect\hyperlink{ref-hoogmoed80}{Hoogmoed and Bouma 1980})}.
-Overall other studies have found similar results \emph{(\protect\hyperlink{ref-ozpinar06}{Ozpinar and Cay 2006})}, suggesting short-term benefits of tillage to soil functions (yet long-term costs).
+This may be due to dense root mats that can form under grasses \emph{(\protect\hyperlink{ref-douglas92}{Douglas et al., 1992})} like sorghum-sudangrass, which could further fill already limited pore space in densely-structured clay soils, helping water to pool under the soil surface \emph{(\protect\hyperlink{ref-hoogmoed80}{Hoogmoed and Bouma, 1980})}.
+Overall other studies have found similar results \emph{(\protect\hyperlink{ref-ozpinar06}{Ozpinar and Cay, 2006})}, suggesting short-term benefits of tillage to soil functions (yet long-term costs).
 
-Water infiltration is a key function to improve urban soil functioning for agriculture by minimizing erosion and improving root available water, as well as mitigating storm-water runoff and potentially contaminated flooding \emph{(\protect\hyperlink{ref-masoner19}{Masoner et al. 2019})} that often occurs after short heavy rains, due to soil sealing by concrete near hillslopes \emph{(\protect\hyperlink{ref-dreelin06}{Dreelin, Fowler, and Ronald Carroll 2006})}.
+Water infiltration is a key function to improve urban soil functioning for agriculture by minimizing erosion and improving root available water, as well as mitigating storm-water runoff and potentially contaminated flooding \emph{(\protect\hyperlink{ref-masoner19}{Masoner et al., 2019})} that often occurs after short heavy rains, due to soil sealing by concrete near hillslopes \emph{(\protect\hyperlink{ref-dreelin06}{Dreelin et al., 2006})}.
 This study found that roto-till resulted in significantly faster infiltration compared to no-till, unlike tractor-till, suggesting that roto-till management can generally be effective for improving infiltration and drainage.
-This result could be explained by medium intensity roto-till increasing soil macro-porosity, which compared to soil micro-pores bind water less tightly allowing to flow faster \emph{(\protect\hyperlink{ref-gerke06}{Gerke 2006})}.
-In contrast, the tractor diffused tillage energy across deeper soil volume, lowering the density of any added soil macro-pores and thereby making it easier for soil particles to settle back together, whereas no-till may have needed more time to improve macro-porosity via organic matter effects on soil structure \emph{(\protect\hyperlink{ref-king20}{King 2020})}.
+This result could be explained by medium intensity roto-till increasing soil macro-porosity, which compared to soil micro-pores bind water less tightly allowing to flow faster \emph{(\protect\hyperlink{ref-gerke06}{Gerke, 2006})}.
+In contrast, the tractor diffused tillage energy across deeper soil volume, lowering the density of any added soil macro-pores and thereby making it easier for soil particles to settle back together, whereas no-till may have needed more time to improve macro-porosity via organic matter effects on soil structure \emph{(\protect\hyperlink{ref-king20}{King, 2020})}.
 It is also possible that this result could be explained by compost incorporation, where tractor-till similarly incorporated compost more diffusely throughout the soil profile, diluting any compost benefits to infiltration.
 Against a one inch rain event, this study supported the use of roto-till, but not no-till or tractor-till, which showed rates of only
 \textasciitilde{} 6.2 ±
@@ -682,24 +565,24 @@ Against a one inch rain event, this study supported the use of roto-till, but no
 ),
 which would likely result in runoff pooling in roads and soil erosion.
 Regarding cover crops, this study suggests that perennials may not have notable significant effects on infiltration rates, despite detectable effects on compaction.
-Based on these findings, roto-till together with compost may be an effective strategy to improve urban soil water infiltration in the short-term, even if no-till may appear to have more evidence as a longer-term strategy \emph{(\protect\hyperlink{ref-cusser20}{Cusser et al. 2020})}.
+Based on these findings, roto-till together with compost may be an effective strategy to improve urban soil water infiltration in the short-term, even if no-till may appear to have more evidence as a longer-term strategy \emph{(\protect\hyperlink{ref-cusser20}{Cusser et al., 2020})}.
 
-Weed suppression is important for reducing competition with crops as well as asthma and respiratory health risks from pollen \emph{(\protect\hyperlink{ref-katz14}{Katz and Carey 2014})}, and can also be achieved by tilling \emph{(\protect\hyperlink{ref-barberi01}{Barberi and Lo Cascio 2001}; \protect\hyperlink{ref-cordeau20}{Cordeau, Baudron, and Adeux 2020})}, but this study additionally suggests that cover crops may be more likely to be effective.
+Weed suppression is important for reducing competition with crops as well as asthma and respiratory health risks from pollen \emph{(\protect\hyperlink{ref-katz14}{Katz and Carey, 2014})}, and can also be achieved by tilling \emph{(\protect\hyperlink{ref-barberi01}{Barberi and Lo Cascio, 2001}; \protect\hyperlink{ref-cordeau20}{Cordeau et al., 2020})}, but this study additionally suggests that cover crops may be more likely to be effective.
 Tractor-till, while able to combat relatively deep soil compaction, resulted in the highest weed density of the two most common weeds, velvet leaf (\emph{Abutilon theophrasti}) and pigweed (\emph{Palmer amaranth}), whose root density may have also slowed soil water infiltration rates.
-This may have been due to fast-growing weed life histories taking advantage of looser soil, such as to re-sprout clonally, and/or looser soil facilitating the establishment of weed seed banks \emph{(\protect\hyperlink{ref-hesse07}{Hesse, Rees, and Müller-Schärer 2007})}.
+This may have been due to fast-growing weed life histories taking advantage of looser soil, such as to re-sprout clonally, and/or looser soil facilitating the establishment of weed seed banks \emph{(\protect\hyperlink{ref-hesse07}{Hesse et al., 2007})}.
 However more notably, the targeted weed suppression mix of sorghum-sudangrass, buckwheat, and cowpea significantly reduced both weed density and richness by about half compared to the other cover crop mixes.
-This result agrees with other studies pairing buckwheat and sorghum-sudangrass \emph{(\protect\hyperlink{ref-smith15}{Smith, Marín-Spiotta, and Balser 2015})}, and may have occurred due to competitive exclusion by sorghum-sudangrass and/or buckwheat via allelopathic chemical root defenses \emph{(\protect\hyperlink{ref-weston89}{Weston, Harmon, and Mueller 1989})} or competition for light \emph{(\protect\hyperlink{ref-liu09b}{Liu et al. 2009})}, better phosphorus mining and use by buckwheat \emph{(\protect\hyperlink{ref-zhu02}{Zhu et al. 2002})}, facilitation or amplification of these previous effects by cowpea's added nitrogen supply \emph{(\protect\hyperlink{ref-sanginga00}{Sanginga, Lyasse, and Singh 2000}; \protect\hyperlink{ref-martins03}{Martins et al. 2003})}, and/or existing adaptations to poor dry soils \emph{(\protect\hyperlink{ref-barberi18}{Bàrberi et al. 2018})} allowing high biomass accumulation.
+This result agrees with other studies pairing buckwheat and sorghum-sudangrass \emph{(\protect\hyperlink{ref-smith15}{Smith et al., 2015})}, and may have occurred due to competitive exclusion by sorghum-sudangrass and/or buckwheat via allelopathic chemical root defenses \emph{(\protect\hyperlink{ref-weston89}{Weston et al., 1989})} or competition for light \emph{(\protect\hyperlink{ref-liu09b}{Liu et al., 2009})}, better phosphorus mining and use by buckwheat \emph{(\protect\hyperlink{ref-zhu02}{Zhu et al., 2002})}, facilitation or amplification of these previous effects by cowpea's added nitrogen supply \emph{(\protect\hyperlink{ref-martins03}{Martins et al., 2003}; \protect\hyperlink{ref-sanginga00}{Sanginga et al., 2000})}, and/or existing adaptations to poor dry soils \emph{(\protect\hyperlink{ref-barberi18}{Bàrberi et al., 2018})} allowing high biomass accumulation.
 Given both effectiveness and relative ease of re-seeding and winter-kill, this weed suppression mix can be used to frame crop beds, keeping out encroaching weeds, or to reduce weed pressure in an area that might be planted in the fall or following season.
 
 Despite overall significant effects by tillage on compaction, infiltration, and weeds, tillage did not significantly affect radish yield.
-As is, this study does not rule out more complex relationships between soil compaction, infiltration, and crop yield, as suggested by emerging ideas \emph{(\protect\hyperlink{ref-ryan07}{Ryan, Ludwig, and Mcalpine 2007}; \protect\hyperlink{ref-vandermeer17}{Vandermeer and Perfecto 2017})}.
-However, with further replication, it is possible that no-till would show slightly higher yields, validating some similar studies \emph{(\protect\hyperlink{ref-nunes18}{Nunes et al. 2018})}.
-Overall yields can respond more to longer-term reservoirs of water and nutrients like mulched compost compared to shorter-term, transient influxes brought by infiltration processes \emph{(\protect\hyperlink{ref-schlegel95}{A. J. Schlegel and Havlin 1995}; \protect\hyperlink{ref-schlegel15}{Alan J. Schlegel et al. 2015})}.
-As a result, it is possible that similar alternative soil management practices like no-till combined with compost and mulching application may lead to better yields, although the translation of no-till benefits to soil structure \emph{(\protect\hyperlink{ref-du15}{Du et al. 2015}; \protect\hyperlink{ref-sheehy15}{Sheehy et al. 2015})} on yield are not guaranteed \emph{(\protect\hyperlink{ref-martinez16}{Martínez et al. 2016})} nor do they appear to be widespread \emph{(\protect\hyperlink{ref-pittelkow15}{Pittelkow et al. 2015}; \protect\hyperlink{ref-vandenbygaart16}{VandenBygaart 2016})}.
-Additionally, other studies suggest that forage radish can be an effective cover crop in reducing compaction and building soil structure, with minimal or no mechanical tillage \emph{(\protect\hyperlink{ref-chen10b}{Chen and Weil 2010}; \protect\hyperlink{ref-lawley11}{Lawley, Weil, and Teasdale 2011})}.
-However ultimately this study suggests the need for future studies of processes tying yield to land management strategies particularly in similar urban clay soils with legacy compaction and pH concerns under smallholder management and possibly including occassional tillage \emph{(\protect\hyperlink{ref-ekboir01}{Ekboir 2001}; \protect\hyperlink{ref-blanco-canqui20}{Blanco-Canqui and Wortmann 2020})}.
+As is, this study does not rule out more complex relationships between soil compaction, infiltration, and crop yield, as suggested by emerging ideas \emph{(\protect\hyperlink{ref-ryan07}{Ryan et al., 2007}; \protect\hyperlink{ref-vandermeer17}{Vandermeer and Perfecto, 2017})}.
+However, with further replication, it is possible that no-till would show slightly higher yields, validating some similar studies \emph{(\protect\hyperlink{ref-nunes18}{Nunes et al., 2018})}.
+Overall yields can respond more to longer-term reservoirs of water and nutrients like mulched compost compared to shorter-term, transient influxes brought by infiltration processes \emph{(\protect\hyperlink{ref-schlegel15}{Schlegel et al., 2015}; \protect\hyperlink{ref-schlegel95}{Schlegel and Havlin, 1995})}.
+As a result, it is possible that similar alternative soil management practices like no-till combined with compost and mulching application may lead to better yields, although the translation of no-till benefits to soil structure \emph{(\protect\hyperlink{ref-du15}{Du et al., 2015}; \protect\hyperlink{ref-sheehy15}{Sheehy et al., 2015})} on yield are not guaranteed \emph{(\protect\hyperlink{ref-martinez16}{Martínez et al., 2016})} nor do they appear to be widespread \emph{(\protect\hyperlink{ref-pittelkow15}{Pittelkow et al., 2015}; \protect\hyperlink{ref-vandenbygaart16}{VandenBygaart, 2016})}.
+Additionally, other studies suggest that forage radish can be an effective cover crop in reducing compaction and building soil structure, with minimal or no mechanical tillage \emph{(\protect\hyperlink{ref-chen10b}{Chen and Weil, 2010}; \protect\hyperlink{ref-lawley11}{Lawley et al., 2011})}.
+However ultimately this study suggests the need for future studies of processes tying yield to land management strategies particularly in similar urban clay soils with legacy compaction and pH concerns under smallholder management and possibly including occassional tillage \emph{(\protect\hyperlink{ref-blanco-canqui20}{Blanco-Canqui and Wortmann, 2020}; \protect\hyperlink{ref-ekboir01}{Ekboir, 2001})}.
 
-Taken together, this study presents data that, in addition to validating previous studies supporting general tillage for short-term soil fertility, also supports the partial use of medium-intensity roto-till and cover crop mixtures \emph{(\protect\hyperlink{ref-chapagain20}{Chapagain, Lee, and Raizada 2020})} specifically for weed suppression.
+Taken together, this study presents data that, in addition to validating previous studies supporting general tillage for short-term soil fertility, also supports the partial use of medium-intensity roto-till and cover crop mixtures \emph{(\protect\hyperlink{ref-chapagain20}{Chapagain et al., 2020})} specifically for weed suppression.
 This study serves as a model demonstration of both widely accessible and effective strategies for growing on re-purposed urban soils after urban land-use turnover.
 We advocate for the maximal use of cover crop mixes for various target functions, with medium-intensity tillage to jump-start urban cultivation.
 
@@ -713,8 +596,8 @@ Thanks to previous anonymous reviewers, and peer student (Kristel, Zach,) discus
 
 \emph{This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.}
 
-\hypertarget{conflicts-of-interest}{%
-\section{Conflicts of interest}\label{conflicts-of-interest}}
+\hypertarget{declaration-of-interests}{%
+\section{Declaration of interests}\label{declaration-of-interests}}
 
 Authors declare no conflicts of interest.
 
@@ -732,289 +615,289 @@ Data and code available at \url{nmedina17.github.com/must}.
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-acuto18}{}}%
-Acuto, Michele, Susan Parnell, and Karen C. Seto. 2018. {``Building a Global Urban Science.''} \emph{Nature Sustainability} 1 (1): 2--4. \url{https://doi.org/10.1038/s41893-017-0013-9}.
+Acuto, M., Parnell, S., Seto, K.C., 2018. Building a global urban science. Nature Sustainability 1, 2--4. \url{https://doi.org/10.1038/s41893-017-0013-9}
 
 \leavevmode\vadjust pre{\hypertarget{ref-rmarkdown2022}{}}%
-Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2022. \emph{Rmarkdown: Dynamic Documents for r}. \url{https://github.com/rstudio/rmarkdown}.
+Allaire, J., Xie, Y., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., Wickham, H., Cheng, J., Chang, W., Iannone, R., 2022. \href{https://github.com/rstudio/rmarkdown}{Rmarkdown: Dynamic documents for r}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-amundson15}{}}%
-Amundson, Ronald, Asmeret Asefaw Berhe, Jan W. Hopmans, Carolyn Olson, A. Ester Sztein, and Donald L. Sparks. 2015. {``Soil Science. {Soil} and Human Security in the 21st Century.''} \emph{Science (New York, N.Y.)} 348 (6235): 1261071. \url{https://doi.org/10.1126/science.1261071}.
+Amundson, R., Berhe, A.A., Hopmans, J.W., Olson, C., Sztein, A.E., Sparks, D.L., 2015. Soil science. {Soil} and human security in the 21st century. Science (New York, N.Y.) 348, 1261071. \url{https://doi.org/10.1126/science.1261071}
 
 \leavevmode\vadjust pre{\hypertarget{ref-anderson07}{}}%
-Anderson, Randy L. 2007. {``Managing Weeds with a Dualistic Approach of Prevention and Control. {A} Review.''} \emph{Agronomy for Sustainable Development} 27 (1): 13--18. \url{https://doi.org/10.1051/agro:2006027}.
+Anderson, R.L., 2007. Managing weeds with a dualistic approach of prevention and control. {A} review. Agronomy for Sustainable Development 27, 13--18. \url{https://doi.org/10.1051/agro:2006027}
 
 \leavevmode\vadjust pre{\hypertarget{ref-badalikova10}{}}%
-Badalíková, Barbora. 2010. {``Influence of {Soil Tillage} on {Soil Compaction}.''} In \emph{Soil {Engineering}}, edited by Athanasios P. Dedousis and Thomas Bartzanas, 20:19--30. {Berlin, Heidelberg}: {Springer Berlin Heidelberg}. \url{https://doi.org/10.1007/978-3-642-03681-1_2}.
+Badalíková, B., 2010. Influence of {Soil Tillage} on {Soil Compaction}, in: Dedousis, A.P., Bartzanas, T. (Eds.), Soil {Engineering}. {Springer Berlin Heidelberg}, {Berlin, Heidelberg}, pp. 19--30. \url{https://doi.org/10.1007/978-3-642-03681-1_2}
 
 \leavevmode\vadjust pre{\hypertarget{ref-barberi01}{}}%
-Barberi, P, and B Lo Cascio. 2001. {``Long-Term Tillage and Crop Rotation Effects on Weed Seedbank Size and Composition.''} \emph{Weed Research} 41 (4): 325--40. \url{https://doi.org/10.1046/j.1365-3180.2001.00241.x}.
+Barberi, P., Lo Cascio, B., 2001. Long-term tillage and crop rotation effects on weed seedbank size and composition. Weed Research 41, 325--340. \url{https://doi.org/10.1046/j.1365-3180.2001.00241.x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-barberi18}{}}%
-Bàrberi, P, G Bocci, S Carlesi, L Armengot, J M Blanco-Moreno, and F X Sans. 2018. {``Linking Species Traits to Agroecosystem Services: A Functional Analysis of Weed Communities.''} Edited by Jonathan Storkey. \emph{Weed Research} 58 (2): 76--88. \url{https://doi.org/10.1111/wre.12283}.
+Bàrberi, P., Bocci, G., Carlesi, S., Armengot, L., Blanco-Moreno, J.M., Sans, F.X., 2018. Linking species traits to agroecosystem services: A functional analysis of weed communities. Weed Research 58, 76--88. \url{https://doi.org/10.1111/wre.12283}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bazzoffi98}{}}%
-Bazzoffi, P. 1998. {``The Effect of Urban Refuse Compost and Different Tractors Tyres on Soil Physical Properties, Soil Erosion and Maize Yield.''} \emph{Soil and Tillage Research} 48 (4): 275--86. \url{https://doi.org/10.1016/S0167-1987(98)00133-0}.
+Bazzoffi, P., 1998. The effect of urban refuse compost and different tractors tyres on soil physical properties, soil erosion and maize yield. Soil and Tillage Research 48, 275--286. \url{https://doi.org/10.1016/S0167-1987(98)00133-0}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bedoussac15}{}}%
-Bedoussac, Laurent, Etienne-Pascal Journet, Henrik Hauggaard-Nielsen, Christophe Naudin, Guenaelle Corre-Hellou, Erik Steen Jensen, Loïc Prieur, and Eric Justes. 2015. {``Ecological Principles Underlying the Increase of Productivity Achieved by Cereal-Grain Legume Intercrops in Organic Farming. {A} Review.''} \emph{Agronomy for Sustainable Development} 35 (3): 911--35. \url{https://doi.org/10.1007/s13593-014-0277-7}.
+Bedoussac, L., Journet, E.-P., Hauggaard-Nielsen, H., Naudin, C., Corre-Hellou, G., Jensen, E.S., Prieur, L., Justes, E., 2015. Ecological principles underlying the increase of productivity achieved by cereal-grain legume intercrops in organic farming. {A} review. Agronomy for Sustainable Development 35, 911--935. \url{https://doi.org/10.1007/s13593-014-0277-7}
 
 \leavevmode\vadjust pre{\hypertarget{ref-beniston16}{}}%
-Beniston, Joshua W., Rattan Lal, and Kristin L. Mercer. 2016. {``Assessing and {Managing Soil Quality} for {Urban Agriculture} in a {Degraded Vacant Lot Soil}: {ASSESSING AND MANAGING SOIL QUALITY FOR URBAN AGRICULTURE}.''} \emph{Land Degradation \& Development} 27 (4): 996--1006. \url{https://doi.org/10.1002/ldr.2342}.
+Beniston, J.W., Lal, R., Mercer, K.L., 2016. Assessing and {Managing Soil Quality} for {Urban Agriculture} in a {Degraded Vacant Lot Soil}: {ASSESSING AND MANAGING SOIL QUALITY FOR URBAN AGRICULTURE}. Land Degradation \& Development 27, 996--1006. \url{https://doi.org/10.1002/ldr.2342}
 
 \leavevmode\vadjust pre{\hypertarget{ref-measurements}{}}%
-Birk, Matthew A. 2019. \emph{Measurements: Tools for Units of Measurement}. \url{https://CRAN.R-project.org/package=measurements}.
+Birk, M.A., 2019. \href{https://CRAN.R-project.org/package=measurements}{Measurements: Tools for units of measurement}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-blanco-canqui20}{}}%
-Blanco-Canqui, Humberto, and Charles S. Wortmann. 2020. {``Does Occasional Tillage Undo the Ecosystem Services Gained with No-till? {A} Review.''} \emph{Soil and Tillage Research} 198 (April): 104534. \url{https://doi.org/10.1016/j.still.2019.104534}.
+Blanco-Canqui, H., Wortmann, C.S., 2020. Does occasional tillage undo the ecosystem services gained with no-till? {A} review. Soil and Tillage Research 198, 104534. \url{https://doi.org/10.1016/j.still.2019.104534}
 
 \leavevmode\vadjust pre{\hypertarget{ref-blesh17}{}}%
-Blesh, Jennifer. 2017. {``Functional Traits in Cover Crop Mixtures: {Biological} Nitrogen Fixation and Multifunctionality.''} Edited by Adam Martin. \emph{Journal of Applied Ecology} 55 (1): 38--48. \url{https://doi.org/10.1111/1365-2664.13011}.
+Blesh, J., 2017. Functional traits in cover crop mixtures: {Biological} nitrogen fixation and multifunctionality. Journal of Applied Ecology 55, 38--48. \url{https://doi.org/10.1111/1365-2664.13011}
 
 \leavevmode\vadjust pre{\hypertarget{ref-block12}{}}%
-Block, Daniel R., Noel Chávez, Erika Allen, and Dinah Ramirez. 2012. {``Food Sovereignty, Urban Food Access, and Food Activism: Contemplating the Connections Through Examples from {Chicago}.''} \emph{Agriculture and Human Values} 29 (2): 203--15. \url{https://doi.org/10.1007/s10460-011-9336-8}.
+Block, D.R., Chávez, N., Allen, E., Ramirez, D., 2012. Food sovereignty, urban food access, and food activism: Contemplating the connections through examples from {Chicago}. Agriculture and Human Values 29, 203--215. \url{https://doi.org/10.1007/s10460-011-9336-8}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bourke21}{}}%
-Bourke, Peter M., Jochem B. Evers, Piter Bijma, Dirk F. van Apeldoorn, Marinus J. M. Smulders, Thomas W. Kuyper, Liesje Mommer, and Guusje Bonnema. 2021. {``Breeding {Beyond Monoculture}: {Putting} the {`{Intercrop}'} {Into Crops}.''} \emph{Frontiers in Plant Science} 12 (November): 734167. \url{https://doi.org/10.3389/fpls.2021.734167}.
+Bourke, P.M., Evers, J.B., Bijma, P., van Apeldoorn, D.F., Smulders, M.J.M., Kuyper, T.W., Mommer, L., Bonnema, G., 2021. Breeding {Beyond Monoculture}: {Putting} the {``{Intercrop}''} {Into Crops}. Frontiers in Plant Science 12, 734167. \url{https://doi.org/10.3389/fpls.2021.734167}
 
 \leavevmode\vadjust pre{\hypertarget{ref-catania18}{}}%
-Catania, Pietro, Luigi Badalucco, Vito Armando Laudicina, and Mariangela Vallone. 2018. {``Effects of Tilling Methods on Soil Penetration Resistance, Organic Carbon and Water Stable Aggregates in a Vineyard of Semiarid {Mediterranean} Environment.''} \emph{Environmental Earth Sciences} 77 (9): 348. \url{https://doi.org/10.1007/s12665-018-7520-5}.
+Catania, P., Badalucco, L., Laudicina, V.A., Vallone, M., 2018. Effects of tilling methods on soil penetration resistance, organic carbon and water stable aggregates in a vineyard of semiarid {Mediterranean} environment. Environmental Earth Sciences 77, 348. \url{https://doi.org/10.1007/s12665-018-7520-5}
 
 \leavevmode\vadjust pre{\hypertarget{ref-taxize2020}{}}%
-Chamberlain, Scott, Eduard Szoecs, Zachary Foster, Zebulun Arendsee, Carl Boettiger, Karthik Ram, Ignasi Bartomeus, et al. 2020. \emph{Taxize: Taxonomic Information from Around the Web}. \url{https://github.com/ropensci/taxize}.
+Chamberlain, S., Szoecs, E., Foster, Z., Arendsee, Z., Boettiger, C., Ram, K., Bartomeus, I., Baumgartner, J., O'Donnell, J., Oksanen, J., Tzovaras, B.G., Marchand, P., Tran, V., Salmon, M., Li, G., Grenié, M., 2020. \href{https://github.com/ropensci/taxize}{Taxize: Taxonomic information from around the web}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-chapagain20}{}}%
-Chapagain, Tejendra, Elizabeth A. Lee, and Manish N. Raizada. 2020. {``The {Potential} of {Multi-Species Mixtures} to {Diversify Cover Crop Benefits}.''} \emph{Sustainability} 12 (5): 2058. \url{https://doi.org/10.3390/su12052058}.
+Chapagain, T., Lee, E.A., Raizada, M.N., 2020. The {Potential} of {Multi-Species Mixtures} to {Diversify Cover Crop Benefits}. Sustainability 12, 2058. \url{https://doi.org/10.3390/su12052058}
 
 \leavevmode\vadjust pre{\hypertarget{ref-chen10b}{}}%
-Chen, Guihua, and Ray R. Weil. 2010. {``Penetration of Cover Crop Roots Through Compacted Soils.''} \emph{Plant and Soil} 331 (1-2): 31--43. \url{https://doi.org/10.1007/s11104-009-0223-7}.
+Chen, G., Weil, R.R., 2010. Penetration of cover crop roots through compacted soils. Plant and Soil 331, 31--43. \url{https://doi.org/10.1007/s11104-009-0223-7}
 
 \leavevmode\vadjust pre{\hypertarget{ref-clark07}{}}%
-Clark, Andy, ed. 2007. \emph{Managing Cover Crops Profitably}. 3rd ed. Handbook Series, bk. 9. {College Park, MD}: {Sustainable Agriculture Research \& Education (SARE)}.
+Clark, A. (Ed.), 2007. Managing cover crops profitably, 3rd ed. ed, Handbook series. {Sustainable Agriculture Research \& Education (SARE)}, {College Park, MD}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-clendenning16}{}}%
-Clendenning, Jessica, Wolfram H. Dressler, and Carol Richards. 2016. {``Food Justice or Food Sovereignty? {Understanding} the Rise of Urban Food Movements in the {USA}.''} \emph{Agriculture and Human Values} 33 (1): 165--77. \url{https://doi.org/10.1007/s10460-015-9625-8}.
+Clendenning, J., Dressler, W.H., Richards, C., 2016. Food justice or food sovereignty? {Understanding} the rise of urban food movements in the {USA}. Agriculture and Human Values 33, 165--177. \url{https://doi.org/10.1007/s10460-015-9625-8}
 
 \leavevmode\vadjust pre{\hypertarget{ref-cogger05}{}}%
-Cogger, Craig G. 2005. {``Potential {Compost Benefits} for {Restoration Of Soils Disturbed} by {Urban Development}.''} \emph{Compost Science \& Utilization} 13 (4): 243--51. \url{https://doi.org/10.1080/1065657X.2005.10702248}.
+Cogger, C.G., 2005. Potential {Compost Benefits} for {Restoration Of Soils Disturbed} by {Urban Development}. Compost Science \& Utilization 13, 243--251. \url{https://doi.org/10.1080/1065657X.2005.10702248}
 
 \leavevmode\vadjust pre{\hypertarget{ref-cordeau20}{}}%
-Cordeau, Stéphane, Auxence Baudron, and Guillaume Adeux. 2020. {``Is {Tillage} a {Suitable Option} for {Weed Management} in {Conservation Agriculture}?''} \emph{Agronomy} 10 (11): 1746. \url{https://doi.org/10.3390/agronomy10111746}.
+Cordeau, S., Baudron, A., Adeux, G., 2020. Is {Tillage} a {Suitable Option} for {Weed Management} in {Conservation Agriculture}? Agronomy 10, 1746. \url{https://doi.org/10.3390/agronomy10111746}
 
 \leavevmode\vadjust pre{\hypertarget{ref-correa19}{}}%
-Correa, José, Johannes A Postma, Michelle Watt, and Tobias Wojciechowski. 2019. {``Soil Compaction and the Architectural Plasticity of Root Systems.''} Edited by Jianhua Zhang. \emph{Journal of Experimental Botany} 70 (21): 6019--34. \url{https://doi.org/10.1093/jxb/erz383}.
+Correa, J., Postma, J.A., Watt, M., Wojciechowski, T., 2019. Soil compaction and the architectural plasticity of root systems. Journal of Experimental Botany 70, 6019--6034. \url{https://doi.org/10.1093/jxb/erz383}
 
 \leavevmode\vadjust pre{\hypertarget{ref-cusser20}{}}%
-Cusser, Sarah, Christie Bahlai, Scott M. Swinton, G. Philip Robertson, and Nick M. Haddad. 2020. {``Long-Term Research Avoids Spurious and Misleading Trends in Sustainability Attributes of No-till.''} \emph{Global Change Biology} 26 (6): 3715--25. \url{https://doi.org/10.1111/gcb.15080}.
+Cusser, S., Bahlai, C., Swinton, S.M., Robertson, G.P., Haddad, N.M., 2020. Long-term research avoids spurious and misleading trends in sustainability attributes of no-till. Global Change Biology 26, 3715--3725. \url{https://doi.org/10.1111/gcb.15080}
 
 \leavevmode\vadjust pre{\hypertarget{ref-daniel07}{}}%
-Daniel, Pete. 2007. {``African {American Farmers} and {Civil Rights},''} 37.
+Daniel, P., 2007. African {American Farmers} and {Civil Rights} 37.
 
 \leavevmode\vadjust pre{\hypertarget{ref-davies15b}{}}%
-Davies, G. Matt, and Alan Gray. 2015. {``Don't Let Spurious Accusations of Pseudoreplication Limit Our Ability to Learn from Natural Experiments (and Other Messy Kinds of Ecological Monitoring).''} \emph{Ecology and Evolution} 5 (22): 5295--5304. \url{https://doi.org/10.1002/ece3.1782}.
+Davies, G.M., Gray, A., 2015. Don't let spurious accusations of pseudoreplication limit our ability to learn from natural experiments (and other messy kinds of ecological monitoring). Ecology and Evolution 5, 5295--5304. \url{https://doi.org/10.1002/ece3.1782}
 
 \leavevmode\vadjust pre{\hypertarget{ref-decarcer19}{}}%
-de Cárcer, Paula Sanginés, Sokrat Sinaj, Mathieu Santonja, Dario Fossati, and Bernard Jeangros. 2019. {``Long-Term Effects of Crop Succession, Soil Tillage and Climate on Wheat Yield and Soil Properties.''} \emph{Soil and Tillage Research} 190 (July): 209--19. \url{https://doi.org/10.1016/j.still.2019.01.012}.
+de Cárcer, P.S., Sinaj, S., Santonja, M., Fossati, D., Jeangros, B., 2019. Long-term effects of crop succession, soil tillage and climate on wheat yield and soil properties. Soil and Tillage Research 190, 209--219. \url{https://doi.org/10.1016/j.still.2019.01.012}
 
 \leavevmode\vadjust pre{\hypertarget{ref-douglas92}{}}%
-Douglas, J. T., A. J. Koppi, and C. J. Moran. 1992. {``Alteration of the Structural Attributes of a Compact Clay Loam Soil by Growth of a Perennial Grass Crop.''} \emph{Plant and Soil} 139 (2): 195--202. \url{https://doi.org/10.1007/BF00009310}.
+Douglas, J.T., Koppi, A.J., Moran, C.J., 1992. Alteration of the structural attributes of a compact clay loam soil by growth of a perennial grass crop. Plant and Soil 139, 195--202. \url{https://doi.org/10.1007/BF00009310}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dreelin06}{}}%
-Dreelin, Erin A., Laurie Fowler, and C. Ronald Carroll. 2006. {``A Test of Porous Pavement Effectiveness on Clay Soils During Natural Storm Events.''} \emph{Water Research} 40 (4): 799--805. \url{https://doi.org/10.1016/j.watres.2005.12.002}.
+Dreelin, E.A., Fowler, L., Ronald Carroll, C., 2006. A test of porous pavement effectiveness on clay soils during natural storm events. Water Research 40, 799--805. \url{https://doi.org/10.1016/j.watres.2005.12.002}
 
 \leavevmode\vadjust pre{\hypertarget{ref-drugova22}{}}%
-Drugova, Tatiana, Kynda R. Curtis, and Ruby A. Ward. 2022. {``Producer Preferences for Drought Management Strategies in the Arid West.''} \emph{Renewable Agriculture and Food Systems} 37 (1): 14--23. \url{https://doi.org/10.1017/S1742170521000259}.
+Drugova, T., Curtis, K.R., Ward, R.A., 2022. Producer preferences for drought management strategies in the arid west. Renewable Agriculture and Food Systems 37, 14--23. \url{https://doi.org/10.1017/S1742170521000259}
 
 \leavevmode\vadjust pre{\hypertarget{ref-du15}{}}%
-Du, Zhangliu, Tusheng Ren, Chunsheng Hu, and Qingzhong Zhang. 2015. {``Transition from Intensive Tillage to No-till Enhances Carbon Sequestration in Microaggregates of Surface Soil in the {North China Plain}.''} \emph{Soil and Tillage Research} 146 (March): 26--31. \url{https://doi.org/10.1016/j.still.2014.08.012}.
+Du, Z., Ren, T., Hu, C., Zhang, Q., 2015. Transition from intensive tillage to no-till enhances carbon sequestration in microaggregates of surface soil in the {North China Plain}. Soil and Tillage Research 146, 26--31. \url{https://doi.org/10.1016/j.still.2014.08.012}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ekboir01}{}}%
-Ekboir, Javier. 2001. {``Developing {No-Till Packages} for {Small-Scale Farmers}.''}
+Ekboir, J., 2001. Developing {No-Till Packages} for {Small-Scale Farmers}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fao14}{}}%
-FAO. 2014. \emph{World Reference Base for Soil Resources 2014: International Soil Classification System for Naming Soils and Creating Legends for Soil Maps}. {Rome}: {FAO}.
+FAO, 2014. World reference base for soil resources 2014: International soil classification system for naming soils and creating legends for soil maps. {FAO}, {Rome}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-garcia-gonzalez18}{}}%
-García-González, Irene, Chiquinquirá Hontoria, José Luis Gabriel, María Alonso-Ayuso, and Miguel Quemada. 2018. {``Cover Crops to Mitigate Soil Degradation and Enhance Soil Functionality in Irrigated Land.''} \emph{Geoderma} 322 (July): 81--88. \url{https://doi.org/10.1016/j.geoderma.2018.02.024}.
+García-González, I., Hontoria, C., Gabriel, J.L., Alonso-Ayuso, M., Quemada, M., 2018. Cover crops to mitigate soil degradation and enhance soil functionality in irrigated land. Geoderma 322, 81--88. \url{https://doi.org/10.1016/j.geoderma.2018.02.024}
 
 \leavevmode\vadjust pre{\hypertarget{ref-garcia-sempere19}{}}%
-García-Sempere, Ana, Helda Morales, Moisés Hidalgo, Bruce G. Ferguson, Peter Rosset, and Austreberta Nazar-Beutelspacher. 2019. {``Food {Sovereignty} in the City?: {A} Methodological Proposal for Evaluating Food Sovereignty in Urban Settings.''} \emph{Agroecology and Sustainable Food Systems} 43 (10): 1145--73. \url{https://doi.org/10.1080/21683565.2019.1578719}.
+García-Sempere, A., Morales, H., Hidalgo, M., Ferguson, B.G., Rosset, P., Nazar-Beutelspacher, A., 2019. Food {Sovereignty} in the city?: {A} methodological proposal for evaluating food sovereignty in urban settings. Agroecology and Sustainable Food Systems 43, 1145--1173. \url{https://doi.org/10.1080/21683565.2019.1578719}
 
 \leavevmode\vadjust pre{\hypertarget{ref-gerke06}{}}%
-Gerke, Horst H. 2006. {``Preferential Flow Descriptions for Structured Soils.''} \emph{Journal of Plant Nutrition and Soil Science} 169 (3): 382--400. \url{https://doi.org/10.1002/jpln.200521955}.
+Gerke, H.H., 2006. Preferential flow descriptions for structured soils. Journal of Plant Nutrition and Soil Science 169, 382--400. \url{https://doi.org/10.1002/jpln.200521955}
 
 \leavevmode\vadjust pre{\hypertarget{ref-grossman03}{}}%
-Grossman, J. M. 2003. {``Exploring Farmer Knowledge of Soil Processes in Organic Coffee Systems of {Chiapas}, {Mexico}.''} \emph{Geoderma} 111 (3-4): 267--87. \url{https://doi.org/10.1016/S0016-7061(02)00268-9}.
+Grossman, J.M., 2003. Exploring farmer knowledge of soil processes in organic coffee systems of {Chiapas}, {Mexico}. Geoderma 111, 267--287. \url{https://doi.org/10.1016/S0016-7061(02)00268-9}
 
 \leavevmode\vadjust pre{\hypertarget{ref-grossman05}{}}%
-Grossman, J. M., C. Sheaffer, D. Wyse, and P. H. Graham. 2005. {``Characterization of Slow-Growing Root Nodule Bacteria from {Inga} Oerstediana in Organic Coffee Agroecosystems in {Chiapas}, {Mexico}.''} \emph{Applied Soil Ecology} 29 (3): 236--51. \url{https://doi.org/10.1016/j.apsoil.2004.12.008}.
+Grossman, J.M., Sheaffer, C., Wyse, D., Graham, P.H., 2005. Characterization of slow-growing root nodule bacteria from {Inga} oerstediana in organic coffee agroecosystems in {Chiapas}, {Mexico}. Applied Soil Ecology 29, 236--251. \url{https://doi.org/10.1016/j.apsoil.2004.12.008}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hesse07}{}}%
-Hesse, Elze, Mark Rees, and Heinz Müller-Schärer. 2007. {``Seed Bank Persistence of Clonal Weeds in Contrasting Habitats: Implications for Control.''} \emph{Plant Ecology} 190 (2): 233--43. \url{https://doi.org/10.1007/s11258-006-9203-7}.
+Hesse, E., Rees, M., Müller-Schärer, H., 2007. Seed bank persistence of clonal weeds in contrasting habitats: Implications for control. Plant Ecology 190, 233--243. \url{https://doi.org/10.1007/s11258-006-9203-7}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hill85}{}}%
-Hill, R. L., R. Horton, and R. M. Cruse. 1985. {``Tillage {Effects} on {Soil Water Retention} and {Pore Size Distribution} of {Two Mollisols}.''} \emph{Soil Science Society of America Journal} 49 (5): 1264--70. \url{https://doi.org/10.2136/sssaj1985.03615995004900050039x}.
+Hill, R.L., Horton, R., Cruse, R.M., 1985. Tillage {Effects} on {Soil Water Retention} and {Pore Size Distribution} of {Two Mollisols}. Soil Science Society of America Journal 49, 1264--1270. \url{https://doi.org/10.2136/sssaj1985.03615995004900050039x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hoogmoed80}{}}%
-Hoogmoed, W. B., and J. Bouma. 1980. {``A {Simulation Model} for {Predicting Infiltration} into {Cracked Clay Soil}.''} \emph{Soil Science Society of America Journal} 44 (3): 458--61. \url{https://doi.org/10.2136/sssaj1980.03615995004400030003x}.
+Hoogmoed, W.B., Bouma, J., 1980. A {Simulation Model} for {Predicting Infiltration} into {Cracked Clay Soil}. Soil Science Society of America Journal 44, 458--461. \url{https://doi.org/10.2136/sssaj1980.03615995004400030003x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-rstatix}{}}%
-Kassambara, Alboukadel. 2021. \emph{Rstatix: Pipe-Friendly Framework for Basic Statistical Tests}. \url{https://CRAN.R-project.org/package=rstatix}.
+Kassambara, A., 2021. \href{https://CRAN.R-project.org/package=rstatix}{Rstatix: Pipe-friendly framework for basic statistical tests}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-katz14}{}}%
-Katz, Daniel S. W., and Tiffany S. Carey. 2014. {``Heterogeneity in Ragweed Pollen Exposure Is Determined by Plant Composition at Small Spatial Scales.''} \emph{Science of the Total Environment} 485--486 (1): 435--40. \url{https://doi.org/10.1016/j.scitotenv.2014.03.099}.
+Katz, D.S.W., Carey, T.S., 2014. Heterogeneity in ragweed pollen exposure is determined by plant composition at small spatial scales. Science of the Total Environment 485--486, 435--440. \url{https://doi.org/10.1016/j.scitotenv.2014.03.099}
 
 \leavevmode\vadjust pre{\hypertarget{ref-king20}{}}%
-King, Alison E. 2020. {``Soil {Organic Matter} as {Catalyst} of {Crop Resource Capture}.''} \emph{Frontiers in Environmental Science} 8: 8.
+King, A.E., 2020. Soil {Organic Matter} as {Catalyst} of {Crop Resource Capture}. Frontiers in Environmental Science 8, 8.
 
 \leavevmode\vadjust pre{\hypertarget{ref-krause95}{}}%
-Krause, Mark A., and J. Roy Black. 1995. {``Optimal {Adoption Strategies} for {No-till Technology} in {Michigan}.''} \emph{Review of Agricultural Economics} 17 (3): 299. \url{https://doi.org/10.2307/1349575}.
+Krause, M.A., Black, J.R., 1995. Optimal {Adoption Strategies} for {No-till Technology} in {Michigan}. Review of Agricultural Economics 17, 299. \url{https://doi.org/10.2307/1349575}
 
 \leavevmode\vadjust pre{\hypertarget{ref-kumar16}{}}%
-Kumar, Kuldip, and Lakhwinder S. Hundal. 2016. {``Soil in the {City}: {Sustainably Improving Urban Soils}.''} \emph{Journal of Environmental Quality} 45 (1): 2--8. \url{https://doi.org/10.2134/jeq2015.11.0589}.
+Kumar, K., Hundal, L.S., 2016. Soil in the {City}: {Sustainably Improving Urban Soils}. Journal of Environmental Quality 45, 2--8. \url{https://doi.org/10.2134/jeq2015.11.0589}
 
 \leavevmode\vadjust pre{\hypertarget{ref-kuzyakov19}{}}%
-Kuzyakov, Yakov, and Kazem Zamanian. 2019. {``Reviews and Syntheses: {Agropedogenesis} \textendash{} Humankind as the Sixth Soil-Forming Factor and Attractors of Agricultural Soil Degradation.''} \emph{Biogeosciences} 16 (24): 4783--803. \url{https://doi.org/10.5194/bg-16-4783-2019}.
+Kuzyakov, Y., Zamanian, K., 2019. Reviews and syntheses: {Agropedogenesis} \textendash{} humankind as the sixth soil-forming factor and attractors of agricultural soil degradation. Biogeosciences 16, 4783--4803. \url{https://doi.org/10.5194/bg-16-4783-2019}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lal07}{}}%
-Lal, Rattan. 2007. {``Soil {Science} and the {Carbon Civilization}''} 71 (5): 1425--37. \url{https://doi.org/10.2136/sssaj2007.0001}.
+Lal, R., 2007. Soil {Science} and the {Carbon Civilization} 71, 1425--1437. \url{https://doi.org/10.2136/sssaj2007.0001}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lal15}{}}%
-Lal, Rattan, Wakene Negassa, and Klaus Lorenz. 2015. {``Carbon Sequestration in Soil.''} \emph{Current Opinion in Environmental Sustainability} 15 (C): 79--86. \url{https://doi.org/10.1016/j.cosust.2015.09.002}.
+Lal, R., Negassa, W., Lorenz, K., 2015. Carbon sequestration in soil. Current Opinion in Environmental Sustainability 15, 79--86. \url{https://doi.org/10.1016/j.cosust.2015.09.002}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lawley11}{}}%
-Lawley, Yvonne E., Ray R. Weil, and John R. Teasdale. 2011. {``Forage {Radish Cover Crop Suppresses Winter Annual Weeds} in {Fall} and {Before Corn Planting}.''} \emph{Agronomy Journal} 103 (1): 137--44. \url{https://doi.org/10.2134/agronj2010.0187}.
+Lawley, Y.E., Weil, R.R., Teasdale, J.R., 2011. Forage {Radish Cover Crop Suppresses Winter Annual Weeds} in {Fall} and {Before Corn Planting}. Agronomy Journal 103, 137--144. \url{https://doi.org/10.2134/agronj2010.0187}
 
 \leavevmode\vadjust pre{\hypertarget{ref-liu09b}{}}%
-Liu, J G, K J Mahoney, P H Sikkema, and C J Swanton. 2009. {``The Importance of Light Quality in Crop-Weed Competition: {Light} Quality and Crop Competition.''} \emph{Weed Research} 49 (2): 217--24. \url{https://doi.org/10.1111/j.1365-3180.2008.00687.x}.
+Liu, J.G., Mahoney, K.J., Sikkema, P.H., Swanton, C.J., 2009. The importance of light quality in crop-weed competition: {Light} quality and crop competition. Weed Research 49, 217--224. \url{https://doi.org/10.1111/j.1365-3180.2008.00687.x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-martinez16}{}}%
-Martínez, Ingrid, Andreas Chervet, Peter Weisskopf, Wolfgang G. Sturny, Ararso Etana, Matthias Stettler, Johannes Forkman, and Thomas Keller. 2016. {``Two Decades of No-till in the {Oberacker} Long-Term Field Experiment: {Part I}. {Crop} Yield, Soil Organic Carbon and Nutrient Distribution in the Soil Profile.''} \emph{Soil and Tillage Research} 163 (November): 141--51. \url{https://doi.org/10.1016/j.still.2016.05.021}.
+Martínez, I., Chervet, A., Weisskopf, P., Sturny, W.G., Etana, A., Stettler, M., Forkman, J., Keller, T., 2016. Two decades of no-till in the {Oberacker} long-term field experiment: {Part I}. {Crop} yield, soil organic carbon and nutrient distribution in the soil profile. Soil and Tillage Research 163, 141--151. \url{https://doi.org/10.1016/j.still.2016.05.021}
 
 \leavevmode\vadjust pre{\hypertarget{ref-martins03}{}}%
-Martins, L. M. V., G. R. Xavier, F. W. Rangel, J. R. A. Ribeiro, M. C. P. Neves, L. B. Morgado, and N. G. Rumjanek. 2003. {``Contribution of Biological Nitrogen Fixation to Cowpea: A Strategy for Improving Grain Yield in the Semi-Arid Region of {Brazil}.''} \emph{Biology and Fertility of Soils} 38 (6): 333--39. \url{https://doi.org/10.1007/s00374-003-0668-4}.
+Martins, L.M.V., Xavier, G.R., Rangel, F.W., Ribeiro, J.R.A., Neves, M.C.P., Morgado, L.B., Rumjanek, N.G., 2003. Contribution of biological nitrogen fixation to cowpea: A strategy for improving grain yield in the semi-arid region of {Brazil}. Biology and Fertility of Soils 38, 333--339. \url{https://doi.org/10.1007/s00374-003-0668-4}
 
 \leavevmode\vadjust pre{\hypertarget{ref-masoner19}{}}%
-Masoner, Jason R., Dana W. Kolpin, Isabelle M. Cozzarelli, Larry B. Barber, David S. Burden, William T. Foreman, Kenneth J. Forshay, et al. 2019. {``Urban {Stormwater}: {An Overlooked Pathway} of {Extensive Mixed Contaminants} to {Surface} and {Groundwaters} in the {United States}.''} \emph{Environmental Science \& Technology} 53 (17): 10070--81. \url{https://doi.org/10.1021/acs.est.9b02867}.
+Masoner, J.R., Kolpin, D.W., Cozzarelli, I.M., Barber, L.B., Burden, D.S., Foreman, W.T., Forshay, K.J., Furlong, E.T., Groves, J.F., Hladik, M.L., Hopton, M.E., Jaeschke, J.B., Keefe, S.H., Krabbenhoft, D.P., Lowrance, R., Romanok, K.M., Rus, D.L., Selbig, W.R., Williams, B.H., Bradley, P.M., 2019. Urban {Stormwater}: {An Overlooked Pathway} of {Extensive Mixed Contaminants} to {Surface} and {Groundwaters} in the {United States}. Environmental Science \& Technology 53, 10070--10081. \url{https://doi.org/10.1021/acs.est.9b02867}
 
 \leavevmode\vadjust pre{\hypertarget{ref-materechera09}{}}%
-Materechera, S. A. 2009. {``Tillage and Tractor Traffic Effects on Soil Compaction in Horticultural Fields Used for Peri-Urban Agriculture in a Semi-Arid Environment of the {North West Province}, {South Africa}.''} \emph{Soil and Tillage Research} 103 (1): 11--15. \url{https://doi.org/10.1016/j.still.2008.09.001}.
+Materechera, S.A., 2009. Tillage and tractor traffic effects on soil compaction in horticultural fields used for peri-urban agriculture in a semi-arid environment of the {North West Province}, {South Africa}. Soil and Tillage Research 103, 11--15. \url{https://doi.org/10.1016/j.still.2008.09.001}
 
 \leavevmode\vadjust pre{\hypertarget{ref-mead81}{}}%
-Mead, R., and Janet Riley. 1981. {``A {Review} of {Statistical Ideas Relevant} to {Intercropping Research}.''} \emph{Journal of the Royal Statistical Society. Series A (General)} 144 (4): 462. \url{https://doi.org/10.2307/2981827}.
+Mead, R., Riley, J., 1981. A {Review} of {Statistical Ideas Relevant} to {Intercropping Research}. Journal of the Royal Statistical Society. Series A (General) 144, 462. \url{https://doi.org/10.2307/2981827}
 
 \leavevmode\vadjust pre{\hypertarget{ref-montgomery07}{}}%
-Montgomery, David R. 2007. {``Soil Erosion and Agricultural Sustainability''} 104 (33): 13268--72.
+Montgomery, D.R., 2007. Soil erosion and agricultural sustainability 104, 13268--13272.
 
 \leavevmode\vadjust pre{\hypertarget{ref-monti01}{}}%
-Monti, A, P Venturi, and H. W Elbersen. 2001. {``Evaluation of the Establishment of Lowland and Upland Switchgrass ({Panicum} Virgatum {L}.) Varieties Under Different Tillage and Seedbed Conditions in Northern {Italy}.''} \emph{Soil and Tillage Research} 63 (1-2): 75--83. \url{https://doi.org/10.1016/S0167-1987(01)00238-0}.
+Monti, A., Venturi, P., Elbersen, H.W., 2001. Evaluation of the establishment of lowland and upland switchgrass ({Panicum} virgatum {L}.) Varieties under different tillage and seedbed conditions in northern {Italy}. Soil and Tillage Research 63, 75--83. \url{https://doi.org/10.1016/S0167-1987(01)00238-0}
 
 \leavevmode\vadjust pre{\hypertarget{ref-mori22}{}}%
-Mori, Taiki, Senhao Wang, Wei Zhang, and Jiangming Mo. 2022. {``Microbial Assembly Adapted to Low-{P} Soils in Three Subtropical Forests by Increasing the Maximum Rate of Substrate Conversion of Acid Phosphatases but Not by Decreasing the Half-Saturation Constant.''} \emph{European Journal of Soil Biology} 108 (January): 103377. \url{https://doi.org/10.1016/j.ejsobi.2021.103377}.
+Mori, T., Wang, S., Zhang, W., Mo, J., 2022. Microbial assembly adapted to low-{P} soils in three subtropical forests by increasing the maximum rate of substrate conversion of acid phosphatases but not by decreasing the half-saturation constant. European Journal of Soil Biology 108, 103377. \url{https://doi.org/10.1016/j.ejsobi.2021.103377}
 
 \leavevmode\vadjust pre{\hypertarget{ref-here}{}}%
-Müller, Kirill. 2020. \emph{Here: A Simpler Way to Find Your Files}. \url{https://CRAN.R-project.org/package=here}.
+Müller, K., 2020. \href{https://CRAN.R-project.org/package=here}{Here: A simpler way to find your files}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-nunes18}{}}%
-Nunes, Márcio Renato, Harold Mathijs van Es, Robert Schindelbeck, Aaron James Ristow, and Matthew Ryan. 2018. {``No-till and Cropping System Diversification Improve Soil Health and Crop Yield.''} \emph{Geoderma} 328 (October): 30--43. \url{https://doi.org/10.1016/j.geoderma.2018.04.031}.
+Nunes, M.R., van Es, H.M., Schindelbeck, R., Ristow, A.J., Ryan, M., 2018. No-till and cropping system diversification improve soil health and crop yield. Geoderma 328, 30--43. \url{https://doi.org/10.1016/j.geoderma.2018.04.031}
 
 \leavevmode\vadjust pre{\hypertarget{ref-oldfield19}{}}%
-Oldfield, Emily E., Mark A. Bradford, and Stephen A. Wood. 2019. {``Global Meta-Analysis of the Relationship Between Soil Organic Matter and Crop Yields,''} 15--32.
+Oldfield, E.E., Bradford, M.A., Wood, S.A., 2019. Global meta-analysis of the relationship between soil organic matter and crop yields 15--32.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ozpinar06}{}}%
-Ozpinar, Sakine, and Anıl Cay. 2006. {``Effect of Different Tillage Systems on the Quality and Crop Productivity of a Clay\textendash loam Soil in Semi-Arid North-Western {Turkey}.''} \emph{Soil and Tillage Research} 88 (1-2): 95--106. \url{https://doi.org/10.1016/j.still.2005.04.009}.
+Ozpinar, S., Cay, A., 2006. Effect of different tillage systems on the quality and crop productivity of a clay\textendash loam soil in semi-arid north-western {Turkey}. Soil and Tillage Research 88, 95--106. \url{https://doi.org/10.1016/j.still.2005.04.009}
 
 \leavevmode\vadjust pre{\hypertarget{ref-pavao-zuckerman08}{}}%
-Pavao-Zuckerman, Mitchell A. 2008. {``The {Nature} of {Urban Soils} and {Their Role} in {Ecological Restoration} in {Cities}.''} \emph{Restoration Ecology} 16 (4): 642--49. \url{https://doi.org/10.1111/j.1526-100X.2008.00486.x}.
+Pavao-Zuckerman, M.A., 2008. The {Nature} of {Urban Soils} and {Their Role} in {Ecological Restoration} in {Cities}. Restoration Ecology 16, 642--649. \url{https://doi.org/10.1111/j.1526-100X.2008.00486.x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-perez21}{}}%
-Perez, Rica. 2021. {``Freedom {Farmers}: {Agricultural Resistance} and the {Black Freedom Movement}, by {Monica M}.{White}, {Chapel Hill}: {University} of {North Carolina Press}, 2018. 208 Pp. \$14.99 (e-Book). {ISBN}: 978-1-4696-4370-0.''} \emph{Rural Sociology} 86 (4): 974--77. \url{https://doi.org/10.1111/ruso.12423}.
+Perez, R., 2021. Freedom {Farmers}: {Agricultural Resistance} and the {Black Freedom Movement}, by {Monica M}.{White}, {Chapel Hill}: {University} of {North Carolina Press}, 2018. 208 pp. \$14.99 (e-book). {ISBN}: 978-1-4696-4370-0. Rural Sociology 86, 974--977. \url{https://doi.org/10.1111/ruso.12423}
 
 \leavevmode\vadjust pre{\hypertarget{ref-pittelkow15}{}}%
-Pittelkow, Cameron M., Bruce A. Linquist, Mark E. Lundy, Xinqiang Liang, Kees Jan van Groenigen, Juhwan Lee, Natasja van Gestel, Johan Six, Rodney T. Venterea, and Chris van Kessel. 2015. {``When Does No-till Yield More? {A} Global Meta-Analysis.''} \emph{Field Crops Research} 183 (November): 156--68. \url{https://doi.org/10.1016/j.fcr.2015.07.020}.
+Pittelkow, C.M., Linquist, B.A., Lundy, M.E., Liang, X., van Groenigen, K.J., Lee, J., van Gestel, N., Six, J., Venterea, R.T., van Kessel, C., 2015. When does no-till yield more? {A} global meta-analysis. Field Crops Research 183, 156--168. \url{https://doi.org/10.1016/j.fcr.2015.07.020}
 
 \leavevmode\vadjust pre{\hypertarget{ref-possinger13}{}}%
-Possinger, Angela R., Loren B. Byrne, and Nancy E. Breen. 2013. {``Effect of Buckwheat ( {\emph{Fagopyrum}}{ \emph{Esculentum}} ) on Soil-Phosphorus Availability and Organic Acids.''} \emph{Journal of Plant Nutrition and Soil Science} 176 (1): 16--18. \url{https://doi.org/10.1002/jpln.201200337}.
+Possinger, A.R., Byrne, L.B., Breen, N.E., 2013. Effect of buckwheat ( {\emph{Fagopyrum}}{ \emph{Esculentum}} ) on soil-phosphorus availability and organic acids. Journal of Plant Nutrition and Soil Science 176, 16--18. \url{https://doi.org/10.1002/jpln.201200337}
 
 \leavevmode\vadjust pre{\hypertarget{ref-base}{}}%
-R Core Team. 2022. \emph{R: A Language and Environment for Statistical Computing}. Vienna, Austria: R Foundation for Statistical Computing. \url{https://www.R-project.org/}.
+R Core Team, 2022. \href{https://www.R-project.org/}{R: A language and environment for statistical computing}. R Foundation for Statistical Computing, Vienna, Austria.
 
 \leavevmode\vadjust pre{\hypertarget{ref-richter21}{}}%
-Richter, Daniel D. 2021. {``Searching for Solutions to Our Soil Woes--{A World Without Soil}: {The Past}, {Present}, and {Precarious Future} of the {Earth Beneath Our Feet}, {Jo Handelsman}, {Yale University Press}, 2021, 272 Pp.''} \emph{Science} 374 (6574): 1452--52. \url{https://doi.org/10.1126/science.abm4765}.
+Richter, D.D., 2021. Searching for solutions to our soil woes--{A World Without Soil}: {The Past}, {Present}, and {Precarious Future} of the {Earth Beneath Our Feet}, {Jo Handelsman}, {Yale University Press}, 2021, 272 pp. Science 374, 1452--1452. \url{https://doi.org/10.1126/science.abm4765}
 
 \leavevmode\vadjust pre{\hypertarget{ref-roger-estrade10}{}}%
-Roger-Estrade, Jean, Christel Anger, Michel Bertrand, and Guy Richard. 2010. {``Tillage and Soil Ecology: {Partners} for Sustainable Agriculture.''} \emph{Soil and Tillage Research} 111 (1): 33--40. \url{https://doi.org/10.1016/j.still.2010.08.010}.
+Roger-Estrade, J., Anger, C., Bertrand, M., Richard, G., 2010. Tillage and soil ecology: {Partners} for sustainable agriculture. Soil and Tillage Research 111, 33--40. \url{https://doi.org/10.1016/j.still.2010.08.010}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ryan07}{}}%
-Ryan, Justin G., John A. Ludwig, and Clive A. Mcalpine. 2007. {``Complex Adaptive Landscapes ({CAL}): {A} Conceptual Framework of Multi-Functional, Non-Linear Ecohydrological Feedback Systems.''} \emph{Ecological Complexity} 4 (3): 113--27. \url{https://doi.org/10.1016/j.ecocom.2007.03.004}.
+Ryan, J.G., Ludwig, J.A., Mcalpine, C.A., 2007. Complex adaptive landscapes ({CAL}): {A} conceptual framework of multi-functional, non-linear ecohydrological feedback systems. Ecological Complexity 4, 113--127. \url{https://doi.org/10.1016/j.ecocom.2007.03.004}
 
 \leavevmode\vadjust pre{\hypertarget{ref-salem15}{}}%
-Salem, Haytham M., Constantino Valero, Miguel Ángel Muñoz, María Gil Rodríguez, and Luis L. Silva. 2015. {``Short-Term Effects of Four Tillage Practices on Soil Physical Properties, Soil Water Potential, and Maize Yield.''} \emph{Geoderma} 237--238 (January): 60--70. \url{https://doi.org/10.1016/j.geoderma.2014.08.014}.
+Salem, H.M., Valero, C., Muñoz, M.Á., Rodríguez, M.G., Silva, L.L., 2015. Short-term effects of four tillage practices on soil physical properties, soil water potential, and maize yield. Geoderma 237--238, 60--70. \url{https://doi.org/10.1016/j.geoderma.2014.08.014}
 
 \leavevmode\vadjust pre{\hypertarget{ref-sanginga00}{}}%
-Sanginga, N, O Lyasse, and B B Singh. 2000. {``Phosphorus Use Efficiency and Nitrogen Balance of Cowpea Breeding Lines in a Low {P} Soil of the Derived Savanna Zone in {West Africa}.''} \emph{Plant and Soil}, 10.
-
-\leavevmode\vadjust pre{\hypertarget{ref-schlegel95}{}}%
-Schlegel, A. J., and J. L. Havlin. 1995. {``Corn {Response} to {Long-Term Nitrogen} and {Phosphorus Fertilization}.''} \emph{Journal of Production Agriculture} 8 (2): 181--85. \url{https://doi.org/10.2134/jpa1995.0181}.
+Sanginga, N., Lyasse, O., Singh, B.B., 2000. Phosphorus use efficiency and nitrogen balance of cowpea breeding lines in a low {P} soil of the derived savanna zone in {West Africa}. Plant and Soil 10.
 
 \leavevmode\vadjust pre{\hypertarget{ref-schlegel15}{}}%
-Schlegel, Alan J., Yared Assefa, H. Dewayne Bond, Scott M. Wetter, and Loyd R. Stone. 2015. {``Soil {Physicochemical Properties} After 10 {Years} of {Animal Waste Application}.''} \emph{Soil Science Society of America Journal} 79 (3): 711--19. \url{https://doi.org/10.2136/sssaj2014.11.0461}.
+Schlegel, A.J., Assefa, Y., Bond, H.D., Wetter, S.M., Stone, L.R., 2015. Soil {Physicochemical Properties} after 10 {Years} of {Animal Waste Application}. Soil Science Society of America Journal 79, 711--719. \url{https://doi.org/10.2136/sssaj2014.11.0461}
+
+\leavevmode\vadjust pre{\hypertarget{ref-schlegel95}{}}%
+Schlegel, A.J., Havlin, J.L., 1995. Corn {Response} to {Long-Term Nitrogen} and {Phosphorus Fertilization}. Journal of Production Agriculture 8, 181--185. \url{https://doi.org/10.2134/jpa1995.0181}
 
 \leavevmode\vadjust pre{\hypertarget{ref-sheehy15}{}}%
-Sheehy, Jatta, Kristiina Regina, Laura Alakukku, and Johan Six. 2015. {``Impact of No-till and Reduced Tillage on Aggregation and Aggregate-Associated Carbon in {Northern European} Agroecosystems.''} \emph{Soil and Tillage Research} 150 (July): 107--13. \url{https://doi.org/10.1016/j.still.2015.01.015}.
+Sheehy, J., Regina, K., Alakukku, L., Six, J., 2015. Impact of no-till and reduced tillage on aggregation and aggregate-associated carbon in {Northern European} agroecosystems. Soil and Tillage Research 150, 107--113. \url{https://doi.org/10.1016/j.still.2015.01.015}
 
 \leavevmode\vadjust pre{\hypertarget{ref-siebert20}{}}%
-Siebert, Anne. 2020. {``Transforming Urban Food Systems in {South Africa}: Unfolding Food Sovereignty in the City.''} \emph{The Journal of Peasant Studies} 47 (2): 401--19. \url{https://doi.org/10.1080/03066150.2018.1543275}.
+Siebert, A., 2020. Transforming urban food systems in {South Africa}: Unfolding food sovereignty in the city. The Journal of Peasant Studies 47, 401--419. \url{https://doi.org/10.1080/03066150.2018.1543275}
 
 \leavevmode\vadjust pre{\hypertarget{ref-silk20}{}}%
-Silk, Matthew J., Xavier A. Harrison, and David J. Hodgson. 2020. {``Perils and Pitfalls of Mixed-Effects Regression Models in Biology.''} \emph{PeerJ} 8 (August): e9522. \url{https://doi.org/10.7717/peerj.9522}.
+Silk, M.J., Harrison, X.A., Hodgson, D.J., 2020. Perils and pitfalls of mixed-effects regression models in biology. PeerJ 8, e9522. \url{https://doi.org/10.7717/peerj.9522}
 
 \leavevmode\vadjust pre{\hypertarget{ref-six02a}{}}%
-Six, Johan, Christian Feller, Karolien Denef, Stephen Ogle, Joao Carlos De Moraes, and Alain Albrecht. 2002. {``Soil Organic Matter, Biota and Aggregation in Temperate and Tropical Soils - {Effects} of No-Tillage.''} \url{https://doi.org/10.1051/agro}.
+Six, J., Feller, C., Denef, K., Ogle, S., De Moraes, J.C., Albrecht, A., 2002. Soil organic matter, biota and aggregation in temperate and tropical soils - {Effects} of no-tillage. \url{https://doi.org/10.1051/agro}
 
 \leavevmode\vadjust pre{\hypertarget{ref-small19}{}}%
-Small, Gaston, Paliza Shrestha, Geneviève Suzanne Metson, Katherine Polsky, Ivan Jimenez, and Adam Kay. 2019. {``Excess Phosphorus from Compost Applications in Urban Gardens Creates Potential Pollution Hotspots {Excess} Phosphorus from Compost Applications in Urban Gardens Creates Potential Pollution Hotspots.''}
+Small, G., Shrestha, P., Metson, G.S., Polsky, K., Jimenez, I., Kay, A., 2019. Excess phosphorus from compost applications in urban gardens creates potential pollution hotspots {Excess} phosphorus from compost applications in urban gardens creates potential pollution hotspots.
 
 \leavevmode\vadjust pre{\hypertarget{ref-smith15}{}}%
-Smith, A. Peyton, Erika Marín-Spiotta, and Teri Balser. 2015. {``Successional and Seasonal Variations in Soil and Litter Microbial Community Structure and Function During Tropical Postagricultural Forest Regeneration: {A} Multiyear Study.''} \emph{Global Change Biology} 21 (9): 3532--47. \url{https://doi.org/10.1111/gcb.12947}.
+Smith, A.P., Marín-Spiotta, E., Balser, T., 2015. Successional and seasonal variations in soil and litter microbial community structure and function during tropical postagricultural forest regeneration: {A} multiyear study. Global Change Biology 21, 3532--3547. \url{https://doi.org/10.1111/gcb.12947}
 
 \leavevmode\vadjust pre{\hypertarget{ref-stewart07}{}}%
-Stewart, Catherine E., Keith Paustian, Richard T. Conant, Alain F. Plante, and Johan Six. 2007. {``Soil Carbon Saturation: Concept, Evidence and Evaluation.''} \emph{Biogeochemistry} 86 (1): 19--31. \url{https://doi.org/10.1007/s10533-007-9140-0}.
+Stewart, C.E., Paustian, K., Conant, R.T., Plante, A.F., Six, J., 2007. Soil carbon saturation: Concept, evidence and evaluation. Biogeochemistry 86, 19--31. \url{https://doi.org/10.1007/s10533-007-9140-0}
 
 \leavevmode\vadjust pre{\hypertarget{ref-stewart13}{}}%
-Stewart, Ruth, Marcel Korth, Laurenz Langer, Shannon Rafferty, Natalie Rebelo Da Silva, and Carina van Rooyen. 2013. {``What Are the Impacts of Urban Agriculture Programs on Food Security in Low and Middle-Income Countries?''} \emph{Environmental Evidence} 2 (1): 7. \url{https://doi.org/10.1186/2047-2382-2-7}.
+Stewart, R., Korth, M., Langer, L., Rafferty, S., Da Silva, N.R., van Rooyen, C., 2013. What are the impacts of urban agriculture programs on food security in low and middle-income countries? Environmental Evidence 2, 7. \url{https://doi.org/10.1186/2047-2382-2-7}
 
 \leavevmode\vadjust pre{\hypertarget{ref-storkey18}{}}%
-Storkey, J, and P Neve. 2018. {``What Good Is Weed Diversity?''} Edited by Matt Liebman. \emph{Weed Research} 58 (4): 239--43. \url{https://doi.org/10.1111/wre.12310}.
+Storkey, J., Neve, P., 2018. What good is weed diversity? Weed Research 58, 239--243. \url{https://doi.org/10.1111/wre.12310}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tomczak14}{}}%
-Tomczak, Maciej, and Ewa Tomczak. 2014. {``The Need to Report Effect Size Estimates Revisited. {An} Overview of Some Recommended Measures of Effect Size''} 1: 7.
+Tomczak, M., Tomczak, E., 2014. The need to report effect size estimates revisited. {An} overview of some recommended measures of effect size 1, 7.
 
 \leavevmode\vadjust pre{\hypertarget{ref-vandenbygaart16}{}}%
-VandenBygaart, A. J. 2016. {``The Myth That No-till Can Mitigate Global Climate Change.''} \emph{Agriculture, Ecosystems \& Environment} 216 (January): 98--99. \url{https://doi.org/10.1016/j.agee.2015.09.013}.
+VandenBygaart, A.J., 2016. The myth that no-till can mitigate global climate change. Agriculture, Ecosystems \& Environment 216, 98--99. \url{https://doi.org/10.1016/j.agee.2015.09.013}
 
 \leavevmode\vadjust pre{\hypertarget{ref-vandermeer17}{}}%
-Vandermeer, John, and Ivette Perfecto. 2017. {``Ecological Complexity and Agroecosystems : Seven Themes from Theory.''} \emph{Agroecology and Sustainable Food Systems} 41 (7): 697--722. \url{https://doi.org/10.1080/21683565.2017.1322166}.
+Vandermeer, J., Perfecto, I., 2017. Ecological complexity and agroecosystems : Seven themes from theory. Agroecology and Sustainable Food Systems 41, 697--722. \url{https://doi.org/10.1080/21683565.2017.1322166}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wang06}{}}%
-Wang, Xiao-Bin, Dian-Xiong Cai, W. B. Hoogmoed, O. Oenema, and U. D. Perdok. 2006. {``Potential {Effect} of {Conservation Tillage} on {Sustainable Land Use}: {A Review} of {Global Long-Term Studies}.''} \emph{Pedosphere} 16 (5): 587--95. \url{https://doi.org/10.1016/S1002-0160(06)60092-1}.
+Wang, X.-B., Cai, D.-X., Hoogmoed, W.B., Oenema, O., Perdok, U.D., 2006. Potential {Effect} of {Conservation Tillage} on {Sustainable Land Use}: {A Review} of {Global Long-Term Studies}. Pedosphere 16, 587--595. \url{https://doi.org/10.1016/S1002-0160(06)60092-1}
 
 \leavevmode\vadjust pre{\hypertarget{ref-weston89}{}}%
-Weston, Leslie A., Roselee Harmon, and Sara Mueller. 1989. {``Allelopathic Potential of Sorghum-Sudangrass Hybrid (Sudex).''} \emph{Journal of Chemical Ecology} 15 (6): 1855--65. \url{https://doi.org/10.1007/BF01012272}.
+Weston, L.A., Harmon, R., Mueller, S., 1989. Allelopathic potential of sorghum-sudangrass hybrid (sudex). Journal of Chemical Ecology 15, 1855--1865. \url{https://doi.org/10.1007/BF01012272}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tidyverse}{}}%
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. {``Welcome to the {tidyverse}.''} \emph{Journal of Open Source Software} 4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L.D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T.L., Miller, E., Bache, S.M., Müller, K., Ooms, J., Robinson, D., Seidel, D.P., Spinu, V., Takahashi, K., Vaughan, D., Wilke, C., Woo, K., Yutani, H., 2019. Welcome to the {tidyverse}. Journal of Open Source Software 4, 1686. \url{https://doi.org/10.21105/joss.01686}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wolkowski90}{}}%
-Wolkowski, R. P. 1990. {``Relationship Between {Wheel-Traffic-Induced Soil Compaction}, {Nutrient Availability}, and {Crop Growth}: {A Review}.''} \emph{Journal of Production Agriculture} 3 (4): 460--69. \url{https://doi.org/10.2134/jpa1990.0460}.
+Wolkowski, R.P., 1990. Relationship between {Wheel-Traffic-Induced Soil Compaction}, {Nutrient Availability}, and {Crop Growth}: {A Review}. Journal of Production Agriculture 3, 460--469. \url{https://doi.org/10.2134/jpa1990.0460}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bookdown2022}{}}%
-Xie, Yihui. 2022a. \emph{Bookdown: Authoring Books and Technical Documents with r Markdown}. \url{https://github.com/rstudio/bookdown}.
+Xie, Y., 2022a. \href{https://github.com/rstudio/bookdown}{Bookdown: Authoring books and technical documents with r markdown}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-knitr2022}{}}%
----------. 2022b. \emph{Knitr: A General-Purpose Package for Dynamic Report Generation in r}. \url{https://yihui.org/knitr/}.
+Xie, Y., 2022b. \href{https://yihui.org/knitr/}{Knitr: A general-purpose package for dynamic report generation in r}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-zhu02}{}}%
-Zhu, Y. G., Y. Q. He, S. E. Smith, and F. A. Smith. 2002. {``Buckwheat ({Fagopyrum} Esculentum {Moench}) Has High Capacity to Take up Phosphorus ({P}) from a Calcium ({Ca})-Bound Source.''} \emph{Plant and Soil} 239 (1): 1--8. \url{https://doi.org/10.1023/A:1014958029905}.
+Zhu, Y.G., He, Y.Q., Smith, S.E., Smith, F.A., 2002. Buckwheat ({Fagopyrum} esculentum {Moench}) has high capacity to take up phosphorus ({P}) from a calcium ({Ca})-bound source. Plant and Soil 239, 1--8. \url{https://doi.org/10.1023/A:1014958029905}
 
 \end{CSLReferences}
 

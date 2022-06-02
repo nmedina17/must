@@ -14,5 +14,5 @@ design <- magick::image_read(here::here("figs/design.jpg")) %>%
 
 siteImgs <- ggpubr::ggarrange(map, soil, design, plotsView,
                               labels = c("a","b","c","d"))
-ggplot2::ggsave(here::here("figs/siteImgs.png"), siteImgs,
-                height = 3, width = 3, units = "in")
+# ggplot2::ggsave(here::here("figs/siteImgs.png"), siteImgs,
+#                 height = 3, width = 3, units = "in")

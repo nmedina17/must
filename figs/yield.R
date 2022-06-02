@@ -10,19 +10,22 @@ yieldTT <- magick::image_read(here::here("figs/yieldTT.jpg")) %>%
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 8)))
-yieldLabels <- c("Length (cm)", expression(paste("Mass (kg m"^-2,")")))
-names(yieldLabels) <- c("RADL_CM", "TOTRAD_kg_m2")
+yieldLabels <- c("Length (cm)", expression(paste("Mass (g m"^-2,")")))
+names(yieldLabels) <- c("RADL_CM", "TOTRAD_g_m2")
 yieldPlot <- yieldData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
   ggplot(aes(x = TIL, y = value)) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
   facet_wrap(~variable, labeller = labeller(variable = yieldLabels),
-             # scales = "free",
+             scales = "free",
              nrow = 1) + #scale_y_log10() +
+  # remotes::install_github("teunbrand/ggh4x")
+  # ggh4x::facetted_pos_scales(y = list(NULL, scale_y_continuous(limits = c(0, 100)))) +
   labs(x = "Tillage", y = "Radish yield")
   # scale_y_reverse()
-yieldPlot <- yieldPlot %>%
-  ggpubr::add_summary(fun = "median_mad", size = 0.25) +
+yieldPlot <- yieldPlot +
+  ggplot2::stat_summary(fun.data = ggpubr::mean_se_,
+                      size = 0.25) +
   ggpubr::stat_compare_means(label.y.npc = "bottom", label = "p.format", size = 1.5) +
   # ggpubr::stat_compare_means(comparisons = list(c("No", "Tractor")),
   #   # c("Roto", "Tractor"), c("No", "Roto"),
@@ -59,5 +62,5 @@ yieldPlot <- ggpubr::ggarrange(
   ggpubr::ggarrange(yieldNT, yieldTT, labels = c("a", "b"), nrow = 1),
   yieldPlot, labels = c("", "c"), nrow = 2
 )
-ggplot2::ggsave("figs/yieldPlot.png", yieldPlot,
-       height = 3, width = 3, units = "in")
+# ggplot2::ggsave("figs/yieldPlot.png", yieldPlot,
+#        height = 3, width = 3, units = "in")

@@ -3,17 +3,26 @@ title: "Methods"
 output: 
   # html_notebook
   bookdown::pdf_document2:
-    # number_sections: FALSE
+  #   # number_sections: FALSE
+    toc: FALSE
+    keep_tex: TRUE
+  # rticles::elsevier_article
+# always_allow_html: TRUE
 bibliography: 
   - ../../library.bib
   - ../../grateful-refs.bib
 link-citations: TRUE
+# csl: ../../styles-master/elsevier-harvard.csl
 ---
 
 
 ```{r setupM, warning=F, echo=F, results='hide', message=F}
-knitr::opts_chunk$set(echo = F, warning = F, message = F); library(tidyverse)
-options(digits = 1); library(measurements); 
+knitr::opts_chunk$set(echo = F, warning = F, message = F,
+                      fig.width = 3, fig.height = 3); library(tidyverse)
+options(digits = 1,
+        # knitr.table.format = "simple",
+        tinytex.verbose = T
+        ); library(measurements);
 # library(taxize); taxize::taxize_options(taxon_state_messages = T, quiet = T)
 ```
 
@@ -22,7 +31,7 @@ options(digits = 1); library(measurements);
 
 
 ```{r chem}
-source(here::here("tables/chem.R")); 
+source(here::here("tables/chem.R"));
 ```
 
 
@@ -33,6 +42,7 @@ The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r 
 It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)a).
 ```{r plots, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near education center, (c) plot layout design, and (d) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (d) Edgar Cardenas."}
 source(here::here("figs/plots.R")); siteImgs
+# knitr::include_graphics(here::here("figs/siteImgs.png"))
 ```
 
 Site soils can be classified as Technosols (Fig \@ref(fig:plots)b), given that large metal artifacts can be found throughout various profiles *[@fao14]*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
@@ -56,7 +66,8 @@ lowering availability of existing nutrients, as well as weak aggregate stability
 leading to concerns with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chem)).
 
 ```{r chemKbl}
-chemKbl
+# chemKbl;
+# knitr::include_graphics(here::here("tables/chemKbl.png"))
 ```
 
 
@@ -103,7 +114,8 @@ red clover (*`r taxize::comm2sci("red clover", taxon_state_messages=T)[[1]]`*), 
 wheat (*`r taxize::comm2sci("wheat", taxon_state_messages=T)[[1]]`*). 
 We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
 ```{r crops}
-source(here::here("tables/crops.R")); cropKbl
+# source(here::here("tables/crops.R")); cropKbl
+# knitr::include_graphics(here::here("tables/cropKbl.png"))
 ```
 
 
@@ -144,14 +156,14 @@ grateful::get_pkgs_info(out.dir = "../..");
 
 Field space limited strict plot replication for combined treatments (*n*=3), and thus inference from advanced nested mixed models *[@silk20]*, so analysis focused on specific hypotheses tested using simpler, more conservative non-parametric tests that make few underlying assumptions about data and thus appropriate for data with lower replication.
 Kruskal-Wallis tests were run for tillage and cover crop treatments separately, with alpha corrections from 0.05 to 0.01 under multiple comparisons to descriptively parse any treatment interactions, and overall significant treatment effects were followed up by post-hoc Wilcoxon pairwise tests with Holm-corrected p-value adjustments.
-All data were centered at plot-level medians, and where applicable pooled across sampling times given no preliminary significant variation along this axis, together with minimal relevance to focal hypotheses in field studies *[@davies15b]*, and was a general solution to uneven sampling across response variables, minimally increasing statistical power (base *n* ≥ 3-6).
+All data were centered at plot-level medians, often more robust than means, and where applicable pooled across sampling times given no preliminary significant variation along this axis, together with minimal relevance to focal hypotheses in field studies *[@davies15b]*, and was a general solution to uneven sampling across response variables, minimally increasing statistical power (base *n* > 3-6).
 For clarity, results figures were designed to reflect statistical models and grouping transparently.
 Significant treatment effect sizes were estimated with *eta^2^* *[@tomczak14]* and simpler raw median differences at finer pairwise levels.
 All calculations and analyzes were done in `r version$version.string` *[@base]* with useful functions from the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` and *ggpubr* `r packageVersion("ggpubr")` *[@rstatix]*.
 Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must), 
 documented using R packages *here* *[@here]*, *bookdown* *[@bookdown2022]*, *measurements* *[@measurements]*, *taxize* *[@taxize2020]*, *knitr* *[@knitr2022]*, and *rmarkdown* *[@rmarkdown2022]*.
 <!-- in Table \@ref(tab:pkgsTab). -->
-```{r pkgsTab}
+```{r pkgsTab, include=F}
 grateful::cite_packages("table") %>% unnest() %>% 
   knitr::kable(caption = "Software packages used")
 ```

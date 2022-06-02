@@ -66,6 +66,7 @@ Usmpg <- Usmp %>%
     "INFILmL" = (INFIL_OZ.SEC + 1) * 29.5 - 29.5, #oz2mL
     "TOTRAD_kg" = ((TOTRAD_oz + 1) * 28.35 - 28.35) / 1000,
     "TOTRAD_kg_m2" = TOTRAD_kg / 4.6, #plotArea
+    "TOTRAD_g_m2" = TOTRAD_kg_m2 *1000,
     "Wd_Dn_m2" = Wd_Dn / 4.6
   ) %>%
   ###pool----

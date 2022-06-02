@@ -14,8 +14,8 @@ weedPlot_a <- weedData %>%
   ggbeeswarm::geom_quasirandom(color = "gray") +
   facet_wrap(~variable, labeller = labeller(variable = weedLabels), scales = "free") +
   labs(x = "Tillage", y = "Weeds")
-weedPlot_a <- weedPlot_a %>%
-  ggpubr::add_summary(fun = "median_mad", size = 0.25) +
+weedPlot_a <- weedPlot_a +
+  ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
   ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
   ggpubr::stat_compare_means(comparisons = list(c("Roto", "Tractor"),
                                         # c("No", "Roto"),
@@ -34,8 +34,8 @@ weedPlot_b <- weedData %>%
   ggbeeswarm::geom_quasirandom(color = "gray") +
   facet_wrap(~variable, labeller = labeller(variable = weedLabels), scales = "free") +
   labs(x = "Cover crop mix", y = "Weeds")
-weedPlot_b <- weedPlot_b %>%
-  ggpubr::add_summary(fun = "mean_se_", size = 0.25) +
+weedPlot_b <- weedPlot_b +
+  ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
   ggpubr::stat_compare_means(label = "p.format", size = 1.5, label.y.npc = "bottom") +
   ggpubr::stat_compare_means(comparisons = list(
     c("null", "comp"), c("null", "pere"),
@@ -54,5 +54,5 @@ weedPlot_b <- weedPlot_b %>%
   EnvStats::stat_n_text(size = 1.5)
 
 weedPlot <- ggpubr::ggarrange(weedPlot_a, weedPlot_b, labels = c("a", "b"), nrow = 2)
-ggplot2::ggsave("figs/weedPlot.png", weedPlot,
-       height = 3, width = 3, units = "in")
+# ggplot2::ggsave("figs/weedPlot.png", weedPlot,
+#        height = 3, width = 3, units = "in")

@@ -2,7 +2,8 @@
 title: "Introduction"
 output: 
   # html_notebook
-  bookdown::pdf_document2
+  bookdown::pdf_document2: 
+    toc: FALSE
 bibliography: ../../library.bib
 link-citations: TRUE
 ---

@@ -1,0 +1,22 @@
+---
+title: ""
+output: 
+  # - html_notebook
+  - word_document
+---
+
+
+**Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration**
+
+
+**Highlights:**
+
+- Roto-till improves urban soil compaction and infiltration vs. no-till
+
+- Tractor-till improves compaction but not infiltration and also increases weeds
+
+- Cover crop mixes suppress weeds
+
+- Forage radish yield not affected by till or cover crop mixes
+
+- Roto-till and cover crop mixes help improve soils for urban agriculture

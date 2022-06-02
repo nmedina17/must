@@ -40,7 +40,8 @@ cropKbl <- cropTbl %>%
          Binomial = ifelse(is.na(Binomial), "", as.character(Binomial))) %>%
   # select(!Function) %>%
 
-  knitr::kable(caption = "Cover crop mixes", align = "c") %>%
+  knitr::kable(caption = "Cover crop mixes", align = "c"#, format = "latex"
+               ) %>%
   # as.data.frame(rvest::html_table()) %>%
   kableExtra::collapse_rows() %>% #bug
   # kableExtra::group_rows(names(mixes)[4], 1, 3) %>%
@@ -51,5 +52,4 @@ cropKbl <- cropTbl %>%
   kableExtra::column_spec(3, italic = T)
 
 #save----
-#library(magick)
-# cropKbl %>% kableExtra::save_kable(here::here("tables/crops.png"))
+# kableExtra::save_kable(cropKbl, here::here("tables/cropKbl.png")) #pdf2

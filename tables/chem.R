@@ -26,17 +26,19 @@ chemKbl <-
   rename("Variable" = variable, "Median" = median, "Deviation" = mad) %>%
   select(!c(type, n)) %>%
   knitr::kable(caption = "Baseline Cornell Soil Health Assessment",
-               align = "c") %>%
+               align = "c"#, format = "latex"
+               ) %>%
   kableExtra::kable_styling() %>%
   # kableExtra::group_rows("major", 1, 6) %>%
   kableExtra::group_rows("Biological", 1, 2) %>%
   kableExtra::group_rows("Physical", 3, 3) %>%
   kableExtra::group_rows("Chemical", 4, 10) %>%
   kableExtra::group_rows("-- minor", 7, 10)
-# kableExtra::save_kable(chemKbl, here::here("tables/chemTbl.png"))
+# library(magick)
+# kableExtra::save_kable(chemKbl, here::here("tables/chemKbl.png")) #pdf2
 
-chem_gtbl <- Chem %>% #group_by()
-  # flextable::flextable() %>%
-  # flextable::set_caption("Baseline Cornell Soil Health Assessment")
-  pivot_wider(everything(), names_from = Variable) %>%
-  gtsummary::tbl_summary(include = !c("sampleID"))
+# chem_gtbl <- Chem %>% #group_by()
+#   # flextable::flextable() %>%
+#   # flextable::set_caption("Baseline Cornell Soil Health Assessment")
+#   pivot_wider(everything(), names_from = Variable) %>%
+#   gtsummary::tbl_summary(include = !c("sampleID"))

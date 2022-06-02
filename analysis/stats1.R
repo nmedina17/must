@@ -84,7 +84,7 @@ weedData <- varTestTbl %>% filter(variable == "Wd_Abn" |
                                     variable == "Wd_Dn_m2") %>%
   unnest(variable:varData)
 yieldData <- varTestTbl %>% filter(variable == "RADL_CM" |
-                                     variable == "TOTRAD_kg_m2") %>%
+                                     variable == "TOTRAD_g_m2") %>%
   unnest(variable:varData)
 
 
