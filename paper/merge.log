@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.31)  1 JUN 2022 20:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.31)  2 JUN 2022 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -581,89 +581,105 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/Users/nicholasmedina/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 141.
+(Font)              <10.95> on input line 145.
 [2] [3] [4] [5]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 187.
+(Font)              <12> on input line 192.
 
-LaTeX Warning: Reference `fig:plots' on page 6 undefined on input line 190.
+LaTeX Warning: Reference `fig:plots' on page 6 undefined on input line 195.
 
-<merge_files/figure-latex/plots-1.pdf, id=223, 361.35pt x 361.35pt>
+<merge_files/figure-latex/plots-1.pdf, id=224, 361.35pt x 361.35pt>
 File: merge_files/figure-latex/plots-1.pdf Graphic file (type pdf)
 <use merge_files/figure-latex/plots-1.pdf>
-Package pdftex.def Info: merge_files/figure-latex/plots-1.pdf  used on input line 191.
+Package pdftex.def Info: merge_files/figure-latex/plots-1.pdf  used on input line 196.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
 [6]
 
-LaTeX Warning: Reference `fig:plots' on page 7 undefined on input line 193.
+LaTeX Warning: Reference `fig:plots' on page 7 undefined on input line 198.
 
 
-LaTeX Warning: Reference `fig:plots' on page 7 undefined on input line 194.
+LaTeX Warning: Reference `fig:plots' on page 7 undefined on input line 199.
 
 
-LaTeX Warning: Reference `fig:plots' on page 7 undefined on input line 196.
+LaTeX Warning: Reference `fig:plots' on page 7 undefined on input line 201.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 198.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 203.
 (/Users/nicholasmedina/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-LaTeX Warning: Reference `tab:chem' on page 7 undefined on input line 204.
+LaTeX Warning: Reference `tab:chemKbl' on page 7 undefined on input line 209.
 
 
-LaTeX Warning: Reference `tab:chem' on page 7 undefined on input line 211.
+LaTeX Warning: Reference `tab:chemKbl' on page 7 undefined on input line 216.
 
 [7 <./merge_files/figure-latex/plots-1.pdf>]
 
-LaTeX Warning: Reference `fig:plots' on page 8 undefined on input line 216.
+LaTeX Warning: Reference `fig:plots' on page 8 undefined on input line 245.
+
+[8]
+
+LaTeX Warning: Reference `tab:crops' on page 9 undefined on input line 259.
+
+[9]
+Overfull \hbox (63.24464pt too wide) in alignment at lines 275--280
+ [] [] [] 
+ []
 
 
-LaTeX Warning: Reference `tab:crops' on page 8 undefined on input line 230.
+Overfull \hbox (63.24464pt too wide) in alignment at lines 280--284
+ [] [] [] 
+ []
 
-[8] [9] [10]
-<merge_files/figure-latex/compactFig-1.pdf, id=299, 361.35pt x 361.35pt>
+
+Overfull \hbox (63.24464pt too wide) in alignment at lines 284--296
+ [] [] [] 
+ []
+
+[10] [11]
+<merge_files/figure-latex/compactFig-1.pdf, id=306, 361.35pt x 361.35pt>
 File: merge_files/figure-latex/compactFig-1.pdf Graphic file (type pdf)
 <use merge_files/figure-latex/compactFig-1.pdf>
-Package pdftex.def Info: merge_files/figure-latex/compactFig-1.pdf  used on input line 331.
+Package pdftex.def Info: merge_files/figure-latex/compactFig-1.pdf  used on input line 383.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[11] [12
+[12] [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.363 
+l.415 
        <./merge_files/figure-latex/compactFig-1.pdf>]
-<merge_files/figure-latex/infilFig-1.pdf, id=339, 216.81pt x 216.81pt>
+<merge_files/figure-latex/infilFig-1.pdf, id=346, 216.81pt x 325.215pt>
 File: merge_files/figure-latex/infilFig-1.pdf Graphic file (type pdf)
 <use merge_files/figure-latex/infilFig-1.pdf>
-Package pdftex.def Info: merge_files/figure-latex/infilFig-1.pdf  used on input line 399.
-(pdftex.def)             Requested size: 216.81938pt x 216.81938pt.
-<merge_files/figure-latex/weedsFig-1.pdf, id=341, 361.35pt x 361.35pt>
+Package pdftex.def Info: merge_files/figure-latex/infilFig-1.pdf  used on input line 448.
+(pdftex.def)             Requested size: 216.81938pt x 325.22908pt.
+<merge_files/figure-latex/weedsFig-1.pdf, id=348, 361.35pt x 361.35pt>
 File: merge_files/figure-latex/weedsFig-1.pdf Graphic file (type pdf)
 <use merge_files/figure-latex/weedsFig-1.pdf>
-Package pdftex.def Info: merge_files/figure-latex/weedsFig-1.pdf  used on input line 439.
+Package pdftex.def Info: merge_files/figure-latex/weedsFig-1.pdf  used on input line 488.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[13] [14
+[14] [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.517 \subsection{Yield}\label{yield}}
-                                       <./merge_files/figure-latex/infilFig-1.pdf>] [15
+l.561 
+       <./merge_files/figure-latex/infilFig-1.pdf>] [16
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.517 \subsection{Yield}\label{yield}}
-                                       <./merge_files/figure-latex/weedsFig-1.pdf>]
-<merge_files/figure-latex/yieldFig-1.pdf, id=375, 216.81pt x 216.81pt>
+l.561 
+       <./merge_files/figure-latex/weedsFig-1.pdf>]
+<merge_files/figure-latex/yieldFig-1.pdf, id=380, 216.81pt x 216.81pt>
 File: merge_files/figure-latex/yieldFig-1.pdf Graphic file (type pdf)
 <use merge_files/figure-latex/yieldFig-1.pdf>
-Package pdftex.def Info: merge_files/figure-latex/yieldFig-1.pdf  used on input line 539.
+Package pdftex.def Info: merge_files/figure-latex/yieldFig-1.pdf  used on input line 585.
 (pdftex.def)             Requested size: 216.81938pt x 216.81938pt.
-[16
+[17] [18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.551 
-       <./merge_files/figure-latex/yieldFig-1.pdf>] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] (./merge.aux)
+l.610 
+       <./merge_files/figure-latex/yieldFig-1.pdf>] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] (./merge.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -675,21 +691,21 @@ Package rerunfilecheck Info: File `merge.out' has not changed.
 ### semi simple group (level 1) entered at line 98 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 13225 strings out of 480253
- 210086 string characters out of 5892772
- 511379 words of memory out of 5000000
- 30723 multiletter control sequences out of 15000+600000
+ 13231 strings out of 480253
+ 210126 string characters out of 5892772
+ 511632 words of memory out of 5000000
+ 30726 multiletter control sequences out of 15000+600000
  549633 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,11n,77p,915b,2339s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,11n,77p,915b,2334s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{ref-moebius-clune16} has been referenced but does not exist, replaced by a fixed one
 
-{/Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
-Output written on merge.pdf (32 pages, 7237342 bytes).
+{/Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Users/nicholasmedina/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on merge.pdf (33 pages, 8222715 bytes).
 PDF statistics:
- 796 PDF objects out of 1000 (max. 8388607)
- 717 compressed objects within 8 object streams
- 170 named destinations out of 1000 (max. 500000)
+ 821 PDF objects out of 1000 (max. 8388607)
+ 735 compressed objects within 8 object streams
+ 173 named destinations out of 1000 (max. 500000)
  170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

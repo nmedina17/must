@@ -33,7 +33,7 @@ chemKbl <-
   rename("Variable" = variable, "Median (n=10)" = median, "Deviation" = mad) %>%
   select(!c(type, n)) %>%
   knitr::kable(caption = "Baseline Soil Health Assessment (Cornell, Ithaca, NY, USA)",
-               align = "c"#, format = "latex"
+               align = "c"#, format = "simple"
                ) %>%
   kableExtra::kable_styling() %>%
   # kableExtra::group_rows("major", 1, 6) %>%

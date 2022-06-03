@@ -1,10 +1,10 @@
 ---
 title: "Results"
 output: 
-  bookdown::html_notebook2
-  # bookdown::pdf_document2:
+  # bookdown::html_notebook2
+  bookdown::pdf_document2:
   #   # number_sections: FALSE
-  #   toc: FALSE
+    toc: FALSE
 ---
 
 
@@ -30,7 +30,7 @@ Compaction was affected significantly overall by tillage treatments (
 *n* = `r compactionData$n_TIL[1]`, 
 *p* = `r compactionData$p_TIL[1] %>% p_format()`
 ) by 
-~`r compactionData$effsize_TIL[[1]]$effsize_TIL *100` % 
+~`r compactionData$effsize_TIL[[1]]$effsize_TIL *100`% 
 across cover crop treatments (Fig \@ref(fig:compactFig)a).
 Tractor-till had the largest significant effect on depth to hardpan compared to no-till (
 *p~adj~* = `r compactionData$posthoc_TIL[[1]]$p.adj[2] %>% p_format()`
@@ -73,7 +73,7 @@ or ~`r diffTR / filter(compData_TIL, TIL=="Roto")$median *100`%
 ) between tractor- and roto-till among all cover crop mixes (Fig \@ref(fig:compactFig)a).
 <!-- test-static-vals? -->
 
-```{r compactFig, fig.width=5, fig.height=5, fig.cap="Compaction data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
+```{r compactFig, fig.width=5, fig.height=5, fig.cap="Compaction data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1 or ns)"}
 source(here::here("figs/compaction.R")); compactionPlot
 # knitr::include_graphics(here::here("figs/compactionPlot.png"))
 ```
@@ -85,8 +85,8 @@ Compaction was not affected by cover crops among tillage groups overall (
 *p* = `r compactionData$p_MIX[1] %>% p_format()`
 ), but was significantly affected by cover crops specifically under no-till conditions (
 <!-- *Holm-corrected alpha = 0.01*,  -->
-*df = 3*,
-*n = 6*,
+<!-- *df = 3*, -->
+<!-- *n = 6*, -->
 *p~adj~ = <0.01*
 ) (Fig \@ref(fig:compactFig)b).
 Under no-till, the perennial mix had significantly shallower depth to hardpan compared to both null (
@@ -97,7 +97,8 @@ Under no-till, the perennial mix had significantly shallower depth to hardpan co
 *p~adj~ = <0.01*
 ),
 raising the depth to hardpan by 
-~`r diffPN = filter(compData_MIX, MIX=="pere")$median - filter(compData_MIX, MIX=="null")$median; diffPN` cm (
+<!-- ###(specific, by eye) -->
+~`r diffPN = filter(compData_MIX, MIX=="null")$median - filter(compData_MIX, MIX=="pere")$median; diffPN` cm (
 `r conv_unit(diffPN, "cm", "inch")` in, 
 or ~`r diffPN / filter(compData_MIX, MIX=="null")$median *100`%
 ) compared to each mix,
@@ -130,7 +131,7 @@ Roto-till had significantly faster infiltration compared to no-till (
 ) and marginally significantly compared to tractor-till (
 *p~adj~* = `r infilData$posthoc_TIL[[1]]$p.adj[3]`
 ), speeding up infiltration by 
-~`r infilData$effsize_TIL[[1]]$effsize_TIL *100` % 
+~`r infilData$effsize_TIL[[1]]$effsize_TIL *100`% 
 compared to each tillage groups, 
 up to 
 ~ `r filter(infilData_TIL, TIL=="Roto")$median` ±
@@ -142,7 +143,7 @@ up to
 (Fig \@ref(fig:infilFig)a).
 
 
-```{r infilFig, fig.width=3, fig.width=3, fig.cap="Infiltration data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
+```{r infilFig, fig.width=3, fig.width=3, fig.cap="Infiltration data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
 source(here::here("figs/infil.R")); infilPlot
 # knitr::include_graphics(here::here("figs/infilPlot.png"))
 ```
@@ -169,17 +170,17 @@ Weed density was overall significantly affected by tillage (
 *n* = `r weedDnData$n_TIL[1]`, 
 *p* = `r weedDnData$p_TIL[1] %>% p_format()`
 ) by 
-~`r weedDnData$effsize_MIX[[1]]$effsize_MIX *100` %, 
+~`r weedDnData$effsize_MIX[[1]]$effsize_MIX *100`%, 
 although weed cover (
-*`r testStat`* = `r weedCovData$statistic_TIL[1]`, 
-*df* = `r weedCovData$df_TIL[1]`, 
-*n* = `r weedCovData$n_TIL[1]`, 
-*p* = `r weedCovData$p_TIL[1] %>% p_format()`
-) and richness (
 *`r testStat`* = `r weedAbnData$statistic_TIL[1]`, 
 *df* = `r weedAbnData$df_TIL[1]`, 
 *n* = `r weedAbnData$n_TIL[1]`, 
 *p* = `r weedAbnData$p_TIL[1] %>% p_format()`
+) and richness (
+*`r testStat`* = `r weedCovData$statistic_TIL[1]`, 
+*df* = `r weedCovData$df_TIL[1]`, 
+*n* = `r weedCovData$n_TIL[1]`, 
+*p* = `r weedCovData$p_TIL[1] %>% p_format()`
 ) were not 
 (Fig \@ref(fig:weedsFig)a). 
 Weeds under tractor-till were marginally significantly denser compared to no-till (
@@ -187,14 +188,14 @@ Weeds under tractor-till were marginally significantly denser compared to no-til
 ) and roto-till (
 *p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[3] %>% p_format(digits = 2)`
 ), denser by 
-~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100` % 
+~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100`% 
 compared to each tillage group, 
 up to 
 ~ `r filter(weedDnData_TIL, TIL=="Tractor")$median` ±
 `r filter(weedDnData_TIL, TIL=="Tractor")$mad` *stems per m^-2^*
 .
 
-```{r weedsFig, fig.width=5, fig.height=5, fig.cap="Weeds data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
+```{r weedsFig, fig.width=5, fig.height=5, fig.cap="Weeds data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1 or ns)"}
 source(here::here("figs/weeds.R")); weedPlot
 # knitr::include_graphics(here::here("figs/weedPlot.png"))
 ```
@@ -206,64 +207,33 @@ weed density (
 *n* = `r weedDnData$n_MIX[1]`, 
 *p* = `r weedDnData$p_MIX[1] %>% p_format()`
 ) changing overall by
-~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100` %, 
+~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100`%, 
 weed cover (
-*`r testStat`* = `r weedCovData$statistic_MIX[1]`,
-*df* = `r weedCovData$df_MIX[1]`, 
-*n* = `r weedCovData$n_MIX[1]`, 
-*p* = `r weedCovData$p_MIX[1] %>% p_format()`
-) changing overall by
-~`r weedCovData$effsize_TIL[[1]]$effsize_TIL *100` %, and 
-weed richness (
 *`r testStat`* = `r weedAbnData$statistic_MIX[1]`,
 *df* = `r weedAbnData$df_MIX[1]`, 
 *n* = `r weedAbnData$n_MIX[1]`, 
 *p* = `r weedAbnData$p_MIX[1] %>% p_format()`
-) changing overall by
-~`r weedAbnData$effsize_TIL[[1]]$effsize_TIL *100` % 
+) lowering overall by
+~`r weedAbnData$effsize_TIL[[1]]$effsize_TIL *100 *-1`% 
+, and 
+weed richness (
+*`r testStat`* = `r weedCovData$statistic_MIX[1]`,
+*df* = `r weedCovData$df_MIX[1]`, 
+*n* = `r weedCovData$n_MIX[1]`, 
+*p* = `r weedCovData$p_MIX[1] %>% p_format()`
+) also lowering overall by
+~`r weedCovData$effsize_TIL[[1]]$effsize_TIL *100 *-1`%
 (Fig \@ref(fig:weedsFig)b). 
-Weeds in the null mix covered significantly more plot area compared to the weed suppression mix (
-*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[3] %>% p_format(digits = 4)`
-) and marginally significantly compared to perennial (
-*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[1] %>% p_format(digits = 1)`
-) and compaction (
-*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[2]`
-) mixes,
-<!-- by  -->
-<!-- ~ **##** +-  -->
-<!-- **##** ( -->
-<!-- conv_, or  -->
-<!-- **%%%** -->
-<!-- ), -->
-up to 
-~ `r filter(weedCovData_MIX, MIX=="null")$median` ±
-`r filter(weedCovData_MIX, MIX=="null")$mad %>% round(2)` %.
-The null mix also had marginally significantly higher weed density compared to the weed suppression mix (
-*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()`
-) and marginally significantly compared to perennial (
-*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[1]`
-) and compaction (
-*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[2]`
-) mixes,
-<!-- by  -->
-<!-- ~ **##** +-  -->
-<!-- **##** ( -->
-<!-- conv_, or  -->
-<!-- **%%%** -->
-<!-- ), -->
-up to 
-~ `r filter(weedDnData_MIX, MIX=="null")$median` ±
-`r filter(weedDnData_MIX, MIX=="null")$mad` *stems m^-2^*.
-The weed suppression mix had the most detectable effects on both weed density and richness.
+The weed suppression mix had the most detectable effects on both weed density and cover.
 The weed suppression mix significantly lowered weed density compared to all other cover crop mix treatments, namely the null (
-*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()`
+*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format(accuracy = 0.001)`
 ), perennial (
 *p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[5] %>% p_format()`
 ), and compaction (
-*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[6]`
+*p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[6] %>% p_format()`
 ) mixes, by 
-~`r diffWNdn = filter(weedDnData_MIX, MIX=="wdsp")$median - filter(weedDnData_MIX, MIX=="null")$median; diffWNdn` *stems m^-2^* (
-`r conv_unit(diffWNdn, "m2", "in2")` *stems in^-2^*, 
+~`r diffWNdn = filter(weedDnData_MIX, MIX=="null")$median - filter(weedDnData_MIX, MIX=="wdsp")$median; diffWNdn` *stems m^-2^* (
+`r 1 / conv_unit(diffWNdn, "m2", "in2")` *stems in^-2^*, 
 or ~`r diffWNdn / filter(weedDnData_MIX, MIX=="null")$median *100`%
 ), down to 
 ~ `r filter(weedDnData_MIX, MIX=="wdsp")$median` ±
@@ -273,7 +243,7 @@ or ~`r diffWNdn / filter(weedDnData_MIX, MIX=="null")$median *100`%
 <!-- **%%%** -->
 <!-- ) -->
 .
-The weed suppression mix also significantly lowered weed richness compared to all other cover crop mix treatments, namely the null (
+The weed suppression mix also significantly lowered weed cover compared to all other cover crop mix treatments, namely the null (
 *p~adj~* = `r weedAbnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()`
 ), perennial (
 *p~adj~* = `r weedAbnData$posthoc_MIX[[1]]$p.adj[5] %>% p_format()`
@@ -285,12 +255,45 @@ The weed suppression mix also significantly lowered weed richness compared to al
 or ~`r diffWNab / filter(weedAbnData_MIX, MIX=="null")$median *100`%
 ), down to 
 ~ `r filter(weedAbnData_MIX, MIX=="wdsp")$median` ±
-`r filter(weedAbnData_MIX, MIX=="wdsp")$mad` taxa 
+`r filter(weedAbnData_MIX, MIX=="wdsp")$mad`%
 <!-- ( -->
 <!-- conv_, or  -->
 <!-- **%%%** -->
 <!-- ) -->
 .
+Finally, the null mix showed significantly higher richness compared to the weed suppression mix (
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[3] %>% p_format(digits = 4)`
+) and marginally significantly compared to perennial (
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[1] %>% p_format(digits = 1)`
+) and compaction (
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[2] %>% p_format(digits = 2)`
+) mixes,
+<!-- by  -->
+<!-- ~ **##** +-  -->
+<!-- **##** ( -->
+<!-- conv_, or  -->
+<!-- **%%%** -->
+<!-- ), -->
+up to 
+~ `r filter(weedCovData_MIX, MIX=="null")$median` ±
+`r filter(weedCovData_MIX, MIX=="null")$mad %>% round(2)` %.
+<!-- The null mix also had marginally significantly higher weed density compared to the weed suppression mix ( -->
+<!-- *p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()` -->
+<!-- ) and marginally significantly compared to perennial ( -->
+<!-- *p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[1]` -->
+<!-- ) and compaction ( -->
+<!-- *p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[2]` -->
+<!-- ) mixes, -->
+<!-- by  -->
+<!-- ~ **##** +-  -->
+<!-- **##** ( -->
+<!-- conv_, or  -->
+<!-- **%%%** -->
+<!-- ), -->
+<!-- up to  -->
+<!-- ~ `r filter(weedDnData_MIX, MIX=="null")$median` ± -->
+<!-- `r filter(weedDnData_MIX, MIX=="null")$mad` *stems m^-2^*. -->
+
 
 
 ## Yield
@@ -308,10 +311,10 @@ Radish yield was not significantly affected by tillage (
 *p* = `r yieldData$p_TIL[1]`
 ), and centered at 
 ~ `r filter(yieldMassData, TIL=="No")$median` ±
-`r filter(yieldMassData, TIL=="No")$mad` *kg m^-2^*
+`r filter(yieldMassData, TIL=="No")$mad` *g m^-2^*
 (
-`r conv_unit(filter(yieldMassData, TIL=="No")$median, "kg", "lbs")` ±
-`r conv_unit(filter(yieldMassData, TIL=="No")$mad, "kg", "lbs")` *lbs m^-2^*
+`r conv_unit(filter(yieldMassData, TIL=="No")$median, "g", "lbs")` ±
+`r conv_unit(filter(yieldMassData, TIL=="No")$mad, "g", "lbs")` *lbs m^-2^*
 ) and 
 ~ `r filter(yieldLenData, TIL=="No")$median` cm 
 <!-- ± -->
@@ -323,7 +326,7 @@ Radish yield was not significantly affected by tillage (
 )
 long (Fig \@ref(fig:yieldFig)).
 
-```{r yieldFig, fig.width=3, fig.height=3, fig.cap="Yield data (a) from no-till and (b) tractor-till. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Photo credits: Naim Edwards."}
+```{r yieldFig, fig.width=3.5, fig.height=3.5, fig.cap="Yield data (a) from no-till, (b) tractor-till, and (c) all tillage groups. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Photo credits: Naim Edwards."}
 source(here::here("figs/yield.R")); yieldPlot
 # knitr::include_graphics(here::here("figs/yieldPlot.png"))
 ```

@@ -41,7 +41,7 @@ cropKbl <- cropTbl %>%
          ) %>%
   # select(!Function) %>%
 
-  knitr::kable(caption = "Cover crop mixes", align = "c"#, format = "latex"
+  knitr::kable(caption = "Cover crop mixes", align = "c"#, format = "simple"
                ) %>%
   # as.data.frame(rvest::html_table()) %>%
   # kableExtra::collapse_rows() %>% #bug

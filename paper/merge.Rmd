@@ -34,11 +34,11 @@ abstract: |
   These results reveal that medium-intensity tillage may offer more balanced trade-offs for initial management, and that cover crops can help reduce weeds under low-till strategies.
   Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.  
   
-  \\
+  \
   
   **Keywords**: urban agriculture; soil compaction; weed suppression; roto-till, cover crop mix; soil infiltration  
   
-  \\
+  \
   
   **Highlights:**  
     - Roto-till improves urban soil compaction and infiltration vs. no-till  
@@ -46,6 +46,8 @@ abstract: |
     - Cover crop mixes suppress weeds  
     - Forage radish yield not affected by till or cover crop mixes  
     - Roto-till and cover crop mixes help improve soils for urban agriculture  
+  
+  \
   
   ***Corresponding author**: Naim Edwards, edwar649@msu.edu  
   Author emails: edwar649@msu.edu, nmedina@umich.edu, askereli@msu.edu

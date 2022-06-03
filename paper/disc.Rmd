@@ -29,7 +29,7 @@ Overall this study informs urban soil management by supporting the use of tillag
 Our hypothesis was partially supported, because overall tillage significantly deepened the depth to hardpan by ~`r compactionData$effsize_TIL[[1]]$effsize_TIL` (Fig \@ref(fig:compactFig)a), which was within the range of effect sizes measured among the various cover crop mixes within the no-till treatment (Fig \@ref(fig:compactFig)b). 
 Additionally, infiltration was significantly affected by tillage, with roto-till showing the fastest rates (Fig \@ref(fig:infilFig)a), which agreed with our predictions.
 Furthermore, weed pressure was significantly affected by both cover crop mixes and tillage (Fig \@ref(fig:weedsFig)), although effects from cover crop mixes, especially the weed suppression mix, were more widespread among multiple measured variables (Fig \@ref(fig:weedsFig)b).
-Despite these significant effects on soils, infiltration, and weeds, yields did not respond to tillage treatments.
+Despite these significant effects on soils, infiltration, and weeds, yields did not respond to tillage treatments in this study.
 
 
 <!-- ## Compaction -->
@@ -83,18 +83,17 @@ Given both effectiveness and relative ease of re-seeding and winter-kill, this w
 <!-- ## Yield -->
 
 
-Despite overall significant effects by tillage on compaction, infiltration, and weeds, tillage did not significantly affect radish yield.
+Despite overall significant effects by tillage on compaction, infiltration, and weeds, tillage did not significantly affect radish yield, which agrees with other similar studies despite intuition.
 As is, this study does not rule out more complex relationships between soil compaction, infiltration, and crop yield, as suggested by emerging ideas *[@ryan07; @vandermeer17]*.
-However, with further replication, it is possible that no-till would show slightly higher yields, validating some similar studies *[@nunes18]*.
-Overall yields can respond more to longer-term reservoirs of water and nutrients like mulched compost compared to shorter-term, transient influxes brought by infiltration processes *[@schlegel95; @schlegel15]*. 
-As a result, it is possible that similar alternative soil management practices like no-till combined with compost and mulching application may lead to better yields, although the translation of no-till benefits to soil structure *[@du15; @sheehy15]* on yield are not guaranteed *[@martinez16]* nor do they appear to be widespread *[@pittelkow15; @vandenbygaart16]*. 
-Additionally, other studies suggest that forage radish can be an effective cover crop in reducing compaction and building soil structure, with minimal or no mechanical tillage *[@chen10b; @lawley11]*. 
-However ultimately this study suggests the need for future studies of processes tying yield to land management strategies particularly in similar urban clay soils with legacy compaction and pH concerns under smallholder management and possibly including occassional tillage *[@ekboir01; @blanco-canqui20]*.
+With further replication, future similar studies no-till might be expected to show slightly higher yields *[@nunes18]*, due to resulting longer-term reservoirs of water and nutrients, like from mulched compost, less reliance on transient influxes from infiltration *[@schlegel95; @schlegel15]*, and better soil structure *[@du15; @sheehy15]*. 
+However, despite these reasonable hypotheses, recent studies appear to converge with results shown here, namely that benefits to soil from no-till may not scale up to detectably affect yields *[@pittelkow15; @martinez16; @vandenbygaart16]*. 
+Although forage radish can still be an effective cover crop in reducing compaction and building soil structure, with minimal or no mechanical tillage *[@chen10b; @lawley11]*. 
+This study together with others suggest a need for future studies to tie yield to land management strategies, including in urban clay soils to aid small-scale growers in addressing legacy compaction and pH issues, potentially acknolwedging short-term benefits of occassional tillage *[@ekboir01; @blanco-canqui20]*.
 
 
 <!-- ## Conclusion -->
 
 
-Taken together, this study presents data that, in addition to validating previous studies supporting general tillage for short-term soil fertility, also supports the partial use of medium-intensity roto-till and cover crop mixtures *[@chapagain20]* specifically for weed suppression. 
-This study serves as a model demonstration of both widely accessible and effective strategies for growing on re-purposed urban soils after urban land-use turnover.
-We advocate for the maximal use of cover crop mixes for various target functions, with medium-intensity tillage to jump-start urban cultivation.
+Taken together, this study presents data that, in addition to validating previous studies supporting general tillage for short-term soil fertility, also supports the targeted use of medium-intensity roto-till and cover crop mixtures *[@chapagain20]* specifically for weed suppression. 
+This study serves as a model demonstration of both widely accessible and effective strategies for growing on re-purposed urban soils after industrial land-use turnover.
+Overall, we advocate for the maximal use of cover crop mixes for various target functions, with medium-intensity tillage to jump-start urban cultivation.

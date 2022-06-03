@@ -35,7 +35,7 @@ compactionPlot_a <- compactionPlot_a +
                      # hide.ns = T,
                      symnum.args = list(
                        cutpoints = c(0, 0.0001, 0.001, 0.01,
-                                     # 0.11,
+                                     # 0.1,
                                      1),
                        symbols = c("****", "***", "**",
                                    # "*'",
@@ -66,10 +66,10 @@ compactionPlot_b <- compactionPlot_b +
   ), label = "p.signif", hide.ns = T,
   symnum.args = list(
     cutpoints = c(0, 0.0001, 0.001, 0.01,
-                  0.1,
+                  # 0.1,
                   1),
     symbols = c("****", "***", "**",
-                "'",
+                # "*'",
                 "'")
   ),
   size = 1.5, vjust = 0.5
