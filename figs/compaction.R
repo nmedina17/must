@@ -57,18 +57,19 @@ compactionPlot_b <- compactionData %>%
   scale_y_reverse() + facet_grid(~TIL)
 compactionPlot_b <- compactionPlot_b +
   ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
-  ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom") +
+  ggpubr::stat_compare_means(size = 1.5, label = "p.format", label.y.npc = "bottom",
+                             hide.ns = T) +
   ggpubr::stat_compare_means(comparisons = list(
     # c("null", "comp"), c("comp", "pere"),
     c("null", "pere"), c("pere", "wdsp")
     # c("comp", "wdsp"), c("null", "wdsp")
-  ), label = "p.signif", # hide.ns = T,
+  ), label = "p.signif", hide.ns = T,
   symnum.args = list(
     cutpoints = c(0, 0.0001, 0.001, 0.01,
-                  # 0.11,
+                  0.1,
                   1),
     symbols = c("****", "***", "**",
-                # "*'",
+                "'",
                 "'")
   ),
   size = 1.5, vjust = 0.5

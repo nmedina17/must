@@ -22,7 +22,7 @@ infilPlot_a <- infilPlot_a +
                      # hide.ns = T,
                      symnum.args = list(
                        cutpoints = c(0, 0.0001, 0.001, 0.01,
-                                     0.11,
+                                     0.1,
                                      1),
                        symbols = c("****", "***", "**",
                                    "*'",
@@ -41,15 +41,15 @@ infilPlot_b <- infilData %>%
   # scale_y_log10()
 infilPlot_b <- infilPlot_b +
   ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
-  ggpubr::stat_compare_means(size = 1.5, label = "p.format", digits = 3) +
+  ggpubr::stat_compare_means(size = 1.5, label = "p.format", digits = 1) +
   ggpubr::stat_compare_means(comparisons = list(
     # c("null", "comp"), c("null", "pere"),
-    # c("null", "wdsp")
+    # c("null", "wdsp"),
     # c("comp", "pere"), c("comp", "wdsp"), c("pere", "wdsp")
   ), label = "p.signif", # hide.ns = T,
   symnum.args = list(
     cutpoints = c(0, 0.0001, 0.001, 0.01,
-                  0.11,
+                  0.1,
                   1),
     symbols = c("****", "***", "**",
                 "*'",

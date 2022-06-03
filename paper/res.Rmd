@@ -10,8 +10,9 @@ output:
 
 ```{r setup_res, results='hide', warning=F, echo=F, message=F}
 here::i_am("paper/res.Rmd"); source(here::here("analysis/stats1.R"))
-knitr::opts_chunk$set(echo = F, warning = F, message = F,
-                      fig.width = 4, fig.height = 4)
+knitr::opts_chunk$set(echo = F, warning = F, message = F
+                      # fig.width = 4, fig.height = 4
+                      )
 # source(here::here("figs/compaction.R")); source(here::here("figs/infil.R"))
 # source(here::here("figs/weeds.R")); source(here::here("figs/yield.R"))
 options(digits = 1); library(measurements); library(rstatix) #p_format()
@@ -72,7 +73,7 @@ or ~`r diffTR / filter(compData_TIL, TIL=="Roto")$median *100`%
 ) between tractor- and roto-till among all cover crop mixes (Fig \@ref(fig:compactFig)a).
 <!-- test-static-vals? -->
 
-```{r compactFig, fig.cap="Compaction data (a) , and (b). Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
+```{r compactFig, fig.width=5, fig.height=5, fig.cap="Compaction data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
 source(here::here("figs/compaction.R")); compactionPlot
 # knitr::include_graphics(here::here("figs/compactionPlot.png"))
 ```
@@ -140,11 +141,8 @@ up to
 )
 (Fig \@ref(fig:infilFig)a).
 
-**add marginal cover crop results (if new paragraph, move below fig)**
-(Fig \@ref(fig:infilFig)b).
 
-
-```{r infilFig, fig.cap="Infiltration data (a) , and (b). Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
+```{r infilFig, fig.width=3, fig.width=3, fig.cap="Infiltration data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
 source(here::here("figs/infil.R")); infilPlot
 # knitr::include_graphics(here::here("figs/infilPlot.png"))
 ```
@@ -196,7 +194,7 @@ up to
 `r filter(weedDnData_TIL, TIL=="Tractor")$mad` *stems per m^-2^*
 .
 
-```{r weedsFig, fig.cap="Weeds data (a) , and (b). Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
+```{r weedsFig, fig.width=5, fig.height=5, fig.cap="Weeds data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
 source(here::here("figs/weeds.R")); weedPlot
 # knitr::include_graphics(here::here("figs/weedPlot.png"))
 ```
@@ -325,7 +323,7 @@ Radish yield was not significantly affected by tillage (
 )
 long (Fig \@ref(fig:yieldFig)).
 
-```{r yieldFig, fig.cap="Yield data (a) from no-till and (b) tractor-till. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Photo credits: Naim Edwards."}
+```{r yieldFig, fig.width=3, fig.height=3, fig.cap="Yield data (a) from no-till and (b) tractor-till. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Photo credits: Naim Edwards."}
 source(here::here("figs/yield.R")); yieldPlot
 # knitr::include_graphics(here::here("figs/yieldPlot.png"))
 ```

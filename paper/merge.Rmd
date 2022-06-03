@@ -21,11 +21,10 @@ author:
 #   - code: Michigan State University
 #     address: Agriculture and Natural Resources Extension, Detroit, MI
 date: \scriptsize 
-  ^a^ edwar649@msu.edu, Agriculture and Natural Resources, Michigan State University, 16745 Lamphere St, Detroit, MI, USA 48219;  
-  ^b^ nmedina@umich.edu, Ecology and Evolutionary Biology, University of Michigan, 1105 N University Ave, Ann Arbor, MI, USA
+  ^a^ Agriculture and Natural Resources, Michigan State University, 16745 Lamphere St, Detroit, MI, USA 48219;  
+  ^b^ Ecology and Evolutionary Biology, University of Michigan, 1105 N University Ave, Ann Arbor, MI, USA
 
 abstract: |
-  \singlespacing
   
   Urban soils have been degraded by decades of industrial activities, but they also represent opportunities to improve food sovereignty for urban residents practicing urban agriculture.
   Urban growers often use varying practices of compost, tillage, and cover cropping, but without distinguishing their benefits to optimize integrated approaches.
@@ -35,7 +34,11 @@ abstract: |
   These results reveal that medium-intensity tillage may offer more balanced trade-offs for initial management, and that cover crops can help reduce weeds under low-till strategies.
   Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.  
   
+  \\
+  
   **Keywords**: urban agriculture; soil compaction; weed suppression; roto-till, cover crop mix; soil infiltration  
+  
+  \\
   
   **Highlights:**  
     - Roto-till improves urban soil compaction and infiltration vs. no-till  
@@ -45,6 +48,7 @@ abstract: |
     - Roto-till and cover crop mixes help improve soils for urban agriculture  
   
   ***Corresponding author**: Naim Edwards, edwar649@msu.edu  
+  Author emails: edwar649@msu.edu, nmedina@umich.edu, askereli@msu.edu
 
 # keywords: "Keywords: urban, compact, weed, till, cover, water"
   
@@ -71,7 +75,7 @@ header-includes:
   - \usepackage[left]{lineno}
   - \linenumbers
   - \usepackage{setspace}\doublespace
-font-family: Helvetica
+font-family: Calibri Light
 ---
 
 
@@ -129,7 +133,7 @@ options(digits = 1, knitr.table.format = "latex");
 
 # Acknowledgements
 
-Thanks to previous anonymous reviewers, and peer student (Kristel, Zach,) discussion of initial drafts.
+Thanks to previous anonymous reviewers and peers KS and ZHF for discussion of initial drafts.
 
 
 # Author contributions

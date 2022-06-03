@@ -17,13 +17,17 @@ link-citations: TRUE
 
 
 ```{r setupM, warning=F, echo=F, results='hide', message=F}
-knitr::opts_chunk$set(echo = F, warning = F, message = F,
-                      fig.width = 3, fig.height = 3); library(tidyverse)
+knitr::opts_chunk$set(echo = F, warning = F, message = F
+                      # fig.width = 3, fig.height = 3
+                      ); library(tidyverse)
 options(digits = 1,
         # knitr.table.format = "simple",
-        tinytex.verbose = T
+        tinytex.verbose = T,
+        knitr.kable.NA = ""
         ); library(measurements);
 # library(taxize); taxize::taxize_options(taxon_state_messages = T, quiet = T)
+source(here::here("tables/crops.R")); 
+source(here::here("figs/plots.R")); 
 ```
 
 
@@ -40,33 +44,34 @@ The climate is temperate with four seasons, with mean annual temperature of ~`r 
 The site was formerly a school building and associated playground until 2016 when it was demolished **after closing for ... reasons** and the land became vacant.
 The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r riverDist_mi` mi) away from a small river, conferring some wetland ecosystem properties like denser soils.
 It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)a).
-```{r plots, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near education center, (c) plot layout design, and (d) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (d) Edgar Cardenas."}
-source(here::here("figs/plots.R")); siteImgs
+```{r plots, fig.height=5, fig.width=5, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near education center, (c) plot layout design, and (d) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (d) Edgar Cardenas."}
+siteImgs
 # knitr::include_graphics(here::here("figs/siteImgs.png"))
 ```
 
 Site soils can be classified as Technosols (Fig \@ref(fig:plots)b), given that large metal artifacts can be found throughout various profiles *[@fao14]*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
 Accordingly, the growing area has both a finer- and coarser-textured side (Fig \@ref(fig:plots)a), 
 and this study was done on the side with consistent clay of ~37%.
-Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color **YR##?!** (Fig \@ref(fig:plots)b).
+Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color 10YR 8/4 (Fig \@ref(fig:plots)b).
 A baseline site-level soil lab assessment from Cornell determined that the top *4 in (10 cm)* of soils around the site together have relatively good organic matter at 
 ~`r filter(chem, variable == "SOM_pct") %>% .$median` ± 
 `r filter(chem, variable == "SOM_pct") %>% .$mad`% 
-and nutrient levels, including concentrations of heavy metals like lead and arsenic **(Table ??)** which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
+and nutrient levels, including concentrations of heavy metals like lead and arsenic *(data not shown)* which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
 The soils were also assesed to have decent but sub-optimal *CO~2~* respiration rates of 
 `r filter(chem, variable == "resp_mg_day") %>% .$median` ± 
-`r filter(chem, variable == "resp_mg_day") %>% .$mad` mg per day 
-(Table \@ref(tab:chem).
+`r filter(chem, variable == "resp_mg_day") %>% .$mad %>% round(digits = 3)` mg per day 
+(Table \@ref(tab:chemKbl)).
 Some main concerns limiting productivity include high alkaline pH of 
 `r filter(chem, variable == "pH") %>% .$median` ± 
 `r filter(chem, variable == "pH") %>% .$mad`, 
 lowering availability of existing nutrients, as well as weak aggregate stability of 
 `r filter(chem, variable == "aggStability_pct") %>% .$median` ± 
 `r filter(chem, variable == "aggStability_pct") %>% .$mad`, 
-leading to concerns with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chem)).
+leading to concerns with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chemKbl)).
+
 
 ```{r chemKbl}
-# chemKbl;
+chemKbl;
 # knitr::include_graphics(here::here("tables/chemKbl.png"))
 ```
 
@@ -106,7 +111,7 @@ cereal ryegrass (*Secale cereale*)
 . 
 The mix targeting weed suppression included heat- and drought-tolerant crops that tend to grow rapidly, allowing them to outcompete other plants--the taxa chosed were 
 sorghum-sudangrass (*Sorghum bicolor x Sorghum bicolor var. sudanese*), 
-cowpea (*`r taxize::comm2sci("black-eyed pea", taxon_state_messages=T)[[1]]`*), and 
+cowpea/black-eyed pea (*`r taxize::comm2sci("black-eyed pea", taxon_state_messages=T)[[1]]`*), and 
 buckwheat (*Fagopyrum esculentum*). 
 Lastly, a mix was dedicated to perennial cover crops, which in contrast to annuals can survive the winter and thus tend to accumulate biomass and establish before spring weeds--this mix included 
 hairy vetch (*`r taxize::comm2sci("hairy vetch", taxon_state_messages=T)`*), 
@@ -114,7 +119,7 @@ red clover (*`r taxize::comm2sci("red clover", taxon_state_messages=T)[[1]]`*), 
 wheat (*`r taxize::comm2sci("wheat", taxon_state_messages=T)[[1]]`*). 
 We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
 ```{r crops}
-# source(here::here("tables/crops.R")); cropKbl
+cropKbl
 # knitr::include_graphics(here::here("tables/cropKbl.png"))
 ```
 
@@ -161,8 +166,9 @@ For clarity, results figures were designed to reflect statistical models and gro
 Significant treatment effect sizes were estimated with *eta^2^* *[@tomczak14]* and simpler raw median differences at finer pairwise levels.
 All calculations and analyzes were done in `r version$version.string` *[@base]* with useful functions from the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` and *ggpubr* `r packageVersion("ggpubr")` *[@rstatix]*.
 Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must), 
-documented using R packages *here* *[@here]*, *bookdown* *[@bookdown2022]*, *measurements* *[@measurements]*, *taxize* *[@taxize2020]*, *knitr* *[@knitr2022]*, and *rmarkdown* *[@rmarkdown2022]*.
-<!-- in Table \@ref(tab:pkgsTab). -->
+documented using R packages *here* *[@here]*, *bookdown* *[@bookdown2022]*, *measurements* *[@measurements]*, *taxize* *[@taxize2020]*, *knitr* *[@knitr2022]*, and *rmarkdown* *[@rmarkdown2022]*
+<!-- (Table \@ref(tab:pkgsTab)) -->
+.
 ```{r pkgsTab, include=F}
 grateful::cite_packages("table") %>% unnest() %>% 
   knitr::kable(caption = "Software packages used")

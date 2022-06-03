@@ -27,7 +27,7 @@ cropTbl <- mixes %>% as_tibble() %>%
   pivot_longer(everything(), names_to = "Function", values_to = "Plants") %>%
 
   full_join(plants) %>%
-  reorder_levels(Function, c(
+  rstatix::reorder_levels(Function, c(
     "Weed Suppression", "Perennial", "Compaction", "Null"
   )) %>% arrange(Function) %>%
   nest(!Function) %>% unnest()
@@ -36,20 +36,22 @@ cropTbl <- mixes %>% as_tibble() %>%
 #style----
 cropKbl <- cropTbl %>%
   distinct() %>%
-  mutate(Function = ifelse(duplicated(Function), "", as.character(Function)),
-         Binomial = ifelse(is.na(Binomial), "", as.character(Binomial))) %>%
+  mutate(Function = ifelse(duplicated(Function), "", as.character(Function))
+         # Binomial = ifelse(is.na(Binomial), "", as.character(Binomial))
+         ) %>%
   # select(!Function) %>%
 
   knitr::kable(caption = "Cover crop mixes", align = "c"#, format = "latex"
                ) %>%
   # as.data.frame(rvest::html_table()) %>%
-  kableExtra::collapse_rows() %>% #bug
+  # kableExtra::collapse_rows() %>% #bug
   # kableExtra::group_rows(names(mixes)[4], 1, 3) %>%
   # kableExtra::group_rows(names(mixes)[2], 4, 6) %>%
   # kableExtra::group_rows(names(mixes)[3], 7, 9) %>%
   # kableExtra::group_rows(names(mixes)[1], 10, 10) %>%
   kableExtra::kable_styling() %>%
-  kableExtra::column_spec(3, italic = T)
+  kableExtra::column_spec(3, italic = T) %>%
+  kableExtra::row_spec(0, bold = T)
 
 #save----
 # kableExtra::save_kable(cropKbl, here::here("tables/cropKbl.png")) #pdf2

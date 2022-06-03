@@ -121,8 +121,6 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-\singlespacing
-
 Urban soils have been degraded by decades of industrial activities, but they also represent opportunities to improve food sovereignty for urban residents practicing urban agriculture.
 Urban growers often use varying practices of compost, tillage, and cover cropping, but without distinguishing their benefits to optimize integrated approaches.
 This study examined how tillage methods representing various intensities and cover crop mixes targeting different functions affected agricultural variables including soil compaction, water infiltration rate, herbaceous weedy plant pressure, and crop yield.
@@ -131,7 +129,7 @@ Mixing sorghum-sudangrass, buckwheat, and cowpea cover crops significantly reduc
 These results reveal that medium-intensity tillage may offer more balanced trade-offs for initial management, and that cover crops can help reduce weeds under low-till strategies.
 Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.
 
-\textbf{Keywords}: urban, compact, weed, till, cover, water
+\textbf{Keywords}: urban agriculture; soil compaction; weed suppression; roto-till, cover crop mix; soil infiltration
 
 \textbf{Highlights:}\\
 - Roto-till improves urban soil compaction and infiltration vs.~no-till\\
@@ -267,7 +265,7 @@ The length of a radish root was measured from the hypocotyl, or root cap, to whe
 
 Field space limited strict plot replication for combined treatments (\emph{n}=3), and thus inference from advanced nested mixed models \emph{(\protect\hyperlink{ref-silk20}{Silk et al., 2020})}, so analysis focused on specific hypotheses tested using simpler, more conservative non-parametric tests that make few underlying assumptions about data and thus appropriate for data with lower replication.
 Kruskal-Wallis tests were run for tillage and cover crop treatments separately, with alpha corrections from 0.05 to 0.01 under multiple comparisons to descriptively parse any treatment interactions, and overall significant treatment effects were followed up by post-hoc Wilcoxon pairwise tests with Holm-corrected p-value adjustments.
-All data were centered at plot-level medians, and where applicable pooled across sampling times given no preliminary significant variation along this axis, together with minimal relevance to focal hypotheses in field studies \emph{(\protect\hyperlink{ref-davies15b}{Davies and Gray, 2015})}, and was a general solution to uneven sampling across response variables, minimally increasing statistical power (base \emph{n} \textgreater{} 3-6).
+All data were centered at plot-level medians, often more robust than means, and where applicable pooled across sampling times given no preliminary significant variation along this axis, together with minimal relevance to focal hypotheses in field studies \emph{(\protect\hyperlink{ref-davies15b}{Davies and Gray, 2015})}, and was a general solution to uneven sampling across response variables, minimally increasing statistical power (base \emph{n} \textgreater{} 3-6).
 For clarity, results figures were designed to reflect statistical models and grouping transparently.
 Significant treatment effect sizes were estimated with \emph{eta\textsuperscript{2}} \emph{(\protect\hyperlink{ref-tomczak14}{Tomczak and Tomczak, 2014})} and simpler raw median differences at finer pairwise levels.
 All calculations and analyzes were done in R version 4.2.0 (2022-04-22) \emph{(\protect\hyperlink{ref-base}{R Core Team, 2022})} with useful functions from the packages \emph{tidyverse} 1.3.1 \emph{(\protect\hyperlink{ref-tidyverse}{Wickham et al., 2019})}, \emph{rstatix} 0.7.0 and \emph{ggpubr} 0.4.0 \emph{(\protect\hyperlink{ref-rstatix}{Kassambara, 2021})}.
@@ -291,7 +289,11 @@ across cover crop treatments (Fig \ref{fig:compactFig}a).
 Tractor-till had the largest significant effect on depth to hardpan compared to no-till (
 \emph{p\textsubscript{adj}} = \textless0.0001
 ),
-deepening the depth to hardpan by \textbf{\#\#} cm (conv\_, or \textasciitilde{}\emph{30-100}\%) compared to no-till,
+deepening the depth to hardpan by
+\textasciitilde9.4 cm (
+3.7 in,
+or \textasciitilde83.3\%
+) compared to no-till,
 down to
 \textasciitilde20.6 ±
 4.6 cm
@@ -301,7 +303,11 @@ across all cover crop mixes.
 Roto-till also had a marginally significant effect on depth to hardpan compared to no-till (
 \emph{p\textsubscript{adj}} = 0.1
 ),
-deepening the depth to hardpan by \textbf{\#\#} cm (conv\_, or \textasciitilde{}\emph{0-100}\%) compared to no-till, down to
+deepening the depth to hardpan by
+\textasciitilde9.4 cm (
+3.7 in,
+or \textasciitilde83.3\%
+) compared to no-till, down to
 \textasciitilde13.8 ±
 1.9 cm
 (5.4 ±
@@ -314,12 +320,16 @@ The overall effect from tillage stemmed from significant effects among the peren
 The effect of roto-till was more pronounced in the perennial mix (
 \emph{p\textsubscript{adj} = \textless0.01}
 ), where depth to hardpan was about twice as deep as in no-till plots (Fig \ref{fig:compactFig}a).
-There was also a significant difference of \textbf{\#\#\#} (conv\_, or \textasciitilde{}\emph{33}\%) between tractor- and roto-till among all cover crop mixes (Fig \ref{fig:compactFig}a).
+There was also a significant difference of
+\textasciitilde6.9 cm (
+2.7 in,
+or \textasciitilde50\%
+) between tractor- and roto-till among all cover crop mixes (Fig \ref{fig:compactFig}a).
 
 \begin{figure}
 \centering
 \includegraphics{merge_files/figure-latex/compactFig-1.pdf}
-\caption{\label{fig:compactFig}Compaction data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
+\caption{\label{fig:compactFig}Compaction data (a) , and (b). Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
 \end{figure}
 
 Compaction was not affected by cover crops among tillage groups overall (
@@ -338,9 +348,9 @@ Under no-till, the perennial mix had significantly shallower depth to hardpan co
 \emph{p\textsubscript{adj} = \textless0.01}
 ),
 raising the depth to hardpan by
-\textasciitilde{}\emph{5} cm (
-2, or
-\textasciitilde{}\emph{30-100}\%
+\textasciitilde-2.5 cm (
+-1 in,
+or \textasciitilde-16.7\%
 ) compared to each mix,
 up to
 \textasciitilde12.5 ±
@@ -358,15 +368,15 @@ Soil infiltration was significantly affected by tillage (
 \emph{H} = 8.5,
 \emph{df} = 2,
 \emph{n} = 48,
-\emph{p} = 0.014
-) but not cover crop mix (
+\emph{p} = 0.01
+) and marginally significantly by cover crop mix (
 \emph{H} = 5.9,
 \emph{df} = 3,
 \emph{n} = 48,
-\emph{p} = 0.12
+\emph{p} = 0.1
 ) (Fig \ref{fig:infilFig}).
 Roto-till had significantly faster infiltration compared to no-till (
-\emph{p\textsubscript{adj}} = 0
+\emph{p\textsubscript{adj}} = 0.027
 ) and marginally significantly compared to tractor-till (
 \emph{p\textsubscript{adj}} = 0.1
 ), speeding up infiltration by
@@ -381,16 +391,19 @@ up to
 )
 (Fig \ref{fig:infilFig}a).
 
+\textbf{add marginal cover crop results (if new paragraph, move below fig)}
+(Fig \ref{fig:infilFig}b).
+
 \begin{figure}
 \centering
 \includegraphics{merge_files/figure-latex/infilFig-1.pdf}
-\caption{\label{fig:infilFig}Infiltration data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
+\caption{\label{fig:infilFig}Infiltration data (a) , and (b). Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
 \end{figure}
 
 \hypertarget{weed-pressure}{%
 \subsection{Weed pressure}\label{weed-pressure}}
 
-Weed density was overall marginally significantly affected by tillage (
+Weed density was overall significantly affected by tillage (
 \emph{H} = 6.5,
 \emph{df} = 2,
 \emph{n} = 72,
@@ -410,9 +423,9 @@ although weed cover (
 ) were not
 (Fig \ref{fig:weedsFig}a).
 Weeds under tractor-till were marginally significantly denser compared to no-till (
-\emph{p\textsubscript{adj}} = 0.1
+\emph{p\textsubscript{adj}} = 0.059
 ) and roto-till (
-\emph{p\textsubscript{adj}} = 0.1
+\emph{p\textsubscript{adj}} = 0.11
 ), denser by
 \textasciitilde6.5 \%
 compared to each tillage group,
@@ -424,7 +437,7 @@ up to
 \begin{figure}
 \centering
 \includegraphics{merge_files/figure-latex/weedsFig-1.pdf}
-\caption{\label{fig:weedsFig}Weeds data (a) , and (b). Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
+\caption{\label{fig:weedsFig}Weeds data (a) , and (b). Gray dots show plot medians and black point ranges show group mean ± 1 std error. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p \textless{} 0.0001, *** p \textless{} 0.001, ** p \textless{} 0.01, * p \textless{} 0.05, *' p \textless{} 0.1, ' p \textgreater{} 0.1)}
 \end{figure}
 
 All measured weed variables were affected significantly by cover crop mix, including
@@ -451,7 +464,7 @@ weed richness (
 \textasciitilde-0.5 \%
 (Fig \ref{fig:weedsFig}b).
 Weeds in the null mix covered significantly more plot area compared to the weed suppression mix (
-\emph{p\textsubscript{adj}} = 0
+\emph{p\textsubscript{adj}} = 0.03
 ) and marginally significantly compared to perennial (
 \emph{p\textsubscript{adj}} = 0.1
 ) and compaction (
@@ -469,19 +482,18 @@ The null mix also had marginally significantly higher weed density compared to t
 ) mixes,
 up to
 \textasciitilde{} 0.9 ±
-0.3 \emph{stems per m\textsuperscript{-2}}.
+0.3 \emph{stems m\textsuperscript{-2}}.
 The weed suppression mix had the most detectable effects on both weed density and richness.
 The weed suppression mix significantly lowered weed density compared to all other cover crop mix treatments, namely the null (
 \emph{p\textsubscript{adj}} = 2e-04
 ), perennial (
-\emph{p\textsubscript{adj}} = 0
+\emph{p\textsubscript{adj}} = 0.017
 ), and compaction (
-\emph{p\textsubscript{adj}} = 0.7
+\emph{p\textsubscript{adj}} = 0
 ) mixes, by
-\textasciitilde{} \textbf{\#\#} +-
-\textbf{\#\#} (
-conv\_, or
-\textbf{\%\%\%}
+\textasciitilde-0.4 \emph{stems m\textsuperscript{-2}} (
+-674.3 \emph{stems in\textsuperscript{-2}},
+or \textasciitilde-50\%
 ), down to
 \textasciitilde{} 0.4 ±
 0 \emph{stems per m\textsuperscript{-2}}
@@ -493,13 +505,12 @@ The weed suppression mix also significantly lowered weed richness compared to al
 ), and compaction (
 \emph{p\textsubscript{adj}} = 0.00093
 ) mixes, by
-\textasciitilde{} \textbf{\#\#} +-
-\textbf{\#\#} (
-conv\_, or
-\textbf{\%\%\%}
+\textasciitilde2 \emph{stems m\textsuperscript{-2}} (
+3100 \emph{stems in\textsuperscript{-2}},
+or \textasciitilde33.3\%
 ), down to
 \textasciitilde{} 4 ±
-1.5 morphoscpecies taxa
+1.5 taxa
 .
 
 \hypertarget{yield}{%
@@ -511,22 +522,22 @@ Radish yield was not significantly affected by tillage (
 \emph{n} = 8,
 \emph{p} = 0.5
 ), and centered at
-\textasciitilde{} 13.2 ±
-1.5 \emph{kg m\textsuperscript{-2}}
+\textasciitilde{} 67.8 ±
+0 \emph{kg m\textsuperscript{-2}}
 (
-29.1 ±
-3.3 \emph{lbs m\textsuperscript{-2}}
+149.5 ±
+0 \emph{lbs m\textsuperscript{-2}}
 ) and
-\textasciitilde{} 0.1 cm
+\textasciitilde{} 13.2 cm
 (
-0 in
+5.2 in
 )
 long (Fig \ref{fig:yieldFig}).
 
 \begin{figure}
 \centering
 \includegraphics{merge_files/figure-latex/yieldFig-1.pdf}
-\caption{\label{fig:yieldFig}Yield data (a) from no-till and (b) tractor-till. Photo credits: Naim Edwards.}
+\caption{\label{fig:yieldFig}Yield data (a) from no-till and (b) tractor-till. Gray dots show plot medians and black point ranges show group mean ± 1 std error. Photo credits: Naim Edwards.}
 \end{figure}
 
 \hypertarget{discussion}{%
@@ -564,7 +575,7 @@ Against a one inch rain event, this study supported the use of roto-till, but no
 0 gal per min
 ),
 which would likely result in runoff pooling in roads and soil erosion.
-Regarding cover crops, this study suggests that perennials may not have notable significant effects on infiltration rates, despite detectable effects on compaction.
+\textbf{Regarding cover crops, this study suggests that perennials may not have notable significant effects on infiltration rates, despite detectable effects on compaction.}
 Based on these findings, roto-till together with compost may be an effective strategy to improve urban soil water infiltration in the short-term, even if no-till may appear to have more evidence as a longer-term strategy \emph{(\protect\hyperlink{ref-cusser20}{Cusser et al., 2020})}.
 
 Weed suppression is important for reducing competition with crops as well as asthma and respiratory health risks from pollen \emph{(\protect\hyperlink{ref-katz14}{Katz and Carey, 2014})}, and can also be achieved by tilling \emph{(\protect\hyperlink{ref-barberi01}{Barberi and Lo Cascio, 2001}; \protect\hyperlink{ref-cordeau20}{Cordeau et al., 2020})}, but this study additionally suggests that cover crops may be more likely to be effective.
@@ -589,7 +600,12 @@ We advocate for the maximal use of cover crop mixes for various target functions
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}
 
-Thanks to previous anonymous reviewers, and peer student (Kristel, Zach,) discussion of initial drafts.
+Thanks to previous anonymous reviewers and peer students KS and ZHF for discussion of initial drafts.
+
+\hypertarget{author-contributions}{%
+\section{Author contributions}\label{author-contributions}}
+
+NE conceived, designed, and performed the study; NE and NM collected data; NM analyzed data; NE and NM wrote the paper; NE, NM, and EA revised the paper.
 
 \hypertarget{funding}{%
 \section{Funding}\label{funding}}

@@ -65,7 +65,7 @@ Against a one inch rain event, this study supported the use of roto-till, but no
 `r conv_unit(filter(infilData_TIL, TIL=="No")$mad, "ml_per_sec", "gal_per_min")` gal per min
 ), 
 which would likely result in runoff pooling in roads and soil erosion.
-**Regarding cover crops, this study suggests that perennials may not have notable significant effects on infiltration rates, despite detectable effects on compaction.**
+Regarding cover crops, this study suggests that cover crop mixes can generally affect infiltration, though specifically perennials may not have notable significant effects on infiltration rates, despite detectable effects on compaction.
 Based on these findings, roto-till together with compost may be an effective strategy to improve urban soil water infiltration in the short-term, even if no-till may appear to have more evidence as a longer-term strategy *[@cusser20]*. 
 
 

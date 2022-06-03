@@ -23,7 +23,7 @@ weedPlot_a <- weedPlot_a +
                      label = "p.signif",
                      # hide.ns = T,
                      symnum.args = list(
-                       cutpoints = c(0, 0.0001, 0.001, 0.01, 0.05, 0.11, 1),
+                       cutpoints = c(0, 0.0001, 0.001, 0.01, 0.05, 0.1, 1),
                        symbols = c("****", "***", "**", "*", "*'", "'")),
                      size = 1.5, vjust = 0.5) +
   EnvStats::stat_n_text(size = 1.5)
