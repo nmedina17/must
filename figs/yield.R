@@ -10,7 +10,7 @@ yieldTT <- magick::image_read(here::here("figs/yieldTT.jpg")) %>%
 theme_set(theme_bw() + theme(text = element_text(size = 8),
                              strip.background = element_rect(fill = "white"),
                              axis.text.x = element_text(size = 8)))
-yieldLabels <- c("Length (cm)", "Mass (g m2)")
+yieldLabels <- c("Length (cm)", "Mass (g per sq m)")
 names(yieldLabels) <- c("RADL_CM", "TOTRAD_g_m2")
 yieldPlot <- yieldData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")

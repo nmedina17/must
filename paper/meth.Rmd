@@ -54,15 +54,15 @@ Site soils can be classified as Technosols (Fig \@ref(fig:plots)b), given that l
 Accordingly, the growing area has both a finer- and coarser-textured side (Fig \@ref(fig:plots)a), 
 and this study was done on the side with consistent clay of ~37%.
 Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color 10YR 8/4 (Fig \@ref(fig:plots)b).
-A baseline site-level soil lab assessment from Cornell determined that the top *4 in (10 cm)* of soils around the site together have relatively good organic matter at 
+A baseline site-level soil lab assessment determined that the top *4 in (10 cm)* of soils around the site together have relatively good organic matter at 
 ~`r filter(chem, variable == "SOM_pct") %>% .$median` ± 
 `r filter(chem, variable == "SOM_pct") %>% .$mad`% 
-and nutrient levels, including concentrations of heavy metals like lead and arsenic *(data not shown)* which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
-The soils were also assesed to have decent but sub-optimal *CO~2~* respiration rates of 
+and nutrient levels, including concentrations of heavy metals like lead and arsenic which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
+Site soils were also assesed to have decent but sub-optimal *CO~2~* respiration rates of 
 `r filter(chem, variable == "resp_mg_day") %>% .$median` ± 
 `r filter(chem, variable == "resp_mg_day") %>% .$mad %>% round(2)` mg per day 
 (Table \@ref(tab:chemKbl)).
-Some main concerns limiting productivity include high alkaline pH of 
+Initial main concerns limiting productivity include high alkaline pH of 
 `r filter(chem, variable == "pH") %>% .$median` ± 
 `r filter(chem, variable == "pH") %>% .$mad`, 
 lowering availability of existing nutrients, as well as weak aggregate stability of 
@@ -83,8 +83,8 @@ chemKbl
 ## Design
 
 
-The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:plots)c).
-Tillage groups spanned the nine columns in adjacent groups of three, while cover crop mix treatments spanned the rows with one row per cover crop mix, totaling 26 plots, or 12 plots per tillage group and nine plots per cover crop mix.
+The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site under the former school building that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:plots)c).
+Tillage groups spanned the nine columns in adjacent groups of three, while cover crop mix treatments spanned the rows with one row per cover crop mix, totaling 36 plots, or 12 plots per tillage group and nine plots per cover crop mix.
 Before applying treatments, approximately `r compost_plot_m3=0.24;compost_plot_m3` *m^3^* (`r conv_unit(compost_plot_m3,"m3","ft3")` *ft^3^*) of compost was incorporated into each plot.
 
 <!-- **One aggregated sample per tillage group was collected and analyzed for chemistry using modified Morgan-extractable protocols at the MSU soil test lab [@moebius-clune16] and analysis was also conducted on the compost.** -->
@@ -98,7 +98,7 @@ Specifially, treatments included no-till with a broadfork *(NT)*, roto-tiller *(
 Tractor-till plots were worked with a subsoiler, moldboard plow, and roto-tiller attached to a tractor up to `r TTft=1;conv_unit(TTft,"ft","cm")` cm (`r TTft` ft) deep. 
 Roto-till plots were treated with a rototiller implement up to `r RTcm=20;RTcm` cm (`r conv_unit(RTcm,"cm","inch")` in) deep. 
 Lastly, no-till plots were worked with only a broadfork up to `r NTcm=10;NTcm` cm (`r conv_unit(NTcm,"cm","inch")` in) deep. 
-All tilling was done once early in the season after one typical compost application.
+All tilling was done once early in the season after one typical compost application and before planting cover crops.
 
 
 <!-- ## Cover crop mixes -->
@@ -108,8 +108,8 @@ Cover crop mixes were designed primarily based on plants associated with targete
 Three mixes were designed to target three functions, with each mix containing three different plant species (Table \@ref(tab:crops)). 
 The mix specifically designed to alleviate compaction generally focused on plants with roots that tend to penetrate and loosen soil well, and ultimately included 
 crimson clover (*Trifolium incarnatum*), 
-forage radish (*`r taxize::comm2sci("radish", taxon_state_messages=T)[[1]]`*), and 
-cereal ryegrass (*Secale cereale*) 
+forage radish (*`r taxize::comm2sci("radish", taxon_state_messages=T)[[1]]` var. longipinnatus*), and 
+cereal ryegrass (*Secale cereale*)
 <!-- *[@williams/weil04]* -->
 . 
 The mix targeting weed suppression included heat- and drought-tolerant crops that tend to grow rapidly, allowing them to outcompete other plants--the taxa chosed were 
@@ -142,7 +142,7 @@ Measurements were recorded to the nearest *2.5 cm (1 inch)* on dry days.
 
 Soil water infiltration down to *10*
 <!-- `r conv_unit(8.75 / 2, "inch", "cm")`  -->
-cm *(8.75 in)* depth was measured using a `r conv_unit(6.5, "inch", "cm")` *(9.5 in)* wide aluminum cylinder, and recording the time up to 160 sec for *1 L (32 fl oz)* to pass through, representing a typical local rainfall onto ~0.10 *m^2^* (~1 *ft^2^*) of soil area ([waterdata.usgs.gov](waterdata.usgs.gov)). 
+cm *(8.75 in)* depth was measured using a `r conv_unit(6.5, "inch", "cm")` *(9.5 in)* wide aluminum cylinder, set away from dense vegetation and any impeding large roots, and recording the time up to 160 sec for *1 L (32 fl oz)* to pass through, representing a typical local rainfall onto ~0.10 *m^2^* (~1 *ft^2^*) of soil area ([waterdata.usgs.gov](waterdata.usgs.gov)). 
 
 
 <!-- ### Weed cover, density, and richness -->
@@ -175,7 +175,7 @@ All data were centered at plot-level medians, often more robust than means, and 
 For clarity, results figures were designed to reflect statistical models and grouping transparently.
 Significant treatment effect sizes were estimated with *eta^2^* *[@tomczak14]* and raw median differences at finer pairwise levels.
 All calculations and analyzes were done in `r version$version.string` *[@base]* with useful functions from the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` and *ggpubr* `r packageVersion("ggpubr")` *[@rstatix]*.
-Data and code are stored at [nmedina17.github.com/must](nmedina17.github.com/must), 
+Data and code are stored at [github.com/nmedina17/must](github.com/nmedina17/must), 
 documented using R packages 
 *here* `r packageVersion("here")` *[@here]*, 
 *bookdown* `r packageVersion("bookdown")` *[@bookdown2022]*, 

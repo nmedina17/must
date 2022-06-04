@@ -2,11 +2,12 @@
 title: ""
 output: 
   # - html_notebook
-  - word_document
+  word_document
+  # pdf_document
 ---
 
 
-**Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration**
+<!-- **Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration** -->
 
 
 **Highlights:**

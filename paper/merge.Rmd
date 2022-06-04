@@ -24,43 +24,24 @@ date: \scriptsize
   ^a^ Agriculture and Natural Resources, Michigan State University, 16745 Lamphere St, Detroit, MI, USA 48219;  
   ^b^ Ecology and Evolutionary Biology, University of Michigan, 1105 N University Ave, Ann Arbor, MI, USA
 
-abstract: |
-  
-  Urban soils have been degraded by decades of industrial activities, but they also represent opportunities to improve food sovereignty for urban residents practicing urban agriculture.
-  Urban growers often use varying practices of compost, tillage, and cover cropping, but without distinguishing their benefits to optimize integrated approaches.
-  This study examined how tillage methods representing various intensities and cover crop mixes targeting different functions affected agricultural variables including soil compaction, water infiltration rate, herbaceous weedy plant pressure, and crop yield. 
-  Results showed that both roto- and tractor-till significantly affected compaction but not yield compared to no-till, and roto-till also improved infiltration, while tractor-till reached deeper soils but allowed denser weed growth.
-  Mixing sorghum-sudangrass, buckwheat, and cowpea cover crops significantly reduced weed pressure compared to other mixtures, and perennials affected compaction but not soil water infiltration under no-till.
-  These results reveal that medium-intensity tillage may offer more balanced trade-offs for initial management, and that cover crops can help reduce weeds under low-till strategies.
-  Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.  
-  
-  \
-  
-  **Keywords**: urban agriculture; soil compaction; weed suppression; roto-till, cover crop mix; soil infiltration  
-  
-  \
-  
-  **Highlights:**  
-    - Roto-till improves urban soil compaction and infiltration vs. no-till  
-    - Tractor-till improves compaction but not infiltration and also increases weeds  
-    - Cover crop mixes suppress weeds  
-    - Forage radish yield not affected by till or cover crop mixes  
-    - Roto-till and cover crop mixes help improve soils for urban agriculture  
-  
-  \
-  
-  ***Corresponding author**: Naim Edwards, edwar649@msu.edu  
-  Author emails: edwar649@msu.edu, nmedina@umich.edu, askereli@msu.edu
+# abstract: |
 
 # keywords: "Keywords: urban, compact, weed, till, cover, water"
   
 output: 
-  # bookdown::html_notebook2:
+  # bookdown::word_document2:
   #   toc: FALSE
+  #   global_numbering: TRUE #dev
   bookdown::pdf_document2:
     # number_sections: FALSE
     toc: FALSE
     keep_tex: TRUE
+    global_numbering: TRUE #dev
+    # template:
+    #   ../../elsarticle-ecrc/ecrc-template.tex
+    # ../../plot_latex_template/plos_latex_template.tex
+    # includes:
+    #   in-header: ../../elsarticle-ecrc/ecrc.sty
   # rticles::elsevier_article:
   #   keep_tex: TRUE
 # always_allow_html: TRUE
@@ -68,7 +49,11 @@ bibliography:
   - ../../library.bib
   - ../../grateful-refs.bib
 csl: ../../styles-master/elsevier-harvard.csl
+# biblio-style: 
+#   ../../elsarticle-ecrc/elsarticle-num.bst
+  # plos2015.bst
 # documentclass: elsarticle
+# documentclass: ../../elsarticle-ecrc/elsarticle.cls
   
 link-citations: TRUE
 fontsize: 12pt
@@ -77,7 +62,7 @@ header-includes:
   - \usepackage[left]{lineno}
   - \linenumbers
   - \usepackage{setspace}\doublespace
-font-family: Calibri Light
+# font-family: Calibri Light
 ---
 
 
@@ -92,21 +77,44 @@ font-family: Calibri Light
 
 
 ```{r setupFull, echo=F}
-options(digits = 1, knitr.table.format = "latex");
+options(digits = 1
+        # knitr.table.format = "latex"
+        );
 # knitr::opts_chunk$set(fig.width = 3, fig.height = 3)
 ```
 
 
-<!-- # Abstract -->
+\
+\
 
-<!-- ```{r abs, child='abs.Rmd'} -->
-<!-- ``` -->
+**Keywords**: urban agriculture; soil compaction; weed suppression; roto-till, cover crop mix; soil infiltration  
+
+\
+\
+  
+***Corresponding author**: Naim Edwards, edwar649@msu.edu  
+Author emails: edwar649@msu.edu, nmedina@umich.edu, askereli@msu.edu
 
 
-<!-- # Highlights -->
+\newpage
 
-<!-- ```{r intro, child='highlights.Rmd'} -->
-<!-- ``` -->
+
+<!-- ### Highlights{-} -->
+
+```{r intro, child='highlights.Rmd'}
+```
+
+
+\newpage
+
+
+# Abstract{-}
+
+```{r abs, child='abs.Rmd'}
+```
+
+
+\newpage
 
 
 # Introduction
@@ -133,29 +141,29 @@ options(digits = 1, knitr.table.format = "latex");
 ```
 
 
-# Acknowledgements
-
-Thanks to previous anonymous reviewers and peers KS and ZHF for discussion of initial drafts.
-
-
-# Author contributions
-
-NE conceived, designed, and performed the study; NE and NM collected data; NM analyzed data; NE and NM wrote the paper; NE, NM, and EA revised the paper.
-
-
-# Funding
+# Funding{-}
 
 *This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.*
 
 
-# Declaration of interests
+# Declaration of interests{-}
 
 Authors declare no conflicts of interest. 
 
 
-# Data statement
+# Acknowledgements{-}
 
-Data and code available at [nmedina17.github.com/must](nmedina17.github.com/must).
+Thanks to previous anonymous reviewers and peers KS, ZHF, and JK for discussion of initial drafts.
+
+
+# Author contributions{-}
+
+NE conceived, designed, and performed the study; NE and NM helped collect data; NM analyzed data; NE wrote the initial report. All authors wrote and revised second draft; NM wrote the third draft; all authors revised later drafts.
+
+
+# Data statement{-}
+
+Data and code stored at [github.com/nmedina17/must](github.com/nmedin17/must).
 
 
 \newpage

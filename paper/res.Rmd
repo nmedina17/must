@@ -74,7 +74,8 @@ or ~`r diffTR / filter(compData_TIL, TIL=="Roto")$median *100`%
 <!-- test-static-vals? -->
 
 ```{r compactFig, fig.width=5, fig.height=5, fig.cap="Compaction data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1 or ns)"}
-source(here::here("figs/compaction.R")); compactionPlot
+source(here::here("figs/compaction.R")); 
+compactionPlot
 # knitr::include_graphics(here::here("figs/compactionPlot.png"))
 ```
 
@@ -144,7 +145,8 @@ up to
 
 
 ```{r infilFig, fig.width=3, fig.width=3, fig.cap="Infiltration data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
-source(here::here("figs/infil.R")); infilPlot
+source(here::here("figs/infil.R")); 
+infilPlot
 # knitr::include_graphics(here::here("figs/infilPlot.png"))
 ```
 
@@ -183,9 +185,9 @@ although weed cover (
 *p* = `r weedCovData$p_TIL[1] %>% p_format()`
 ) were not 
 (Fig \@ref(fig:weedsFig)a). 
-Weeds under tractor-till were marginally significantly denser compared to no-till (
+Weeds under tractor-till were significantly denser compared to no-till (
 *p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[2] %>% p_format(digits = 2)`
-) and roto-till (
+) and marginally significantly compared to roto-till (
 *p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[3] %>% p_format(digits = 2)`
 ), denser by 
 ~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100`% 
@@ -196,7 +198,8 @@ up to
 .
 
 ```{r weedsFig, fig.width=5, fig.height=5, fig.cap="Weeds data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1 or ns)"}
-source(here::here("figs/weeds.R")); weedPlot
+source(here::here("figs/weeds.R")); 
+weedPlot
 # knitr::include_graphics(here::here("figs/weedPlot.png"))
 ```
 
@@ -327,6 +330,7 @@ Radish yield was not significantly affected by tillage (
 long (Fig \@ref(fig:yieldFig)).
 
 ```{r yieldFig, fig.width=3.5, fig.height=3.5, fig.cap="Yield data (a) from no-till, (b) tractor-till, and (c) all tillage groups. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Photo credits: Naim Edwards."}
-source(here::here("figs/yield.R")); yieldPlot
+source(here::here("figs/yield.R")); 
+yieldPlot
 # knitr::include_graphics(here::here("figs/yieldPlot.png"))
 ```

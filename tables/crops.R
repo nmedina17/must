@@ -41,7 +41,7 @@ cropKbl <- cropTbl %>%
          ) %>%
   # select(!Function) %>%
 
-  knitr::kable(caption = "Cover crop mixes", align = "c"#, format = "simple"
+  knitr::kable(caption = "Cover crop mixes", align = "c", format = "simple"
                ) %>%
   # as.data.frame(rvest::html_table()) %>%
   # kableExtra::collapse_rows() %>% #bug
@@ -49,7 +49,7 @@ cropKbl <- cropTbl %>%
   # kableExtra::group_rows(names(mixes)[2], 4, 6) %>%
   # kableExtra::group_rows(names(mixes)[3], 7, 9) %>%
   # kableExtra::group_rows(names(mixes)[1], 10, 10) %>%
-  kableExtra::kable_styling() %>%
+  # kableExtra::kable_styling() %>%
   kableExtra::column_spec(3, italic = T) %>%
   kableExtra::row_spec(0, bold = T)
 

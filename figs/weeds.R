@@ -15,7 +15,7 @@ weedPlot_a <- weedData %>%
   ggplot(aes(x = TIL, y = value)) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
   facet_wrap(~variable, labeller = labeller(variable = weedLabels), scales = "free") +
-  ggh4x::facetted_pos_scales(y = list(NULL, scale_y_continuous(limits = c(0, 5)), NULL)) +
+  ggh4x::facetted_pos_scales(y = list(NULL, NULL, scale_y_continuous(limits = c(0, 5)))) +
   labs(x = "Tillage", y = "Weeds")
 weedPlot_a <- weedPlot_a +
   ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
@@ -36,7 +36,7 @@ weedPlot_b <- weedData %>%
   ggplot(aes(x = MIX, y = value)) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
   facet_wrap(~variable, labeller = labeller(variable = weedLabels), scales = "free") +
-  ggh4x::facetted_pos_scales(y = list(NULL, scale_y_continuous(limits = c(0, 5)), NULL)) +
+  ggh4x::facetted_pos_scales(y = list(NULL, NULL, scale_y_continuous(limits = c(0, 5)))) +
   labs(x = "Cover crop mix", y = "Weeds")
 weedPlot_b <- weedPlot_b +
   ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +

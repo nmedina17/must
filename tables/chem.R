@@ -26,21 +26,23 @@ chemTbl <- chem %>%
     "Magnesium (ppm)", "Manganese (ppm)", "Zinc (ppm)",
     "Heavy metals (Pb, Al, As, Cu)"
   )) %>%
-  mutate("type" = c(rep("Biological",2), "Physical", rep("Chemical",8)))
+  mutate("Kind" = c(rep("Biological",2), "Physical", rep("Chemical",8)),
+         .before = variable)
 chemKbl <-
   # chem %>%
   chemTbl %>%
   rename("Variable" = variable, "Median (n=10)" = median, "Deviation" = mad) %>%
-  select(!c(type, n)) %>%
+  select(!c(n)) %>%
+  mutate(Kind = ifelse(duplicated(Kind), "", as.character(Kind))) %>%
   knitr::kable(caption = "Baseline Soil Health Assessment (Cornell, Ithaca, NY, USA)",
-               align = "c"#, format = "simple"
+               align = "c", format = "simple"
                ) %>%
-  kableExtra::kable_styling() %>%
-  # kableExtra::group_rows("major", 1, 6) %>%
-  kableExtra::group_rows("Biological", 1, 2) %>%
-  kableExtra::group_rows("Physical", 3, 3) %>%
-  kableExtra::group_rows("Chemical", 4, 11) %>%
-  kableExtra::group_rows("-- minor", 7, 11) %>%
+  # kableExtra::kable_styling() %>%
+  # # kableExtra::group_rows("major", 1, 6) %>%
+  # kableExtra::group_rows("Biological", 1, 2) %>%
+  # kableExtra::group_rows("Physical", 3, 3) %>%
+  # kableExtra::group_rows("Chemical", 4, 11) %>%
+  # kableExtra::group_rows("-- minor", 7, 11) %>%
   kableExtra::row_spec(0, bold = T)
   # kableExtra::add_footnote(label = "n = 10")
 # library(magick)
