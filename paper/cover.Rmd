@@ -2,8 +2,8 @@
 title: ""
 output: 
   # html_notebook
-  # word_document
-  pdf_document
+  - word_document
+  - pdf_document
 fontsize: 12pt
 header-includes:
   - \usepackage{setspace} \doublespace
@@ -12,7 +12,6 @@ header-includes:
 
 Dear Editors of *Soil and Tillage Research*:
 
-\
 
 Please consider this manuscript entitled "Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration" as a Research Paper.
 This manuscript presents and discusses data that support the use of roto-till and cover crop mixtures to alleviate soil compaction and weed pressure, which are very common issues for all farmers as agriculture expands into urban environments.
@@ -24,9 +23,14 @@ Finally, this manuscript places these soil management considerations in an urban
 
 Overall, this manuscript represents a solid and interesting contribution to the soil tillage and modern agricultural literature.
 The analysis and discussion is presented as a full manuscript, though it could be possible to contribute this a Short Communication.
-Please feel free to contact us for any additional relevant information you may like.
+We are also happy to recommend your associate editor Elke Noellemeyer to be associated with our submission, based on a listed interest in agroecology. 
+As potential reviewers, we point to 
+Kami Pothukuchi and Zhijiang Lu (*Wayne State*), 
+Viashelav Vashenev (*RUDN, Russia*), 
+Zhonqi (Joshua) Cheng (*USI, Brooklyn Coll*), 
+and Rattan Lal (*Ohio State*).
+Finally, please feel free to contact us for any additional relevant information you may like.
 
-\
 
 Sincerely,
 

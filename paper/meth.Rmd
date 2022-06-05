@@ -25,9 +25,10 @@ options(digits = 1,
         tinytex.verbose = T,
         knitr.kable.NA = "-"
         ); library(measurements);
-# library(taxize); taxize::taxize_options(taxon_state_messages = T, quiet = T)
-# source(here::here("figs/plots.R")); 
-source(here::here("tables/crops.R"));
+# library(taxize); 
+taxize::taxize_options(taxon_state_messages = T, quiet = T)
+# source(here::here("figs/plots.R"));
+# source(here::here("tables/crops.R"));
 ```
 
 
@@ -44,7 +45,7 @@ The climate is temperate with four seasons, with mean annual temperature of ~`r 
 The site was formerly a school building and associated playground until 2016 when it was demolished after closing due to low funding and the land became vacant.
 The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r riverDist_mi` mi) away from a small river, conferring some wetland ecosystem properties like denser soils.
 It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)a).
-```{r plots, fig.height=5, fig.width=5, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near education center, (c) plot layout design, and (d) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (d) Edgar Cardenas."}
+```{r plots, fig.height=5, fig.width=5, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near current education center, (c) plot layout design, and (d) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (d) Edgar Cardenas."}
 source(here::here("figs/plots.R"));
 siteImgs
 # knitr::include_graphics(here::here("figs/siteImgs.png"))
@@ -60,7 +61,7 @@ A baseline site-level soil lab assessment determined that the top *4 in (10 cm)*
 and nutrient levels, including concentrations of heavy metals like lead and arsenic which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
 Site soils were also assesed to have decent but sub-optimal *CO~2~* respiration rates of 
 `r filter(chem, variable == "resp_mg_day") %>% .$median` ± 
-`r filter(chem, variable == "resp_mg_day") %>% .$mad %>% round(2)` mg per day 
+`r filter(chem, variable == "resp_mg_day") %>% .$mad %>% p_format(digits=1)` mg per day 
 (Table \@ref(tab:chemKbl)).
 Initial main concerns limiting productivity include high alkaline pH of 
 `r filter(chem, variable == "pH") %>% .$median` ± 
@@ -72,7 +73,7 @@ leading to concerns with aeration, infiltration, rooting, crusting when dry, ero
 
 
 ```{r chemKbl}
-# source(here::here("tables/chem.R"));
+source(here::here("tables/chem.R"));
 chemKbl 
 # %>% kableExtra::kable_as_xml() %>% kableExtra::xml_as_kable()
 # knitr::include_graphics(here::here("tables/chemKbl.png"))
@@ -122,7 +123,7 @@ red clover (*`r taxize::comm2sci("red clover", taxon_state_messages=T)[[1]]`*), 
 wheat (*`r taxize::comm2sci("wheat", taxon_state_messages=T)[[1]]`*). 
 We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
 ```{r crops}
-# source(here::here("tables/crops.R"));
+source(here::here("tables/crops.R"));
 cropKbl 
 # %>% kableExtra::kable_as_xml() %>% kableExtra::xml_as_kable()
 # knitr::include_graphics(here::here("tables/cropKbl.png"))

@@ -186,15 +186,15 @@ although weed cover (
 ) were not 
 (Fig \@ref(fig:weedsFig)a). 
 Weeds under tractor-till were significantly denser compared to no-till (
-*p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[2] %>% p_format(digits = 2)`
+*p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[2] %>% p_format(digits = 1)`
 ) and marginally significantly compared to roto-till (
-*p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[3] %>% p_format(digits = 2)`
+*p~adj~* = `r weedDnData$posthoc_TIL[[1]]$p.adj[3] %>% p_format(digits = 1)`
 ), denser by 
 ~`r weedDnData$effsize_TIL[[1]]$effsize_TIL *100`% 
 compared to each tillage group, 
 up to 
-~ `r filter(weedDnData_TIL, TIL=="Tractor")$median` ±
-`r filter(weedDnData_TIL, TIL=="Tractor")$mad` *stems per m^-2^*
+~ `r filter(weedDnData_TIL, TIL=="Tractor")$median %>% round()` ±
+`r filter(weedDnData_TIL, TIL=="Tractor")$mad %>% round()` *stems per m^-2^*
 .
 
 ```{r weedsFig, fig.width=5, fig.height=5, fig.cap="Weeds data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1 or ns)"}
@@ -235,12 +235,14 @@ The weed suppression mix significantly lowered weed density compared to all othe
 ), and compaction (
 *p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[6] %>% p_format()`
 ) mixes, by 
-~`r diffWNdn = filter(weedDnData_MIX, MIX=="null")$median - filter(weedDnData_MIX, MIX=="wdsp")$median; diffWNdn` *stems m^-2^* (
-`r 1 / conv_unit(diffWNdn, "m2", "in2")` *stems in^-2^*, 
-or ~`r diffWNdn / filter(weedDnData_MIX, MIX=="null")$median *100`%
+~`r diffWNdn = filter(weedDnData_MIX, MIX=="null")$median - filter(weedDnData_MIX, MIX=="wdsp")$median; diffWNdn %>% round()` *stems m^-2^* (
+<!-- `r 1 / conv_unit(diffWNdn, "m2", "ft2")`  -->
+<!-- *stems ft^-2^*, or  -->
+~`r diffWNdn / filter(weedDnData_MIX, MIX=="null")$median *100`%
 ), down to 
-~ `r filter(weedDnData_MIX, MIX=="wdsp")$median` ±
-`r filter(weedDnData_MIX, MIX=="wdsp")$mad` *stems per m^-2^*
+~ `r filter(weedDnData_MIX, MIX=="wdsp")$median %>% round()` 
+<!-- `r filter(weedDnData_MIX, MIX=="wdsp")$mad %>% p_format(digits = 2)`  -->
+*stems per m^-2^*
 <!-- ( -->
 <!-- conv_, or  -->
 <!-- **%%%** -->
@@ -253,12 +255,12 @@ The weed suppression mix also significantly lowered weed cover compared to all o
 ), and compaction (
 *p~adj~* = `r weedAbnData$posthoc_MIX[[1]]$p.adj[6] %>% p_format()`
 ) mixes, by 
-~`r diffWNab = filter(weedAbnData_MIX, MIX=="null")$median - filter(weedAbnData_MIX, MIX=="wdsp")$median; diffWNab` *stems m^-2^* (
-`r conv_unit(diffWNab, "m2", "in2")` *stems in^-2^*, 
-or ~`r diffWNab / filter(weedAbnData_MIX, MIX=="null")$median *100`%
+~`r diffWNab = filter(weedAbnData_MIX, MIX=="null")$median - filter(weedAbnData_MIX, MIX=="wdsp")$median; diffWNab %>% round()` *stems m^-2^* (
+<!-- `r 1 / conv_unit(diffWNab, "m2", "ft2") %>% round(2)` *stems ft^-2^*, or -->
+~`r diffWNab / filter(weedAbnData_MIX, MIX=="null")$median *100`%
 ), down to 
 ~ `r filter(weedAbnData_MIX, MIX=="wdsp")$median` ±
-`r filter(weedAbnData_MIX, MIX=="wdsp")$mad`%
+`r filter(weedAbnData_MIX, MIX=="wdsp")$mad %>% p_format(digits = 1)`%
 <!-- ( -->
 <!-- conv_, or  -->
 <!-- **%%%** -->
@@ -269,7 +271,7 @@ Finally, the null mix showed significantly higher richness compared to the weed 
 ) and marginally significantly compared to perennial (
 *p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[1] %>% p_format(digits = 1)`
 ) and compaction (
-*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[2] %>% p_format(digits = 2)`
+*p~adj~* = `r weedCovData$posthoc_MIX[[1]]$p.adj[2] %>% p_format(digits = 1)`
 ) mixes,
 <!-- by  -->
 <!-- ~ **##** +-  -->
@@ -278,8 +280,9 @@ Finally, the null mix showed significantly higher richness compared to the weed 
 <!-- **%%%** -->
 <!-- ), -->
 up to 
-~ `r filter(weedCovData_MIX, MIX=="null")$median` ±
-`r filter(weedCovData_MIX, MIX=="null")$mad %>% round(2)` %.
+~ `r filter(weedCovData_MIX, MIX=="null")$median` 
+<!-- `r filter(weedCovData_MIX, MIX=="null")$mad %>% p_format(digits = 1)`  -->
+taxa.
 <!-- The null mix also had marginally significantly higher weed density compared to the weed suppression mix ( -->
 <!-- *p~adj~* = `r weedDnData$posthoc_MIX[[1]]$p.adj[3] %>% p_format()` -->
 <!-- ) and marginally significantly compared to perennial ( -->
@@ -313,11 +316,13 @@ Radish yield was not significantly affected by tillage (
 *n* = `r yieldData$n_TIL[1]`, 
 *p* = `r yieldData$p_TIL[1]`
 ), and centered at 
-~ `r filter(yieldMassData, TIL=="No")$median` ±
-`r filter(yieldMassData, TIL=="No")$mad` *g m^-2^*
+~ `r filter(yieldMassData, TIL=="No")$median` 
+<!-- `r filter(yieldMassData, TIL=="No")$mad %>% p_format(digits = 2)`  -->
+*g m^-2^*
 (
-`r conv_unit(filter(yieldMassData, TIL=="No")$median, "g", "lbs")` ±
-`r conv_unit(filter(yieldMassData, TIL=="No")$mad, "g", "lbs")` *lbs m^-2^*
+`r conv_unit(filter(yieldMassData, TIL=="No")$median, "g", "lbs")` 
+<!-- `r conv_unit(filter(yieldMassData, TIL=="No")$mad, "g", "lbs") %>% p_format(digits = 2)`  -->
+*lbs m^-2^*
 ) and 
 ~ `r filter(yieldLenData, TIL=="No")$median` cm 
 <!-- ± -->

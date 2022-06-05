@@ -61,6 +61,7 @@ yieldPlot <- yieldPlot +
 yieldPlot <- ggpubr::ggarrange(
   ggpubr::ggarrange(yieldNT, yieldTT, labels = c("a", "b"), nrow = 1),
   yieldPlot, labels = c("", "c"), nrow = 2
+  # align = "hv"
 )
 # ggplot2::ggsave("figs/yieldPlot.png", yieldPlot,
 #        height = 3, width = 3, units = "in")

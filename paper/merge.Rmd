@@ -44,7 +44,7 @@ output:
     #   in-header: ../../elsarticle-ecrc/ecrc.sty
   # rticles::elsevier_article:
   #   keep_tex: TRUE
-# always_allow_html: TRUE
+always_allow_html: TRUE
 bibliography: 
   - ../../library.bib
   - ../../grateful-refs.bib
@@ -81,6 +81,7 @@ options(digits = 1
         # knitr.table.format = "latex"
         );
 # knitr::opts_chunk$set(fig.width = 3, fig.height = 3)
+taxize::taxize_options(quiet = T, taxon_state_messages = T)
 ```
 
 

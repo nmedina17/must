@@ -1,4 +1,5 @@
-here::i_am("tables/crops.R"); library(tidyverse); #taxize::taxize_options(quiet=T)
+here::i_am("tables/crops.R"); library(tidyverse);
+taxize::taxize_options(quiet = T, taxon_state_messages = T) #need2source2PDF!
 #info----
 mixes <- tibble(
   "Null" = "Existing vegetation (no manipulation)",
@@ -6,16 +7,18 @@ mixes <- tibble(
   "Compaction" = c("Forage Radish", "Crimson Clover", "Cereal Ryegrass"),
   "Weed Suppression" = c("Sorghum-Sudangrass", "Cowpea/Black-Eyed Pea", "Buckwheat")
 )
-plantCommNames <- c("Hairy Vetch", "Red Clover", "Wheat", "Forage Radish",
-                    "Crimson Clover", "Cereal Ryegrass", "Sorghum-Sudangrass",
-                    "Cowpea/Black-Eyed Pea", "Buckwheat")
+plantCommNames <- c("Hairy Vetch", "Red Clover", "Wheat",
+                    "Forage Radish", "Crimson Clover", "Cereal Ryegrass",
+                    "Sorghum-Sudangrass", "Cowpea/Black-Eyed Pea", "Buckwheat")
 plants <- c(
   "Hairy Vetch" = taxize::comm2sci(mixes$Perennial[[1]])[[1]],
   "Red Clover" = taxize::comm2sci(mixes$Perennial[[2]])[[1]],
   "Wheat" = taxize::comm2sci(mixes$Perennial[[3]])[[1]],
+
   "Forage Radish" = "Raphanus sativus var. longipinnatus",
   "Crimson Clover" = "Trifolium incarnatum",
   "Cereal Ryegrass" = "Secale cereale",
+
   "Sorghum-Sudangrass" = "Sorghum bicolor x S. bicolor var. sudanese",
   "Cowpea/Black-Eyed Pea" = taxize::comm2sci("Black-Eyed Pea")[[1]],
   "Buckwheat" = "Fagopyrum esculentum"
@@ -37,7 +40,7 @@ cropTbl <- mixes %>% as_tibble() %>%
 cropKbl <- cropTbl %>%
   distinct() %>%
   mutate(Function = ifelse(duplicated(Function), "", as.character(Function))
-         # Binomial = ifelse(is.na(Binomial), "", as.character(Binomial))
+         # Binomial = map(Binomial, ~stringr::str_c("*", Binomial, "*"))
          ) %>%
   # select(!Function) %>%
 
