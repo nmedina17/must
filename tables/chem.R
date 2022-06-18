@@ -35,15 +35,15 @@ chemKbl <-
   select(!c(n)) %>%
   mutate(Kind = ifelse(duplicated(Kind), "", as.character(Kind))) %>%
   knitr::kable(caption = "Baseline Soil Health Assessment (Cornell, Ithaca, NY, USA)",
-               align = "c", format = "simple"
-               ) %>%
+               align = "c", format = "simple", longtable = F
+               ) #%>%
   # kableExtra::kable_styling() %>%
   # # kableExtra::group_rows("major", 1, 6) %>%
   # kableExtra::group_rows("Biological", 1, 2) %>%
   # kableExtra::group_rows("Physical", 3, 3) %>%
   # kableExtra::group_rows("Chemical", 4, 11) %>%
   # kableExtra::group_rows("-- minor", 7, 11) %>%
-  kableExtra::row_spec(0, bold = T)
+  # kableExtra::row_spec(0, bold = T)
   # kableExtra::add_footnote(label = "n = 10")
 # library(magick)
 # kableExtra::save_kable(chemKbl, here::here("tables/chemKbl.png")) #pdf2

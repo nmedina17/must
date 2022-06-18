@@ -5,7 +5,7 @@ output:
   bookdown::pdf_document2:
   #   # number_sections: FALSE
     toc: FALSE
-    keep_tex: TRUE
+    # keep_tex: TRUE
   # rticles::elsevier_article
 # always_allow_html: TRUE
 bibliography: 
@@ -42,19 +42,20 @@ source(here::here("tables/chem.R"));
 
 The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st") %>% round(digits=5)`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha (`r site_acre` acres) extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
 The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` C (`r conv_unit(MATc,"C","F")` F) and precipitation at ~`r MAPmm=787;MAPmm` mm (`r conv_unit(MAPmm,"mm","inch")` in) ([ncdc.noaa.gov](ncdc.noaa.gov)). 
-The site was formerly a school building and associated playground until 2016 when it was demolished after closing due to low funding and the land became vacant.
+The site was formerly a school building and associated playground since 1924 until 2016 when it was demolished after closing due to low enrollment since 2009, and the city land was rented by the university (Fig \@ref(fig:siteFig)a).
 The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r riverDist_mi` mi) away from a small river, conferring some wetland ecosystem properties like denser soils.
-It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:plots)a).
-```{r plots, fig.height=5, fig.width=5, fig.cap="Field site images (a) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (b) soil profile from North-East site area near current education center, (c) plot layout design, and (d) aerial drone view of treated study area plots. Photo credits: (b) Naim Edwards, (d) Edgar Cardenas."}
+It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:siteFig)b).
+
+```{r siteFig, fig.height=4.5, fig.width=4.5, fig.cap="Field site images (a) map © 2022 Wayne State University library digital historical collection showing former school land use from 1981, (b) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (c) soil profile from northeast site area near current education center, (d) plot layout design, and (e) aerial drone view of treated plots after five weeks. Photo credits: (c) Naim Edwards, (e) Edgar Cardenas."}
 source(here::here("figs/plots.R"));
 siteImgs
 # knitr::include_graphics(here::here("figs/siteImgs.png"))
 ```
 
-Site soils can be classified as Technosols (Fig \@ref(fig:plots)b), given that large metal artifacts can be found throughout various profiles *[@fao14]*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
-Accordingly, the growing area has both a finer- and coarser-textured side (Fig \@ref(fig:plots)a), 
+Site soils can be classified as Technosols (Fig \@ref(fig:siteFig)c), given that large metal artifacts can be found throughout various profiles *[@fao14]*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
+Accordingly, the growing area has both a finer- and coarser-textured side (Fig \@ref(fig:siteFig)b), 
 and this study was done on the side with consistent clay of ~37%.
-Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color 10YR 8/4 (Fig \@ref(fig:plots)b).
+Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color 10YR 8/4 (Fig \@ref(fig:siteFig)c).
 A baseline site-level soil lab assessment determined that the top *4 in (10 cm)* of soils around the site together have relatively good organic matter at 
 ~`r filter(chem, variable == "SOM_pct") %>% .$median` ± 
 `r filter(chem, variable == "SOM_pct") %>% .$mad`% 
@@ -84,7 +85,7 @@ chemKbl
 ## Design
 
 
-The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site under the former school building that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:plots)c).
+The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site under the former school building that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:siteFig)d).
 Tillage groups spanned the nine columns in adjacent groups of three, while cover crop mix treatments spanned the rows with one row per cover crop mix, totaling 36 plots, or 12 plots per tillage group and nine plots per cover crop mix.
 Before applying treatments, approximately `r compost_plot_m3=0.24;compost_plot_m3` *m^3^* (`r conv_unit(compost_plot_m3,"m3","ft3")` *ft^3^*) of compost was incorporated into each plot.
 
@@ -121,7 +122,8 @@ Lastly, a mix was dedicated to perennial cover crops, which in contrast to annua
 hairy vetch (*`r taxize::comm2sci("hairy vetch", taxon_state_messages=T)`*), 
 red clover (*`r taxize::comm2sci("red clover", taxon_state_messages=T)[[1]]`*), and 
 wheat (*`r taxize::comm2sci("wheat", taxon_state_messages=T)[[1]]`*). 
-We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown.
+We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown, so existing plants grew unmanipulated alongside other crop treatments (Fig \@ref(fig:siteFig)e).
+
 ```{r crops}
 source(here::here("tables/crops.R"));
 cropKbl 

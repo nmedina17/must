@@ -42,7 +42,7 @@ Under tillage, this study validates that tillage intensity corresponds negativel
 (`r conv_unit(filter(compData_TIL, TIL=="Tractor")$median, "cm", "inch")` ± 
 `r conv_unit(filter(compData_TIL, TIL=="Tractor")$mad, "cm", "inch")` in), 
 as well as that roto-till can be useful under perennial crops, although under annuals, no-till can be just as effective as roto-till, saving grower time, energy, and cost for areas with crops harvested before rooting surpasses *~10 cm (4 in)* *[@krause95]*.
-For urban Technosol soils, however, it is worth noting that some initial tillage may help remove large metal artifacts and legacy construction debris like rebar, wires, cables, bricks, cinder blacks, and pipes, that could limit root growth under stricter no-till management. 
+For urban Technosol soils, however, it is worth noting that some initial tillage may help remove large metal artifacts and legacy construction debris like rebar, wires, cables, bricks, cinder blocks, and pipes, that could limit root growth under stricter no-till management. 
 Additionally, results suggest that when used together, tillage may obscure varying but notable effects of cover crops on compaction, however, cover crops would still provide separate benefits to soils, like available macro-nutrients *[@chapagain20]*.
 Under no-till, this study found that perennial crop mixes can have significant effects on compaction, but rather than deep roots loosening soils, in some cases depth to hardpan can instead become shallower.
 This may be due to dense root mats that can form under grasses *[@douglas92]* like sorghum-sudangrass, which could further fill already limited pore space in densely-structured clay soils, helping water to pool under the soil surface *[@hoogmoed80]*.

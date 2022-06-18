@@ -88,7 +88,7 @@ taxize::taxize_options(quiet = T, taxon_state_messages = T)
 \
 \
 
-**Keywords**: urban agriculture; soil compaction; weed suppression; roto-till, cover crop mix; soil infiltration  
+**Keywords**: urban agriculture; soil compaction; weed suppression; roto-till; cover crop mix; soil infiltration  
 
 \
 \
@@ -142,6 +142,9 @@ Author emails: edwar649@msu.edu, nmedina@umich.edu, askereli@msu.edu
 ```
 
 
+\newpage
+
+
 # Funding{-}
 
 *This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.*
@@ -154,7 +157,7 @@ Authors declare no conflicts of interest.
 
 # Acknowledgements{-}
 
-Thanks to previous anonymous reviewers and peers KS, ZHF, and JK for discussion of initial drafts.
+Thanks to Brother Nature Produce, Earthworks Urban Farm, and Georgia Street Community Collective for project input; site intern JH for field assistance; volunteer GV for site background help; and previous anonymous reviewers and peers KS, ZHF, and JK for discussion of initial drafts.
 
 
 # Author contributions{-}
