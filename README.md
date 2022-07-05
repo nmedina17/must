@@ -13,6 +13,5 @@ Highlights --
 
 Files use info --
 - Col-row pairs distiguish plots.
-- Analysis code DOI citable via Zenodo.org -- 
-  - [![DOI](https://zenodo.org/badge/510875270.svg)](https://zenodo.org/badge/latestdoi/510875270)
+- Recent analysis code DOI citable via Zenodo.org -- [![DOI](https://zenodo.org/badge/510875270.svg)](https://zenodo.org/badge/latestdoi/510875270)
 - More study information and context in report preprint with additional citable DOI, and can be reproduced by knitting merge.Rmd into PDF in RStudio, after installing required packages.
