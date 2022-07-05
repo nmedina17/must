@@ -70,6 +70,7 @@ header-includes:
 <!-- - Elsevier--Soil & Tillage Research (IF=5, Elsevier),  -->
 <!-- *- Land Degradation & Development (Research vs. Original, IF=5, Wiley), * -->
 <!-- *- Urban Forestry & Urban Greening (1wk), or then [Wiley--]* -->
+<!-- -- Urban Ecosystems (3.5, but 101d) -->
 <!-- - ASA Agronomy Journal (?),  -->
 <!-- - Ecology & Evolution (replicates), or lastly  -->
 <!-- - PCI Ecology submission (45d) w/  -->
@@ -94,7 +95,8 @@ taxize::taxize_options(quiet = T, taxon_state_messages = T)
 \
   
 ***Corresponding author**: Naim Edwards, edwar649@msu.edu  
-Author emails: edwar649@msu.edu, nmedina@umich.edu, askereli@msu.edu
+Author emails: edwar649@msu.edu, nmedina@umich.edu, askereli@msu.edu  
+ORCIDs: Nicholas Medina, 0000-0001-5465-3988
 
 
 \newpage
@@ -157,12 +159,12 @@ Authors declare no conflicts of interest.
 
 # Acknowledgements{-}
 
-Thanks to Brother Nature Produce, Earthworks Urban Farm, and Georgia Street Community Collective for project input; site intern JH for field assistance; volunteer GV for site background help; and previous anonymous reviewers and peers KS, ZHF, and JK for discussion of initial drafts.
+Authors thank Brother Nature Produce, Earthworks Urban Farm, and Georgia Street Community Collective for early project input; site intern JH for field assistance; volunteer GV for site background help; and previous anonymous reviewers and peers KS, ZHF, and JK for discussion of initial drafts.
 
 
 # Author contributions{-}
 
-NE conceived, designed, and performed the study; NE and NM helped collect data; NM analyzed data; NE wrote the initial report. All authors wrote and revised second draft; NM wrote the third draft; all authors revised later drafts.
+NE conceived, designed, and performed the study; NE and NM helped collect data; NM analyzed data; NE wrote the initial report. All authors wrote and revised second draft; NM wrote the third draft; all authors approved recent version.
 
 
 # Data statement{-}
