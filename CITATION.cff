@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Edwards"
+  given-names: "Naim"
+- family-names: "Medina"
+  given-names: "Nicholas"
+  orcid: "https://orcid.org/0000-0001-5465-3988"
+- family-names: "Asker"
+  given-names: "Elizabeth"
+title: "Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration"
+version: 0.9.1
+doi: 10.5281/zenodo.6800153
+date-released: 2022-07-05
+url: "https://github.com/nmedina17/must"
