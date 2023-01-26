@@ -1,0 +1,45 @@
+---
+title: ""
+output: 
+  # html_notebook
+  # word_document
+  pdf_document
+fontsize: 12pt
+header-includes:
+  - \usepackage{setspace} \onehalfspace
+# geometry: margin=0.75in
+---
+
+
+Dear Editors of *Soil and Tillage Research*:
+
+
+Please consider this manuscript REVISION entitled "Mixing cover crops suppresses weeds and roto-till lowers urban soil strength and improves infiltration" as a Research Paper.
+This manuscript again presents and discusses data that support the use of roto-till and cover crop mixtures to alleviate soil compaction-related issues and weed pressure, which are very common issues for all farmers as agriculture expands into urban environments.
+
+We bring up that two of three reviewers were originally satisfied with accepting the article as was after minor revisions to the text.
+In summary of the main changes that have been made, we have addressed all comments made by each reviewer, including several as discussion points.
+Notable changes include focusing on penetrometer measurements made as referring most directly to soil strength, and indirectly to practical soil compaction issues faced by urban growers in the field.
+We have also included more detail asked about methods, updated all language phrasing related to results, and discussion points related to potential underlying explanations of treatment effects.
+As a result, we are happy to present with you responses to all reviewer comments and an improved article that we aim to be suitable for acceptance for publication in *Soil & Till Res*.
+
+As mentioned before, this manuscript both fits within and also expands the scope of this journal publication.
+The manuscript fits well with the scope because it discusses changes to soil functions caused by various types and intensities of mechanical tillage, and informs balancing trade-offs during agricultural management.
+In addition analyzing tillage affects, the manuscript also incorporates discussion of cover crops as a comparable management strategy targeting similar soil functions, and more specifically presents the use of cover crop mixtures, rather than traditional single-species cover cropping.
+Finally, this manuscript places these soil management considerations in an urban agriculture context, which is increasingly relevant to the majority of the world's population living in urban areas and promotes adaptation to more local food supply chain systems.
+
+As reviewers have already noted, this manuscript overall represents a "scientific and innovative" contribution to the soil tillage and modern agricultural literature.
+Accordingly, we look forward to being in correspondence with you about this revision.
+<!-- The analysis and discussion is presented as a full manuscript, though it could be possible to contribute this a Short Communication. -->
+<!-- We are also happy to recommend your associate editor Elke Noellemeyer to be associated with our submission, based on a listed interest in agroecology.  -->
+<!-- As potential reviewers, we point to  -->
+<!-- Kami Pothukuchi and Zhijiang Lu (*Wayne State*),  -->
+<!-- Viashelav Vashenev (*RUDN, Russia*),  -->
+<!-- Zhonqi (Joshua) Cheng (*USI, Brooklyn Coll*),  -->
+<!-- and Rattan Lal (*Ohio State*). -->
+Finally, please feel free to contact us for any additional relevant information you may like.
+
+
+Sincerely,
+
+Authors

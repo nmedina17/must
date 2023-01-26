@@ -7,9 +7,9 @@ yieldTT <- magick::image_read(here::here("figs/yieldTT.jpg")) %>%
 # yieldData <- varTestTbl %>% filter(variable == "RADL_CM" |
 #                                      variable == "TOTRAD_kg_m2") %>%
 #   unnest(variable:varData)
-theme_set(theme_bw() + theme(text = element_text(size = 8),
+theme_set(theme_bw() + theme(text = element_text(size = 10),
                              strip.background = element_rect(fill = "white"),
-                             axis.text.x = element_text(size = 8)))
+                             axis.text.x = element_text(size = 10)))
 yieldLabels <- c("Length (cm)", "Mass (g per sq m)")
 names(yieldLabels) <- c("RADL_CM", "TOTRAD_g_m2")
 yieldPlot <- yieldData %>%
@@ -26,7 +26,7 @@ yieldPlot <- yieldData %>%
 yieldPlot <- yieldPlot +
   ggplot2::stat_summary(fun.data = ggpubr::mean_se_,
                       size = 0.25) +
-  ggpubr::stat_compare_means(label.y.npc = "bottom", label = "p.format", size = 1.5) +
+  ggpubr::stat_compare_means(label.y.npc = "bottom", label = "p.format", size = 3) +
   # ggpubr::stat_compare_means(comparisons = list(c("No", "Tractor")),
   #   # c("Roto", "Tractor"), c("No", "Roto"),
   #                    label = "p.signif",
@@ -35,7 +35,7 @@ yieldPlot <- yieldPlot +
   #                      cutpoints = c(0, 0.0001, 0.001, 0.01, 0.11, 1),
   #                      symbols = c("****", "***", "**", "*'", "'")),
   #   size = 1.5, vjust = 0.5) +
-  EnvStats::stat_n_text(size = 1.5)
+  EnvStats::stat_n_text(size = 3)
 
 # yieldPlot_b <- yieldData %>%
 #   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")

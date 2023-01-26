@@ -9,24 +9,26 @@ chem <- Chem %>% pivot_wider(everything(), names_from = Variable) %>%
          #                "", "Water, nutrient availability", "")
          ) %>%
   add_row(variable = "metals_ppm)", Descriptor = "Safe") %>%
+  add_row(variable = "texture", Descriptor = "Fine") %>%
   # mutate("type" = c())
 
   mutate(variable = as_factor(variable)) %>% #needed
-  reorder_levels(variable, c("SOM_pct", "resp_mg_day", "aggStability_pct",
+  reorder_levels(variable, c("SOM_pct", "resp_mg_day",
+                             "aggStability_pct", "texture",
                              "pH", "P_ppm", "K_ppm", "Fe_ppm",
                              "Mg_ppm", "Mn_ppm", "Zn_ppm", "metals_ppm")) %>%
   arrange(variable)
 chemTbl <- chem %>%
   mutate(variable = c(
     "Organic Matter (%)", "Respiration (mg per day)",
-    "Aggregate Stability (%)",
+    "Aggregate Stability (%)", "Texture (class)",
     # expression(paste("Respiration (mg CO"~2, " day"^1, ")")),
     "pH",
     "Phosphorus (ppm)", "Potassium (ppm)", "Iron (ppm)",
     "Magnesium (ppm)", "Manganese (ppm)", "Zinc (ppm)",
     "Heavy metals (Pb, Al, As, Cu)"
   )) %>%
-  mutate("Kind" = c(rep("Biological",2), "Physical", rep("Chemical",8)),
+  mutate("Kind" = c(rep("Biological",2), rep("Physical",2), rep("Chemical",8)),
          .before = variable)
 chemKbl <-
   # chem %>%

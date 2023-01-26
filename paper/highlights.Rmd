@@ -12,9 +12,9 @@ output:
 
 **Highlights:**
 
-- Roto-till improves urban soil compaction and infiltration vs. no-till
+- Roto-till lowers urban soil strength and improves infiltration vs. no-till
 
-- Tractor-till improves compaction but not infiltration and also increases weeds
+- Tractor-till lowers soil strength but not infiltration and also increases weeds
 
 - Cover crop mixes suppress weeds
 

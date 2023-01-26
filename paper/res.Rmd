@@ -21,10 +21,10 @@ posthocStat <- "T" #wilcoxon
 ```
 
 
-## Compaction
+## Soil strength
 
 
-Compaction was affected significantly overall by tillage treatments (
+Depth to hardpan was affected significantly overall by tillage treatments (
 *`r testStat`* = `r compactionData$statistic_TIL[1]`, 
 *df* = `r compactionData$df_TIL[1]`, 
 *n* = `r compactionData$n_TIL[1]`, 
@@ -37,27 +37,29 @@ Tractor-till had the largest significant effect on depth to hardpan compared to 
 ), 
 deepening the depth to hardpan by 
 ~`r diffTN = filter(compData_TIL, TIL=="Tractor")$median - filter(compData_TIL, TIL=="No")$median; diffTN` cm (
-`r conv_unit(diffTN, "cm", "inch")` in, 
-or ~`r diffTN / filter(compData_TIL, TIL=="No")$median *100`%
+<!-- `r conv_unit(diffTN, "cm", "inch")` in,  -->
+<!-- or  -->
+~`r diffTN / filter(compData_TIL, TIL=="No")$median *100`%
 ) compared to no-till, 
 down to 
 ~`r filter(compData_TIL, TIL=="Tractor")$median` ± 
 `r filter(compData_TIL, TIL=="Tractor")$mad` cm 
-(`r conv_unit(filter(compData_TIL, TIL=="Tractor")$median, "cm", "inch")` ± 
-`r conv_unit(filter(compData_TIL, TIL=="Tractor")$mad, "cm", "inch")` in)
+<!-- (`r conv_unit(filter(compData_TIL, TIL=="Tractor")$median, "cm", "inch")` ±  -->
+<!-- `r conv_unit(filter(compData_TIL, TIL=="Tractor")$mad, "cm", "inch")` in) -->
 across all cover crop mixes.
 Roto-till also had a marginally significant effect on depth to hardpan compared to no-till (
 *p~adj~* = `r compactionData$posthoc_TIL[[1]]$p.adj[1]`
 ), 
 deepening the depth to hardpan by 
 ~`r diffRN = filter(compData_TIL, TIL=="Tractor")$median - filter(compData_TIL, TIL=="No")$median; diffRN` cm (
-`r conv_unit(diffRN, "cm", "inch")` in, 
-or ~`r diffRN / filter(compData_TIL, TIL=="No")$median *100`%
+<!-- `r conv_unit(diffRN, "cm", "inch")` in,  -->
+<!-- or  -->
+~`r diffRN / filter(compData_TIL, TIL=="No")$median *100`%
 ) compared to no-till, down to 
 ~`r filter(compData_TIL, TIL=="Roto")$median` ± 
 `r filter(compData_TIL, TIL=="Roto")$mad` cm
-(`r conv_unit(filter(compData_TIL, TIL=="Roto")$median, "cm", "inch")` ± 
-`r conv_unit(filter(compData_TIL, TIL=="Roto")$mad, "cm", "inch")` in).
+<!-- (`r conv_unit(filter(compData_TIL, TIL=="Roto")$median, "cm", "inch")` ±  -->
+<!-- `r conv_unit(filter(compData_TIL, TIL=="Roto")$mad, "cm", "inch")` in). -->
 The overall effect from tillage stemmed from significant effects among the perennial (
 *p~adj~ = <0.01*
 ) and weed suppression (
@@ -68,18 +70,19 @@ The effect of roto-till was more pronounced in the perennial mix (
 ), where depth to hardpan was about twice as deep as in no-till plots (Fig \@ref(fig:compactFig)a).
 There was also a significant difference of 
 ~`r diffTR = filter(compData_TIL, TIL=="Tractor")$median - filter(compData_TIL, TIL=="Roto")$median; diffTR` cm (
-`r conv_unit(diffTR, "cm", "inch")` in, 
-or ~`r diffTR / filter(compData_TIL, TIL=="Roto")$median *100`%
+<!-- `r conv_unit(diffTR, "cm", "inch")` in,  -->
+<!-- or  -->
+~`r diffTR / filter(compData_TIL, TIL=="Roto")$median *100`%
 ) between tractor- and roto-till among all cover crop mixes (Fig \@ref(fig:compactFig)a).
 <!-- test-static-vals? -->
 
-```{r compactFig, fig.width=5, fig.height=5, fig.cap="Compaction data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1 or ns)"}
+```{r compactFig, fig.width=6, fig.height=3, fig.cap="Compaction data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *^ p < 0.1, ^ p > 0.1 or ns)"}
 source(here::here("figs/compaction.R")); 
 compactionPlot
 # knitr::include_graphics(here::here("figs/compactionPlot.png"))
 ```
 
-Compaction was not affected by cover crops among tillage groups overall (
+Depth to hardpan was not affected by cover crops among tillage groups overall (
 *`r testStat`* = `r compactionData$statistic_MIX[1]`,
 *df* = `r compactionData$df_MIX[1]`, 
 *n* = `r compactionData$n_MIX[1]`, 
@@ -96,20 +99,20 @@ Under no-till, the perennial mix had significantly shallower depth to hardpan co
 ) and weed suppression mixes (
 <!-- *Holm-corrected alpha = 0.01*,  -->
 *p~adj~ = <0.01*
-),
-raising the depth to hardpan by 
+).
+Specifically, the perennial mix raised the depth to hardpan by 
 <!-- ###(specific, by eye) -->
 ~`r diffPN = filter(compData_MIX, MIX=="null")$median - filter(compData_MIX, MIX=="pere")$median; diffPN` cm (
-`r conv_unit(diffPN, "cm", "inch")` in, 
-or ~`r diffPN / filter(compData_MIX, MIX=="null")$median *100`%
-) compared to each mix,
+<!-- `r conv_unit(diffPN, "cm", "inch")` in,  -->
+<!-- or  -->
+~`r diffPN / filter(compData_MIX, MIX=="null")$median *100`%
+) compared to other mixes,
 up to 
 ~`r filter(compData_MIX, MIX=="pere")$median` ± 
 `r filter(compData_MIX, MIX=="pere")$mad` cm 
-(
-`r conv_unit(filter(compData_MIX, MIX=="pere")$median, "cm", "inch")` ± 
-`r conv_unit(filter(compData_MIX, MIX=="pere")$mad, "cm", "inch")` in
-) below the soil surface
+<!-- (`r conv_unit(filter(compData_MIX, MIX=="pere")$median, "cm", "inch")` ±  -->
+<!-- `r conv_unit(filter(compData_MIX, MIX=="pere")$mad, "cm", "inch")` in)  -->
+below the soil surface
 (Fig \@ref(fig:compactFig)b).
 
 
@@ -137,14 +140,11 @@ compared to each tillage groups,
 up to 
 ~ `r filter(infilData_TIL, TIL=="Roto")$median` ±
 `r filter(infilData_TIL, TIL=="Roto")$mad` mL per sec
-(
-`r conv_unit(filter(infilData_TIL, TIL=="Roto")$median, "ml_per_sec", "gal_per_min")` ±
-`r conv_unit(filter(infilData_TIL, TIL=="Roto")$mad, "ml_per_sec", "gal_per_min")` gal per min
-)
+<!-- (`r conv_unit(filter(infilData_TIL, TIL=="Roto")$median, "ml_per_sec", "gal_per_min")` ± `r conv_unit(filter(infilData_TIL, TIL=="Roto")$mad, "ml_per_sec", "gal_per_min")` gal per min) -->
 (Fig \@ref(fig:infilFig)a).
 
 
-```{r infilFig, fig.width=3, fig.width=3, fig.cap="Infiltration data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1)"}
+```{r infilFig, fig.height=2, fig.width=4, fig.cap="Infiltration data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *^ p < 0.1, ^ p > 0.1)"}
 source(here::here("figs/infil.R")); 
 infilPlot
 # knitr::include_graphics(here::here("figs/infilPlot.png"))
@@ -197,7 +197,7 @@ up to
 `r filter(weedDnData_TIL, TIL=="Tractor")$mad %>% round()` *stems per m^-2^*
 .
 
-```{r weedsFig, fig.width=5, fig.height=5, fig.cap="Weeds data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *' p < 0.1, ' p > 0.1 or ns)"}
+```{r weedsFig, fig.width=5, fig.height=5, fig.cap="Weeds data (a) by tillage, and (b) cover crop mix. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Significant pairwise post-hoc Wilcoxon test outcomes shown (**** p < 0.0001, *** p < 0.001, ** p < 0.01, * p < 0.05, *^ p < 0.1, ^ p > 0.1 or ns)"}
 source(here::here("figs/weeds.R")); 
 weedPlot
 # knitr::include_graphics(here::here("figs/weedPlot.png"))
@@ -319,20 +319,19 @@ Radish yield was not significantly affected by tillage (
 ~ `r filter(yieldMassData, TIL=="No")$median` 
 <!-- `r filter(yieldMassData, TIL=="No")$mad %>% p_format(digits = 2)`  -->
 *g m^-2^*
-(
-`r conv_unit(filter(yieldMassData, TIL=="No")$median, "g", "lbs")` 
-<!-- `r conv_unit(filter(yieldMassData, TIL=="No")$mad, "g", "lbs") %>% p_format(digits = 2)`  -->
-*lbs m^-2^*
-) and 
+<!-- (`r conv_unit(filter(yieldMassData, TIL=="No")$median, "g", "lbs")`  -->
+<!-- <!-- `r conv_unit(filter(yieldMassData, TIL=="No")$mad, "g", "lbs") %>% p_format(digits = 2)`  --> -->
+<!-- *lbs m^-2^*)  -->
+and 
 ~ `r filter(yieldLenData, TIL=="No")$median` cm 
 <!-- ± -->
 <!-- `r filter(yieldMassData, TIL=="No")$mad` cm -->
-(
-`r conv_unit(filter(yieldLenData, TIL=="No")$median, "cm", "inch") %>% round(2)` in
-<!-- ± -->
-<!-- `r conv_unit(filter(yieldMassData, TIL=="No")$mad, "cm", "inch")` in -->
-)
+<!-- (`r conv_unit(filter(yieldLenData, TIL=="No")$median, "cm", "inch") %>% round(2)` in -->
+<!-- <!-- ± --> -->
+<!-- <!-- `r conv_unit(filter(yieldMassData, TIL=="No")$mad, "cm", "inch")` in --> -->
+<!-- ) -->
 long (Fig \@ref(fig:yieldFig)).
+Notably, radish yield under roto-till tended to be lower compared to other treatments, and also appeared more variable in mass.
 
 ```{r yieldFig, fig.width=3.5, fig.height=3.5, fig.cap="Yield data (a) from no-till, (b) tractor-till, and (c) all tillage groups. Gray dots show plot medians and black point ranges show group mean ± 1 std error and may be small. Photo credits: Naim Edwards."}
 source(here::here("figs/yield.R")); 

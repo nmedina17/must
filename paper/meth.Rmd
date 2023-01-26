@@ -11,6 +11,7 @@ output:
 bibliography: 
   - ../../library.bib
   - ../../grateful-refs.bib
+  - ../../software.bib
 link-citations: TRUE
 # csl: ../../styles-master/elsevier-harvard.csl
 ---
@@ -40,23 +41,38 @@ source(here::here("tables/chem.R"));
 ```
 
 
-The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st") %>% round(digits=5)`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha (`r site_acre` acres) extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
-The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` C (`r conv_unit(MATc,"C","F")` F) and precipitation at ~`r MAPmm=787;MAPmm` mm (`r conv_unit(MAPmm,"mm","inch")` in) ([ncdc.noaa.gov](ncdc.noaa.gov)). 
+The study site was located at the Michigan State University (MSU) - Detroit Partnership for Food, Learning, and Innovation (DPFLI) (`r RgoogleMaps::getGeoCode("16745 lamphere st") %>% round(digits=5)`), a `r site_acre=4;conv_unit(site_acre,"acre","hectare")`-ha 
+<!-- (`r site_acre` acres) -->
+extension facility dedicated to urban agriculture and engaging with local small-scale growers in Detroit, MI, USA.
+The climate is temperate with four seasons, with mean annual temperature of ~`r MATc=9.5;MATc` C 
+<!-- (`r conv_unit(MATc,"C","F")` F)  -->
+and precipitation at ~`r MAPmm=787;MAPmm` mm 
+<!-- (`r conv_unit(MAPmm,"mm","inch")` in)  -->
+([ncdc.noaa.gov](ncdc.noaa.gov)). 
 The site was formerly a school building and associated playground since 1924 until 2016 when it was demolished after closing due to low enrollment since 2009, and the city land was rented by the university (Fig \@ref(fig:siteFig)a).
-The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km (~`r riverDist_mi` mi) away from a small river, conferring some wetland ecosystem properties like denser soils.
+The habitat is ~`r riverDist_mi=0.75;conv_unit(riverDist_mi,"mi","km")` km 
+<!-- (~`r riverDist_mi` mi)  -->
+away from a small river, conferring some wetland ecosystem properties like denser soils.
 It is also surrounded by sealed sidewalk and small roads on all four sides, which likely affects runoff and drainage patterns (Fig \@ref(fig:siteFig)b).
 
-```{r siteFig, fig.height=4.5, fig.width=4.5, fig.cap="Field site images (a) map © 2022 Wayne State University library digital historical collection showing former school land use from 1981, (b) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (c) soil profile from northeast site area near current education center, (d) plot layout design, and (e) aerial drone view of treated plots after five weeks. Photo credits: (c) Naim Edwards, (e) Edgar Cardenas."}
+```{r siteFig, fig.height=4.5, fig.width=4.5, fig.cap="Field site images (a) map © 2022 Wayne State University library digital historical collection showing former school land use from 1981, (b) map data © 2022 USDA-NRCS SSURGO web soil survey showing likely soil class division given field and lab data, (c) soil profile from northeast site area near current education center. Photo credit: (c) Naim Edwards."}
 source(here::here("figs/plots.R"));
 siteImgs
 # knitr::include_graphics(here::here("figs/siteImgs.png"))
 ```
 
-Site soils can be classified as Technosols (Fig \@ref(fig:siteFig)c), given that large metal artifacts can be found throughout various profiles *[@fao14]*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
+Site soils can be classified as Technosols (Fig \@ref(fig:siteFig)c), given that large metal artifacts can be found throughout various profiles *( @fao14 ; WRB 2015 )*, from when the area was filled in with nearby soils during highway road construction, as was common in mid-western USA industrial manufacturing cities many decades ago in the *1960s* *[@beniston16]*.
 Accordingly, the growing area has both a finer- and coarser-textured side (Fig \@ref(fig:siteFig)b), 
-and this study was done on the side with consistent clay of ~37%.
-Topsoil A horizons are 1-2" (<5 cm) deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm (`r horizB_ft` ft) deep, with a muted yellow color 10YR 8/4 (Fig \@ref(fig:siteFig)c).
-A baseline site-level soil lab assessment determined that the top *4 in (10 cm)* of soils around the site together have relatively good organic matter at 
+and this study was done on the side with consistent clay of ~37% and a sandy clay loam texture.
+Topsoil A horizons are 
+<!-- 1-2"  -->
+<5 cm 
+deep, and subsoil B horizons can be >`r horizB_ft=1;conv_unit(horizB_ft,"ft","cm")` cm 
+<!-- (`r horizB_ft` ft)  -->
+deep, with a muted yellow color 10YR 8/4 (Fig \@ref(fig:siteFig)c).
+A baseline site-level soil lab assessment determined that the top 
+*10 cm* 
+of soils around the site together have relatively good organic matter at 
 ~`r filter(chem, variable == "SOM_pct") %>% .$median` ± 
 `r filter(chem, variable == "SOM_pct") %>% .$mad`% 
 and nutrient levels, including concentrations of heavy metals like lead and arsenic which were present below harmful government human-contact standards ([cfpub.epa.gov/ecotox](cfpub.epa.gov/ecotox)).
@@ -70,7 +86,7 @@ Initial main concerns limiting productivity include high alkaline pH of
 lowering availability of existing nutrients, as well as weak aggregate stability of 
 `r filter(chem, variable == "aggStability_pct") %>% .$median` ± 
 `r filter(chem, variable == "aggStability_pct") %>% .$mad`, 
-leading to concerns with aeration, infiltration, rooting, crusting when dry, erosion, and runoff (Table \@ref(tab:chemKbl)).
+leading to concerns with aeration, infiltration, rooting, crusting when dry, and some erosion and runoff, given slopes of *0-4%* (Table \@ref(tab:chemKbl)).
 
 
 ```{r chemKbl}
@@ -85,21 +101,39 @@ chemKbl
 ## Design
 
 
-The study area was a `r section_m2=278;section_m2` *m^2^* (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*) section on the East side of the site under the former school building that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*) plots in nine rows and four columns (Fig \@ref(fig:siteFig)d).
+The study area was a `r section_m2=278;section_m2` *m^2^* 
+<!-- (`r conv_unit(section_m2,"m2","ft2")` *ft^2^*)  -->
+section on the East side of the site under the former school building that was divided into 36 separate `r plot_m2=4.6;plot_m2` *m^2^* 
+<!-- (`r conv_unit(plot_m2,"m2","ft2")` *ft^2^*)  -->
+plots in nine rows and four columns (Fig \@ref(fig:figDesign)a).
 Tillage groups spanned the nine columns in adjacent groups of three, while cover crop mix treatments spanned the rows with one row per cover crop mix, totaling 36 plots, or 12 plots per tillage group and nine plots per cover crop mix.
-Before applying treatments, approximately `r compost_plot_m3=0.24;compost_plot_m3` *m^3^* (`r conv_unit(compost_plot_m3,"m3","ft3")` *ft^3^*) of compost was incorporated into each plot.
+Before applying treatments, approximately `r compost_plot_m3=0.24;compost_plot_m3` *m^3^* 
+<!-- (`r conv_unit(compost_plot_m3,"m3","ft3")` *ft^3^*)  -->
+of compost was incorporated into each plot.
 
 <!-- **One aggregated sample per tillage group was collected and analyzed for chemistry using modified Morgan-extractable protocols at the MSU soil test lab [@moebius-clune16] and analysis was also conducted on the compost.** -->
+
+
+```{r designFig, fig.height=4.5, fig.width=4.5, fig.cap="Design images including (a) plot layout and (e) aerial drone view of treated plots after five weeks. Photo credit: (b) Edgar Cardenas."}
+source(here::here("figs/plots.R")); siteDesign
+```
+
 
 
 <!-- ## Tillage -->
 
 
 Tillage treatments represented methods of increasing intensity available for small scale agriculture, also varying in cost, machinery needed, and sometimes grower preferences *[@drugova22]*.
-Specifially, treatments included no-till with a broadfork *(NT)*, roto-tiller *(RT)*, and tractor-till *(TT)* with implements. 
-Tractor-till plots were worked with a subsoiler, moldboard plow, and roto-tiller attached to a tractor up to `r TTft=1;conv_unit(TTft,"ft","cm")` cm (`r TTft` ft) deep. 
-Roto-till plots were treated with a rototiller implement up to `r RTcm=20;RTcm` cm (`r conv_unit(RTcm,"cm","inch")` in) deep. 
-Lastly, no-till plots were worked with only a broadfork up to `r NTcm=10;NTcm` cm (`r conv_unit(NTcm,"cm","inch")` in) deep. 
+Specifially, treatments included no-till with a manual long-tined broadfork *(NT)* tool used for gardens and small farms, roto-tiller *(RT)*, and tractor-till *(TT)* with implements. 
+Tractor-till plots were worked with a subsoiler, moldboard plow, and roto-tiller implement attached to a tractor *(New Holland 7308)* up to `r TTft=1;conv_unit(TTft,"ft","cm")` cm 
+<!-- (`r TTft` ft)  -->
+deep. 
+Roto-till plots were treated with a rototiller *(BCS 749)* implement up to `r RTcm=20;RTcm` cm 
+<!-- (`r conv_unit(RTcm,"cm","inch")` in)  -->
+deep. 
+Lastly, no-till plots were worked with only a broadfork up to `r NTcm=10;NTcm` cm 
+<!-- (`r conv_unit(NTcm,"cm","inch")` in)  -->
+deep. 
 All tilling was done once early in the season after one typical compost application and before planting cover crops.
 
 
@@ -122,7 +156,8 @@ Lastly, a mix was dedicated to perennial cover crops, which in contrast to annua
 hairy vetch (*`r taxize::comm2sci("hairy vetch", taxon_state_messages=T)`*), 
 red clover (*`r taxize::comm2sci("red clover", taxon_state_messages=T)[[1]]`*), and 
 wheat (*`r taxize::comm2sci("wheat", taxon_state_messages=T)[[1]]`*). 
-We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown, so existing plants grew unmanipulated alongside other crop treatments (Fig \@ref(fig:siteFig)e).
+We also had a null control group consisting of established vegetation within the plot, where no additional seeds were sown, so existing plants grew unmanipulated alongside other crop treatments (Fig \@ref(fig:figDesign)b).
+Cover crops were planted using a manual rolling seeder up to 30 cm between rows and seeds pressed 1-2.5 cm deep varying by cover crop.
 
 ```{r crops}
 source(here::here("tables/crops.R"));
@@ -137,15 +172,26 @@ cropKbl
 
 <!-- ### Compaction -->
 
-Soil compaction was measured with a penetrometer *(AgraTronix #08180)* in four randomly selected spots within each quarter of every plot, as the depth where resistance was `r compactionLimit_MPa=2;compactionLimit_MPa` MPa (`r conv_unit(compactionLimit_MPa*1000,"kPa","psi")` psi, *lbs in^-2^*), which is considered hardpan that roots typically cannot penetrate *[@correa19]*. 
-Measurements were recorded to the nearest *2.5 cm (1 inch)* on dry days.
+Soil compaction-related issues were measured as soil strength (resistance to shear), read as the depth to hardpan layer, or where the soil strength was >`r compactionLimit_MPa=2;compactionLimit_MPa` MPa
+<!-- (`r conv_unit(compactionLimit_MPa*1000,"kPa","psi")` psi, *lbs in^-2^*) -->
+, beyond which roots typically cannot penetrate *[@correa19]*.
+Soil strength often correlates positively with soil compaction when measured as higher soil density *[@han09]*, and is also likely in engineered Technosols.
+Furthermore, depth to hardpan serves as a measure of potential rooting extent, making it a relevant indicator of common compaction-related issues affecting urban agricultural potential.
+Depth to hardpan was measured using a standard 60-degree 1.25 cm wide cone tip penetrometer *(AgraTronix 08180)* in four randomly selected spots within each quarter of every plot. 
+Readings were recorded to the nearest *2.5 cm (1 inch)* on dry days.
 
 
 <!-- ### Infiltration -->
 
 Soil water infiltration down to *10*
 <!-- `r conv_unit(8.75 / 2, "inch", "cm")`  -->
-cm *(8.75 in)* depth was measured using a `r conv_unit(6.5, "inch", "cm")` *(9.5 in)* wide aluminum cylinder, set away from dense vegetation and any impeding large roots, and recording the time up to 160 sec for *1 L (32 fl oz)* to pass through, representing a typical local rainfall onto ~0.10 *m^2^* (~1 *ft^2^*) of soil area ([waterdata.usgs.gov](waterdata.usgs.gov)). 
+cm 
+<!-- *(8.75 in)*  -->
+depth was measured using a `r conv_unit(6.5, "inch", "cm")` 
+<!-- *(9.5 in)*  -->
+wide aluminum cylinder, set away from dense vegetation and any impeding large roots, and recording the time up to 160 sec for *1 L* 
+<!-- *(32 fl oz)* -->
+to pass through, representing a typical local rainfall onto ~0.10 *m^2^* (~1 *ft^2^*) of soil area ([waterdata.usgs.gov](waterdata.usgs.gov)). 
 
 
 <!-- ### Weed cover, density, and richness -->
@@ -161,7 +207,9 @@ Finally, weed density was measured as the number of stems of either of the two m
 <!-- ### Yield -->
 
 Five forage radish (Brassica *Raphanus sativus var. longipinnatus*) roots were randomly selected from each plot in the compaction treatment and measured for length, individually, and wet weight, as a cluster. 
-The length of a radish root was measured from the hypocotyl, or root cap, to where the root became ~`r radishLenLimit_in=0.25;conv_unit(radishLenLimit_in,"inch","mm")` mm (~1⁄4 in) wide.
+The length of a radish root was measured from the hypocotyl, or root cap, to where the root became ~`r radishLenLimit_in=0.25;conv_unit(radishLenLimit_in,"inch","mm")` mm 
+<!-- (~1⁄4 in)  -->
+wide.
 
 Sampling was done in July and October 2019 and the following Spring.
 
@@ -174,11 +222,16 @@ grateful::get_pkgs_info(out.dir = "../..");
 
 Field space limited strict plot replication for treatment combinations (*n*=3), and thus inference from advanced nested mixed models *[@silk20]*, so analysis focused on specific hypotheses tested using simpler, more conservative non-parametric tests that make few underlying assumptions about data and thus appropriate for data with lower replication.
 Kruskal-Wallis tests were run for tillage and cover crop treatments separately, with alpha corrections from 0.05 to 0.01 under multiple comparisons to descriptively parse any treatment interactions, and overall significant treatment effects were followed up by post-hoc Wilcoxon pairwise tests with Holm-corrected p-value adjustments.
-All data were centered at plot-level medians, often more robust than means, and where applicable pooled across sampling times given no preliminary significant variation along this axis *[@gomes22]*, together with minimal relevance to focal hypotheses in field studies *[@davies15b]*, and was a general solution to uneven sampling across response variables, also minimally increasing statistical power for hypothesis testing (*n*>3-6).
+All data were centered at plot-level medians, often more robust than means, and where applicable pooled across sampling times given no preliminary significant variation along this axis *[@gomes22]*, together with minimal relevance to focal hypotheses in field studies 
+*[@davies15a]*, 
+and was a general solution to uneven sampling across response variables, also minimally increasing statistical power for hypothesis testing (*n*>3-6).
 For clarity, results figures were designed to reflect statistical models and grouping transparently.
-Significant treatment effect sizes were estimated with *eta^2^* *[@tomczak14]* and raw median differences at finer pairwise levels.
+Significant treatment effects were delineated at alpha = 0.05, and marginal significance at 0.05 < alpha < 0.1 to align with both convention and decreasing emphasis on strict cutoffs for hypothesis testing *[@curran-everett20]*.
+Treatment effect sizes were estimated with *eta^2^*,
+a measure of the proportion of variance in the dependent variable explained by the independent variable using the test statistic and group replication values *[@tomczak14]*, 
+and furthermore raw median differences at finer pairwise levels.
 All calculations and analyzes were done in `r version$version.string` *[@base]* with useful functions from the packages *tidyverse* `r packageVersion("tidyverse")` *[@tidyverse]*, *rstatix* `r packageVersion("rstatix")` and *ggpubr* `r packageVersion("ggpubr")` *[@rstatix]*.
-Data and code are stored at [github.com/nmedina17/must](github.com/nmedina17/must), 
+Code stored with Zenodo as [10.5281/zenodo.6800153](https://doi.org/10.5281/zenodo.6800153) *[@softwareMedinaEdwards22]* and linked to [github.com/nmedina17/must](github.com/nmedina17/must), 
 documented using R packages 
 *here* `r packageVersion("here")` *[@here]*, 
 *bookdown* `r packageVersion("bookdown")` *[@bookdown2022]*, 

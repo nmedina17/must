@@ -19,10 +19,10 @@ oldSite <- magick::image_read(here::here("figs/site81.png")) %>%
 # magick::image_join(map, soil) %>% magick::image_montage() %>%
 #   magick::image_ggplot()
 
-siteImgs <- ggpubr::ggarrange(
-  ggpubr::ggarrange(oldSite, soil, map, plotsViewN,
-                    labels = c("a","c","b","e"), align = "hv"),
-  design, nrow = 1, labels = c("", "d"), align = "hv"
+siteImgs <- ggpubr::ggarrange(oldSite, map, soil, nrow=1,
+                              labels = c("a","b","c"), align = "hv")
+siteDesign <- ggpubr::ggarrange(design, plotsViewN, nrow = 1,
+                                labels = c("a", "b"), align = "hv"
                               # widths = c(1, 1), heights = c(1, 1)
                               )
 # ggplot2::ggsave(here::here("figs/siteImgs.png"), siteImgs,

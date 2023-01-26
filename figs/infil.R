@@ -2,19 +2,20 @@ here::i_am("figs/infil.R"); source(here::here("figs/compaction.R"))
 # infilData <- varTestTbl %>% filter(variable == "INFILmL") %>%
 #   # mutate(varData = varData %>% modify(~.x %>% filter(SAMPL_TIME != "Spring"))) %>%
 #   unnest(variable:varData)
-theme_set(theme_bw() + theme(text = element_text(size = 8),
+theme_set(theme_bw() + theme(text = element_text(size = 9),
                              strip.background = element_rect(fill = "white"),
-                             axis.text.x = element_text(size = 8)))
+                             axis.text.x = element_text(size = 9)))
 infilPlot_a <- infilData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
   ggplot(aes(x = TIL, y = value)) +
   ggbeeswarm::geom_quasirandom(color = "gray") +
   # facet_wrap(~SAMPL_TIME) +
   labs(x = "Tillage", y = expression(paste("Infiltration (mL sec"^-1, ")")),
-       size = 8)
+       size = 8) +
+  scale_y_continuous(limits = c(NA,80))
 infilPlot_a <- infilPlot_a +
   ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
-  ggpubr::stat_compare_means(size = 1.5, label = "p.format") +
+  ggpubr::stat_compare_means(size = 2.5, label = "p.format") +
   ggpubr::stat_compare_means(comparisons = list(c("No", "Roto")),
                                                 # c("Roto", "Tractor"),
                                                 # c("No", "Tractor")),
@@ -26,9 +27,9 @@ infilPlot_a <- infilPlot_a +
                                      1),
                        symbols = c("****", "***", "**",
                                    "*'",
-                                   "'")),
-                     size = 1.5, vjust = 0.5) +
-  EnvStats::stat_n_text(size = 1.5)
+                                   "^")),
+                     size = 5, vjust = 0.5) +
+  EnvStats::stat_n_text(size = 2.5)
 
 infilPlot_b <- infilData %>%
   # dotGraph("PNDcm", TIL, value, "Depth to hardpan", "Tillage")
@@ -37,11 +38,12 @@ infilPlot_b <- infilData %>%
   # facet_wrap(~SAMPL_TIME) +
   labs(x = "Cover crop mix",
        y = expression(paste("Infiltration (mL sec"^-1, ")")),
-       size = 8)
+       size = 8) +
+  scale_y_continuous(limits = c(NA,80))
   # scale_y_log10()
 infilPlot_b <- infilPlot_b +
   ggplot2::stat_summary(fun.data = ggpubr::mean_se_, size = 0.125) +
-  ggpubr::stat_compare_means(size = 1.5, label = "p.format", digits = 1) +
+  ggpubr::stat_compare_means(size = 2.5, label = "p.format", digits = 1) +
   ggpubr::stat_compare_means(comparisons = list(
     # c("null", "comp"), c("null", "pere"),
     # c("null", "wdsp"),
@@ -52,12 +54,12 @@ infilPlot_b <- infilPlot_b +
                   0.1,
                   1),
     symbols = c("****", "***", "**",
-                "*'",
-                "'")),
-  size = 1.5, vjust = 0.5
+                "*^",
+                "^")),
+  size = 5, vjust = 0.5
   ) +
-  EnvStats::stat_n_text(size = 1.5)
+  EnvStats::stat_n_text(size = 2.5)
 
-infilPlot <- ggpubr::ggarrange(infilPlot_a, infilPlot_b, labels = c("a", "b"), nrow = 2)
+infilPlot <- ggpubr::ggarrange(infilPlot_a, infilPlot_b, labels = c("a", "b"), nrow = 1)
 # ggplot2::ggsave("figs/infilPlot.png", infilPlot,
 #        height = 3, width = 3, units = "in")

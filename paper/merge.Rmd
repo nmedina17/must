@@ -1,5 +1,5 @@
 ---
-title: "Mixing cover crops suppresses weeds and roto-till improves urban soil compaction and infiltration"
+title: "Mixing cover crops suppresses weeds and roto-till reduces urban soil strength and improves infiltration"
 author:
   - Naim Edwards ^a^*
   - Nicholas Medina ^b^
@@ -48,6 +48,7 @@ always_allow_html: TRUE
 bibliography: 
   - ../../library.bib
   - ../../grateful-refs.bib
+  - ../../software.bib
 csl: ../../styles-master/elsevier-harvard.csl
 # biblio-style: 
 #   ../../elsarticle-ecrc/elsarticle-num.bst
@@ -59,8 +60,7 @@ link-citations: TRUE
 fontsize: 12pt
 geometry: margin=1in
 header-includes:
-  - \usepackage[left]{lineno}
-  - \linenumbers
+  - \usepackage[left]{lineno}\linenumbers
   - \usepackage{setspace}\doublespace
 # font-family: Calibri Light
 ---
@@ -89,7 +89,7 @@ taxize::taxize_options(quiet = T, taxon_state_messages = T)
 \
 \
 
-**Keywords**: urban agriculture; soil compaction; weed suppression; roto-till; cover crop mix; soil infiltration  
+**Keywords**: urban agriculture; soil strength; weed suppression; roto-till; cover crop mix; soil infiltration  
 
 \
 \
@@ -169,7 +169,7 @@ NE conceived, designed, and performed the study; NE and NM helped collect data; 
 
 # Data statement{-}
 
-Data and code stored at [github.com/nmedina17/must](github.com/nmedin17/must).
+Code stored with Zenodo as [10.5281/zenodo.6800153](https://doi.org/10.5281/zenodo.6800153) *[@softwareMedinaEdwards22]* and linked to [github.com/nmedina17/must](github.com/nmedina17/must).
 
 
 \newpage

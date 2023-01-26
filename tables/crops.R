@@ -42,10 +42,12 @@ cropKbl <- cropTbl %>%
   mutate(Function = ifelse(duplicated(Function), "", as.character(Function))
          # Binomial = map(Binomial, ~stringr::str_c("*", Binomial, "*"))
          ) %>%
-  # select(!Function) %>%
+
+  #reviewer
+  select(!Binomial) %>%
 
   knitr::kable(caption = "Cover crop mixes", align = "c", format = "simple",
-               longtable = F) %>%
+               longtable = F) #%>%
   # as.data.frame(rvest::html_table()) %>%
   # kableExtra::collapse_rows() %>% #bug
   # kableExtra::group_rows(names(mixes)[4], 1, 3) %>%
@@ -53,7 +55,8 @@ cropKbl <- cropTbl %>%
   # kableExtra::group_rows(names(mixes)[3], 7, 9) %>%
   # kableExtra::group_rows(names(mixes)[1], 10, 10) %>%
   # kableExtra::kable_styling() %>%
-  kableExtra::column_spec(3, italic = T) #%>%
+
+  # kableExtra::column_spec(3, italic = T) #%>%  #reviewer
   # kableExtra::row_spec(0, bold = T)
 
 #save----

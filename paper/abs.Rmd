@@ -25,8 +25,8 @@ output: html_notebook
 
 Urban soils have been degraded by decades of industrial activities, but they also represent opportunities to improve food sovereignty for urban residents practicing urban agriculture.
 Urban growers often use varying practices of compost, tillage, and cover cropping, yet further integrated approaches could facilitated by model analyses of how different practices may compare or complement each other.
-This study examined how tillage methods representing various intensities and cover crop mixes targeting different functions affected agricultural variables including soil compaction, water infiltration rate, herbaceous weedy plant pressure, and crop yield. 
-Results showed that both roto- and tractor-till significantly affected compaction but not yield compared to no-till, and roto-till also improved infiltration, while tractor-till reached deeper soils but allowed denser weed growth.
-Mixing sorghum-sudangrass, buckwheat, and cowpea cover crops significantly reduced weed pressure compared to other mixtures, and perennials affected compaction but not soil water infiltration under no-till.
-These results reveal that medium-intensity tillage may offer more balanced trade-offs for initial management, and that cover crops can help reduce weeds under low-till strategies.
+This study examined how tillage methods representing various intensities and cover crop mixes targeting different functions affected agricultural variables including soil strength, water infiltration rate, herbaceous weedy plant pressure, and crop yield in an urban Technosol in Detroit, MI, USA. 
+Results showed that both roto- and tractor-till significantly lowered soil strength by *~50%* overall but not yield when compared to no-till, and roto-till also improved infiltration by *~15%*, while tractor-till reached deeper soils but allowed *~7%* denser weed growth.
+Mixing sorghum-sudangrass, buckwheat, and cowpea cover crops significantly reduced weed density by *~50%* compared to other mixtures, and perennials appeared to increase depth to hardpan by *~2.5 cm (~17%)* but not affect soil water infiltration under no-till.
+These results reveal that medium-intensity tillage may offer more balanced trade-offs for lowering soil strength, promoting infiltration, and feasibly minimizing weeds, and that cover crops can help reduce weeds under low-till strategies.
 Overall this study offers evidence detailing effects of various tillage and cover crop styles that can be of use for smallholder urban growers.
