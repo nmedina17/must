@@ -65,7 +65,7 @@ Water infiltration is a key function of wide interest for urban environmental ma
 This study found that roto-till resulted in significantly faster infiltration compared to no-till, unlike tractor-till, suggesting that roto-till management can generally be effective for improving infiltration and drainage.
 This result could be explained by medium intensity roto-till increasing soil macro-porosity, which compared to micro-pores bind water less tightly, allowing soil water to flow faster *[@gerke06]*.
 In contrast, the tractor diffused tillage energy across deeper soil volume, lowering the density of any added soil macro-pores and thereby making it easier for soil particles to settle back together, whereas no-till may have needed more time to improve macro-porosity via organic matter effects on soil structure *[@king20]*.
-It is also possible that this result could be explained by compost incorporation, where tractor-till incorporated the same amount of compost more diffusely throughout the soil profile, and thereby diluting potential benefits of compost on water infiltration, such as by improving seasonal soil aggregation *[@bach19]*.
+It is also possible that this result could be explained by compost incorporation, where tractor-till incorporated the same amount of compost more diffusely throughout the soil profile, and thereby diluting potential benefits of compost on water infiltration, such as by improving seasonal soil aggregation *[@upton19]*.
 <!-- Overall, this study supported the use of roto-till, but not no-till or tractor-till, against a one inch rain event, since both others showed rates of only  -->
 <!-- ~ `r filter(infilData_TIL, TIL=="No")$median` ± -->
 <!-- `r filter(infilData_TIL, TIL=="No")$mad` mL per sec -->

@@ -217,7 +217,7 @@ Sampling was done in July and October 2019 and the following Spring.
 ## Statistics
 
 ```{r pkgs, results='hide'}
-grateful::get_pkgs_info(out.dir = "../.."); 
+# grateful::get_pkgs_info(out.dir = "../.."); 
 ```
 
 Field space limited strict plot replication for treatment combinations (*n*=3), and thus inference from advanced nested mixed models *[@silk20]*, so analysis focused on specific hypotheses tested using simpler, more conservative non-parametric tests that make few underlying assumptions about data and thus appropriate for data with lower replication.
@@ -234,11 +234,11 @@ All calculations and analyzes were done in `r version$version.string` *[@base]* 
 Code stored with Zenodo as [10.5281/zenodo.6800153](https://doi.org/10.5281/zenodo.6800153) *[@softwareMedinaEdwards22]* and linked to [github.com/nmedina17/must](github.com/nmedina17/must), 
 documented using R packages 
 *here* `r packageVersion("here")` *[@here]*, 
-*bookdown* `r packageVersion("bookdown")` *[@bookdown2022]*, 
+*bookdown* `r packageVersion("bookdown")` *[@bookdown2016]*, 
 *measurements* `r packageVersion("measurements")` *[@measurements]*, 
 *taxize* `r packageVersion("taxize")` *[@taxize2020]*, 
-*knitr* `r packageVersion("knitr")` *[@knitr2022]*, and 
-*rmarkdown* `r packageVersion("rmarkdown")` *[@rmarkdown2022]*
+*knitr* `r packageVersion("knitr")` *[@knitr2015]*, and 
+*rmarkdown* `r packageVersion("rmarkdown")` *[@rmarkdown2020]*
 <!-- (Table \@ref(tab:pkgsTab)) -->
 .
 ```{r pkgsTab, include=F}

@@ -21,8 +21,8 @@ author:
 #   - code: Michigan State University
 #     address: Agriculture and Natural Resources Extension, Detroit, MI
 date: \scriptsize 
-  ^a^ Agriculture and Natural Resources, Michigan State University, 16745 Lamphere St, Detroit, MI, USA 48219;  
-  ^b^ Ecology and Evolutionary Biology, University of Michigan, 1105 N University Ave, Ann Arbor, MI, USA
+  ^a^ Agriculture and Natural Resources, Michigan State University, Detroit, MI, 48219 USA;  
+  ^b^ Ecology and Evolutionary Biology, University of Michigan, Ann Arbor, MI, 48109 USA
 
 # abstract: |
 
@@ -89,7 +89,7 @@ taxize::taxize_options(quiet = T, taxon_state_messages = T)
 \
 \
 
-**Keywords**: urban agriculture; soil strength; weed suppression; roto-till; cover crop mix; soil infiltration  
+**Keywords**: urban agriculture; soil penetration resistance; weed suppression; roto-till; cover crop mix; soil infiltration  
 
 \
 \
